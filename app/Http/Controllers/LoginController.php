@@ -43,6 +43,9 @@ class LoginController extends Controller
             'password' => 'required|confirmed|min:8'
         ]);
 
+
+        //enkel user added als het een thomasmore account is
+
         $user = new User();
         $user->name = $request->input('name');
         $user->birth_date = $request->input('birthdate');
@@ -64,7 +67,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect()->intended('./dashboard');
         }else{
-            // $data['error'] = "Email and password do not match";
             $request->flash();
             $request->session()->flash('error', 'Email and password do not match');
             return redirect('login');

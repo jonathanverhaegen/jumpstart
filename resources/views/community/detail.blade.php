@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Register')
+@section('title', 'Community')
 
 @section('content')
 
@@ -34,10 +34,9 @@
 
 
 
-      
-        
-      <a href="/signup/student">student</a>
-      <a href="/signup/student-zelfstandige">student-zelfstandige</a>
+      <div>
+          <h1>Hier staat de detail van group {{$group_id}}</h1>
+      </div>
 
 
 

@@ -34,7 +34,7 @@ class LoginController extends Controller
         return redirect('./login');
     }
 
-    public function addUser(Request $request){
+    public function addStudent(Request $request){
         //checking
         $credentials = $request->validate([
             'name' => 'required|max:255',
@@ -56,6 +56,11 @@ class LoginController extends Controller
 
         $request->session()->flash('success', 'Je account is aangemaakt');
         return redirect('/login');
+    }
+
+    public function addZelfstandige(Request $request){
+       //add student + company
+       dd('add student-zelfstandige');
     }
 
     public function handleLogin(Request $request){

@@ -28,7 +28,8 @@ Route::get('/signup/student-zelfstandige', [LoginController::class, "signupZelfs
 Route::get('/login', [LoginController::class, "login"])->name('login');
 Route::get('/logout', [LoginController::class, "logout"]);
 
-Route::post('/user/addUser', [LoginController::class, "addUser"]);
+Route::post('/user/addStudent', [LoginController::class, "addStudent"]);
+Route::post('/user/addZelfstandige', [LoginController::class, "addZelfstandige"]);
 Route::post('user/login', [LoginController::class, "handleLogin"]);
 
 

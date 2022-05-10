@@ -13,6 +13,14 @@ class LoginController extends Controller
         return view('signup');
     }
 
+    public function signupStudent(){
+        return view('signupStudent');
+    }
+
+    public function signupZelfstandige(){
+        return view('signupZelfstandige');
+    }
+
     public function login(){
         return view('/login');
     }

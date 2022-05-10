@@ -47,18 +47,21 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de community
     Route::get('/community', [CommunityController::class, "community"]);
+    Route::get('/community/{id}', [CommunityController::class, "communityDetail"]);
 
     //routes van de chat
     Route::get('/chat', [ChatController::class, "chat"]);
 
     //routes vab de contacten
     Route::get('/contacten', [ContactController::class, "contacten"]);
+    Route::get('/contacten/{id}', [ContactController::class, "contactenDetail"]);
 
     //routes van de instellingen
     Route::get('/instellingen', [SettingsController::class, "settings"]);
 
     //routes van het profiel
     Route::get('/profiel', [ProfileController::class, "profile"]);
+    Route::get('/profiel/edit', [ProfileController::class, "editProfile"]);
     
 
 });

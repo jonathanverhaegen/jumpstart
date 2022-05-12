@@ -35,7 +35,7 @@
 
     <x-search />
 
-    <div class="roadmap__container hidden">
+    <div class="roadmap__container">
         <div class="roadmap">
 
             <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
@@ -88,10 +88,16 @@
             <div class="stage__header__extra"><img src="" alt="extra"></div>
         </div>
         <div class="stage">
-            <p class="stage__title"></p>
-            <p class="stage__text"></p>
+            <p class="stage__title">Een rekening openen voor jouw business</p>
+            <p class="stage__text">Het verplicht om een professionele bankrekening te hebben. De reden waarom de meeste zelfstandigen hun persoonlijke bankrekening niet gebruiken voor zakelijke aankopen en uitgaven, is omdat de fiscus een zuivere privébankrekening niet zomaar mag inspecteren. Een ‘gemengde’ rekening mag hij wel onder loep nemen. </p>
         </div>
-        <div class="stage__check"></div>
+        <div class="stage__check">
+            <a class="stagebtn" href="">ING</a>
+            <a class="stagebtn" href="">ARGENTA</a>
+            <a class="stagebtn" href="">KBC</a>
+            <a class="stagebtn" href="">BELFIUS</a>
+            <a class="stageCheckBtn" href="">Stap afronden</a>
+        </div>
     </div>
 
 

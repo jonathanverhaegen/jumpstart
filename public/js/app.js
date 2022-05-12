@@ -2072,6 +2072,9 @@ if (roadmapBtns !== null) {
       e.preventDefault();
       var stage = btn.dataset.stage;
       roadmapContainer.style.display = "none"; //juiste stap laten zien
+
+      var stap = document.querySelector('.stage__container--' + stage);
+      stap.style.display = "block";
     });
   });
 }

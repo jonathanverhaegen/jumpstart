@@ -13,6 +13,8 @@ if(roadmapBtns !== null){
            roadmapContainer.style.display = "none";
 
            //juiste stap laten zien
+           let stap = document.querySelector('.stage__container--' + stage);
+           stap.style.display = "block";
        }); 
     });
 }

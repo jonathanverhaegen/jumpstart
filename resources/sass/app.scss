@@ -1,3 +1,9 @@
 @import 'components/dashboard';
+@import 'components/header';
+@import 'components/search';
+@import 'components/roadmap';
+@import 'abstracts/colors';
 
-
+body{
+    background-color: $background;
+}

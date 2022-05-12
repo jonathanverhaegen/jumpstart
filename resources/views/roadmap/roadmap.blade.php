@@ -31,12 +31,13 @@
 @endif
 
 
+    <x-headerMob />
 
+    <x-search />
 
-
-      <div>
-          <h1>Hier staat de roadmap</h1>
-      </div>
+    <div class="roadmap__container">
+        <div>roadmap</div>
+    </div>
 
 
 

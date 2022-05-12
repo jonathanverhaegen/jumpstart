@@ -4,4 +4,40 @@
     margin-right:auto;
     background-color: $lightgray;
     margin-top:50px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.roadmap{
+    padding:5%;
+}
+
+.roadmap__stage{
+    display:flex;
+    flex-direction: row;
+    gap:5px;
+    margin-bottom:20px;
+    align-items: center;
+}
+
+.roadmap__stage__title{
+    color: $darkblue;
+    background-color: $gray;
+    padding:3% 5% 3% 5%;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.roadmap__stage__number{
+    color: $darkblue;
+    background-color: red;
+    padding:3%;
+    border-radius: 50%;
+}
+
+.roadmap__stage__number--left{
+    margin-right:-5%;
+    z-index:10;
+}
+
+.roadmap__stage__number--right{
+    margin-left:-5%;
 }

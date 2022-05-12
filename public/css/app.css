@@ -75,6 +75,27 @@
   margin-left: -5%;
 }
 
+.stage__container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FAFAFA;
+  margin-top: 50px;
+  border-radius: 20px 20px 20px 20px;
+  padding: 5%;
+}
+
+.stage__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.stage__header__stap {
+  font-family: "Montserrat", sans-serif;
+  color: #E44402;
+}
+
 body {
   background-color: #EDEFF5;
   font-family: "Lato", sans-serif;

@@ -35,8 +35,9 @@
 
     <x-search />
 
-    <div class="roadmap__container">
+    <div class="roadmap__container hidden">
         <div class="roadmap">
+
             <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
                 <div class="roadmap__stage__title">Bank</div>
                 <div class="roadmap__stage__number roadmap__stage__number--right">1</div>
@@ -76,8 +77,21 @@
                 <div class="roadmap__stage__number roadmap__stage__number--left">8</div>
                 <div class="roadmap__stage__title">Student-zelfstandige</div>
             </a>
-            
+
         </div>
+    </div>
+
+    <div class="stage__container stage__container--1">
+        <div class="stage__header">
+            <div class="stage__header__back"><img src="" alt="back"></div>
+            <div class="stage__header__stap">Stap 1</div>
+            <div class="stage__header__extra"><img src="" alt="extra"></div>
+        </div>
+        <div class="stage">
+            <p class="stage__title"></p>
+            <p class="stage__text"></p>
+        </div>
+        <div class="stage__check"></div>
     </div>
 
 

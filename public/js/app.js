@@ -2060,7 +2060,21 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //roadmap
+
+
+var roadmapBtns = document.querySelectorAll('.roadmap__stage');
+var roadmapContainer = document.querySelector('.roadmap__container');
+
+if (roadmapBtns !== null) {
+  roadmapBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var stage = btn.dataset.stage;
+      roadmapContainer.style.display = "none"; //juiste stap laten zien
+    });
+  });
+}
 
 /***/ }),
 

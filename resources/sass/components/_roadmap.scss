@@ -47,3 +47,24 @@
 .roadmap__stage__number--right{
     margin-left:-5%;
 }
+
+.stage__container{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: $lightgray;
+    margin-top:50px;
+    border-radius: 20px 20px 20px 20px;
+    padding:5%;
+}
+
+.stage__header{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.stage__header__stap{
+    font-family: $title;
+    color: $orange;
+}

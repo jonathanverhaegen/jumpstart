@@ -34,8 +34,8 @@
 }
 
 .search {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
   gap: 20px;
   align-items: center;
 }
@@ -54,6 +54,7 @@
   color: #1E3472;
   padding: 5%;
   background-color: #FAFAFA;
+  width: 80%;
 }
 
 .search__input input::-webkit-input-placeholder {

@@ -7,8 +7,29 @@
 }
 
 .search{
-    padding: 5%;
     display:flex;
     flex-direction: row;
     gap:20px;
+    align-items: center;
+}
+
+.search__icon{
+    display: flex;
+    justify-content: center;
+}
+
+.search__icon__img{
+    width:50px;
+}
+
+.search__input input{
+    border:none;
+    color: $blue;
+    padding:5%;
+    background-color: $lightgray;
+}
+
+.search__input input::-webkit-input-placeholder {
+    color: $blue; /*Change the placeholder color*/
+    opacity: 1; /*Change the opacity between 0 and 1*/
 }

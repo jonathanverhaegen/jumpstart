@@ -2077,6 +2077,18 @@ if (roadmapBtns !== null) {
       stap.style.display = "block";
     });
   });
+} //stage back 
+
+
+var stageBackBtn = document.querySelector('.stage__header__back');
+
+if (stageBackBtn !== null) {
+  stageBackBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    var stap = document.querySelector('.stage__container');
+    stap.style.display = "none";
+    document.querySelector('.roadmap__container').style.display = "block";
+  });
 }
 
 /***/ }),

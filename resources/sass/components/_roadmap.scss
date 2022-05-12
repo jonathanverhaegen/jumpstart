@@ -1,3 +1,6 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
 .roadmap__container{
     width:90%;
     margin-left:auto;
@@ -17,6 +20,7 @@
     gap:5px;
     margin-bottom:20px;
     align-items: center;
+    text-decoration: none;
 }
 
 .roadmap__stage__title{
@@ -28,9 +32,11 @@
 
 .roadmap__stage__number{
     color: $darkblue;
-    background-color: red;
+    background-color: $white;
     padding:3%;
     border-radius: 50%;
+    font-family: $title;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 
 .roadmap__stage__number--left{

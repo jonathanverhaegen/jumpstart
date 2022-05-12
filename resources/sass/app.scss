@@ -3,7 +3,12 @@
 @import 'components/search';
 @import 'components/roadmap';
 @import 'abstracts/colors';
+@import 'abstracts/fonts';
 
 body{
     background-color: $background;
+    font-family: $normal;
 }
+
+
+

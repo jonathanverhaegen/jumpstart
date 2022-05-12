@@ -47,6 +47,7 @@
   gap: 5px;
   margin-bottom: 20px;
   align-items: center;
+  text-decoration: none;
 }
 
 .roadmap__stage__title {
@@ -58,9 +59,11 @@
 
 .roadmap__stage__number {
   color: #13204A;
-  background-color: red;
+  background-color: white;
   padding: 3%;
   border-radius: 50%;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .roadmap__stage__number--left {
@@ -74,4 +77,5 @@
 
 body {
   background-color: #EDEFF5;
+  font-family: "Lato", sans-serif;
 }

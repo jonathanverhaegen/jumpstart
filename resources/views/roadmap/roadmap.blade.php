@@ -92,6 +92,10 @@
                 <div class="roadmap__stage__title roadmap__stage__title--right">Student-zelfstandige</div>
             </a>
 
+            <a class="roadmap__next" href="">
+                <img class="nextBtn" src="{{asset('/img/knop3.png')}}" alt="">
+            </a>
+
         </div>
     </div>
 

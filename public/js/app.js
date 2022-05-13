@@ -2060,6 +2060,11 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    add = _require.add,
+    findLastIndex = _require.findLastIndex,
+    isSet = _require.isSet;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //roadmap
 
 
@@ -2071,7 +2076,11 @@ if (roadmapBtns !== null) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       var stage = btn.dataset.stage;
-      roadmapContainer.style.display = "none"; //juiste stap laten zien
+
+      if (stage) {
+        roadmapContainer.style.display = "none";
+      } //juiste stap laten zien
+
 
       var stap = document.querySelector('.stage__container--' + stage);
       stap.style.display = "block";

@@ -1,3 +1,5 @@
+const { add, findLastIndex, isSet } = require('lodash');
+
 require('./bootstrap');
 
 //roadmap
@@ -10,8 +12,10 @@ if(roadmapBtns !== null){
        btn.addEventListener('click', (e) => {
            e.preventDefault();
            let stage = btn.dataset.stage;
+           if(stage){
            roadmapContainer.style.display = "none";
-
+            }
+           
            //juiste stap laten zien
            let stap = document.querySelector('.stage__container--' + stage);
            stap.style.display = "block";

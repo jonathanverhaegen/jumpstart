@@ -2060,6 +2060,7 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
     add = _require.add,
     findLastIndex = _require.findLastIndex,
@@ -2134,6 +2135,9 @@ if (togglePasswordBtn !== null) {
     document.querySelector('.password').type = passwordType;
   });
 }
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 /***/ }),
 

@@ -22,41 +22,37 @@
 }
 
 .roadmap__stage{
-    display:flex;
-    flex-direction: row;
-    gap:5px;
-    margin-bottom:20px;
-    align-items: center;
+    background-color: $gray;
+    width:50%;
+    display:grid;
+    grid-template-columns: 5fr 1fr;
     text-decoration: none;
+    align-items: center;
+    border-radius: 20px;
 }
 
 .roadmap__stage__title{
-    color: $darkblue;
-    background-color: $gray;
-    padding: 20px 60px 20px 40px;
-    border-radius: 10px 10px 10px 10px;
+    color: $blue;
+    justify-self: center;
     font-family: $normal;
-    font-size: 18px;
+    font-size:24px;
+    padding:20% 10%;
 }
 
 .roadmap__stage__number{
-    color: $darkblue;
+    color: $blue;
+    font-size:26px;
     background-color: $white;
-    padding: 16px 23px;
-    border-radius: 50%;
-    font-family: $title;
+    justify-self: center;
+    padding: 100% 100%;
+    border-radius:50%;
+    position: relative;
+    left:20%;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-    font-size: 26px;
+    font-family: $normal;
 }
 
-.roadmap__stage__number--left{
-    margin-right: -11%;
-    z-index:10;
-}
 
-.roadmap__stage__number--right{
-    margin-left: -11%;
-}
 
 .stage__container{
     width:80%;

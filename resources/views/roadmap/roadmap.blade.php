@@ -39,11 +39,11 @@
         <div class="roadmap">
 
             <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
-                <div class="roadmap__stage__title">Bank</div>
-                <div class="roadmap__stage__number roadmap__stage__number--right">1</div>
+                <p class="roadmap__stage__title">Bank</p>
+                <p class="roadmap__stage__number">1</p>
             </a>
 
-            <a href="" data-stage="2" class="roadmap__stage roadmap__stage--2">
+            <!--<a href="" data-stage="2" class="roadmap__stage roadmap__stage--2">
                 <div class="roadmap__stage__number roadmap__stage__number--left">2</div>
                 <div class="roadmap__stage__title">Activiteiten</div>
             </a>
@@ -76,7 +76,7 @@
             <a href="" data-stage="8" class="roadmap__stage roadmap__stage--8">
                 <div class="roadmap__stage__number roadmap__stage__number--left">8</div>
                 <div class="roadmap__stage__title">Student-zelfstandige</div>
-            </a>
+            </a>-->
 
         </div>
     </div>

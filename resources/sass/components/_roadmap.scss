@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 5;
-    height:932px;
+    height: 1000px;
 }
 
 .roadmap__stage{
@@ -47,15 +47,15 @@
     font-family: $title;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     font-size: 26px;
+    z-index:5;
 }
 
-.roadmap__stage__number--left{
-    margin-right: -11%;
-    z-index:10;
+.roadmap__stage__title--left{
+    margin-right:-8%;
 }
 
-.roadmap__stage__number--right{
-    margin-left: -11%;
+.roadmap__stage__title--right{
+    margin-left:-8%;
 }
 
 .stage__container{
@@ -200,7 +200,7 @@
 
 .roadmap__stage--2{
     position:relative;
-    left: 36%;
+    left: 29%;
     top:10px;
 }
 
@@ -212,7 +212,7 @@
 
 .roadmap__stage--4{
     position:relative;
-    left: 30%;
+    left: 19%;
     top: 109px;
 }
 
@@ -224,7 +224,7 @@
 
 .roadmap__stage--6{
     position:relative;
-    left: 27%;
+    left: 19%;
     top: 256px;
 }
 

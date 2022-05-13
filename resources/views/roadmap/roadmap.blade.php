@@ -53,43 +53,43 @@
         <div class="roadmap">
 
             <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
-                <p class="roadmap__stage__title">Bank</p>
-                <p class="roadmap__stage__number roadmap__stage__number--right">1</p>
+                <p class="roadmap__stage__title roadmap__stage__title--left">Bank</p>
+                <p class="roadmap__stage__number">1</p>
             </a>
 
             <a @if($roadmap->stage > 1) href="" data-stage="2" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2">
-                <div class="roadmap__stage__number roadmap__stage__number--left">2</div>
-                <div class="roadmap__stage__title">Activiteiten</div>
+                <div class="roadmap__stage__number">2</div>
+                <div class="roadmap__stage__title roadmap__stage__title--right">Activiteiten</div>
             </a>
 
             <a @if($roadmap->stage > 2) href="" data-stage="3" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--3">
-                <div class="roadmap__stage__title">Sociale bijdragen</div>
-                <div class="roadmap__stage__number roadmap__stage__number--right">3</div>
+                <div class="roadmap__stage__title roadmap__stage__title--left">Sociale bijdragen</div>
+                <div class="roadmap__stage__number">3</div>
             </a>
 
             <a @if($roadmap->stage > 3) href="" data-stage="4" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--4">
-                <div class="roadmap__stage__number roadmap__stage__number--left">4</div>
-                <div class="roadmap__stage__title">Sociaal- <br> verzekeringsfonds</div>
+                <div class="roadmap__stage__number">4</div>
+                <div class="roadmap__stage__title roadmap__stage__title--right">Sociaal- <br> verzekeringsfonds</div>
             </a>
 
             <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--5">
-                <div class="roadmap__stage__title">Bank</div>
-                <div class="roadmap__stage__number roadmap__stage__number--right">5</div>
+                <div class="roadmap__stage__title roadmap__stage__title--left">Bank</div>
+                <div class="roadmap__stage__number">5</div>
             </a>
 
             <a @if($roadmap->stage > 5) href="" data-stage="6" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--6">
-                <div class="roadmap__stage__number roadmap__stage__number--left">6</div>
-                <div class="roadmap__stage__title">Btw-administratie</div>
+                <div class="roadmap__stage__number">6</div>
+                <div class="roadmap__stage__title roadmap__stage__title--right">Btw-administratie</div>
             </a>
 
             <a @if($roadmap->stage > 6) href="" data-stage="7" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--7">
-                <div class="roadmap__stage__title">Ondernemingsnummer</div>
-                <div class="roadmap__stage__number roadmap__stage__number--right">7</div>
+                <div class="roadmap__stage__title roadmap__stage__title--left">Ondernemingsnummer</div>
+                <div class="roadmap__stage__number">7</div>
             </a>
 
             <a @if($roadmap->stage > 7) href="" data-stage="8" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--8">
-                <div class="roadmap__stage__number roadmap__stage__number--left">8</div>
-                <div class="roadmap__stage__title">Student-zelfstandige</div>
+                <div class="roadmap__stage__number">8</div>
+                <div class="roadmap__stage__title roadmap__stage__title--right">Student-zelfstandige</div>
             </a>
 
         </div>

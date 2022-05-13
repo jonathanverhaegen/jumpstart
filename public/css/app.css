@@ -7,18 +7,17 @@
   height: 75px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 25px;
-}
-
-.header--mob__imgcontainer {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 .header--mob__img {
+  background-image: url("/img/logo2.png");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  height: 60px;
   width: 100%;
-  position: relative;
-  top: -25px;
 }
 
 .search__container {
@@ -247,4 +246,5 @@ body {
 
 * {
   font-family: "Lato", sans-serif;
+  box-sizing: border-box;
 }

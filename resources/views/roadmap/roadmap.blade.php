@@ -55,7 +55,7 @@
 
             <a href="" data-stage="4" class="roadmap__stage roadmap__stage--4">
                 <div class="roadmap__stage__number roadmap__stage__number--left">4</div>
-                <div class="roadmap__stage__title">Sociaal verzekeringsfond</div>
+                <div class="roadmap__stage__title">Sociaal- <br> verzekeringsfonds</div>
             </a>
 
             <a href="" data-stage="5" class="roadmap__stage roadmap__stage--5">
@@ -216,7 +216,7 @@
 
     <div class="stage__container stage__container--8">
         <div class="stage__header">
-            <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
+            <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
             <div class="stage__header__stap">Stap 8</div>
             <div class="stage__header__extra"></div>
         </div>

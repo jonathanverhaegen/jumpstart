@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="{{ URL::asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-tailwind.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
     
     
   </head>

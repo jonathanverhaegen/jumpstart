@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('avatar')->default('test.png');
-            $table->longText('bio');
+            $table->longText('bio')->nullable();
             $table->boolean('isAgent')->default(0);
             $table->timestamps();
         });

@@ -1,3 +1,21 @@
 @import 'components/dashboard';
+@import 'components/header';
+@import 'components/search';
+@import 'components/roadmap';
+@import 'components/notification';
+@import 'components/forms';
+@import 'components/btns';
+@import 'abstracts/colors';
+@import 'abstracts/fonts';
+
+body{
+    background-color: $background;
+    
+}
+
+*{
+    font-family: $normal;
+    box-sizing: border-box;
+}
 
 

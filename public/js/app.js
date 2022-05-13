@@ -2060,7 +2060,84 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    add = _require.add,
+    findLastIndex = _require.findLastIndex,
+    isSet = _require.isSet;
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //roadmap
+
+
+var roadmapBtns = document.querySelectorAll('.roadmap__stage');
+var roadmapContainer = document.querySelector('.roadmap__container');
+
+if (roadmapBtns !== null) {
+  roadmapBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var stage = btn.dataset.stage;
+
+      if (stage) {
+        roadmapContainer.style.display = "none";
+      } //juiste stap laten zien
+
+
+      var stap = document.querySelector('.stage__container--' + stage);
+      stap.style.display = "block";
+    });
+  });
+} //stage back 
+
+
+var stageBackBtn = document.querySelector('.stage__header__back');
+
+if (stageBackBtn !== null) {
+  stageBackBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = "/roadmap";
+  });
+} //stage1 btns 
+
+
+var stage1Btns = document.querySelectorAll('.stage1btn');
+
+if (stage1Btns !== false) {
+  stage1Btns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var bank = btn.innerHTML.toLocaleLowerCase(); //juiste checkveld tonen
+
+      var checkField = document.querySelector('.stage__form__check');
+      var btns = document.querySelector('.stage__btns');
+      checkField.style.display = "flex";
+      btns.style.display = "none"; //bank invullen
+
+      document.querySelector('.stage__form__check__extra').value = bank;
+    });
+  });
+} //show password
+
+
+var togglePasswordBtn = document.querySelector('.togglePassword');
+
+if (togglePasswordBtn !== null) {
+  togglePasswordBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    var passwordType = document.querySelector('.password').type;
+
+    if (passwordType === "password") {
+      passwordType = "text";
+    } else {
+      passwordType = "password";
+    }
+
+    document.querySelector('.password').type = passwordType;
+  });
+}
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 /***/ }),
 

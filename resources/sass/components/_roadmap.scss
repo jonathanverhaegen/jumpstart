@@ -6,7 +6,7 @@
     margin-left:auto;
     margin-right:auto;
     background-color: $lightgray;
-    margin-top:25px;
+    margin-top:30px;
     border-radius: 20px 20px 20px 20px;
     margin-bottom:75px;
 }
@@ -63,9 +63,9 @@
     margin-left:auto;
     margin-right:auto;
     background-color: $lightgray;
-    margin-top:50px;
+    margin-top:30px;
     border-radius: 20px 20px 20px 20px;
-    padding:5%;
+    padding:5% 5% 10% 5%;
     display:none;
 }
 
@@ -74,16 +74,17 @@
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
-    margin-top:-10px;
+    margin-top:-40px;
 }
 
 .stage__header__stap{
     font-family: $title;
     color: $orange;
+    font-size:30px;
 }
 
 .stage{
-    margin-top:20px;
+    margin-top: -20px;
 }
 
 .stage__title{
@@ -92,11 +93,12 @@
 }
 
 .stage__text{
-    margin-top:10px;
+    margin-top: 20px;
+    font-family:$normal;
 }
 
 .stage__check{
-    margin-top:20px;
+    margin-top: 30px;
     display:flex;
     flex-direction: column;
     width:100%;
@@ -112,20 +114,23 @@
     background-color: $orange;
     color: $white;
     font-family: $title;
-    border-radius: 20px;
+    border-radius: 15px;
     padding:2%;
+    font-size:24px;
 }
 
 .stageCheckBtn{
     text-decoration: none;
     text-align: center;
     background-color: $lightblue;
-    color: $white;
+    color: $blue;
     font-family: $normal;
-    border-radius: 20px;
-    padding:2%;
+    border-radius: 25px;
+    padding:4%;
     width:60%;
     align-self:center;
+    margin-top: 20px;
+    font-size:22px;
 }
 
 .stage__header__back img{

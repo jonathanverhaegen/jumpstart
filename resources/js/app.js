@@ -35,3 +35,26 @@ if(stageBackBtn !== null){
         document.querySelector('.roadmap__container').style.display = "block";
     })
 }
+
+//stage1 btns 
+
+let stage1Btns = document.querySelectorAll('.stage1btn');
+
+if(stage1Btns !== false){
+    stage1Btns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            let bank = btn.innerHTML.toLocaleLowerCase();
+            
+            //juiste checkveld tonen
+            let checkField = document.querySelector('.stage__form__check');
+            let btns = document.querySelector('.stage__btns');
+
+            checkField.style.display = "flex";
+            btns.style.display = "none";
+
+            //bank invullen
+            document.querySelector('.stage__form__check__extra').value = bank;
+        })
+    })
+}

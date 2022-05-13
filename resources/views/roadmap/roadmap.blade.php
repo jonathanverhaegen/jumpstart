@@ -92,11 +92,19 @@
             <p class="stage__text">Het verplicht om een professionele bankrekening te hebben. De reden waarom de meeste zelfstandigen hun persoonlijke bankrekening niet gebruiken voor zakelijke aankopen en uitgaven, is omdat de fiscus een zuivere privébankrekening niet zomaar mag inspecteren. Een ‘gemengde’ rekening mag hij wel onder loep nemen. </p>
         </div>
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            <a class="stagebtn stage1btn" href="">ING</a>
+            <a class="stagebtn stage1btn" href="">ARGENTA</a>
+            <a class="stagebtn stage1btn" href="">KBC</a>
+            <a class="stagebtn stage1btn" href="">BELFIUS</a>
         </div>
+        <form class="stage__form__check" action="/check/iban" method="post">
+        @csrf
+            
+            <input class="stage__form__check__input" type="text" name="iban" placeholder="IBAN">
+            <button class="stage__form__check__btn" type="submit">Checken</button>
+            <input class="stage__form__check__extra" type="hidden" name="bank">
+            
+        </form>
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">
@@ -105,6 +113,7 @@
             </div>
         </form>
     </div>
+
 
     <div class="stage__container stage__container--2">
         <div class="stage__header">

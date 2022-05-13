@@ -14,6 +14,38 @@ class RoadmapController extends Controller
         return view('roadmap/roadmap', $data);
     }
 
+    public function checkIban(Request $request){
+        $credentials = $request->validate([
+            'iban' => 'required',
+            'bank' => 'required',
+        ]);
+
+        $iban = $request->input('iban');
+        $bank = $request->input('bank');
+
+        //checken of de iban nummer klopt voor die bank
+        switch($bank){
+            case "ing":
+                $check = true;
+                break;
+            case "kbc":
+                $check = true;
+                break;
+            case "argenta":
+                $check = true;
+                break;
+            case "belfius":
+                $check = true;
+                break;
+        }
+
+        if($check){
+            dd('juist en mag dus door');
+        }else{
+            dd('fout en mag dus niet door');
+        }
+    }
+
     public function checkStage1(Request $request){
         //checken of gebruiker al mag checken
         $roadmap = Auth::user()->roadmap;
@@ -27,4 +59,6 @@ class RoadmapController extends Controller
 
         //redirect en inform
     }
+
+    
 }

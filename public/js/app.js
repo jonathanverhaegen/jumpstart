@@ -2098,6 +2098,25 @@ if (stageBackBtn !== null) {
     stap.style.display = "none";
     document.querySelector('.roadmap__container').style.display = "block";
   });
+} //stage1 btns 
+
+
+var stage1Btns = document.querySelectorAll('.stage1btn');
+
+if (stage1Btns !== false) {
+  stage1Btns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var bank = btn.innerHTML.toLocaleLowerCase(); //juiste checkveld tonen
+
+      var checkField = document.querySelector('.stage__form__check');
+      var btns = document.querySelector('.stage__btns');
+      checkField.style.display = "flex";
+      btns.style.display = "none"; //bank invullen
+
+      document.querySelector('.stage__form__check__extra').value = bank;
+    });
+  });
 }
 
 /***/ }),

@@ -2115,6 +2115,24 @@ if (stage1Btns !== false) {
       document.querySelector('.stage__form__check__extra').value = bank;
     });
   });
+} //show password
+
+
+var togglePasswordBtn = document.querySelector('.togglePassword');
+
+if (togglePasswordBtn !== null) {
+  togglePasswordBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    var passwordType = document.querySelector('.password').type;
+
+    if (passwordType === "password") {
+      passwordType = "text";
+    } else {
+      passwordType = "password";
+    }
+
+    document.querySelector('.password').type = passwordType;
+  });
 }
 
 /***/ }),

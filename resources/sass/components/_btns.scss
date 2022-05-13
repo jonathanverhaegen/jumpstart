@@ -1,0 +1,18 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
+
+.formBtn{
+    width:100%;
+    border:none;
+    padding: 5%;
+    color: $blue;
+    font-family:$title;
+    border-radius: 20px;
+    background-color: $darkgray;
+    font-size:20px;
+}
+
+.formBtn:hover{
+    cursor:pointer;
+}

@@ -57,3 +57,20 @@ if(stage1Btns !== false){
         })
     })
 }
+
+//show password
+
+let togglePasswordBtn = document.querySelector('.togglePassword');
+if(togglePasswordBtn !== null){
+    togglePasswordBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        let passwordType = document.querySelector('.password').type;
+        
+        if(passwordType === "password"){
+            passwordType = "text";
+        }else{
+            passwordType = "password";
+        }
+        document.querySelector('.password').type = passwordType;
+    })
+}

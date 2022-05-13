@@ -39,8 +39,8 @@
         <div class="roadmap">
 
             <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
-                <div class="roadmap__stage__title">Bank</div>
-                <div class="roadmap__stage__number roadmap__stage__number--right">1</div>
+                <p class="roadmap__stage__title">Bank</p>
+                <p class="roadmap__stage__number roadmap__stage__number--right">1</p>
             </a>
 
             <a href="" data-stage="2" class="roadmap__stage roadmap__stage--2">
@@ -84,7 +84,7 @@
     <div class="stage__container stage__container--1">
         <div class="stage__header">
             <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
-            <div class="stage__header__stap">STAP 1.</div>
+            <div class="stage__header__stap">Stap 1</div>
             <div class="stage__header__extra"></div>
         </div>
         <div class="stage">

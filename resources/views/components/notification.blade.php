@@ -1,7 +1,3 @@
-<div class="">
-        <div class="">
-          <div class="">
-            <div class="">{{ $slot }}</div>
-          </div>
-        </div>
+<div class="notification notification--{{ $type }}">
+      <div class="">{{ $slot }}</div>
 </div>

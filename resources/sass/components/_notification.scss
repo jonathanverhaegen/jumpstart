@@ -1,0 +1,28 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
+.notification{
+    margin-left:auto;
+    margin-right:auto;
+    width:90%;
+    border-radius: 20px 20px 20px 20px;
+    padding:5%;
+    font-family: $normal;
+    margin-top:20px;
+    opacity: 0.8;
+}
+
+.notification--message{
+    $color: $blue;
+    background-color: $lightgray;
+}
+
+.notification--success{
+    background-color: $green;
+    color: $white;
+}
+
+.notification--error{
+    background-color: $red;
+    color: $white;
+}

@@ -297,6 +297,31 @@
   top: 319px;
 }
 
+.notification {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-radius: 20px 20px 20px 20px;
+  padding: 5%;
+  font-family: "Lato", sans-serif;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+
+.notification--message {
+  background-color: #FAFAFA;
+}
+
+.notification--success {
+  background-color: #56C741;
+  color: white;
+}
+
+.notification--error {
+  background-color: #CC000E;
+  color: white;
+}
+
 body {
   background-color: #EDEFF5;
 }

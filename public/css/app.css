@@ -109,11 +109,11 @@
 }
 
 .roadmap__stage__title--left {
-  margin-right: -8%;
+  margin-right: -40px;
 }
 
 .roadmap__stage__title--right {
-  margin-left: -8%;
+  margin-left: -40px;
 }
 
 .stage__container {

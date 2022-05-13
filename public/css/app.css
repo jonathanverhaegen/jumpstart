@@ -14,9 +14,9 @@
 .header--mob__img {
   background-image: url("/img/logo2.png");
   background-position: center;
-  background-size: 80%;
+  background-size: contain;
   background-repeat: no-repeat;
-  height: 60px;
+  height: 75px;
   width: 100%;
 }
 

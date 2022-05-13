@@ -127,7 +127,7 @@ class RoadmapController extends Controller
                 $roadmap->check = 1;
                 $roadmap->save();
             }else{
-                $request->session()->flash('notification', 'Iban is al gechecked');
+                $request->session()->flash('message', 'Iban is al gechecked');
                 return redirect('/roadmap');
             }
             
@@ -159,7 +159,7 @@ class RoadmapController extends Controller
             $roadmap->check = 0;
             $roadmap->save();
         }else{
-            $request->session()->flash('notification', 'Deze stap is al gechecked');
+            $request->session()->flash('message', 'Deze stap is al gechecked');
             return redirect('/roadmap');
         }
         

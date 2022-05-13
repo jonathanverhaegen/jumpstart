@@ -23,26 +23,67 @@ class RoadmapController extends Controller
         $iban = $request->input('iban');
         $bank = $request->input('bank');
 
+        $realIban = substr($iban, 4, 3);
+        
+        //all ibans argenta
+        $ibanArgenta = ["973", "978", "979", "980"];
+
+        //all ibans ing
+        for($x = 300; $x < 400; $x++){
+            $ibanIng[] = strval($x);
+        }
+        array_push($ibanIng, "185","630", "631", "652", "673", "824", "828", "880", "881", "883", "884", "887", "888", "910", "920", "922", "923", "929", "930", "931", "934", "936", "939", "961", "971", "976" ); 
+       
+        //all ibans kbc
+        $ibanKbc = [];
+
+        //all ibans belgius
+        $ibanBelfius = [];
+
         //checken of de iban nummer klopt voor die bank
         switch($bank){
             case "ing":
-                $check = true;
+                foreach($ibanIng as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
                 break;
             case "kbc":
-                $check = true;
+                foreach($ibanKbc as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
                 break;
             case "argenta":
-                $check = true;
+                foreach($ibanArgenta as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
                 break;
             case "belfius":
-                $check = true;
+                foreach($ibanBelfius as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
                 break;
         }
 
-        if($check){
-            dd('juist en mag dus door');
+        if(!empty($check)){
+            //check opslaan in de roadmap
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->check = 1;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Iban is juist, je kan deze stap nu laten checken');
+            return redirect('/roadmap');
         }else{
-            dd('fout en mag dus niet door');
+            //fout en redirecten
+            $request->session()->flash('error', 'Geen juiste iban ingegeven');
+            return redirect('/roadmap');
         }
     }
 
@@ -54,10 +95,19 @@ class RoadmapController extends Controller
             return redirect('/roadmap');
         }
         //credentials checken
+        $credentials = $request->validate([
+            'stage' => 'required'
+        ]);
 
         //volgende stage opslaan
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->stage = 2;
+        $roadmap->save();
 
         //redirect en inform
+        $request->session()->flash('success', 'Stap 1 is klaar, je kan nu verder met stap 2');
+        return redirect('/roadmap');
+
     }
 
     

@@ -35,11 +35,59 @@ class RoadmapController extends Controller
         array_push($ibanIng, "185","630", "631", "652", "673", "824", "828", "880", "881", "883", "884", "887", "888", "910", "920", "922", "923", "929", "930", "931", "934", "936", "939", "961", "971", "976" ); 
        
         //all ibans kbc
-        $ibanKbc = [];
+        for ($x = 400; $x < 500; $x++) {
+            $ibanKbc[] = strval($x);
+        }
 
+        for ($x = 725; $x < 728; $x++) {
+            $ibanKbc[] = strval($x);
+        }
+
+        for ($x = 730; $x < 732; $x++) {
+            $ibanKbc[] = strval($x);
+        }
+
+        for ($x = 733; $x < 742; $x++) {
+            $ibanKbc[] = strval($x);
+        }
+
+        for ($x = 743; $x < 750; $x++) {
+            $ibanKbc[] = strval($x);
+        }
+
+        array_push($ibanKbc, "640","868");
+        
         //all ibans belgius
-        $ibanBelfius = [];
+        for ($x = 50; $x < 91; $x++) {
+            $ibanBelfius[] = "0".strval($x);
+        }
 
+        for ($x = 550; $x < 561; $x++) {
+            $ibanBelfius[] = strval($x);
+        }
+
+        for ($x = 562; $x < 570; $x++) {
+            $ibanBelfius[] = strval($x);
+        }
+
+        for ($x = 624; $x < 626; $x++) {
+            $ibanBelfius[] = strval($x);
+        }
+
+        for ($x = 682; $x < 684; $x++) {
+            $ibanBelfius[] = strval($x);
+        }
+
+        for ($x = 775; $x < 800; $x++) {
+            $ibanBelfius[] = strval($x);
+        }
+
+        for ($x = 830; $x < 840; $x++) {
+            $ibanBelfius[] = strval($x);
+        }
+
+        array_push($ibanBelfius, "638","657", "672", "680");
+        
         //checken of de iban nummer klopt voor die bank
         switch($bank){
             case "ing":

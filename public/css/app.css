@@ -121,9 +121,9 @@
   margin-left: auto;
   margin-right: auto;
   background-color: #FAFAFA;
-  margin-top: 50px;
+  margin-top: 30px;
   border-radius: 20px 20px 20px 20px;
-  padding: 5%;
+  padding: 5% 5% 10% 5%;
   display: none;
 }
 
@@ -132,16 +132,17 @@
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-  margin-top: -10px;
+  margin-top: -40px;
 }
 
 .stage__header__stap {
   font-family: "Montserrat", sans-serif;
   color: #E44402;
+  font-size: 28px;
 }
 
 .stage {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .stage__title {
@@ -150,11 +151,12 @@
 }
 
 .stage__text {
-  margin-top: 10px;
+  margin-top: 20px;
+  font-family: "Lato", sans-serif;
 }
 
 .stage__check {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -170,20 +172,23 @@
   background-color: #E44402;
   color: white;
   font-family: "Montserrat", sans-serif;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 2%;
+  font-size: 24px;
 }
 
 .stageCheckBtn {
   text-decoration: none;
   text-align: center;
   background-color: #D1D8E8;
-  color: white;
+  color: #1E3472;
   font-family: "Lato", sans-serif;
-  border-radius: 20px;
-  padding: 2%;
+  border-radius: 25px;
+  padding: 4%;
   width: 60%;
   align-self: center;
+  margin-top: 20px;
+  font-size: 22px;
 }
 
 .stage__header__back img {

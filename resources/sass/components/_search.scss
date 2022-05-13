@@ -34,3 +34,14 @@
     color: $blue; /*Change the placeholder color*/
     opacity: 1; /*Change the opacity between 0 and 1*/
 }
+
+@media(min-width:800px){
+    .search__container{
+        margin-top: 20px;
+    }
+
+    .search__input input{
+        padding-top: 10px;
+        padding-bottom:10px;
+    }
+}

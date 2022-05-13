@@ -30,6 +30,14 @@
     @endcomponent
 @endif
 
+@if($flash = session('notification'))
+@component('components/notification')
+        <ul>
+            <li>{{ $flash }}</li>
+        </ul>
+    @endcomponent
+@endif
+
 
     <x-headerMob />
 

@@ -75,9 +75,14 @@ class RoadmapController extends Controller
         if(!empty($check)){
             //check opslaan in de roadmap
             $roadmap = Auth::user()->roadmap;
-            $roadmap->check = 1;
-            $roadmap->save();
-
+            if($roadmap->stage === 1){
+                $roadmap->check = 1;
+                $roadmap->save();
+            }else{
+                $request->session()->flash('notification', 'Iban is al gechecked');
+                return redirect('/roadmap');
+            }
+            
             $request->session()->flash('success', 'Iban is juist, je kan deze stap nu laten checken');
             return redirect('/roadmap');
         }else{
@@ -101,13 +106,18 @@ class RoadmapController extends Controller
 
         //volgende stage opslaan
         $roadmap = Auth::user()->roadmap;
-        $roadmap->stage = 2;
-        $roadmap->save();
+        if($roadmap->stage = 1){
+            $roadmap->stage = 2;
+            $roadmap->save();
+        }else{
+            $request->session()->flash('notification', 'Deze stap is al gechecked');
+            return redirect('/roadmap');
+        }
+        
 
         //redirect en inform
         $request->session()->flash('success', 'Stap 1 is klaar, je kan nu verder met stap 2');
         return redirect('/roadmap');
-
     }
 
     

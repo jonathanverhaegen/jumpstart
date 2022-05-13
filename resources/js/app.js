@@ -30,9 +30,8 @@ let stageBackBtn = document.querySelector('.stage__header__back');
 if(stageBackBtn !== null){
     stageBackBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        let stap = document.querySelector('.stage__container');
-        stap.style.display = "none";
-        document.querySelector('.roadmap__container').style.display = "block";
+        window.location.href = "/roadmap";
+
     })
 }
 

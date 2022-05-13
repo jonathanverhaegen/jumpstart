@@ -2094,9 +2094,7 @@ var stageBackBtn = document.querySelector('.stage__header__back');
 if (stageBackBtn !== null) {
   stageBackBtn.addEventListener('click', function (e) {
     e.preventDefault();
-    var stap = document.querySelector('.stage__container');
-    stap.style.display = "none";
-    document.querySelector('.roadmap__container').style.display = "block";
+    window.location.href = "/roadmap";
   });
 } //stage1 btns 
 

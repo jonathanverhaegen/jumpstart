@@ -99,12 +99,14 @@
             <p class="stage__title">Een rekening openen voor jouw business</p>
             <p class="stage__text">Het verplicht om een professionele bankrekening te hebben. De reden waarom de meeste zelfstandigen hun persoonlijke bankrekening niet gebruiken voor zakelijke aankopen en uitgaven, is omdat de fiscus een zuivere privébankrekening niet zomaar mag inspecteren. Een ‘gemengde’ rekening mag hij wel onder loep nemen. </p>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
             <a class="stagebtn stage1btn" href="">ING</a>
             <a class="stagebtn stage1btn" href="">ARGENTA</a>
             <a class="stagebtn stage1btn" href="">KBC</a>
             <a class="stagebtn stage1btn" href="">BELFIUS</a>
         </div>
+        @endif
         <form class="stage__form__check" action="/check/iban" method="post">
         @csrf
             

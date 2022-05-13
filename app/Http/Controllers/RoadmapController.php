@@ -108,6 +108,7 @@ class RoadmapController extends Controller
         $roadmap = Auth::user()->roadmap;
         if($roadmap->stage = 1){
             $roadmap->stage = 2;
+            $roadmap->check = 0;
             $roadmap->save();
         }else{
             $request->session()->flash('notification', 'Deze stap is al gechecked');

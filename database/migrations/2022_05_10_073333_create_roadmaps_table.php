@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roadmaps_migration', function (Blueprint $table) {
+        Schema::create('roadmaps', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
             $table->integer('stage');

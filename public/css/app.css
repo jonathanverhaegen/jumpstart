@@ -422,6 +422,16 @@
   color: #E44402;
 }
 
+@media (min-width: 800px) {
+  .form--login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form--login__img {
+    width: auto;
+  }
+}
 .formBtn {
   width: 100%;
   border: none;

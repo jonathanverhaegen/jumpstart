@@ -97,7 +97,7 @@
     font-family:$normal;
 }
 
-.stage__check{
+.stage__btns{
     margin-top: 30px;
     display:flex;
     flex-direction: column;
@@ -119,6 +119,13 @@
     font-size:24px;
 }
 
+.stage__check__btn{
+    display:grid;
+    width:100%;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
 .stageCheckBtn{
     text-decoration: none;
     text-align: center;
@@ -131,6 +138,13 @@
     align-self:center;
     margin-top: 20px;
     font-size:22px;
+    border:none;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.stageCheckBtn:hover{
+    cursor:pointer;
 }
 
 .stage__header__back img{

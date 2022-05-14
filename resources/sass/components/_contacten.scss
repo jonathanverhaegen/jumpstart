@@ -1,2 +1,43 @@
 @import '../abstracts/colors';
 @import '../abstracts/fonts';
+
+.contact__container{
+    width:90%;
+    background-color: $lightgray;
+    border-radius: 20px 20px 20px 20px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:25px;
+    margin-bottom:25px;
+    padding-top:25px;
+    height: 575px;
+}
+
+.contact{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px auto 30px auto;
+    text-align: left;
+    background-color: $darkgray;
+    border-radius: 20px 20px 20px 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 450px;    
+}
+
+.contact__blok{
+    text-decoration: none;
+    color: $darkblue;
+    padding: 20px 60px 20px 40px;
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px auto 10px auto;
+    text-align: left;
+}
+
+.contact__blok__title{
+    font-family: $title;
+    font-weight: bold;
+    font-size: 25px;
+}

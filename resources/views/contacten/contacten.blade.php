@@ -57,9 +57,23 @@
 
 
 
-      <div>
-          <h1>Hier staat de contacten</h1>
-      </div>
+      <div class="contact__container">
+        <div class="contact">
+            <a href="" class="contact__blok">
+                    <p class="contact__blok__title">Overheidsinstanties</p>
+             </a>
+
+        </div>
+        <div class="contact">
+             <a href="" class="contact__blok">
+                    <p class="contact__blok__title">Bedrijven</p>
+             </a>
+         </div>
+         <div class="contact">
+             <a href="" class="contact__blok">
+                    <p class="contact__blok__title">ICE CUBE</p>
+             </a>
+         </div>
 
 
 

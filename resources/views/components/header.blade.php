@@ -41,7 +41,7 @@
         </a>
 
         <div class="header__logout">
-            <a class="btn btn--logout" href="">Afmelden</a>
+            <a class="btn btn--logout" href="/logout">Afmelden</a>
         </div>
 
     </div>

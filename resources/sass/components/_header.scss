@@ -1,3 +1,6 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
 .header--mob{
     background-color:$lightgray;
     width:90%;
@@ -20,9 +23,63 @@
     width:100%;
 }
 
+.header{
+    display:none;
+}
+
 @media(min-width: 800px){
     .header--mob{
         display:none;
     }
+
+    .header{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:20px;
+        background-color: $lightgray;
+        border-radius: 20px;
+    }
+
+    .header__img{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 20px;
+    }
+
+    .header__img img{
+        width:100%;
+    }
+
+    .header__links{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:20px;
+        
+    }
+
+    .header__links__item{
+        margin-bottom: 20px;
+        display:flex;
+        align-items: center;
+    }
+
+    .header__links__item__img{
+        width: 30%;
+    }
+
+    .header__links__item__text{
+        font-family: $normal;
+        color: $blue;
+    }
+
+
 }
 

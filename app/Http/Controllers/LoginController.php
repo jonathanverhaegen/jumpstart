@@ -83,11 +83,17 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+        $explodeEmail = explode('@', $request->input('email'));
+        if(str_contains($explodeEmail[1], "thomasmore.be") === false){
+            $request->session()->flash('error', 'Je ingegeven email is geen thomasmore email');
+            return redirect('/login');
+        }
+
         if (Auth::attempt($credentials)) {
             return redirect()->intended('./dashboard');
         }else{
             $request->flash();
-            $request->session()->flash('error', 'Email and password do not match');
+            $request->session()->flash('error', 'Email en wachtwoord matchen niet');
             return redirect('login');
         }
     }

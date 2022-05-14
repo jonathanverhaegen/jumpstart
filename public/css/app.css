@@ -326,56 +326,59 @@
   .roadmap__stage--1 {
     position: relative;
     left: -2%;
-    top: 10px;
+    top: 444px;
   }
 
   .roadmap__stage--2 {
     position: relative;
-    left: 29%;
-    top: 10px;
+    left: 19%;
+    top: 425px;
   }
 
   .roadmap__stage--3 {
     position: relative;
-    left: 0%;
-    top: 70px;
+    left: 40%;
+    top: 495px;
   }
 
   .roadmap__stage--4 {
     position: relative;
-    left: 19%;
-    top: 109px;
+    left: 55%;
+    top: 127px;
   }
 
   .roadmap__stage--5 {
     position: relative;
-    left: 47%;
-    top: 176px;
+    left: 86%;
+    top: 26px;
   }
 
   .roadmap__stage--6 {
     position: relative;
     left: 19%;
     top: 256px;
+    display: none;
   }
 
   .roadmap__stage--7 {
     position: relative;
     left: 1%;
     top: 283px;
+    display: none;
   }
 
   .roadmap__stage--8 {
     position: relative;
     left: 15%;
     top: 319px;
+    display: none;
   }
 
   .roadmap__next {
     display: flex;
     justify-content: center;
     position: relative;
-    top: 50px;
+    top: 270px;
   }
 
   .stage__btns {

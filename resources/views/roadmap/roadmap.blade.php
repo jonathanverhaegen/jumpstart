@@ -142,15 +142,14 @@
             <div class="stage__header__extra"></div>
         </div>
         <div class="stage">
-            <p class="stage__title">Een rekening openen voor jouw business</p>
-            <p class="stage__text">Het verplicht om een professionele bankrekening te hebben. De reden waarom de meeste zelfstandigen hun persoonlijke bankrekening niet gebruiken voor zakelijke aankopen en uitgaven, is omdat de fiscus een zuivere privébankrekening niet zomaar mag inspecteren. Een ‘gemengde’ rekening mag hij wel onder loep nemen. </p>
+            <p class="stage__title">Welke activiteiten ga je uitvoeren als zelfstandige?</p>
+            <p class="stage__text">Kies alle activiteiten uit een lijst van NACEBE-codes</p>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            
         </div>
+        @endif
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">
@@ -166,12 +165,11 @@
             <div class="stage__header__stap">Stap 3</div>
             <div class="stage__header__extra"></div>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            
         </div>
+        @endif
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">
@@ -187,12 +185,11 @@
             <div class="stage__header__stap">Stap 4</div>
             <div class="stage__header__extra"></div>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            
         </div>
+        @endif
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">
@@ -208,12 +205,11 @@
             <div class="stage__header__stap">Stap 5</div>
             <div class="stage__header__extra"></div>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            
         </div>
+        @endif
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">
@@ -229,12 +225,11 @@
             <div class="stage__header__stap">Stap 6</div>
             <div class="stage__header__extra"></div>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            
         </div>
+        @endif
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">
@@ -250,12 +245,11 @@
             <div class="stage__header__stap">Stap 7</div>
             <div class="stage__header__extra"></div>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            
         </div>
+        @endif
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">
@@ -271,12 +265,11 @@
             <div class="stage__header__stap">Stap 8</div>
             <div class="stage__header__extra"></div>
         </div>
+        @if($roadmap->check === 0)
         <div class="stage__btns">
-            <a class="stagebtn" href="">ING</a>
-            <a class="stagebtn" href="">ARGENTA</a>
-            <a class="stagebtn" href="">KBC</a>
-            <a class="stagebtn" href="">BELFIUS</a>
+            
         </div>
+        @endif
         <form class="stage__check" action="/check/stage1" method="post">
         @csrf
             <div class="stage__check__btn">

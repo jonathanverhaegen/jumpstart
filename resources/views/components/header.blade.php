@@ -10,35 +10,35 @@
     </div>
 
     <div class="header__links">
-        <div class="header__links__item">
+        <a href="/dashboard" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/business.png')}}" alt="">
             <p class="header__links__item__text">Mijn business</p>
-        </div>
+        </a>
 
-        <div class="header__links__item">
+        <a href="/roadmap" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/roadmap.png')}}" alt="">
             <p class="header__links__item__text">Roadmap</p>
-        </div>
+        </a>
 
-        <div class="header__links__item">
+        <a href="/community" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/comm.png')}}" alt="">
             <p class="header__links__item__text">Community</p>
-        </div>
+        </a>
 
-        <div class="header__links__item">
+        <a href="/chat" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/chat.png')}}" alt="">
             <p class="header__links__item__text">Chat</p>
-        </div>
+        </a>
 
-        <div class="header__links__item">
+        <a href="/contacten" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/contacten.png')}}" alt="">
             <p class="header__links__item__text">Contacten</p>
-        </div>
+        </a>
 
-        <div class="header__links__item">
+        <a href="/instellingen" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/instellingen.png')}}" alt="">
             <p class="header__links__item__text">Instellingen</p>
-        </div>
+        </a>
 
     </div>
 </div>

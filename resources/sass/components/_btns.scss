@@ -25,3 +25,9 @@
     text-decoration: none;
     border-radius: 15px;
 }
+
+@media(min-width: 800px){
+    .formBtn{
+        padding: 2%;
+    }
+}

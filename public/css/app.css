@@ -673,6 +673,11 @@
   border-radius: 15px;
 }
 
+@media (min-width: 800px) {
+  .formBtn {
+    padding: 2%;
+  }
+}
 body {
   background-color: #EDEFF5;
 }

@@ -2133,6 +2133,37 @@ if (togglePasswordBtn !== null) {
 
     document.querySelector('.password').type = passwordType;
   });
+} //next page
+
+
+var toggleNextBtn = document.querySelector('.nextBtn');
+var toggleNext = 0;
+
+if (toggleNextBtn !== null) {
+  toggleNextBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (toggleNext === 1) {
+      window.location.href = "/roadmap";
+    } //roadmap veranderen
+
+
+    var roadmap = document.querySelector('.roadmap');
+    roadmap.style.backgroundPosition = "right";
+    toggleNextBtn.style.transform = "scaleX(-1)"; //.roadmap__stage veranderen
+
+    var roadmapStages = document.querySelectorAll('.roadmap__stage');
+    roadmapStages.forEach(function (stage) {
+      stage.style.display = "none";
+    });
+    var stage6 = document.querySelector('.roadmap__stage--6');
+    var stage7 = document.querySelector('.roadmap__stage--7');
+    var stage8 = document.querySelector('.roadmap__stage--8');
+    stage6.style.display = "flex";
+    stage7.style.display = "flex";
+    stage8.style.display = "flex";
+    toggleNext = 1;
+  });
 }
 
 /***/ }),

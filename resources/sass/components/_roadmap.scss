@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 5;
-    height:932px;
+    height: 1000px;
 }
 
 .roadmap__stage{
@@ -47,15 +47,15 @@
     font-family: $title;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     font-size: 26px;
+    z-index:5;
 }
 
-.roadmap__stage__number--left{
-    margin-right: -11%;
-    z-index:10;
+.roadmap__stage__title--left{
+    margin-right: -40px;
 }
 
-.roadmap__stage__number--right{
-    margin-left: -11%;
+.roadmap__stage__title--right{
+    margin-left:-40px;
 }
 
 .stage__container{
@@ -200,7 +200,7 @@
 
 .roadmap__stage--2{
     position:relative;
-    left: 36%;
+    left: 29%;
     top:10px;
 }
 
@@ -212,7 +212,7 @@
 
 .roadmap__stage--4{
     position:relative;
-    left: 30%;
+    left: 19%;
     top: 109px;
 }
 
@@ -224,7 +224,7 @@
 
 .roadmap__stage--6{
     position:relative;
-    left: 27%;
+    left: 19%;
     top: 256px;
 }
 
@@ -238,4 +238,139 @@
     position:relative;
     left: 15%;
     top: 319px;
+}
+
+.roadmap__next{
+    display:none;
+}
+
+
+@media(min-width:800px){
+    .roadmap{
+        background-image: url('/img/map.png');
+        background-size: cover;
+        background-position: left;
+    }
+
+    .roadmap__stage--1{
+        position:relative;
+        left:-2%;
+        top: 444px;
+    }
+    
+    .roadmap__stage--2{
+        position:relative;
+        left: 19%;
+        top: 425px;
+        
+    }
+    
+    .roadmap__stage--3{
+        position:relative;
+        left: 40%;
+        top: 495px;
+    }
+    
+    .roadmap__stage--4{
+        position:relative;
+        left: 55%;
+        top: 127px;
+        
+    }
+    
+    .roadmap__stage--5{
+        position:relative;
+        left: 86%;
+        top: 26px;
+    }
+    
+    .roadmap__stage--6{
+        position:relative;
+        left: 5%;
+        top: 256px;
+        display: none;
+    }
+    
+    .roadmap__stage--7{
+        position:relative;
+        left: 29%;
+        top: 283px;
+        display:none;
+    }
+    
+    .roadmap__stage--8{
+        position:relative;
+        left: 70%;
+        top: 319px;
+        display:none;
+    }
+
+    .roadmap__next{
+        display:flex;
+        justify-content: center;
+        position: relative;
+        top: 270px;
+    }
+
+    .stage__btns{
+        margin-top: 30px;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content: center;
+        gap:20px;
+    }
+
+    .stageCheckBtn{
+        padding:1%;
+        width:100%;
+    }
+
+    .stage__form__check{
+        flex-direction: row;
+        width:100%;
+    }
+
+    .stage__form__check__input{
+        padding:1%;
+        width:60%;
+    }
+
+    .stage__form__check__btn{
+        padding: 1%;
+        width:20%;
+    }
+
+    .stage__header{
+        margin-top:-100px;
+    }
+
+    .stage__header__back img{
+        width:60%;
+    }
+
+    .stage{
+        margin-top: -30px;
+    }
+
+    .stage__btns{
+        width:70%;
+        gap: 40px;
+    }
+
+    .stagebtn{
+        width:60%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .stage__check{
+        margin-top: 50px;
+        width: 60%;
+        margin-left: auto;
+        margin-right:auto;
+    }
 }

@@ -26,3 +26,9 @@
     background-color: $red;
     color: $white;
 }
+
+@media(min-width: 800px){
+    .notification{
+        padding: 2%;
+    }
+}

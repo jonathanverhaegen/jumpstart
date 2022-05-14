@@ -16,3 +16,12 @@
 .formBtn:hover{
     cursor:pointer;
 }
+
+.btn{
+    padding: 5% 15%;
+    background-color: $darkgray;
+    color: $blue;
+    font-family: $normal;
+    text-decoration: none;
+    border-radius: 15px;
+}

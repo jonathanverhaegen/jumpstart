@@ -40,5 +40,9 @@
             <p class="header__links__item__text">Instellingen</p>
         </a>
 
+        <div class="header__logout">
+            <a class="btn btn--logout" href="">Afmelden</a>
+        </div>
+
     </div>
 </div>

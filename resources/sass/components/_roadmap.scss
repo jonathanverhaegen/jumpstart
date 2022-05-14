@@ -343,4 +343,34 @@
         padding: 1%;
         width:20%;
     }
+
+    .stage__header{
+        margin-top:-100px;
+    }
+
+    .stage__header__back img{
+        width:60%;
+    }
+
+    .stage{
+        margin-top: -30px;
+    }
+
+    .stage__btns{
+        width:70%;
+        gap: 40px;
+    }
+
+    .stagebtn{
+        width:60%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .stage__check{
+        margin-top: 50px;
+        width: 60%;
+        margin-left: auto;
+        margin-right:auto;
+    }
 }

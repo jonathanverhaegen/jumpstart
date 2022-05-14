@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class RoadmapController extends Controller
 {
     public function roadmap(){
+        
         $data['user'] = Auth::user();
         $data['roadmap'] = Auth::user()->roadmap;
         return view('roadmap/roadmap', $data);

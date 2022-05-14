@@ -74,3 +74,39 @@ if(togglePasswordBtn !== null){
         document.querySelector('.password').type = passwordType;
     })
 }
+
+//next page
+
+let toggleNextBtn = document.querySelector('.nextBtn');
+let toggleNext = 0;
+if(toggleNextBtn !== null){
+    toggleNextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if(toggleNext === 1){
+            window.location.href = "/roadmap";
+        }
+        
+        //roadmap veranderen
+        let roadmap = document.querySelector('.roadmap');
+        roadmap.style.backgroundPosition = "right"
+        toggleNextBtn.style.transform = "scaleX(-1)";
+
+        //.roadmap__stage veranderen
+
+        let roadmapStages = document.querySelectorAll('.roadmap__stage');
+        roadmapStages.forEach((stage) => {
+            stage.style.display = "none";
+        });
+
+        let stage6 = document.querySelector('.roadmap__stage--6');
+        let stage7 = document.querySelector('.roadmap__stage--7');
+        let stage8 = document.querySelector('.roadmap__stage--8');
+
+        stage6.style.display = "flex";
+        stage7.style.display = "flex";
+        stage8.style.display = "flex";
+
+        toggleNext = 1;
+    });
+}

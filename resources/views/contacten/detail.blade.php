@@ -56,10 +56,16 @@
 
 
 
+    <div class="detail__container">
+        <div class="detail">
+                    <img class="detail__pic" src="{{asset('img/sarah_groot.png')}}" alt="sarah"><p class="detail__name">Sarah Van Eynde</p>
+                    <p class="detail__functie">ondernemingscoach ICE CUBE</p>
+                    <a href="" ><img src="{{asset('img/mail.png')}}" alt="mail" class="detail__icon1"></a>
+                    <a href="" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="detail__icon2"></a>
+                    <a href="" ><img src="{{asset('img/tel.png')}}" alt="call" class="detail__icon3"></a>
+        </div>
 
-      <div>
-          <h1>Hier staat de details van contact nr {{$contact_id}}</h1>
-      </div>
+    </div> 
 
 
 

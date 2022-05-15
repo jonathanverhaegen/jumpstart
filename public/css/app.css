@@ -913,6 +913,90 @@ h1 {
   padding-left: 0px;
 }
 
+.info__container {
+  width: 516.59px;
+  height: 500px;
+  background-color: #FAFAFA;
+  border-radius: 20px 20px 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+}
+
+.bio {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #13204A;
+  font-size: 20px;
+  margin-left: 33.3px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.bio__inhoud {
+  font-family: "Lato", sans-serif;
+  color: #13204A;
+  font-size: 18px;
+  margin-left: 33.3px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20pt;
+}
+
+.tijd {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #13204A;
+  font-size: 20px;
+  margin-left: 33.3px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.icon__cal {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  max-width: 20%;
+  max-height: 20%;
+  margin-left: 20px;
+  margin-top: -25px;
+}
+
+.icon__clock {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  max-width: 20%;
+  max-height: 20%;
+  margin-left: -95px;
+}
+
+.day {
+  font-family: "Lato", sans-serif;
+  color: #13204A;
+  font-size: 18px;
+  margin-left: 33.3px;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20pt;
+}
+
+.hour {
+  font-family: "Lato", sans-serif;
+  color: #13204A;
+  font-size: 18px;
+  margin-left: 33.3px;
+  margin-right: 20px;
+  margin-top: 35px;
+  padding-bottom: 10px;
+  line-height: 20pt;
+}
+
 body {
   background-color: #EDEFF5;
 }

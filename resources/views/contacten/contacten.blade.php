@@ -78,26 +78,30 @@
          </div>
     </div> 
 
+    
+
     <div class="contact__container__zoek">
         <h1>Recente zoekopdrachten</h1>
         <div class="contact__zoek">
              <div class="contact__blok__zoek">
-                    <p class="contact__zoek__name">Sarah Van Eynde</p>
+                
+                    <img class="pic1" src="img/sarah.png" alt="sarah"><p class="contact__zoek__name">Sarah Van Eynde</p>
                     <p class="contact__zoek__mail">sarah.vaneynde@thomasmore.be</p>
-                    <a href="" class="contact__zoek__link">profiel bekijken</a>
-                    <a href="" class="contact__zoek__link">bericht sturen</a>
-                    <a href="" class="contact__zoek__link">bellen</a>
+                    <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="" class="contact__zoek__link">profiel bekijken</a>
+                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon"><a href="" class="contact__zoek__link">bericht sturen</a>
+                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon"><a href="" class="contact__zoek__link">bellen</a>
              </div>
         </div>
     
 
         <div class="contact__zoek">
              <div class="contact__blok__zoek">
-                    <p class="contact__zoek__name">Annelies Leysen</p>
+
+                    <img class="pic2" src="img/annelies.png" alt="annelies"><p class="contact__zoek__name">Annelies Leysen</p>
                     <p class="contact__zoek__mail">Annelies.leysen@vlaio.be</p>
-                    <a href="" class="contact__zoek__link">profiel bekijken</a>
-                    <a href="" class="contact__zoek__link">bericht sturen</a>
-                    <a href="" class="contact__zoek__link">bellen</a>
+                    <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="" class="contact__zoek__link">profiel bekijken</a>
+                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon"> <a href="" class="contact__zoek__link">bericht sturen</a>
+                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon"><a href="" class="contact__zoek__link">bellen</a>
             </div>
 
         </div>

@@ -54,9 +54,8 @@
         @endif
 
 
-
-
-    <div class="detail__container">
+<div class="detail__container">
+    <div class="detail__container__base">
         <a href="/contacten"><img src="{{asset('img/back.png')}}" alt="back" class="back"></a>
         <div class="detail">
                     <img class="detail__pic" src="{{asset('img/sarah_groot.png')}}" alt="sarah"><p class="detail__name">Sarah Van Eynde</p>
@@ -85,6 +84,6 @@
 
     </div>
 
-
+</div>
 
 @endsection

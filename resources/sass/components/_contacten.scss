@@ -163,7 +163,7 @@ h1{
 }
 
 // detail mobile
-.detail__container{
+.detail__container__base{
     width: 516.59px;
     height: 200px;
     background-color:$lightpurple;
@@ -367,6 +367,44 @@ h1{
         
     }
 
+//detail desktop
+    .detail__container{
+        width:90%;
+        background-color: $lightgray;
+        border-radius: 20px 20px 20px 20px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 50px;
+        margin-bottom:25px;
+        padding-top:25px;
+        height: 810px;
+    }
 
+    .detail__container__base{
+        margin-top: 50px;
+    }
+
+    .bio{
+        margin-top: 0px;
+    }
+
+    .tijd{
+        margin-bottom: 10px;
+    }
     
+    .icon__cal{
+        margin-top: -20px;
+    }
+
+    .day{
+        padding-top: 15px;
+    }
+
+    .icon__clock{
+        margin-top: 5px;
+    }
+
+    .hour{
+        padding-top: 5px;
+    }
 }    

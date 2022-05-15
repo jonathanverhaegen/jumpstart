@@ -831,7 +831,7 @@ h1 {
   padding-top: -10px;
 }
 
-.detail__container {
+.detail__container__base {
   width: 516.59px;
   height: 200px;
   background-color: #CBD3E6;
@@ -843,13 +843,21 @@ h1 {
   padding-top: 25px;
 }
 
+.back {
+  max-width: 50%;
+  max-height: 50%;
+  margin-top: -80px;
+  margin-bottom: -30px;
+  margin-left: -10px;
+}
+
 .detail {
   float: right;
   text-decoration: none;
   color: #13204A;
   border-radius: 10px 10px 10px 10px;
   padding: 20px 60px 20px 40px;
-  margin: 10px 0px 10px 90px;
+  margin: -10px 0px 10px 90px;
   text-align: left;
 }
 
@@ -857,7 +865,7 @@ h1 {
   width: 100px;
   float: left;
   margin-left: -110px;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .detail__name {
@@ -997,6 +1005,69 @@ h1 {
   line-height: 20pt;
 }
 
+@media (min-width: 800px) {
+  .contact__container {
+    height: 410px;
+    margin-top: 50px;
+  }
+
+  .contact {
+    float: left;
+    margin-left: 25px;
+    margin-right: 0px;
+  }
+
+  .contact__container__zoek {
+    margin-top: 50px;
+    height: 350px;
+  }
+
+  .contact__zoek {
+    float: left;
+    margin-left: 25px;
+    margin-right: 0px;
+  }
+
+  .detail__container {
+    width: 90%;
+    background-color: #FAFAFA;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-top: 25px;
+    height: 810px;
+  }
+
+  .detail__container__base {
+    margin-top: 50px;
+  }
+
+  .bio {
+    margin-top: 0px;
+  }
+
+  .tijd {
+    margin-bottom: 10px;
+  }
+
+  .icon__cal {
+    margin-top: -20px;
+  }
+
+  .day {
+    padding-top: 15px;
+  }
+
+  .icon__clock {
+    margin-top: 5px;
+  }
+
+  .hour {
+    padding-top: 5px;
+  }
+}
 body {
   background-color: #EDEFF5;
 }

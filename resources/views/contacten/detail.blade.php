@@ -57,6 +57,7 @@
 
 
     <div class="detail__container">
+        <a href="/contacten"><img src="{{asset('img/back.png')}}" alt="back" class="back"></a>
         <div class="detail">
                     <img class="detail__pic" src="{{asset('img/sarah_groot.png')}}" alt="sarah"><p class="detail__name">Sarah Van Eynde</p>
                     <p class="detail__functie">ondernemingscoach ICE CUBE</p>

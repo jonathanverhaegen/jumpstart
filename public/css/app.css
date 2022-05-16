@@ -1016,24 +1016,29 @@ h1 {
 
 @media (min-width: 800px) {
   .contact__container {
-    height: 410px;
+    height: 220px;
     margin-top: 50px;
   }
 
   .contact {
     float: left;
-    margin-left: 25px;
+    margin-left: 30px;
     margin-right: 0px;
+    width: 282px;
+  }
+
+  .contact__blok__title {
+    font-size: 23px;
   }
 
   .contact__container__zoek {
     margin-top: 50px;
-    height: 350px;
+    height: 300px;
   }
 
   .contact__zoek {
     float: left;
-    margin-left: 25px;
+    margin-left: 30px;
     margin-right: 0px;
   }
 
@@ -1050,19 +1055,27 @@ h1 {
   }
 
   .detail__container__base {
-    margin-top: 50px;
+    margin-top: 55px;
   }
 
   .bio {
-    margin-top: 0px;
+    margin-top: -15px;
+    margin-left: 10px;
+  }
+
+  .bio__inhoud {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .tijd {
     margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .icon__cal {
-    margin-top: -20px;
+    margin-top: -10px;
+    margin-left: -8px;
   }
 
   .day {
@@ -1075,6 +1088,7 @@ h1 {
 
   .hour {
     padding-top: 5px;
+    margin-left: 60px;
   }
 }
 body {

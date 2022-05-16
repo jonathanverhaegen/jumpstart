@@ -405,6 +405,7 @@
     position: relative;
     left: 40%;
     top: 495px;
+    z-index: 5;
   }
 
   .roadmap__stage--4 {
@@ -445,6 +446,7 @@
     justify-content: center;
     position: relative;
     top: 270px;
+    z-index: 0;
   }
 
   .stage__btns {

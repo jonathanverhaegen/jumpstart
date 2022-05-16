@@ -176,7 +176,40 @@ class RoadmapController extends Controller
         ]);
 
         $link = $request->input('link');
-        dd($link);
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->save();
+        
+        return redirect($link);
+    }
+
+    public function checkStage2(Request $request){
+        //checken of gebruiker al mag checken
+        $roadmap = Auth::user()->roadmap;
+        if($roadmap->check === 0){
+            $request->session()->flash('error', 'Je hebt de link nog niet bekeken.');
+            return redirect('/roadmap');
+        }
+        //credentials checken
+        $credentials = $request->validate([
+            'stage' => 'required'
+        ]);
+
+        //volgende stage opslaan
+        $roadmap = Auth::user()->roadmap;
+        if($roadmap->stage = 1){
+            $roadmap->stage = 3;
+            $roadmap->check = 0;
+            $roadmap->save();
+        }else{
+            $request->session()->flash('message', 'Deze stap is al gechecked');
+            return redirect('/roadmap');
+        }
+        
+        //redirect en inform
+        $request->session()->flash('success', 'Stap 2 is klaar, je kan nu verder met stap 3');
+        return redirect('/roadmap');
     }
     
 }

@@ -110,7 +110,7 @@
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
-                <p class="stage__title">Open een bankrekening voor jouw professionele activitei</p>
+                <p class="stage__title">Open een bankrekening voor jouw professionele activiteit</p>
                 <p class="stage__text">Proficiat! Je hebt een businessidee bedacht en bent helemaal klaar om de stap richting student- zelfstandige te zetten. Om te beginnen heb je een professionele bankrekening nodig die je zal gebruiken als student-zelfstandige. Dit is nodig om je privétransacties mooi gescheiden te houden van je transacties als zelfstandige, dit maakt je boekhouding veel eenvoudiger en zorgt ervoor dat de fiscus niet zomaar kan meekijken in je privérekening.</p>
                 <p class="stage__text">Deze rekening kan een normale zichtrekening zijn die omgezet wordt naar een professionele rekening vanaf het moment dat je een ondernemingsnummer hebt. Informeer bij je bank naar de verschillende opties en voordelen van de verschillende soorten professionele rekeningen.</p>
                 <p class="stage__text"><strong>Let op:</strong> Je zal op dit moment nog geen ondernemingsnummer kunnen toevoegen aan je nieuwe rekening, dit kan pas wanneer je registratie in de Kruispuntbank van Ondernemingen voltooid is. Je hebt nu eenmaal éérst een bankrekening nodig, voor je een ondernemingsnummer kan aanvragen</p>
@@ -132,6 +132,7 @@
                 <input class="stage__form__check__extra" type="hidden" name="bank">
                 
             </form>
+            @if($roadmap->check === 0)
             <form class="stage__check" action="/check/stage1" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -139,6 +140,7 @@
                     <input type="hidden" name="stage" value="1">
                 </div>
             </form>
+            @endif
         </div>
 
 
@@ -150,10 +152,7 @@
             </div>
             <div class="stage">
                 <p class="stage__title">Bepaal welke activiteiten je zal uitvoeren</p>
-                <p class="stage__text">Voor je kan starten als student-zelfstandige, is het belangrijk om te weten welke activiteiten je zal
-                                        uitvoeren. Elke activiteit heeft een NACE-code, die codes heb je nodig om je registratie als zelfstandige
-                                        correct uit te voeren. Klik alle activiteiten die je wenst uit te voeren aan in de onderstaande lijst.
-                                    </p>
+                <p class="stage__text">Voor je kan starten als student-zelfstandige, is het belangrijk om te weten welke activiteiten je zal buitvoeren. Elke activiteit heeft een NACE-code, die codes heb je nodig om je registratie als zelfstandige correct uit te voeren. Klik alle activiteiten die je wenst uit te voeren aan in de onderstaande lijst.</p>
             </div>
 
             @if($roadmap->check === 0)
@@ -165,7 +164,15 @@
                 </form>
             </div>
             @endif
-
+            @if($roadmap->check === 1)
+            <form class="stage__check" action="/check/stage2" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <input type="hidden" name="stage" value="2">
+                </div>
+            </form>
+            @endif
         </div>
 
         <div class="stage__container stage__container--3">

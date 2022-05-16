@@ -53,15 +53,12 @@
         @endcomponent
         @endif
 
-
-
-
-
       <div>
           <h1>Hier staat de chat</h1>
       </div>
 
-
-
+      <div class="chat__message">
+          Dit wordt een chatbericht.
+      </div>
 
 @endsection

@@ -1297,6 +1297,18 @@ h1 {
   margin-right: -105px;
 }
 
+.chat__message {
+  display: flex;
+  width: 400px;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  background-color: #f5f5f5;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  font-family: "Lato", sans-serif;
+}
+
 body {
   background-color: #EDEFF5;
 }

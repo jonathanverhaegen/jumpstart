@@ -405,6 +405,7 @@
     position: relative;
     left: 40%;
     top: 495px;
+    z-index: 5;
   }
 
   .roadmap__stage--4 {
@@ -445,6 +446,7 @@
     justify-content: center;
     position: relative;
     top: 270px;
+    z-index: 0;
   }
 
   .stage__btns {
@@ -500,6 +502,10 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .stagebtn--large {
+    width: 100%;
   }
 
   .stage__check {
@@ -1303,6 +1309,10 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+}
+
+strong {
+  font-weight: bold;
 }
 
 @media (min-width: 800px) {

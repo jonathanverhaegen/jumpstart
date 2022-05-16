@@ -169,5 +169,14 @@ class RoadmapController extends Controller
         $request->session()->flash('success', 'Stap 1 is klaar, je kan nu verder met stap 2');
         return redirect('/roadmap');
     }
+
+    public function checkLink(Request $request){
+        $credentials = $request->validate([
+            'link' => 'required',
+        ]);
+
+        $link = $request->input('link');
+        dd($link);
+    }
     
 }

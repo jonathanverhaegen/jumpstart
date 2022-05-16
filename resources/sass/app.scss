@@ -23,6 +23,10 @@ body{
     flex-direction: column;
 }
 
+strong{
+    font-weight: bold;
+}
+
 @media(min-width: 800px){
     .container{
         display: grid;

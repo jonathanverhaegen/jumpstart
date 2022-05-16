@@ -47,6 +47,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/roadmap', [RoadmapController::class, "roadmap"]);
     Route::post('/check/stage1', [RoadmapController::class, "checkStage1"]);
     Route::post('/check/iban', [RoadmapController::class, "checkIban"]);
+    Route::post('/check/link', [RoadmapController::class, "checkLink"]);
     
 
     //routes van de community

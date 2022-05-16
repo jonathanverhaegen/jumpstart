@@ -86,10 +86,10 @@
              <div class="contact__blok__zoek">
                 
                     <img class="pic1" src="{{asset('img/sarah.png')}}" alt="sarah"><a href="contacten/detail" class="contact__zoek__name">Sarah Van Eynde</a>
-                    <p class="contact__zoek__mail">sarah.vaneynde@thomasmore.be</p>
+                    <p class="contact__zoek__mail">sarah@thomasmore.be</p>
                     <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="" class="contact__zoek__link">profiel bekijken</a>
-                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon"><a href="" class="contact__zoek__link">bericht sturen</a>
-                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon"><a href="" class="contact__zoek__link">bellen</a>
+                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon2"><a href="" class="contact__zoek__link">bericht sturen</a>
+                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon3"><a href="" class="contact__zoek__link">bellen</a>
              </div>
         </div>
     
@@ -100,8 +100,8 @@
                     <img class="pic2" src="{{asset('img/annelies.png')}}" alt="annelies"><a href="contacten/detail" class="contact__zoek__name">Annelies Leysen</a>
                     <p class="contact__zoek__mail">annelies.leysen@vlaio.be</p>
                     <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="" class="contact__zoek__link">profiel bekijken</a>
-                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon"> <a href="" class="contact__zoek__link">bericht sturen</a>
-                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon"><a href="" class="contact__zoek__link">bellen</a>
+                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon2"> <a href="" class="contact__zoek__link">bericht sturen</a>
+                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon3"><a href="" class="contact__zoek__link">bellen</a>
             </div>
 
         </div>

@@ -57,11 +57,55 @@
 
 
 
-      <div>
-          <h1>Hier staat de contacten</h1>
-      </div>
+    <div class="contact__container">
+        <div class="contact">
+            <a href="" class="contact__blok">
+                    <p class="contact__blok__title">Overheidsinstanties</p>
+             </a>
 
+        </div>
 
+        <div class="contact">
+             <a href="" class="contact__blok">
+                    <p class="contact__blok__title">Bedrijven</p>
+             </a>
+         </div>
 
+         <div class="contact">
+             <a href="" class="contact__blok">
+                    <p class="contact__blok__title">ICE CUBE</p>
+             </a>
+         </div>
+    </div> 
+
+    
+
+    <div class="contact__container__zoek">
+        <h1>Recente zoekopdrachten</h1>
+        <div class="contact__zoek">
+             <div class="contact__blok__zoek">
+                
+                    <img class="pic1" src="{{asset('img/sarah.png')}}" alt="sarah"><a href="contacten/detail" class="contact__zoek__name">Sarah Van Eynde</a>
+                    <p class="contact__zoek__mail">sarah.vaneynde@thomasmore.be</p>
+                    <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="" class="contact__zoek__link">profiel bekijken</a>
+                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon"><a href="" class="contact__zoek__link">bericht sturen</a>
+                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon"><a href="" class="contact__zoek__link">bellen</a>
+             </div>
+        </div>
+    
+
+        <div class="contact__zoek">
+             <div class="contact__blok__zoek">
+
+                    <img class="pic2" src="{{asset('img/annelies.png')}}" alt="annelies"><a href="contacten/detail" class="contact__zoek__name">Annelies Leysen</a>
+                    <p class="contact__zoek__mail">annelies.leysen@vlaio.be</p>
+                    <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="" class="contact__zoek__link">profiel bekijken</a>
+                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon"> <a href="" class="contact__zoek__link">bericht sturen</a>
+                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon"><a href="" class="contact__zoek__link">bellen</a>
+            </div>
+
+        </div>
+      
+    </div> 
 
 @endsection

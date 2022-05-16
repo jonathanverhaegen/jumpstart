@@ -58,7 +58,7 @@
 
 
       <div>
-          <h1>Hier staat de instellingen</h1>
+          <h1>Hier staan de instellingen</h1>
       </div>
 
 

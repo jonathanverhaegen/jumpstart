@@ -81,7 +81,7 @@
     
 
     <div class="contact__container__zoek">
-        <h1>Recente zoekopdrachten</h1>
+        <h1 class="title">Recente zoekopdrachten</h1>
         <div class="contact__zoek">
              <div class="contact__blok__zoek">
                 

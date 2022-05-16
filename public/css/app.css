@@ -731,7 +731,7 @@
   height: 625px;
 }
 
-h1 {
+.title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #13204A;
@@ -1022,6 +1022,10 @@ h1 {
     height: 350px;
   }
 
+  .pic1 {
+    margin-top: -10px;
+  }
+
   .contact__zoek {
     float: left;
     margin-left: 25px;
@@ -1085,6 +1089,8 @@ h1 {
   font-weight: bold;
   font-size: 25px;
   color: #E44402;
+  margin-left: 33.3px;
+  padding-bottom: 10px;
 }
 
 .edit__icon {

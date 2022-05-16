@@ -504,6 +504,10 @@
     margin-right: auto;
   }
 
+  .stagebtn--large {
+    width: 100%;
+  }
+
   .stage__check {
     margin-top: 50px;
     width: 60%;

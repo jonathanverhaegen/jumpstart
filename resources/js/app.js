@@ -110,3 +110,15 @@ if(toggleNextBtn !== null){
         toggleNext = 1;
     });
 }
+
+//stage3
+
+let stageBtn3 = document.querySelectorAll('.stagebtn3');
+if(stageBtn3 !== null){
+    stageBtn3.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('.formStage3').submit();
+        })
+    })
+}

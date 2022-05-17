@@ -54,7 +54,7 @@
         @endif
 
 
-<div class="detail__container">
+<div class="detail__container__">
     <div class="detail__container__base">
         <a href="/contacten"><img src="{{asset('img/back.png')}}" alt="back" class="back"></a>
         <div class="detail">
@@ -67,7 +67,7 @@
 
     </div> 
 
-    <div class="info__container">
+    <div class="bio__container">
      <h1 class="bio">Bio</h1>
         <p class="bio__inhoud">
         Get the real shit done! De stap zetten naar ondernemerschap is groots. 

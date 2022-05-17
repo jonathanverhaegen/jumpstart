@@ -34,20 +34,20 @@
     flex-direction: column;
     justify-content: center;
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 60px;
+    margin-right: 0px;
     margin-top: 20px;
     background-color: #FAFAFA;
     border-radius: 20px;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 25px;
   }
 
   .header__img {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
+    margin-top: -10px;
   }
 
   .header__img img {
@@ -63,7 +63,8 @@
   }
 
   .header__links__item {
-    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -1097,9 +1098,9 @@ h1 {
   float: right;
   max-width: 10%;
   max-height: 10%;
-  margin-top: -50px;
+  margin-top: -40px;
   margin-bottom: -30px;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .comm {
@@ -1113,13 +1114,12 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   height: 150px;
-  width: 350px;
+  width: 300px;
 }
 
 .comm__blok {
   text-decoration: none;
   color: #13204A;
-  padding: 20px 60px 20px 40px;
   border-radius: 10px 10px 10px 10px;
   margin: 10px auto 10px auto;
   text-align: left;
@@ -1142,13 +1142,12 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   height: 150px;
-  width: 350px;
+  width: 300px;
 }
 
 .comm__blok__ {
   text-decoration: none;
   color: white;
-  padding: 20px 60px 20px 40px;
   border-radius: 10px 10px 10px 10px;
   margin: 10px auto 10px auto;
   text-align: left;
@@ -1169,14 +1168,15 @@ h1 {
   margin-top: 25px;
   margin-bottom: 25px;
   padding-top: 25px;
-  height: 1520px;
+  height: 1510px;
 }
 
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 25px;
-  color: #E44402;
+.back {
+  max-width: 20%;
+  max-height: 20%;
+  margin-top: -100px;
+  margin-bottom: -25px;
+  margin-left: 10px;
 }
 
 .edit {
@@ -1190,13 +1190,12 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   height: 150px;
-  width: 450px;
+  width: 300px;
 }
 
 .edit__blok {
   text-decoration: none;
   color: #13204A;
-  padding: 20px 60px 20px 40px;
   border-radius: 10px 10px 10px 10px;
   margin: 10px auto 10px auto;
   text-align: left;
@@ -1206,6 +1205,7 @@ h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 25px;
+  text-align: center;
 }
 
 .edit__ {
@@ -1219,13 +1219,12 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   height: 150px;
-  width: 450px;
+  width: 300px;
 }
 
 .edit__blok__ {
   text-decoration: none;
   color: white;
-  padding: 20px 60px 20px 40px;
   border-radius: 10px 10px 10px 10px;
   margin: 10px auto 10px auto;
   text-align: left;
@@ -1235,66 +1234,105 @@ h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 25px;
+  text-align: center;
 }
 
 .checked__icon1 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-bottom: 0px;
   margin-left: 200px;
-  margin-right: -125px;
+  margin-right: -45px;
 }
 
 .checked__icon2 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-bottom: 0px;
   margin-left: 200px;
-  margin-right: -120px;
+  margin-right: -45px;
 }
 
 .checked__icon3 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-bottom: 0px;
   margin-left: 200px;
-  margin-right: -135px;
+  margin-right: -45px;
 }
 
 .checked__icon4 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-bottom: 0px;
   margin-left: 200px;
-  margin-right: -142px;
+  margin-right: -45px;
 }
 
 .checked__icon5 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-left: 200px;
-  margin-right: -120px;
+  margin-right: -45px;
 }
 
 .unchecked__icon1 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-left: 200px;
-  margin-right: -148px;
+  margin-right: -38px;
 }
 
 .unchecked__icon2 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-left: 200px;
-  margin-right: -180px;
+  margin-right: -38px;
 }
 
 .unchecked__icon3 {
   float: right;
-  margin-top: -40px;
+  margin-top: -50px;
   margin-left: 200px;
-  margin-right: -105px;
+  margin-right: -25px;
+}
+
+.comm__container {
+  height: 670px;
+}
+
+.edit__icon {
+  float: right;
+  max-width: 5%;
+  max-height: 5%;
+  margin-top: -50px;
+  margin-bottom: -30px;
+  margin-right: 30px;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: #E44402;
+  margin-left: 40px;
+  padding-bottom: 10px;
+}
+
+.comm {
+  float: left;
+  text-align: left;
+  margin-left: 40px;
+  height: 150px;
+  width: 270px;
+}
+
+.comm__ {
+  float: left;
+  text-align: left;
+  margin-left: 40px;
+  height: 150px;
+  width: 270px;
 }
 
 body {

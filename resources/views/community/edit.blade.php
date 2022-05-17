@@ -58,7 +58,7 @@
 
 
 <div class="edit__container">
-    <h1>Mijn community</h1>
+    <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back"></a>  
         <div class="edit">
             <div class="edit__blok">
                     <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon1">

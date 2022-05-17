@@ -58,7 +58,7 @@
 
 
       <div>
-          <h1>Hier staat de detail van group {{$group_id}}</h1>
+          <h1>Hier staat de d</h1>
       </div>
 
 

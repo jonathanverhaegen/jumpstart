@@ -68,35 +68,35 @@
         </div>
 
         <div class="comm">
-            <a href="" class="comm__blok">
+            <a href="/community/detail" class="comm__blok">
                     <p class="comm__blok__title">Administratie</p>
              </a>
 
         </div>
 
         <div class="comm">
-            <a href="" class="comm__blok">
+            <a href="/community/detail" class="comm__blok">
                     <p class="comm__blok__title">Adverteren</p>
              </a>
 
         </div>
 
         <div class="comm">
-            <a href="" class="comm__blok">
+            <a href="/community/detail" class="comm__blok">
                     <p class="comm__blok__title">Marketing</p>
              </a>
 
         </div>
 
         <div class="comm">
-            <a href="" class="comm__blok">
+            <a href="/community/detail" class="comm__blok">
                     <p class="comm__blok__title">Sociale Media</p>
              </a>
 
         </div>
 
         <div class="comm__">
-            <a href="" class="comm__blok__">
+            <a href="/community/detail" class="comm__blok__">
                     <p class="comm__blok__title__">ICE CUBE</p>
              </a>
 

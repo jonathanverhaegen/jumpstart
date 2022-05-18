@@ -67,6 +67,7 @@
     border-radius: 20px 20px 20px 20px;
     padding:5% 5% 10% 5%;
     display:none;
+    height: 985px;
 }
 
 .stage__header{
@@ -90,6 +91,7 @@
 .stage__title{
     font-family: $title;
     color: $orange;
+    margin-top: -30px;
 }
 
 .stage__text{
@@ -199,9 +201,11 @@
 }
 
 .roadmap__stage--2{
-    position:relative;
-    left: 29%;
-    top:10px;
+   // position:relative;
+   // left: 29%;
+    margin-left: 40px;
+    margin-top:70px;
+    margin-bottom: -10px;
 }
 
 .roadmap__stage--3{
@@ -211,33 +215,45 @@
 }
 
 .roadmap__stage--4{
-    position:relative;
-    left: 19%;
-    top: 109px;
+    //position:relative;
+    //left: 19%;
+    margin-left: 40px;
+    margin-top:130px;
+    margin-bottom: -10px;
 }
+   
 
 .roadmap__stage--5{
-    position:relative;
-    left: 47%;
-    top: 176px;
+    //position:relative;
+   // left: 47%;
+   margin-left: 70px;
+   margin-top:70px;
+   margin-bottom: -10px;
 }
 
 .roadmap__stage--6{
-    position:relative;
-    left: 19%;
-    top: 256px;
+    //position:relative;
+   // left: 19%;
+   margin-left: 40px;
+   margin-top:70px;
+   margin-bottom: -10px;
 }
 
 .roadmap__stage--7{
-    position:relative;
-    left: 1%;
-    top: 283px;
+    //position:relative;
+   // left: 1%;
+   // top: 83px;
+    margin-left: 10px;
+    margin-top:70px;
+    margin-bottom: -10px;
 }
 
 .roadmap__stage--8{
-    position:relative;
-    left: 15%;
-    top: 319px;
+    //position:relative;
+   // left: 15%;
+   margin-left: 40px;
+   margin-top:70px;
+   margin-bottom: -10px;
 }
 
 .roadmap__next{

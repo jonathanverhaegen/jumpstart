@@ -192,9 +192,9 @@
             <form class="formStage3" action="/check/input" method="post">
             @csrf
                 <div class="stage__btns">
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Geen vrijstellingsregeling</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Wel een vrijstellingsregeling</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik weet het nog niet</a>
                 </div>
             </form>
             @endif

@@ -34,7 +34,5 @@ class CommunityController extends Controller
         return view('community/edit', $data);
     }
 
-    public function addFaq(Request $request){
-        
-    }
+    
 }

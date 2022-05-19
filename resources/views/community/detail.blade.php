@@ -81,7 +81,7 @@
             </div>
             @endforeach
 
-        <a href="" class="ask"><p class="ask__question">Vraag stellen</p></a>  
+        <a href="/community/addFaq/{{$group->id}}" class="ask"><p class="ask__question">Vraag stellen</p></a>  
         </div>
 
 

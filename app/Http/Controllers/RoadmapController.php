@@ -89,7 +89,57 @@ class RoadmapController extends Controller
         }
 
         array_push($ibanBelfius, "638","657", "672", "680");
+
+        //iban bnp
+
+        for ($x = 1; $x < 10; $x++) {
+            $ibanBnp[] = "00".strval($x);
+        }
+
+        for ($x = 10; $x < 50; $x++) {
+            $ibanBnp[] = "0".strval($x);
+        }
+
+        for ($x = 140; $x < 150; $x++) {
+            $ibanBnp[] = strval($x);
+        }
+
+        for ($x = 200; $x < 215; $x++) {
+            $ibanBnp[] = strval($x);
+        }
+
+        for ($x = 220; $x < 299; $x++) {
+            $ibanBnp[] = strval($x);
+        }
+
+        array_push($ibanBnp, "137","508");
+
+        //iban axa
+        for ($x = 700; $x < 710; $x++) {
+            $ibanAxa[] = strval($x);
+        }
+
+        for ($x = 750; $x < 775; $x++) {
+            $ibanAxa[] = strval($x);
+        }
+
+        for ($x = 800; $x < 817; $x++) {
+            $ibanAxa[] = strval($x);
+        }
         
+        array_push($ibanAxa, "963","975");
+
+        //iban crelan
+        for ($x = 103; $x < 109; $x++) {
+            $ibanCrelan[] = strval($x);
+        }
+
+        for ($x = 850; $x < 854; $x++) {
+            $ibanCrelan[] = strval($x);
+        }
+
+        array_push($ibanCrelan, "859","860", "862", "863", "865", "866");
+
         //checken of de iban nummer klopt voor die bank
         switch($bank){
             case "ing":
@@ -120,7 +170,30 @@ class RoadmapController extends Controller
                     }
                 }
                 break;
+            case "bnp paribas fortis":
+                foreach($ibanBnp as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
+                break;
+            case "axa":
+                foreach($ibanAxa as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
+                break;
+            case "crelan":
+                foreach($ibanCrelan as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
+                break;
         }
+
+        
 
         if(!empty($check)){
             //check opslaan in de roadmap

@@ -117,17 +117,18 @@
                 <a class="stagebtn stage1btn" href="">ARGENTA</a>
                 <a class="stagebtn stage1btn" href="">KBC</a>
                 <a class="stagebtn stage1btn" href="">BELFIUS</a>
+                <a class="stagebtn stage1btn" href="">BNP Paribas Fortis</a>
+                <a class="stagebtn stage1btn" href="">AXA</a>
+                <a class="stagebtn stage1btn" href="">Crelan</a>
             </div>
             @endif
             <form class="stage__form__check" action="/check/iban" method="post">
             @csrf
-                
                 <input class="stage__form__check__input" type="text" name="iban" placeholder="IBAN">
                 <button class="stage__form__check__btn" type="submit">Checken</button>
                 <input class="stage__form__check__extra" type="hidden" name="bank">
-                
             </form>
-            @if($roadmap->check === 0)
+            @if($roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -326,6 +327,15 @@
 
                     <label for="telefoonnummer">Telefoonnummer</label>
                     <input class="" name="telefoonnummer" type="text">
+
+                    <button class="">Inzenden</button>
+            </form>
+            @endif
+            @if($roadmap->stage === 5 && $roadmap->extra === 3)
+            <form class="form form--vertical" action="check/stage5/activiteiten" method="post">
+            @csrf   
+                    <p class="form--vertical__title">Activiteiten</p>
+                    <p class="form--vertical__text">Vul het correcte adres in van je administratieve hoofdzetel, dat is hetzelfde adres waarop je je onderneming hebt laten registreren in de KBO. Vul hier ook een correct e-mailadres en telefoonnummer in.</p>
 
                     <button class="">Inzenden</button>
             </form>

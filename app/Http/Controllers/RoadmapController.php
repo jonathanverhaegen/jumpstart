@@ -276,7 +276,21 @@ class RoadmapController extends Controller
         $email = $request->input('email');
         $telefoonnummer = $request->input('telefoonnummer');
 
-        dd(Auth::user()->company);
+        $company = Auth::user()->company;
+        $company->street = $straat;
+        $company->number = $nummer;
+        $company->postal = $postcode;
+        $company->city = $plaats;
+        $company->email = $email;
+        $company->phone = $telefoonnummer;
+        $company->save();
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 2;
+        $roadmap->save();
+        
+        $request->session()->flash('success', 'locatie, email en telefoonnummer zijn opgeslagen');
+        return redirect('/roadmap');
     }
     
 }

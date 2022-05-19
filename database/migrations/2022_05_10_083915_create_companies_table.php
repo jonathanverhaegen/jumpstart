@@ -17,8 +17,12 @@ class CreateCompaniesTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('company_number')->nullable();
-            $table->string('email')->nullable();
+            $table->string('street')->nullable();
             $table->string('number')->nullable();
+            $table->string('postal')->nullable();
+            $table->string('city')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->date('start_date')->nullable();
             $table->foreignId('user_id')->nullable();
             $table->timestamps();

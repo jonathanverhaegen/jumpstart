@@ -217,6 +217,7 @@ class RoadmapController extends Controller
             $nextStage = 6;
             $roadmap->stage = $nextStage;
             $roadmap->check = 0;
+            $roadmap->extra = 0;
             $roadmap->save();
             $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
             return redirect('/roadmap');

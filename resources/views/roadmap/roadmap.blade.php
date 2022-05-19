@@ -260,18 +260,15 @@
             <div class="stage">
                 <p class="stage__title">Btw-administratie</p>
                 <p class="stage__text">Ondernemingsnummer: Check! Btw-nummer: Niet check... Om te mogen factureren voor je zelfstandige activiteit, is het wettelijk verplicht je ook te “identificeren” bij de btw-administratie. Dit is niet zo heel moeilijk, je kan gewoon online een formulier invullen. Voor je dit doet willen we zeker zijn dat je weet wat je waar zal moeten invullen. Hieronder vind je voor elke stap een beetje extra uitleg. Het online formulier kan je hier invullen: <a href="https://eservices.minfin.fgov.be/VAT001/">https://eservices.minfin.fgov.be/VAT001/</a> Kies voor het formulier E604: AANVRAAG TOT BTW-IDENTIFICATIE</p>
-                <p class="stage__text"><strong>Start</strong></p>
-                <p class="stage__text"></p>
-                <p class="stage__text"></p>
-                <p class="stage__text"></p>
-                <p class="stage__text"></p>
-                <p class="stage__text"></p>
             </div>
             </form>
             @if($roadmap->check === 0)
-            <div class="stage__btns">
-                
-            </div>
+            <form class="form form--vertical" action="check/stage5/start" method="post">
+            @csrf   
+                    <p class="form--vertical__title">Start</p>
+                    <input class="" type="text">
+                    <button class="">Inzenden</button>
+            </form>
             @endif
             <form class="stage__check" action="/check/stage" method="post">
             @csrf

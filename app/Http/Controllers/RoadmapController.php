@@ -6,6 +6,8 @@ use App\Models\Company;
 use App\Models\Roadmap;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RicorocksDigitalAgency\Soap\Facades\Soap;
+use SoapClient;
 
 class RoadmapController extends Controller
 {
@@ -364,6 +366,15 @@ class RoadmapController extends Controller
         
         $request->session()->flash('success', 'locatie, email en telefoonnummer zijn opgeslagen');
         return redirect('/roadmap');
+    }
+
+    public function companyInfo(){
+       //soap call doen naar de api van kruispuntbank dankzij de ondernemingsnummer
+
+       //company maken in databank en de velden halen uit de soap call
+
+       
+       
     }
     
 }

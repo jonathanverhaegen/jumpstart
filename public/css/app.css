@@ -1358,19 +1358,17 @@ h1 {
 }
 
 .faq {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   margin: 10px auto 30px auto;
   text-align: left;
   background-color: #DADFEC;
   border-radius: 20px 20px 20px 20px;
   padding: 5%;
+  width: 90%;
 }
 
 .faq__blok {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 5fr 1fr;
   align-items: center;
 }
 
@@ -1381,9 +1379,18 @@ h1 {
   font-size: 18px;
 }
 
+.faq__answer {
+  display: none;
+  font-family: "Lato", sans-serif;
+}
+
 .fold__icon {
-  width: 50%;
+  width: 80%;
   margin-left: 50%;
+}
+
+.fold__icon:hover {
+  cursor: pointer;
 }
 
 .ask {
@@ -1551,14 +1558,6 @@ h1 {
     height: 438px;
   }
 
-  .faq {
-    float: left;
-    margin-left: 27px;
-    height: 80px;
-    width: 600px;
-    margin-bottom: 8px;
-  }
-
   .ask {
     display: flex;
     flex-direction: row;
@@ -1577,6 +1576,11 @@ h1 {
     font-size: 20px;
     color: white;
     padding-bottom: 10px;
+  }
+
+  .faq {
+    padding: 2%;
+    width: 95%;
   }
 }
 body {

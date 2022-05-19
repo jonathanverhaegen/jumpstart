@@ -2101,7 +2101,7 @@ if (stageBackBtn !== null) {
 
 var stage1Btns = document.querySelectorAll('.stage1btn');
 
-if (stage1Btns !== false) {
+if (stage1Btns !== null) {
   stage1Btns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -2163,6 +2163,30 @@ if (toggleNextBtn !== null) {
     stage7.style.display = "flex";
     stage8.style.display = "flex";
     toggleNext = 1;
+  });
+} //faqs open
+
+
+var faqs = document.querySelectorAll('.faq');
+var check = 0;
+
+if (faqs !== null) {
+  faqs.forEach(function (faq) {
+    var btn = faq.querySelector('.fold__icon');
+    var answer = faq.querySelector('.faq__answer');
+    btn.addEventListener('click', function (e) {
+      if (check === 0) {
+        e.preventDefault();
+        btn.style.transform = "rotate(180deg)";
+        check = 1;
+        answer.style.display = "block";
+      } else {
+        e.preventDefault();
+        btn.style.transform = "rotate(0deg)";
+        check = 0;
+        answer.style.display = "none";
+      }
+    });
   });
 }
 

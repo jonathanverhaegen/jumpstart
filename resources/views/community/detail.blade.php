@@ -68,12 +68,16 @@
 
         <div class="faq__container">
         <h1 class="faq__title">FAQ {{$group->name}}</h1>
+            
             @foreach($faqs as $faq)
             <div class="faq">
                 <div class="faq__blok">
-                    <p class="question">test</p>
+                    <p class="question">{{$faq->question}}</p>
                     <img src="{{asset('img/uitklappen.png')}}" alt="fold" class="fold__icon">
                 </div>
+                <div class="faq__answer">
+                <p>{!! $faq->answer !!}</p>
+            </div>
             </div>
             @endforeach
 

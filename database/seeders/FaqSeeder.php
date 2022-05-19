@@ -19,6 +19,7 @@ class FaqSeeder extends Seeder
         $faq1->question = "Welke zakelijke onkosten kan ik inbrengen?";
         $faq1->answer = "Afhankelijk van het soort bedrijf en de kosten die u heeft, kunt u mogelijk bepaalde bedrijfskosten inbrengen en uw belastingaanslag verlagen. Dit zijn enkele voorbeelden:
         <br>
+        <br>
         – verplaatsing voor uw werk
         <br>
         – uw thuiskantoor

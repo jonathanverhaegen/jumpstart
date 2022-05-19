@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Instantie;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
     public function contacten(){
-        return view('contacten/contacten');
+        $data['instanties'] = Instantie::get();
+        return view('contacten/contacten', $data);
     }
 
     public function contactenDetail($id){

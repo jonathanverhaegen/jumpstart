@@ -58,24 +58,13 @@
 
 
     <div class="contact__container">
+        @foreach($instanties as $i)
         <div class="contact">
-            <a href="" class="contact__blok">
-                    <p class="contact__blok__title">Overheidsinstanties</p>
+            <a href="/community/instantie/{{$i->id}}" class="contact__blok">
+                    <p class="contact__blok__title">{{$i->name}}</p>
              </a>
-
         </div>
-
-        <div class="contact">
-             <a href="" class="contact__blok">
-                    <p class="contact__blok__title">Bedrijven</p>
-             </a>
-         </div>
-
-         <div class="contact">
-             <a href="" class="contact__blok">
-                    <p class="contact__blok__title">ICE CUBE</p>
-             </a>
-         </div>
+        @endforeach
     </div> 
 
     

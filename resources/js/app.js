@@ -122,3 +122,16 @@ if(stageBtn3 !== null){
         })
     })
 }
+
+//stage4 
+let stageBtn4 = document.querySelectorAll('.stagebtn4');
+if(stageBtn4 !== null){
+    stageBtn4.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            let extra = btn.dataset.extra;
+            document.querySelector('.stage4Input').value = extra;
+            document.querySelector('.formStage4').submit();
+        })
+    })
+}

@@ -133,7 +133,7 @@
                 
             </form>
             @if($roadmap->check === 0)
-            <form class="stage__check" action="/check/stage1" method="post">
+            <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
@@ -165,7 +165,7 @@
             </div>
             @endif
             @if($roadmap->check === 1)
-            <form class="stage__check" action="/check/stage2" method="post">
+            <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
@@ -189,17 +189,17 @@
                 <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
             </div>
             @if($roadmap->check === 0)
-            <form class="formStage3" action="/check/input" method="post">
+            <form class="formStage3" action="/check/inputStage3" method="post">
             @csrf
                 <div class="stage__btns">
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Geen vrijstellingsregeling</a>
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Wel een vrijstellingsregeling</a>
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik weet het nog niet</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
                 </div>
             </form>
             @endif
             @if($roadmap->check === 1)
-            <form class="stage__check" action="/check/stage3" method="post">
+            <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
@@ -216,22 +216,40 @@
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
-                <p class="stage__title">Sluit je aan bij een sociaal verzekeringsfonds en registreer je onderneming
-in de KBO</p>
-                <p class="stage__text">Iedere werknemer in dit land betaalt sociale bijdragen, ook zelfstandigen. Van deze sociale bijdragen worden onder andere de pensioenen, ziekte- en invaliditeitsuitkeringen en gezinsbijslag uitbetaald. Als student-zelfstandige krijg je de keuze om gebruik te maken van een vrijstellingsregeling voor deze sociale bijdragen. Dit kan enkel als je weet dat je netto niet meer dan 7.329,21 euro zal verdienen in het jaar 2022. Kies je niet voor de <strong>vrijstellingsregeling</strong> betaal je als starter een voorlopige minimumbijdrage van ongeveer 85 euro per kwartaal.</p>
-                <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
-                <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
+                <p class="stage__title">Sluit je aan bij een sociaal verzekeringsfonds en registreer je onderneming in de KBO</p>
+                <p class="stage__text">Nu je een professionele rekening hebt, weet welke activiteiten je zal uitvoeren én beslist hebt op welke manier je graag wel of geen sociale bijdragen wilt betalen, kan je jezelf aansluiten bij een sociaal verzekeringsfonds. Het is wettelijk verplicht je aan te sluiten bij een sociaal verzekeringsfonds, zij doen eigenlijk niet veel meer dan voor jou berekenen hoeveel sociale bijdragen je moet betalen. Zij storten wat jij betaalt, rechtstreeks door naar de overheid</p>
+                <p class="stage__text">Vaak is een sociaal verzekeringsfonds ook een ondernemingsloket, en die heb je dan weer nodig om je onderneming te kunnen registreren in de “Kruispuntbank van Ondernemingen”, afgekort KBO. De KBO is een databank van de FOD Economie waarin alle basisgegevens van alle Belgische ondernemingen verzameld worden. Om aan de slag te kunnen als zelfstandige, moet jouw unieke ondernemingsnummer hierin opgenomen zijn.</p>
+                <p class="stage__text">De voornaamste sociale verzekeringsfondsen waaruit je in Vlaanderen kan kiezen zijn:</p>
+                <ul class="stage__list">
+                    <li>Xerius</li>
+                    <li>Liantis</li>
+                    <li>Partena</li>
+                    <li>Acerta</li>
+                    <li>Securex</li>
+                    <li>Avixi</li>
+                    <li>Nationale Hulpkas</li>
+                </ul>
+                <p class="stage__text"><strong>Tip:</strong> Welk sociaal verzekeringsfonds is het beste voor jou? (blog)</p>
             </div>
             @if($roadmap->check === 0)
-            <div class="stage__btns">
-                
-            </div>
+            <form class="formStage4" action="/check/inputStage4" method="post">
+            @csrf
+                <p class="stage__text">Je sociaal verzekeringsfonds zal je ook vragen of zij je identificatie bij de btw-administratie voor jou in orde moeten maken. Ook dit is wettelijk verplicht, maar je kan er ook voor kiezen om dit zelf te doen, dat spaart je ongeveer 70 euro uit. Wil je zelf de identificatie bij de btw-administratie in orde brengen, begeleiden we je graag bij deze stap.</p>
+                <div class="stage__btns">
+                    <a class="stagebtn stagebtn--large stagebtn4" data-extra="1" href="#" >Ik laat mijn identificatie bij de btw-administratie uitvoeren door mijn gekozen sociaal verzekeringsfonds.</a>
+                    <a class="stagebtn stagebtn--large stagebtn4" data-extra="2" href="#" >Ik wil graag zelf mijn identificatie bij de btw-administratie uitvoeren. Let op! Doe dit zo snel na je registratie in de KBO, je mag niet beginnen aan je zelfstandige activiteit voor dit gebeurd is.</a>
+                    <input class="stage4Input" type="hidden" name="extra" value="">
+                </div>
+            </form>
             @endif
-            <form class="stage__check" action="/check/stage1" method="post">
+            @if($roadmap->check === 1)
+            <p class="stage__text">Bijkomende vraag als de vorige is aangeklikt: “Vul je ondernemingsnummer in om aan te tonen dat je jezelf hebt aangesloten bij een sociaal verzekeringsfonds, en je jezelf hebt laten registreren in de KBO. Als je besloten hebt om je identificatie bij de btw-administratie zelf te doen, leggen we je in de volgende stap uit hoe dit moet.</p>
+            @endif
+            <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
+                    <input type="hidden" name="stage" value="4">
                 </div>
             </form>
         </div>
@@ -242,12 +260,18 @@ in de KBO</p>
                 <div class="stage__header__stap">Stap 5</div>
                 <div class="stage__header__extra"></div>
             </div>
+            <div class="stage">
+                <p class="stage__title">Btw-administratie</p>
+                <p class="stage__text">Iedere werknemer in dit land betaalt sociale bijdragen, ook zelfstandigen. Van deze sociale bijdragen worden onder andere de pensioenen, ziekte- en invaliditeitsuitkeringen en gezinsbijslag uitbetaald. Als student-zelfstandige krijg je de keuze om gebruik te maken van een vrijstellingsregeling voor deze sociale bijdragen. Dit kan enkel als je weet dat je netto niet meer dan 7.329,21 euro zal verdienen in het jaar 2022. Kies je niet voor de <strong>vrijstellingsregeling</strong> betaal je als starter een voorlopige minimumbijdrage van ongeveer 85 euro per kwartaal.</p>
+                <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
+                <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
+            </div>
             @if($roadmap->check === 0)
             <div class="stage__btns">
                 
             </div>
             @endif
-            <form class="stage__check" action="/check/stage1" method="post">
+            <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>

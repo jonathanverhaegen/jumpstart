@@ -333,6 +333,13 @@
   margin-right: auto;
 }
 
+.stage__list {
+  margin-top: 10px;
+  list-style: circle;
+  margin-left: 5%;
+  font-family: "Lato", sans-serif;
+}
+
 /*roadmap verdeling */
 .roadmap__stage--1 {
   position: relative;

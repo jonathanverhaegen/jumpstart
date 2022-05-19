@@ -98,6 +98,11 @@
     margin-bottom: 20px;
 }
 
+.form--vertical__text{
+    font-family: $normal;
+    margin-bottom: 20px;
+}
+
 @media(min-width:800px){
     .form--login{
         display:grid;

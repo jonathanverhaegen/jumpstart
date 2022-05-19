@@ -266,17 +266,40 @@
             <form class="form form--vertical" action="check/stage5/start" method="post">
             @csrf   
                     <p class="form--vertical__title">Start</p>
-                    <input class="" type="text">
+        
+                    <label for="naam">Naam van het bedrijf</label>
+                    <input class="" name="naam" type="text">
+
+                    <label for="ondernemingsnummer">Vul hier je ondernemingsnummer in zonder puntjes, 10 cijfers</label>
+                    <input class="" name="ondernemingsnummer" type="text">
+
                     <button class="">Inzenden</button>
-                    
             </form>
             @endif
             @if($roadmap->stage === 5 && $roadmap->extra === 1)
-            <form class="form form--vertical" action="check/stage5/start" method="post">
+            <form class="form form--vertical" action="check/stage5/adress" method="post">
             @csrf   
-                    <p class="form--vertical__title">Start</p>
-                    <label for="onderneminsnummer"></label>
-                    <input class="" type="text" name="ondernemingsnummer">
+                    <p class="form--vertical__title">Adres(sen)</p>
+                    <p class="form--vertical__text">Vul het correcte adres in van je administratieve hoofdzetel, dat is hetzelfde adres waarop je je onderneming hebt laten registreren in de KBO. Vul hier ook een correct e-mailadres en telefoonnummer in.</p>
+
+                    <label for="straat">Straat</label>
+                    <input class="" name="straat" type="text">
+
+                    <label for="nummer">Nummer</label>
+                    <input class="" name="nummer" type="text">
+
+                    <label for="postcode">Postcode</label>
+                    <input class="" name="postcode" type="text">
+
+                    <label for="plaats">Plaats</label>
+                    <input class="" name="plaats" type="text">
+
+                    <label for="email">Email</label>
+                    <input class="" name="email" type="text">
+
+                    <label for="telefoonnummer">Telefoonnummer</label>
+                    <input class="" name="telefoonnummer" type="text">
+
                     <button class="">Inzenden</button>
             </form>
             @endif

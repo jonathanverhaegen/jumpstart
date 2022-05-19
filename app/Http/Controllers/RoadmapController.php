@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Roadmap;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -236,7 +237,46 @@ class RoadmapController extends Controller
     }
 
     public function checkStart(Request $request){
+        $credentials = $request->validate([
+            'naam' => 'required|max:255',
+            'ondernemingsnummer' => 'required'
+        ]);
+
+        $naam = $request->input('naam');
+        $onderneminsnummer = $request->input('ondernemingsnummer');
         
+        $company = new Company();
+        $company->name = $naam;
+        $company->company_number = $onderneminsnummer;
+        $company->user_id = Auth::id();
+        $company->save();
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 1;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Naam en ondernemingsnummer zijn opgeslagen.');
+        return redirect('/roadmap');
+    }
+
+    public function checkAdress(Request $request){
+        $credentials = $request->validate([
+            'straat' => 'required|max:255',
+            'nummer' => 'required',
+            'postcode' => 'required',
+            'plaats' => 'required',
+            'email' => 'required|email',
+            'telefoonnummer' => 'required'
+        ]);
+
+        $straat = $request->input('straat');
+        $nummer = $request->input('nummer');
+        $postcode = $request->input('postcode');
+        $plaats = $request->input('plaats');
+        $email = $request->input('email');
+        $telefoonnummer = $request->input('telefoonnummer');
+
+        dd(Auth::user()->company);
     }
     
 }

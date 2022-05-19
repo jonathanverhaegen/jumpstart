@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/inputStage3', [RoadmapController::class, "checkInputStage3"]);
     Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
     Route::post('/check/inputStage6', [RoadmapController::class, "checkInputStage6"]);
+    Route::post('check/stage5/start', [RoadmapController::class, "checkStart"]);
     
 
     //routes van de community

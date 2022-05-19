@@ -203,16 +203,6 @@ class RoadmapController extends Controller
         
         //volgende stage opslaan
         $roadmap = Auth::user()->roadmap;
-        if($roadmap->stage === $stage){
-            $roadmap->stage = $stage + 1;
-            $roadmap->check = 0;
-            $roadmap->save();
-        }else{
-            $request->session()->flash('message', 'Deze stap is al gechecked');
-            return redirect('/roadmap');
-        }
-        $nextStage = $stage + 1;
-        //redirect en inform
         if($stage === 4 && $roadmap->extra === 1){
             $nextStage = 6;
             $roadmap->stage = $nextStage;
@@ -221,9 +211,18 @@ class RoadmapController extends Controller
             $roadmap->save();
             $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
             return redirect('/roadmap');
+        }elseif($roadmap->stage === $stage){
+            $roadmap->stage = $stage + 1;
+            $roadmap->check = 0;
+            $roadmap->extra = 0;
+            $roadmap->save();
+            $nextStage = $stage + 1;
+            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
+            return redirect('/roadmap');
+        }else{
+            $request->session()->flash('message', 'Deze stap is al gechecked');
+            return redirect('/roadmap');
         }
-        $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
-        return redirect('/roadmap');
     }
 
     public function checkInputStage6(Request $request){
@@ -234,6 +233,10 @@ class RoadmapController extends Controller
 
         $request->session()->flash('success', 'Je kan nu stap 6 checken');
         return redirect('/roadmap');
+    }
+
+    public function checkStart(Request $request){
+        
     }
     
 }

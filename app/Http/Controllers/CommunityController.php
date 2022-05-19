@@ -33,6 +33,5 @@ class CommunityController extends Controller
         $data['group_id'] = $id;
         return view('community/edit', $data);
     }
-
     
 }

@@ -274,7 +274,8 @@ h1{
     margin-top:25px;
     margin-bottom:25px;
     padding-top:25px;
-    height: 475px;
+    padding-bottom: 25px;
+    
 }
 
 .faq__title{
@@ -290,7 +291,7 @@ h1{
     text-align: left;
     background-color: $darkgray;
     border-radius: 20px 20px 20px 20px; 
-    padding:5%;
+    padding: 5px 35px 5px 35px;
     width: 90%;
 }
 
@@ -310,10 +311,11 @@ h1{
 .faq__answer{
     display:none;
     font-family: $normal;
+    margin-bottom:20px;
 }
 
 .fold__icon{
-    width:80%;
+    width:90%;
     margin-left: 50%;
 }
 
@@ -488,7 +490,6 @@ h1{
         margin-top:50px;
         margin-bottom:25px;
         padding-top:25px;
-        height: 438px;
     }
 
     
@@ -499,7 +500,7 @@ h1{
         display:flex;
         flex-direction: row;
         align-items: center;
-        margin: 307px 0px 0px 27px;
+        margin: 20px 0px 50px 27px;
         text-align: center;
         background-color: $darkblue;
         border-radius: 40px 40px 40px 40px;
@@ -516,8 +517,12 @@ h1{
     }
 
     .faq{
-        padding: 2%;
         width:95%;
+    }
+
+    .fold__icon{
+        width:60%;
+        margin-left: 50%;
     }
 
 

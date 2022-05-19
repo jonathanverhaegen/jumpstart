@@ -130,7 +130,6 @@ if(faqs !== null){
                 check = 0;
                 answer.style.display = "none";
             }
-            
         })
     })
 }

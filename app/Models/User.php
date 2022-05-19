@@ -42,8 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with = ["roadmap"];
+    protected $with = ["roadmap", "usersgroups"];
     public function roadmap(){
         return $this->hasOne(\App\Models\Roadmap::class);
+    }
+
+    public function usersgroups(){
+        return $this->hasMany(\App\Models\UsersGroup::class);
     }
 }

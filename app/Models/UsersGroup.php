@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class UsersGroup extends Model
 {
     use HasFactory;
+    
 }

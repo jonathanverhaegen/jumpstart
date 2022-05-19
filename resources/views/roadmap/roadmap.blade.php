@@ -268,6 +268,7 @@
                     <p class="form--vertical__title">Start</p>
                     <input class="" type="text">
                     <button class="">Inzenden</button>
+                    
             </form>
             @endif
             @if($roadmap->stage === 5 && $roadmap->extra === 1)

@@ -15,7 +15,7 @@ class ContactController extends Controller
     }
 
     public function contactenDetail($id){
-        $data["contact_id"] = $id;
+        $data["agent"] = Agent::where('id', $id)->first();
         return view('contacten/detail', $data);
     }
 }

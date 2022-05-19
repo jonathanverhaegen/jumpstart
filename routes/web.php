@@ -45,12 +45,13 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de roadmap
     Route::get('/roadmap', [RoadmapController::class, "roadmap"]);
-    Route::post('/check/stage1', [RoadmapController::class, "checkStage1"]);
-    Route::post('/check/stage2', [RoadmapController::class, "checkStage2"]);
-    Route::post('/check/stage3', [RoadmapController::class, "checkStage3"]);
+    Route::post('/check/stage', [RoadmapController::class, "checkStage"]);
     Route::post('/check/iban', [RoadmapController::class, "checkIban"]);
     Route::post('/check/link', [RoadmapController::class, "checkLink"]);
-    Route::post('/check/input', [RoadmapController::class, "checkInput"]);
+    Route::post('/check/inputStage3', [RoadmapController::class, "checkInputStage3"]);
+    Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
+    Route::post('/check/inputStage6', [RoadmapController::class, "checkInputStage6"]);
+    Route::post('check/stage5/start', [RoadmapController::class, "checkStart"]);
     
 
     //routes van de community

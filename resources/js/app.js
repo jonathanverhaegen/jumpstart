@@ -122,3 +122,27 @@ if(stageBtn3 !== null){
         })
     })
 }
+
+//stage4 
+let stageBtn4 = document.querySelectorAll('.stagebtn4');
+if(stageBtn4 !== null){
+    stageBtn4.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            let extra = btn.dataset.extra;
+            document.querySelector('.stage4Input').value = extra;
+            document.querySelector('.formStage4').submit();
+        })
+    })
+}
+
+//stage6
+let stageBtn6 = document.querySelectorAll('.stagebtn6');
+if(stageBtn6 !== null){
+    stageBtn6.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('.formStage6').submit();
+        })
+    })
+}

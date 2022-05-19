@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use App\Models\User;
+use App\Models\UsersGroup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,9 +30,9 @@ class CommunityController extends Controller
         return view('community/detail', $data);
     }
 
-    public function communityEdit($id){
-        $data['group_id'] = $id;
+    public function communityEdit(){
+        $data['groups'] = Group::get();
         return view('community/edit', $data);
     }
-    
+
 }

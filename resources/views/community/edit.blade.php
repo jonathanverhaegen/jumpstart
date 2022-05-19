@@ -59,62 +59,22 @@
 
 <div class="edit__container">
     <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back__icon"></a>  
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon1">
-                    <p class="edit__blok__title">Boekhouden</p>
-            </div>
-        </div>
 
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon2">
-                    <p class="edit__blok__title">Administratie</p>
-            </div>
-        </div>
-
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon3">
-                    <p class="edit__blok__title">Adverteren</p>
-            </div>
-        </div>
-
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon4">
-                    <p class="edit__blok__title">Marketing</p>
-            </div>
-        </div>
-
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon5">
-                    <p class="edit__blok__title">Sociale Media</p>
-            </div>       
-        </div>
-
+    @foreach($groups as $group)
+        @if($group->goverment === 1)
         <div class="edit__">
-            <div class="edit__blok__">
-                <img src="{{asset('img/unchecked.png')}}" alt="unchecked" class="unchecked__icon1">
-                <p class="edit__blok__title__">ICE CUBE</p>
+        <div class="edit__blok__">
+        @else
+        <div class="edit">
+        <div class="edit__blok">
+        @endif      
+                    
+                    <img src="/img/unchecked.png" alt="checked" class="unchecked__icon1">
+                    <p class="edit__blok__title">{{$group->name}}</p>
             </div>
         </div>
-
-        <div class="edit__">
-            <div class="edit__blok__">
-                <img src="{{asset('img/unchecked.png')}}" alt="unchecked" class="unchecked__icon2">
-                <p class="edit__blok__title__">SINC</p>
-            </div>
-        </div>
-
-
-        <div class="edit__">
-            <div class="edit__blok__">
-                <img src="{{asset('img/unchecked.png')}}" alt="unchecked" class="unchecked__icon3">
-                <p class="edit__blok__title__">MANESTARTERS</p>
-            </div>
-        </div>
+    @endforeach
+        
 
 </div> 
 

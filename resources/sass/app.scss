@@ -6,6 +6,7 @@
 @import 'components/forms';
 @import 'components/btns';
 @import 'components/contacten';
+@import 'components/community';
 @import 'abstracts/colors';
 @import 'abstracts/fonts';
 
@@ -21,6 +22,10 @@ body{
 .container{
     display: flex;
     flex-direction: column;
+}
+
+strong{
+    font-weight: bold;
 }
 
 @media(min-width: 800px){

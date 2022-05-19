@@ -6,7 +6,9 @@
 
 <div class="header">
     <div class="header__img">
-        <img src="{{asset('/img/logo1.png')}}" alt="">
+        <a href="/dashboard">
+            <img src="{{asset('/img/logo1.png')}}" alt="">
+        </a>
     </div>
 
     <div class="header__links">

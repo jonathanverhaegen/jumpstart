@@ -110,8 +110,11 @@
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
-                <p class="stage__title">Een rekening openen voor jouw business</p>
-                <p class="stage__text">Het verplicht om een professionele bankrekening te hebben. De reden waarom de meeste zelfstandigen hun persoonlijke bankrekening niet gebruiken voor zakelijke aankopen en uitgaven, is omdat de fiscus een zuivere privébankrekening niet zomaar mag inspecteren. Een ‘gemengde’ rekening mag hij wel onder loep nemen. </p>
+                <p class="stage__title">Open een bankrekening voor jouw professionele activiteit</p>
+                <p class="stage__text">Proficiat! Je hebt een businessidee bedacht en bent helemaal klaar om de stap richting student- zelfstandige te zetten. Om te beginnen heb je een professionele bankrekening nodig die je zal gebruiken als student-zelfstandige. Dit is nodig om je privétransacties mooi gescheiden te houden van je transacties als zelfstandige, dit maakt je boekhouding veel eenvoudiger en zorgt ervoor dat de fiscus niet zomaar kan meekijken in je privérekening.</p>
+                <p class="stage__text">Deze rekening kan een normale zichtrekening zijn die omgezet wordt naar een professionele rekening vanaf het moment dat je een ondernemingsnummer hebt. Informeer bij je bank naar de verschillende opties en voordelen van de verschillende soorten professionele rekeningen.</p>
+                <p class="stage__text"><strong>Let op:</strong> Je zal op dit moment nog geen ondernemingsnummer kunnen toevoegen aan je nieuwe rekening, dit kan pas wanneer je registratie in de Kruispuntbank van Ondernemingen voltooid is. Je hebt nu eenmaal éérst een bankrekening nodig, voor je een ondernemingsnummer kan aanvragen</p>
+                <p class="stage__text"><strong>Tip:</strong> Nog geen uitgewerkt businessplan? Surf naar het startersplatform van VLAIO en werk je businessidee van A tot Z uit! <a target="_blank" href="https://startersgids.vlaio.be/nl">https://startersgids.vlaio.be/nl</a></p>
             </div>
             @if($roadmap->check === 0)
             <div class="stage__btns">
@@ -129,6 +132,7 @@
                 <input class="stage__form__check__extra" type="hidden" name="bank">
                 
             </form>
+            @if($roadmap->check === 0)
             <form class="stage__check" action="/check/stage1" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -136,6 +140,7 @@
                     <input type="hidden" name="stage" value="1">
                 </div>
             </form>
+            @endif
         </div>
 
 
@@ -146,21 +151,28 @@
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
-                <p class="stage__title">Welke activiteiten ga je uitvoeren als zelfstandige?</p>
-                <p class="stage__text">Kies alle activiteiten uit een lijst van NACEBE-codes</p>
+                <p class="stage__title">Bepaal welke activiteiten je zal uitvoeren</p>
+                <p class="stage__text">Voor je kan starten als student-zelfstandige, is het belangrijk om te weten welke activiteiten je zal buitvoeren. Elke activiteit heeft een NACE-code, die codes heb je nodig om je registratie als zelfstandige correct uit te voeren. Klik alle activiteiten die je wenst uit te voeren aan in de onderstaande lijst.</p>
             </div>
+
             @if($roadmap->check === 0)
             <div class="stage__btns">
-                
+                <form action="/check/link" method="post">
+                @csrf
+                    <input type="hidden" name="link" value="https://www.liantis.be/nacebel/nl">
+                    <button class="stagebtn" type="submit">Liantis</button>
+                </form>
             </div>
             @endif
-            <form class="stage__check" action="/check/stage1" method="post">
+            @if($roadmap->check === 1)
+            <form class="stage__check" action="/check/stage2" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
+                    <input type="hidden" name="stage" value="2">
                 </div>
             </form>
+            @endif
         </div>
 
         <div class="stage__container stage__container--3">
@@ -169,18 +181,32 @@
                 <div class="stage__header__stap">Stap 3</div>
                 <div class="stage__header__extra"></div>
             </div>
-            @if($roadmap->check === 0)
-            <div class="stage__btns">
-                
+            <div class="stage">
+                <p class="stage__title">Bepaal of je gebruik wil maken van de vrijstellingsregeling voor sociale
+                                        bijdragen</p>
+                <p class="stage__text">Iedere werknemer in dit land betaalt sociale bijdragen, ook zelfstandigen. Van deze sociale bijdragen worden onder andere de pensioenen, ziekte- en invaliditeitsuitkeringen en gezinsbijslag uitbetaald. Als student-zelfstandige krijg je de keuze om gebruik te maken van een vrijstellingsregeling voor deze sociale bijdragen. Dit kan enkel als je weet dat je netto niet meer dan 7.329,21 euro zal verdienen in het jaar 2022. Kies je niet voor de <strong>vrijstellingsregeling</strong> betaal je als starter een voorlopige minimumbijdrage van ongeveer 85 euro per kwartaal.</p>
+                <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
+                <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
             </div>
+            @if($roadmap->check === 0)
+            <form class="formStage3" action="/check/input" method="post">
+            @csrf
+                <div class="stage__btns">
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
+                </div>
+            </form>
             @endif
-            <form class="stage__check" action="/check/stage1" method="post">
+            @if($roadmap->check === 1)
+            <form class="stage__check" action="/check/stage3" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
+                    <input type="hidden" name="stage" value="3">
                 </div>
             </form>
+            @endif
         </div>
 
         <div class="stage__container stage__container--4">
@@ -188,6 +214,13 @@
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 4</div>
                 <div class="stage__header__extra"></div>
+            </div>
+            <div class="stage">
+                <p class="stage__title">Sluit je aan bij een sociaal verzekeringsfonds en registreer je onderneming
+in de KBO</p>
+                <p class="stage__text">Iedere werknemer in dit land betaalt sociale bijdragen, ook zelfstandigen. Van deze sociale bijdragen worden onder andere de pensioenen, ziekte- en invaliditeitsuitkeringen en gezinsbijslag uitbetaald. Als student-zelfstandige krijg je de keuze om gebruik te maken van een vrijstellingsregeling voor deze sociale bijdragen. Dit kan enkel als je weet dat je netto niet meer dan 7.329,21 euro zal verdienen in het jaar 2022. Kies je niet voor de <strong>vrijstellingsregeling</strong> betaal je als starter een voorlopige minimumbijdrage van ongeveer 85 euro per kwartaal.</p>
+                <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
+                <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
             </div>
             @if($roadmap->check === 0)
             <div class="stage__btns">

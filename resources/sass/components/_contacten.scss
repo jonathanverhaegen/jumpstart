@@ -55,7 +55,7 @@
 }
 
 
-h1{
+.title{
     font-family: $title;
     font-weight: bold;
     color: $darkblue;
@@ -373,6 +373,10 @@ h1{
         margin-top: 50px;
         height: 379px;
         
+    }
+
+    .pic1{
+        margin-top: -10px;
     }
 
     .contact__zoek{

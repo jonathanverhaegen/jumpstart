@@ -60,7 +60,7 @@
     <div class="contact__container">
         @foreach($instanties as $i)
         <div class="contact">
-            <a href="/contacten/instantie/{{$i->id}}" class="contact__blok">
+            <a href="/community/instantie/{{$i->id}}" class="contact__blok">
                     <p class="contact__blok__title">{{$i->name}}</p>
              </a>
         </div>
@@ -70,11 +70,11 @@
     
 
     <div class="contact__container__zoek">
-        <h1 class="title">Recente zoekopdrachten</h1>
+        <h1 class="title">Contactpersonen</h1>
         @foreach($agents as $agent)
         <div class="contact__zoek">
              <div class="contact__blok__zoek">
-                    <img class="pic1" src="img/{{ $agent->avatar }}" alt="sarah"><a href="contacten/detail" class="contact__zoek__name">{{$agent->firstname}} {{$agent->lastname}}</a>
+                    <img class="pic1" src="/img/{{ $agent->avatar }}" alt="sarah"><a href="contacten/detail" class="contact__zoek__name">{{$agent->firstname}} {{$agent->lastname}}</a>
                     <p class="contact__zoek__mail">{{$agent->email}}</p>
                     <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="/contacten/{{$agent->id}}" class="contact__zoek__link">profiel bekijken</a>
                     <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon2"><a href="" class="contact__zoek__link">bericht sturen</a>

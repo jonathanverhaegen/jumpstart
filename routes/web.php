@@ -63,7 +63,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes vab de contacten
     Route::get('/contacten', [ContactController::class, "contacten"]);
+    Route::get('/contacten/instantie/{id}', [ContactController::class, "instantieDetail"]);
     Route::get('/contacten/{id}', [ContactController::class, "contactenDetail"]);
+    
 
     //routes van de instellingen
     Route::get('/instellingen', [SettingsController::class, "settings"]);

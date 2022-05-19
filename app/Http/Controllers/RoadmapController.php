@@ -224,5 +224,15 @@ class RoadmapController extends Controller
         $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
         return redirect('/roadmap');
     }
+
+    public function checkInputStage6(Request $request){
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->extra = 0;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Je kan nu stap 6 checken');
+        return redirect('/roadmap');
+    }
     
 }

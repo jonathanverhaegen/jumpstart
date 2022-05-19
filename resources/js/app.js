@@ -135,3 +135,14 @@ if(stageBtn4 !== null){
         })
     })
 }
+
+//stage6
+let stageBtn6 = document.querySelectorAll('.stagebtn6');
+if(stageBtn6 !== null){
+    stageBtn6.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('.formStage6').submit();
+        })
+    })
+}

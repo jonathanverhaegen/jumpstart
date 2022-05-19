@@ -2190,6 +2190,18 @@ if (stageBtn4 !== null) {
       document.querySelector('.formStage4').submit();
     });
   });
+} //stage6
+
+
+var stageBtn6 = document.querySelectorAll('.stagebtn6');
+
+if (stageBtn6 !== null) {
+  stageBtn6.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector('.formStage6').submit();
+    });
+  });
 }
 
 /***/ }),

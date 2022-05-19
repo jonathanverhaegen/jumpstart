@@ -91,11 +91,6 @@
                     <div class="roadmap__stage__number">7</div>
                 </a>
 
-                <a @if($roadmap->stage > 7) href="" data-stage="8" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--8">
-                    <div class="roadmap__stage__number">8</div>
-                    <div class="roadmap__stage__title roadmap__stage__title--right">Student-zelfstandige</div>
-                </a>
-
                 <a class="roadmap__next" href="">
                     <img class="nextBtn" src="{{asset('/img/knop3.png')}}" alt="">
                 </a>
@@ -253,19 +248,26 @@
                 </div>
             </form>
         </div>
-
+        
+        <!-- stap 4 nog helemaal uitwerken -->
         <div class="stage__container stage__container--5">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 5</div>
                 <div class="stage__header__extra"></div>
             </div>
+            <form action="">
             <div class="stage">
                 <p class="stage__title">Btw-administratie</p>
-                <p class="stage__text">Iedere werknemer in dit land betaalt sociale bijdragen, ook zelfstandigen. Van deze sociale bijdragen worden onder andere de pensioenen, ziekte- en invaliditeitsuitkeringen en gezinsbijslag uitbetaald. Als student-zelfstandige krijg je de keuze om gebruik te maken van een vrijstellingsregeling voor deze sociale bijdragen. Dit kan enkel als je weet dat je netto niet meer dan 7.329,21 euro zal verdienen in het jaar 2022. Kies je niet voor de <strong>vrijstellingsregeling</strong> betaal je als starter een voorlopige minimumbijdrage van ongeveer 85 euro per kwartaal.</p>
-                <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
-                <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
+                <p class="stage__text">Ondernemingsnummer: Check! Btw-nummer: Niet check... Om te mogen factureren voor je zelfstandige activiteit, is het wettelijk verplicht je ook te “identificeren” bij de btw-administratie. Dit is niet zo heel moeilijk, je kan gewoon online een formulier invullen. Voor je dit doet willen we zeker zijn dat je weet wat je waar zal moeten invullen. Hieronder vind je voor elke stap een beetje extra uitleg. Het online formulier kan je hier invullen: <a href="https://eservices.minfin.fgov.be/VAT001/">https://eservices.minfin.fgov.be/VAT001/</a> Kies voor het formulier E604: AANVRAAG TOT BTW-IDENTIFICATIE</p>
+                <p class="stage__text"><strong>Start</strong></p>
+                <p class="stage__text"></p>
+                <p class="stage__text"></p>
+                <p class="stage__text"></p>
+                <p class="stage__text"></p>
+                <p class="stage__text"></p>
             </div>
+            </form>
             @if($roadmap->check === 0)
             <div class="stage__btns">
                 
@@ -286,18 +288,27 @@
                 <div class="stage__header__stap">Stap 6</div>
                 <div class="stage__header__extra"></div>
             </div>
-            @if($roadmap->check === 0)
-            <div class="stage__btns">
-                
+            <div class="stage">
+                <p class="stage__title">Laat aan de bank weten wat je ondernemingsnummer is</p>
+                <p class="stage__text">Oef, dit is gelukkig maar een kleine stap. Nu je geregistreerd bent in de Kruispuntbank van Ondernemingen, heb je een ondernemingsnummer gekregen. Geef bij dit door aan je bank zodat zij jouw pas geopende rekening kunnen omzetten naar een rekening voor professioneel gebruik.</p>
             </div>
+            @if($roadmap->check === 0)
+            <form class="formStage6" action="/check/inputStage6" method="post">
+            @csrf
+                <div class="stage__btns">
+                    <a class="stagebtn stagebtn--large stagebtn6"  href="#" >Ik bevestig dat ik mijn ondernemingsnummer aan mijn bank heb doorgegeven.</a>
+                </div>
+            </form>
             @endif
-            <form class="stage__check" action="/check/stage1" method="post">
+            @if($roadmap->check === 1)
+            <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
+                    <input type="hidden" name="stage" value="6">
                 </div>
             </form>
+            @endif
         </div>
 
         <div class="stage__container stage__container--7">
@@ -306,40 +317,36 @@
                 <div class="stage__header__stap">Stap 7</div>
                 <div class="stage__header__extra"></div>
             </div>
-            @if($roadmap->check === 0)
-            <div class="stage__btns">
-                
-            </div>
-            @endif
-            <form class="stage__check" action="/check/stage1" method="post">
-            @csrf
-                <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
+            <div class="stage">
+                <p class="stage__title"> Je bent klaar om te starten als zelfstandige!</p>
+                <p class="stage__text">Zo! Je bent klaar om te starten als zelfstandige. We geven je graag nog mee dat je op Jumpstart ook te recht kan voor hulp en begeleiding van medestudenten die ook de stap hebben gezet naar student-zelfstandige worden, maar je kan ook professioneel advies inwinnen.</p>
+                <p class="stage__text">Ook verwijzen we je graag door naar Dexxter, waarme je eenvoudig online je boekhouding kan bijhouden. Je kan uiteraard ook op zoek gaan naar een professionele boekhouder die deze administratieve last van je schouders neemt, let op dat een boekhouder gemiddeld 100,00 euro per maand kost.</p>
+                <p class="stage__text">Doe je liever zelf je boekhouding? Download hier het Excel-template van SBB. Zij organiseren regelmatig workshops voor student-zelfstandigen zodat je helemaal op weg gezet kan worden met het voeren van je eigen boekhouding.</p>
+                <p class="stage__text">Tenslotte geven we je graag nog een overzichtje van de maximumdrempels waar je als student-zelfstandige rekening mee moet houden. Let op: Al deze bedragen worden jaarlijks geïndexeerd en dus verhoogd.</p>
+                <p class="stage__text"><strong>Sociale bijdragen</strong></p>
+                <ul class="stage__list">
+                    <li>Bij een netto belastbaar inkomen <strong>lager dan 7.329,22 euro</strong> betaal je geen sociale bedragen.</li>
+                    <li><strong>Vanaf 7.329,22 euro tot 14.658,44 euro</strong> betaal je 20,5% op het inkomen boven het grensbedrag.</li>
+                    <li>Ligt je inkomen <strong>hoger dan 14.658,44 euro</strong> dan betaal je dezelfde bijdragen als een zelfstandige in hoofdberoep.</li>
+                </ul>
+                <p class="stage__text"><strong>Fiscaal ten laste blijven en de personenbelasting</strong></p>
+                <ul class="stage__list">
+                    <li>Als je ouders samen belast worden dan mag je <strong>maximum 3.490,00 euro netto</strong> verdienen om fiscaal ten laste te blijven.</li>
+                    <li>Als je ouders elk apart worden belast en jij fiscaal ten laste bent van één van je ouders of je enige ouder, dan mag je <strong>maximaal 5.040,00 euro netto</strong> verdienen om fiscaal ten laste te blijven.</li>
+                    <li>Als je ouders elk apart worden belast en jij fiscaal ten laste bent van één van je ouders of je enige ouder, én je wordt fiscaal als gehandicapt beschouwd, mag je <strong>maximaal 6.400,00 euro netto </strong> verdienen om fiscaal ten laste te blijven.</li>
+                </ul>
+                <p class="stage__text">Fiscaal ten laste blijven wil niet meer zeggen dan je ouders die in jouw plaats belastingen blijven betalen. Ben je niet meer fiscaal ten laste, zul je zelf belastingen moeten betalen. Geen paniek, je bent vrijgesteld tot een bepaald bedrag, maar het is wel iets om rekening mee te houden.</p>
+                <p class="stage__text">Als gevolg zullen je ouders namelijk ook hun belastingvoordeel op jou verliezen! Zij zullen dus iets meer belastingen moeten betalen omdat jij niet meer fiscaal ten laste bent van hen. Dit is ook wat gebeurt als jij fulltime gaat werken, dan begin je ook zelf belastingen te betalen.</p>
+                <p class="stage__text">Hoeveel belastingen je moet betalen als je niet meer fiscaal ten laste bent, lees je hier: <a href="https://financien.belgium.be/nl/particulieren/belastingaangifte/tarieven-belastbaar-inkomen/tarieven#q1">https://financien.belgium.be/nl/particulieren/belastingaangifte/tarieven-belastbaar-inkomen/tarieven#q1</a></p>
+                <p class="stage__text"><strong>Kinderbijslag</strong></p>
+                <p class="stage__text">Voor de kinderbijslag moet je kijken naar de grenswaarde van de sociale bijdragen, weet je nog, die <strong>7.329,22 euro.</strong> Vanaf dat moment betaal je niet alleen sociale bijdragen op je inkomsten, maar kan het ook zijn dat je je kinderbijslag verliest.</p>
+                <p class="stage__text">In Vlaanderen verlies je je kinderbijslag als je meer dan 240 uren per maand werkt, in Brussel en Wallonië geldt een plafond van 240 uren per kwartaal. Zit je niet over dit aantal uren, hoef je je dus geen zorgen te maken over het verliezen van je kinderbijslag.</p>
+                <p class="stage__text">Uiteraard moet je wel nog steeds voldoen aan de algemene voorwaarden om kinderbijslag te kunnen krijgen, lees hier meer over op de website van de Vlaamse Overheid <a href="https://www.vlaanderen.be/algemene-voorwaarden-en-procedure-voor-het-groeipakket">https://www.vlaanderen.be/algemene-voorwaarden-en-procedure-voor-het-groeipakket</a></p>
+                <p class="stage__text"><strong>Wat is netto?</strong></p>
+                <p class="stage__text">Als we spreken over “netto”-inkomen als student-zelfstandige, betekent dat je omzet, <strong>min</strong> je beroepskosten. Dat wil zeggen alle kosten die je maakt om je professionele activiteit te kunnen uitvoeren, denk aan telefoonkosten, sociale bijdragen, verzekeringen, lidmaatschap van Unizo, je boekhouder, opstartkosten, ...</p>
+                <p class="stage__text">Het is veel informatie, maar mocht je nog vragen hebben, twijfel dan niet om links in het menu op “Contacten” te klikken en iemand om advies te vragen. Succes!</p>
                 </div>
-            </form>
         </div>
-
-        <div class="stage__container stage__container--8">
-            <div class="stage__header">
-                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
-                <div class="stage__header__stap">Stap 8</div>
-                <div class="stage__header__extra"></div>
-            </div>
-            @if($roadmap->check === 0)
-            <div class="stage__btns">
-                
-            </div>
-            @endif
-            <form class="stage__check" action="/check/stage1" method="post">
-            @csrf
-                <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
-                </div>
-            </form>
-        </div>
-
     </div>
 
     </div>

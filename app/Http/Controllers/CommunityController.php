@@ -25,6 +25,10 @@ class CommunityController extends Controller
             $users[] = User::where('id', $u->user_id)->first();
         }    
         $data['users'] = $users;  
+
+        //faq
+        $data['faqs'] = $data['group']->faqs;
+        
         return view('community/detail', $data);
     }
     public function communityEdit($id){

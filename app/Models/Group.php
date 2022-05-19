@@ -8,9 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Group extends Model
 {
     use HasFactory;
-    protected $with = ["usersgroups"];
+    protected $with = ["usersgroups", 'faqs'];
 
     public function usersgroups(){
         return $this->hasMany(\App\Models\UsersGroup::class);
+    }
+
+    public function faqs(){
+        return $this->hasMany(\App\Models\Faq::class);
     }
 }

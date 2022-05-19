@@ -61,33 +61,21 @@
         <h1 class="group__title">{{$group->name}}</h1>
             <div class="group__blok">
                 @foreach($users as $user)
-                    <img src="/public/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
+                    <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
                 @endforeach
             </div>
         </div>
 
         <div class="faq__container">
-        <h1 class="faq__title">FAQ boekhouden</h1>
+        <h1 class="faq__title">FAQ {{$group->name}}</h1>
+            @foreach($faqs as $faq)
             <div class="faq">
                 <div class="faq__blok">
-                    <img src="{{asset('img/uitklappen.png')}}" alt="fold" class="fold__icon1">
-                    <p class="question1">Welke zakelijke onkosten kan ik inbrengen?</p>
+                    <p class="question">test</p>
+                    <img src="{{asset('img/uitklappen.png')}}" alt="fold" class="fold__icon">
                 </div>
             </div>
-
-            <div class="faq">
-                <div class="faq__blok">
-                    <img src="{{asset('img/uitklappen.png')}}" alt="fold" class="fold__icon2">
-                    <p class="question2">Hoe kan ik mijn cashflow verbeteren?</p>
-                </div>
-            </div>
-
-            <div class="faq">
-                <div class="faq__blok">
-                    <img src="{{asset('img/uitklappen.png')}}" alt="fold" class="fold__icon3">
-                    <p class="question3">Moet ik me registreren voor de btw en wat zijn mijn fiscale verplichtingen?</p>
-                </div>
-            </div>
+            @endforeach
 
         <a href="" class="ask"><p class="ask__question">Vraag stellen</p></a>  
         </div>

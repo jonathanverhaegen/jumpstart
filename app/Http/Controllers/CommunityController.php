@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,8 +18,13 @@ class CommunityController extends Controller
         return view('community/community', $data);
     }
 
-    public function communityDetail($id){
-        $data['group_id'] = $id;
+    public function communityDetail($name){
+        $data['group'] = Group::where('name', $name)->first();
+        $usersgroups = $data['group']->usersgroups;
+        foreach($usersgroups as $u){
+            $users[] = User::where('id', $u->user_id)->first();
+        }    
+        $data['users'] = $users;  
         return view('community/detail', $data);
     }
     public function communityEdit($id){

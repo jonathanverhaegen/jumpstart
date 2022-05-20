@@ -494,6 +494,14 @@
   display: none;
 }
 
+.activity__container--visible {
+  background-color: #D1D8E8;
+  padding: 10px 15px 10px 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
+
 .activity {
   display: grid;
   grid-template-columns: 10fr 2fr;
@@ -511,6 +519,24 @@
 
 .activity__icon {
   margin-left: auto;
+}
+
+.briefje {
+  margin-top: 50px;
+}
+
+.briefje__title {
+  font-family: "Montserrat", sans-serif;
+  color: #1E3472;
+  font-size: 18px;
+}
+
+.briefje__text {
+  font-family: "Lato", sans-serif;
+  color: #1E3472;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 800px) {

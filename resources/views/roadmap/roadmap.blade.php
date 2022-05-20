@@ -362,7 +362,17 @@
                         </div>
                         @endforeach
                     
-                    
+                    <div class="briefje">
+                        <p class="briefje__title">Mijn aangeduiden activiteiten</p>
+                        <p class="briefje__text">Hou dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
+                        <div class="activity__container activity__container--visible">
+                            <div class="activity">
+                                <p class="activity__text">test</p>
+                                <img class="activity__icon" src="/img/checked.png" alt="uitklappen">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Roadmap;
@@ -16,6 +17,7 @@ class RoadmapController extends Controller
         $data['user'] = Auth::user();
         $data['roadmap'] = Auth::user()->roadmap;
         $data['categories'] = Category::get();
+        
         return view('roadmap/roadmap', $data);
     }
 

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     use HasFactory;
+
+    protected $with = ["briefjes"];
+
+    public function briefjes(){
+        return $this->belongsTo(\App\Models\Briefje::class);
+    }
 }

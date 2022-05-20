@@ -241,7 +241,6 @@ if(categoryContainers !== null){
                         activityContainer.appendChild(activity);
                         briefje.appendChild(activityContainer);
 
-
                         check3 = 1;
                     }else{
                         ac.querySelector('.activity__icon').src = "/img/unchecked.png";
@@ -262,6 +261,19 @@ if(categoryContainers !== null){
         })
 
         
+    })
+}
+
+//clicked on briefje
+
+let activityContainers = document.querySelector('.activity__container--visible');
+
+if(activityContainers !== null){
+    activityContainers.forEach((ac) => {
+        let activity = ac.querySelector('.activity');
+        activity.addEventListener('click', (e) => {
+            console.log("test");
+        })
     })
 }
 

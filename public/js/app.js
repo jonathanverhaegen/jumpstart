@@ -2315,6 +2315,18 @@ if (categoryContainers !== null) {
       });
     });
   });
+} //clicked on briefje
+
+
+var activityContainers = document.querySelector('.activity__container--visible');
+
+if (activityContainers !== null) {
+  activityContainers.forEach(function (ac) {
+    var activity = ac.querySelector('.activity');
+    activity.addEventListener('click', function (e) {
+      console.log("test");
+    });
+  });
 } //stage6
 
 

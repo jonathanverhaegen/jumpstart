@@ -365,7 +365,6 @@
                     <div class="briefje">
                         <p class="briefje__title">Mijn aangeduiden activiteiten</p>
                         <p class="briefje__text">Hou dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
-                        
                     </div>
 
                 </div>

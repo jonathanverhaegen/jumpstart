@@ -2220,6 +2220,66 @@ if (stage5 !== null) {
       }
     });
   });
+} //stage5 activity
+
+
+var categoryContainers = document.querySelectorAll('.category__container');
+
+if (categoryContainers !== null) {
+  categoryContainers.forEach(function (cat) {
+    var container = cat.querySelector('.category');
+    var check = 0;
+    container.addEventListener('click', function (e) {
+      if (check === 0) {
+        cat.querySelector('.category__icon').style.transform = "rotate(180deg)";
+        cat.querySelectorAll('.subcategory__container').forEach(function (con) {
+          con.style.display = "block";
+        });
+        check = 1;
+      } else {
+        cat.querySelector('.category__icon').style.transform = "rotate(0deg)";
+        cat.querySelectorAll('.subcategory__container').forEach(function (con) {
+          con.style.display = "none";
+        });
+        check = 0;
+      }
+    });
+    var subContainers = cat.querySelectorAll('.subcategory__container');
+    subContainers.forEach(function (sub) {
+      var subcategory = sub.querySelector('.subcategory');
+      var check2 = 0;
+      subcategory.addEventListener('click', function (e) {
+        if (check2 === 0) {
+          sub.querySelector('.subcategory__icon').style.transform = "rotate(180deg)";
+          sub.querySelectorAll('.activity__container').forEach(function (ac) {
+            ac.style.display = "block";
+          });
+          check2 = 1;
+        } else {
+          sub.querySelector('.subcategory__icon').style.transform = "rotate(0deg)";
+          sub.querySelectorAll('.activity__container').forEach(function (ac) {
+            ac.style.display = "none";
+          });
+          check2 = 0;
+        }
+      });
+      var acContainer = sub.querySelectorAll('.activity__container');
+      console.log(acContainer);
+      acContainer.forEach(function (ac) {
+        var activity = ac.querySelector('.activity');
+        var check3 = 0;
+        activity.addEventListener('click', function (e) {
+          if (check3 === 0) {
+            ac.querySelector('.activity__icon').src = "/img/checked.png";
+            check3 = 1;
+          } else {
+            ac.querySelector('.activity__icon').src = "/img/unchecked.png";
+            check3 = 0;
+          }
+        });
+      });
+    });
+  });
 } //stage6
 
 

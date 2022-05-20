@@ -165,6 +165,70 @@ if(stage5 !== null){
     })
 }
 
+//stage5 activity
+let categoryContainers = document.querySelectorAll('.category__container');
+if(categoryContainers !== null){
+    categoryContainers.forEach((cat) => {
+        let container = cat.querySelector('.category');
+        let check = 0;
+
+        container.addEventListener('click', (e) => {
+            if(check === 0){
+                cat.querySelector('.category__icon').style.transform = "rotate(180deg)";
+                cat.querySelectorAll('.subcategory__container').forEach((con) => {
+                    con.style.display = "block";
+                })
+                check = 1;
+            }else{
+                cat.querySelector('.category__icon').style.transform = "rotate(0deg)";
+                cat.querySelectorAll('.subcategory__container').forEach((con) => {
+                    con.style.display = "none";
+                })
+                check = 0;
+            }
+        })
+
+        let subContainers = cat.querySelectorAll('.subcategory__container');
+        subContainers.forEach((sub) => {
+            let subcategory = sub.querySelector('.subcategory');
+            let check2 = 0;
+            subcategory.addEventListener('click', (e) => {
+                if(check2 === 0){
+                    sub.querySelector('.subcategory__icon').style.transform = "rotate(180deg)";
+                    sub.querySelectorAll('.activity__container').forEach((ac) => {
+                        ac.style.display = "block";
+                    })
+                    check2 = 1;
+                }else{
+                    sub.querySelector('.subcategory__icon').style.transform = "rotate(0deg)";
+                    sub.querySelectorAll('.activity__container').forEach((ac) => {
+                        ac.style.display = "none";
+                    })
+                    check2 = 0;
+                }
+            })
+
+            let acContainer = sub.querySelectorAll('.activity__container');
+            console.log(acContainer);
+            acContainer.forEach((ac) => {
+                let activity = ac.querySelector('.activity');
+                let check3 = 0;
+                activity.addEventListener('click', (e) => {
+                    if(check3 === 0){
+                        ac.querySelector('.activity__icon').src = "/img/checked.png";
+                        check3 = 1;
+                    }else{
+                        ac.querySelector('.activity__icon').src = "/img/unchecked.png";
+                        check3 = 0;
+                    }
+                })
+            })
+        })
+
+        
+    })
+}
+
 //stage6
 let stageBtn6 = document.querySelectorAll('.stagebtn6');
 if(stageBtn6 !== null){

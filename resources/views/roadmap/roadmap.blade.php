@@ -345,8 +345,8 @@
                             @foreach($cat->subcategories as $sub)
                             <div class="subcategory__container">
                                 <div class="subcategory">
-                                    <p class="category__text">{{$sub->name}}</p>
-                                    <img class="category__icon" src="/img/uitklappen.png" alt="uitklappen">
+                                    <p class="subcategory__text">{{$sub->name}}</p>
+                                    <img class="subcategory__icon" src="/img/uitklappen.png" alt="uitklappen">
                                 </div>
 
                                 @foreach($sub->activities as $ac)

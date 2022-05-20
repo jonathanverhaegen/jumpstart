@@ -414,7 +414,37 @@
                 </div>
             </div>
 
+            @if(Auth::user()->roadmap->extra === 6)
+            <div class="stage5">
+            @else
+            <div class="stage5Checked">
+            @endif
+                <div class="stage__field">
+                        <p class="stage__field__title"><strong>Bevestigen</strong></p>
+                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
+                </div>
+                <div class="stage5__form">
+                    <form class="form--stage" action="/check/stage5/bevestig" method="post">
+                    @csrf
+                        <p class="form--stage__title">Bevestig hier je aanvraag tot btw-identificatie. Je krijgt een brief via de post die je zal vertellen wanneer je btw-identificatie in orde is. Vanaf dat moment mag je beginnen met factureren.</p>
+                        <div class="form--stage__field">
+                            
+                        <div class="form--stage__field__radio"><input type="radio" name="bevestig" value="bevestig"><label for="bevestig">Ik bevestig dat ik mijn identificatie bij de btw-administratie in orde heb gebracht.</label></div>
+                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             
+            @if(Auth::user()->roadmap->check === 1)
+            <form class="stage__check" action="/check/stage" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <input type="hidden" name="stage" value="5">
+                </div>
+            </form>
+            @endif
 
 
 

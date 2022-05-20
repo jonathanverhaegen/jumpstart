@@ -465,6 +465,24 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
+    public function checkBevestig(Request $request){
+        $credentials = $request->validate([
+            'bevestig' => 'required',
+        ]);
+
+        if(!empty($request->input('bevestig'))){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->extra = 7;
+            $roadmap->check = 1;
+            $roadmap->save();
+            $request->session()->flash('success', 'Je hebt bevestigd');
+            return redirect('/roadmap');
+        }else{
+            $request->session()->flash('error', 'Bevesteging is noodzakelijk');
+            return redirect('/roadmap');
+        }
+    }
+
     private function companyInfo($number){
        //soap call doen naar de api van kruispuntbank dankzij de ondernemingsnummer
 

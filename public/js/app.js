@@ -2271,9 +2271,44 @@ if (categoryContainers !== null) {
         activity.addEventListener('click', function (e) {
           if (check3 === 0) {
             ac.querySelector('.activity__icon').src = "/img/checked.png";
+            var name = ac.querySelector('.activity__text').innerHTML; //name toevoegen aan briefje
+
+            var briefje = document.querySelector('.briefje');
+            var activityContainer = document.createElement("div");
+            activityContainer.classList.add('activity__container--visible');
+
+            var _activity = document.createElement("div");
+
+            _activity.classList.add('activity');
+
+            var activityText = document.createElement("p");
+            var activityIcon = document.createElement("img");
+            activityText.classList.add('activity__text');
+            activityIcon.classList.add('activity__icon');
+            activityText.innerHTML = name;
+            activityIcon.src = "/img/checked.png";
+
+            _activity.appendChild(activityText);
+
+            _activity.appendChild(activityIcon);
+
+            activityContainer.appendChild(_activity);
+            briefje.appendChild(activityContainer);
             check3 = 1;
           } else {
             ac.querySelector('.activity__icon').src = "/img/unchecked.png";
+            var _name = ac.querySelector('.activity__text').innerHTML;
+
+            var _activityContainer = document.querySelectorAll('.activity__container--visible');
+
+            _activityContainer.forEach(function (ac) {
+              var text = ac.querySelector('.activity__text').innerHTML;
+
+              if (text === _name) {
+                document.querySelector('.briefje').removeChild(ac);
+              }
+            });
+
             check3 = 0;
           }
         });

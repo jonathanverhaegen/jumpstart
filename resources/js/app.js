@@ -216,9 +216,45 @@ if(categoryContainers !== null){
                 activity.addEventListener('click', (e) => {
                     if(check3 === 0){
                         ac.querySelector('.activity__icon').src = "/img/checked.png";
+                        let name = ac.querySelector('.activity__text').innerHTML;
+
+                        //name toevoegen aan briefje
+                        let briefje = document.querySelector('.briefje');
+
+                        let activityContainer = document.createElement("div");
+                        activityContainer.classList.add('activity__container--visible');
+
+                        let activity = document.createElement("div");
+                        activity.classList.add('activity');
+
+                        let activityText = document.createElement("p");
+                        let activityIcon = document.createElement("img");
+
+                        activityText.classList.add('activity__text');
+                        activityIcon.classList.add('activity__icon');
+
+                        activityText.innerHTML = name;
+                        activityIcon.src = "/img/checked.png";
+
+                        activity.appendChild(activityText);
+                        activity.appendChild(activityIcon);
+                        activityContainer.appendChild(activity);
+                        briefje.appendChild(activityContainer);
+
+
                         check3 = 1;
                     }else{
                         ac.querySelector('.activity__icon').src = "/img/unchecked.png";
+                        let name = ac.querySelector('.activity__text').innerHTML;
+
+                        let activityContainer = document.querySelectorAll('.activity__container--visible');
+                        activityContainer.forEach((ac) => {
+                            let text = ac.querySelector('.activity__text').innerHTML;
+                            if(text === name){
+                                document.querySelector('.briefje').removeChild(ac);
+                            }
+                        })
+
                         check3 = 0;
                     }
                 })

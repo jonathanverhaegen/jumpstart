@@ -371,6 +371,48 @@
                 </div>
             </div>
 
+            @if(Auth::user()->roadmap->extra === 4)
+            <div class="stage5">
+            @else
+            <div class="stage5Checked">
+            @endif
+                <div class="stage__field">
+                        <p class="stage__field__title"><strong>Rekening</strong></p>
+                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
+                </div>
+                <div class="stage5__form">
+                    <form class="form--stage" action="/check/stage5/rekening" method="post">
+                    @csrf
+                        <p class="form--stage__title">Als je gekozen hebt voor de vrijstellingsregeling, hoef je hier geen rekeningnummer in te vullen. Koos je voor een maandelijkse of driemaandelijkse btw-aangifte, vul dan hier het correcte rekeningnummer in van je onderneming.</p>
+                        <div class="form--stage__field">
+                            <input class="form--stage__field__input" @if($roadmap->regime === "b")type="hidden" value="geen" @else type="text" @endif name="rekeningsnummer" placeholder="Rekeningsnummer">
+                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            @if(Auth::user()->roadmap->extra === 5)
+            <div class="stage5">
+            @else
+            <div class="stage5Checked">
+            @endif
+                <div class="stage__field">
+                        <p class="stage__field__title"><strong>Rekening</strong></p>
+                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
+                </div>
+                <div class="stage5__form">
+                    <form class="form--stage" action="/check/stage5/rekening" method="post">
+                    @csrf
+                        <p class="form--stage__title">Als je gekozen hebt voor de vrijstellingsregeling, hoef je hier geen rekeningnummer in te vullen. Koos je voor een maandelijkse of driemaandelijkse btw-aangifte, vul dan hier het correcte rekeningnummer in van je onderneming.</p>
+                        <div class="form--stage__field">
+                            <input class="form--stage__field__input" @if($roadmap->regime === "b")type="hidden" value="geen" @else type="text" @endif name="rekeningsnummer" placeholder="Rekeningsnummer">
+                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             
 
 

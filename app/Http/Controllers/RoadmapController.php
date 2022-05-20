@@ -372,7 +372,7 @@ class RoadmapController extends Controller
         $credentials = $request->validate([
             'optie' => 'required',
         ]);
-        
+
         $letter = $request->input('optie');
         
         if($letter === 'a'){
@@ -404,6 +404,40 @@ class RoadmapController extends Controller
             $request->session()->flash('success', 'Optie C opgeslagen');
             return redirect('/roadmap');
         }
+    }
+
+    public function checkRekening(Request $request){
+        $credentials = $request->validate([
+            'rekeningsnummer' => 'required',
+        ]);
+
+        $number = $request->input('rekeningsnummer');
+
+        if($number === "geen"){
+            $company = Auth::user()->company;
+            $company->account_number = null;
+            $company->save();
+
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->extra = 5;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Geen rekeninsnummer opgeslagen');
+            return redirect('/roadmap');
+        }
+
+        $company = Auth::user()->company;
+        $company->account_number = $number;
+        $company->save();
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 5;
+        $roadmap->save();
+
+        $request->session()->flash('success', $number.' opgeslagen');
+        return redirect('/roadmap');
+
+
     }
 
     private function companyInfo($number){

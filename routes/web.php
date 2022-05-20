@@ -54,6 +54,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
     Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
     Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);
+    Route::post('/check/stage5/rekening', [RoadmapController::class, "checkRekening"]);
     Route::post('/check/number', [RoadmapController::class, "checkNumber"]);
     Route::get('/test', [RoadmapController::class, "companyInfo"]);
     

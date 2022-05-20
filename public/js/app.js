@@ -2210,12 +2210,12 @@ if (stage5 !== null) {
       e.preventDefault();
 
       if (check === 0) {
-        document.querySelector('.stage__field__icon').style.transform = "rotate(180deg)";
-        document.querySelector('.stage5__form').style.display = "block";
+        stage.querySelector('.stage__field__icon').style.transform = "rotate(180deg)";
+        stage.querySelector('.stage5__form').style.display = "block";
         check = 1;
       } else {
-        document.querySelector('.stage__field__icon').style.transform = "rotate(0deg)";
-        document.querySelector('.stage5__form').style.display = "none";
+        stage.querySelector('.stage__field__icon').style.transform = "rotate(0deg)";
+        stage.querySelector('.stage5__form').style.display = "none";
         check = 0;
       }
     });

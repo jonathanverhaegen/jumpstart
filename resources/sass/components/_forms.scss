@@ -114,8 +114,14 @@ button:hover{
 .form--stage__field{
     margin-top:10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap:20px;
+}
+
+.form--stage__text{
+    font-size: 14px;
+    font-family: $normal;
+    margin-top: -10px;
 }
 
 .form--stage__field__input{
@@ -126,6 +132,15 @@ button:hover{
     font-family: $normal;
 }
 
+.form--stage__field__input::placeholder {
+    color: $blue; /*Change the placeholder color*/
+    opacity: 1; /*Change the opacity between 0 and 1*/
+}
+
+.form--stage__field__radio{
+    color: $blue;
+}
+
 .form--stage__field__btn{
     background-color: $orange;
     border: none;
@@ -133,6 +148,9 @@ button:hover{
     border-radius: 20px 20px 20px 20px;
     color: $white;
     font-family: $normal;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 @media(min-width:800px){

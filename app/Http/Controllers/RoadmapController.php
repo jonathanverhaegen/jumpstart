@@ -368,6 +368,44 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
+    public function checkRegime(Request $request){
+        $credentials = $request->validate([
+            'optie' => 'required',
+        ]);
+        
+        $letter = $request->input('optie');
+        
+        if($letter === 'a'){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->regime = 'a';
+            $roadmap->extra = 4;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Optie A opgeslagen');
+            return redirect('/roadmap');
+        }
+
+        if($letter === 'b'){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->regime = 'b';
+            $roadmap->extra = 4;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Optie B opgeslagen');
+            return redirect('/roadmap');
+        }
+
+        if($letter === 'c'){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->regime = 'c';
+            $roadmap->extra = 4;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Optie C opgeslagen');
+            return redirect('/roadmap');
+        }
+    }
+
     private function companyInfo($number){
        //soap call doen naar de api van kruispuntbank dankzij de ondernemingsnummer
 

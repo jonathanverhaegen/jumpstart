@@ -350,6 +350,17 @@
   border-radius: 20px 20px 20px 20px;
 }
 
+.stage5Checked {
+  margin-top: 20px;
+  background-color: #E4E8F1;
+  padding: 5%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px 20px 20px 20px;
+  opacity: 0.8;
+}
+
 .stage__field {
   display: grid;
   grid-template-columns: 8fr 4fr;
@@ -725,8 +736,14 @@ button:hover {
 .form--stage__field {
   margin-top: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px;
+}
+
+.form--stage__text {
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  margin-top: -10px;
 }
 
 .form--stage__field__input {
@@ -737,6 +754,31 @@ button:hover {
   font-family: "Lato", sans-serif;
 }
 
+.form--stage__field__input::-moz-placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.form--stage__field__input:-ms-input-placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.form--stage__field__input::placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.form--stage__field__radio {
+  color: #1E3472;
+}
+
 .form--stage__field__btn {
   background-color: #E44402;
   border: none;
@@ -744,6 +786,9 @@ button:hover {
   border-radius: 20px 20px 20px 20px;
   color: white;
   font-family: "Lato", sans-serif;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 800px) {

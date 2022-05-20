@@ -273,21 +273,105 @@
                 <p class="stage__text">Ondernemingsnummer: Check! Btw-nummer: Niet check... Om te mogen factureren voor je zelfstandige activiteit, is het wettelijk verplicht je ook te “identificeren” bij de btw-administratie. Dit is niet zo heel moeilijk, je kan gewoon online een formulier invullen. Voor je dit doet willen we zeker zijn dat je weet wat je waar zal moeten invullen. Hieronder vind je voor elke stap een beetje extra uitleg. Het online formulier kan je hier invullen: <a href="https://eservices.minfin.fgov.be/VAT001/">https://eservices.minfin.fgov.be/VAT001/</a>  Kies voor het formulier E604: AANVRAAG TOT BTW-IDENTIFICATIE.</p>
             </div>
             
+            @if(Auth::user()->roadmap->extra === 0)
             <div class="stage5">
+            @else
+            <div class="stage5Checked">
+            @endif
                 <div class="stage__field">
                         <p class="stage__field__title"><strong>Start</strong></p>
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
                 <div class="stage5__form">
-                    <form class="form--stage" action="" method="post">
-                        <p class="form--stage__title">Vul hier je ondernemingsnummer in zonder puntjes, 10 cijfers</p>
+                    <form class="form--stage" action="/check/stage5/start" method="post">
+                    @csrf
+                        <p class="form--stage__title">Vul hier je naam en ondernemingsnummer in zonder puntjes, 10 cijfers</p>
                         <div class="form--stage__field">
-                            <input class="form--stage__field__input" type="text" name="ondernemingsnummer">
+                            <input class="form--stage__field__input" type="text" name="naam" placeholder="Naam">
+                            <input class="form--stage__field__input" type="text" name="ondernemingsnummer" placeholder="0123456789">
                             <button class="form--stage__field__btn" type="submit">Verstuur</button>
                         </div>
                     </form>
                 </div>
             </div>
+
+            @if(Auth::user()->roadmap->extra === 1)
+            <div class="stage5">
+            @else
+            <div class="stage5Checked">
+            @endif
+                <div class="stage__field">
+                        <p class="stage__field__title"><strong>Adres(sen)</strong></p>
+                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
+                </div>
+                <div class="stage5__form">
+                    <form class="form--stage" action="/check/stage5/adress" method="post">
+                    @csrf
+                        <p class="form--stage__title">Vul het correcte adres in van je administratieve hoofdzetel, dat is hetzelfde adres waarop je je onderneming hebt laten registreren in de KBO. Vul hier ook een correct e-mailadres en telefoonnummer in</p>
+                        <div class="form--stage__field">
+                            <input class="form--stage__field__input" type="text" name="straat" placeholder="Straat">
+                            <input class="form--stage__field__input" type="number" name="nummer" placeholder="Nummer">
+                            <input class="form--stage__field__input" type="number" name="postcode" placeholder="Postcode">
+                            <input class="form--stage__field__input" type="text" name="plaats" placeholder="Plaats">
+                            <input class="form--stage__field__input" type="text" name="email" placeholder="Email">
+                            <input class="form--stage__field__input" type="number" name="telefoonnummer" placeholder="Telefoon">
+                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            @if(Auth::user()->roadmap->extra === 2)
+            <div class="stage5">
+            @else
+            <div class="stage5Checked">
+            @endif
+                <div class="stage__field">
+                        <p class="stage__field__title"><strong>Activiteiten</strong></p>
+                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
+                </div>
+                <div class="stage5__form">
+                    <form class="form--stage" action="/check/stage5/adress" method="post">
+                    @csrf
+                        <p class="form--stage__title">Bij de activiteiten moet je kiezen voor één hoofdactiviteit, dat is de activiteit waarmee je het meeste geld zal verdienen en dus het grootste deel van je omzet zal uitmaken. Duid je hoofdactiviteit aan door naast in de kolom “H” het bolletje aan te klikken</p>
+                        <div class="form--stage__field">
+                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            @if(Auth::user()->roadmap->extra === 3)
+            <div class="stage5">
+            @else
+            <div class="stage5Checked">
+            @endif
+                <div class="stage__field">
+                        <p class="stage__field__title"><strong>Regime</strong></p>
+                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
+                </div>
+                <div class="stage5__form">
+                    <form class="form--stage" action="/check/stage5/regime" method="post">
+                    @csrf
+                        <p class="form--stage__title">In deze stap moet je kiezen welk btw-regime je op jouw onderneming wil toepassen, er zijn een aantal opties, maar in de meeste gevallen zal je kiezen voor optie “B”, “Belastingplichtige onderworpen aan de vrijstellingsregeling van de belasting”.</p>
+                        <div class="form--stage__field">
+                            <div class="form--stage__field__radio"><input type="radio" name="optie" value="a"><label for="a">A. Belastingplichtige gehouden tot het indienen van periodieke btw-aangiften</label></div>
+                            <p class="form--stage__text">Kies je voor deze optie dan ben je verplicht elke maand of elk kwartaal een btw-aangifte in te dienen. Dit is werk voor boekhouders, als je voor deze optie kiest ben je vrijwel altijd genoodzaakt een boekhouder aan te stellen. Als je deze optie kiest, ben je verplicht het correcte btw-percentage aan te rekenen aan de klant, en door te storten aan de btw-administratie. Je krijgt op die manier ook het recht om btw terug te vorderen op elke aankoop die je doet.</p>
+                            
+                            <div class="form--stage__field__radio"><input type="radio" name="optie" value="b"><label for="b">B. Belastingplichtige onderworpen aan de vrijstellingsregeling van de belasting</label></div>
+                            <p class="form--stage__text">Ondernemers met een jaaromzet lager dan 25.000,00 euro kunnen ervoor kiezen om vrijgesteld te worden van hun btw-plicht. Je bent dan wel btw-onderworpen en je hebt een btw-hoedanigheid, maar je hoeft geen (drie)maandelijkse aangifte in te dienen en je klanten geen btw aan te rekenen. Dit is veruit de eenvoudigste optie, je kan helaas geen btw terugvorderen op je aankopen.</p>
+                            
+                            <div class="form--stage__field__radio"><input type="radio" name="optie" value="c"><label for="c">Optie C, D, E en F</label></div>
+                            <p class="form--stage__text">Deze andere opties zijn uitzonderlijke situaties waar je als student-zelfstandige hoogstwaarschijnlijk niet mee te maken zult krijgen. Denk je toch dat één van deze btw-regimes op jou van toepassing zal zijn, lees er hier dan meer over: <a href="https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/btw-regime#q1">https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/btw-regime#q1</a></p>
+
+                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
 
 
 

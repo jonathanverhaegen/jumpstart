@@ -232,15 +232,21 @@
             @csrf
                 <p class="stage__text">Je sociaal verzekeringsfonds zal je ook vragen of zij je identificatie bij de btw-administratie voor jou in orde moeten maken. Ook dit is wettelijk verplicht, maar je kan er ook voor kiezen om dit zelf te doen, dat spaart je ongeveer 70 euro uit. Wil je zelf de identificatie bij de btw-administratie in orde brengen, begeleiden we je graag bij deze stap.</p>
                 <div class="stage__btns">
-                    <a class="stagebtn stagebtn--large stagebtn4" data-extra="1" href="#" >Ik laat mijn identificatie bij de btw-administratie uitvoeren door mijn gekozen sociaal verzekeringsfonds.</a>
-                    <a class="stagebtn stagebtn--large stagebtn4" data-extra="2" href="#" >Ik wil graag zelf mijn identificatie bij de btw-administratie uitvoeren. Let op! Doe dit zo snel na je registratie in de KBO, je mag niet beginnen aan je zelfstandige activiteit voor dit gebeurd is.</a>
+                    <a class="stagebtn4" data-extra="1" href="#" >Ik laat mijn identificatie bij de btw-administratie uitvoeren door mijn gekozen sociaal verzekeringsfonds.</a>
+                    <a class="stagebtn4" data-extra="2" href="#" >Ik wil graag zelf mijn identificatie bij de btw-administratie uitvoeren. Let op! Doe dit zo snel na je registratie in de KBO, je mag niet beginnen aan je zelfstandige activiteit voor dit gebeurd is.</a>
                     <input class="stage4Input" type="hidden" name="extra" value="">
                 </div>
             </form>
+            <form action="/check/number" method="post">
+            @csrf
+                <p class="stage__text">Bijkomende vraag als de vorige is aangeklikt: “Vul je ondernemingsnummer in om aan te tonen dat je jezelf hebt aangesloten bij een sociaal verzekeringsfonds, en je jezelf hebt laten registreren in de KBO. Als je besloten hebt om je identificatie bij de btw-administratie zelf te doen, leggen we je in de volgende stap uit hoe dit moet.</p>
+                <div class="stage__form__number">
+                    <input type="text" class="" name="ondernemingsnummer">
+                    <button type="submit">Verstuur</button>
+                </div>
+            </form>
             @endif
-            @if($roadmap->check === 1)
-            <p class="stage__text">Bijkomende vraag als de vorige is aangeklikt: “Vul je ondernemingsnummer in om aan te tonen dat je jezelf hebt aangesloten bij een sociaal verzekeringsfonds, en je jezelf hebt laten registreren in de KBO. Als je besloten hebt om je identificatie bij de btw-administratie zelf te doen, leggen we je in de volgende stap uit hoe dit moet.</p>
-            @endif
+            
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -249,108 +255,54 @@
                 </div>
             </form>
         </div>
+
+
+
+
+
         
-        <!-- stap 4 nog helemaal uitwerken -->
+        <!-- stap 5 nog helemaal uitwerken -->
         <div class="stage__container stage__container--5">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 5</div>
                 <div class="stage__header__extra"></div>
             </div>
-            <form action="">
             <div class="stage">
                 <p class="stage__title">Btw-administratie</p>
-                <p class="stage__text">Ondernemingsnummer: Check! Btw-nummer: Niet check... Om te mogen factureren voor je zelfstandige activiteit, is het wettelijk verplicht je ook te “identificeren” bij de btw-administratie. Dit is niet zo heel moeilijk, je kan gewoon online een formulier invullen. Voor je dit doet willen we zeker zijn dat je weet wat je waar zal moeten invullen. Hieronder vind je voor elke stap een beetje extra uitleg. Het online formulier kan je hier invullen: <a href="https://eservices.minfin.fgov.be/VAT001/">https://eservices.minfin.fgov.be/VAT001/</a> Kies voor het formulier E604: AANVRAAG TOT BTW-IDENTIFICATIE</p>
+                <p class="stage__text">Ondernemingsnummer: Check! Btw-nummer: Niet check... Om te mogen factureren voor je zelfstandige activiteit, is het wettelijk verplicht je ook te “identificeren” bij de btw-administratie. Dit is niet zo heel moeilijk, je kan gewoon online een formulier invullen. Voor je dit doet willen we zeker zijn dat je weet wat je waar zal moeten invullen. Hieronder vind je voor elke stap een beetje extra uitleg. Het online formulier kan je hier invullen: <a href="https://eservices.minfin.fgov.be/VAT001/">https://eservices.minfin.fgov.be/VAT001/</a>  Kies voor het formulier E604: AANVRAAG TOT BTW-IDENTIFICATIE.</p>
             </div>
-            </form>
-            @if($roadmap->stage === 5 && $roadmap->extra === 0)
-            <form class="form form--vertical" action="check/stage5/start" method="post">
-            @csrf   
-                    <p class="form--vertical__title">Start</p>
-        
-                    <label for="naam">Naam van het bedrijf</label>
-                    <input class="" name="naam" type="text">
-
-                    <label for="ondernemingsnummer">Vul hier je ondernemingsnummer in zonder puntjes, 10 cijfers</label>
-                    <input class="" name="ondernemingsnummer" type="text">
-
-                    <button class="">Inzenden</button>
-            </form>
-            @endif
-            @if($roadmap->stage === 5 && $roadmap->extra === 1)
-            <form class="form form--vertical" action="check/stage5/adress" method="post">
-            @csrf   
-                    <p class="form--vertical__title">Adres(sen)</p>
-                    <p class="form--vertical__text">Vul het correcte adres in van je administratieve hoofdzetel, dat is hetzelfde adres waarop je je onderneming hebt laten registreren in de KBO. Vul hier ook een correct e-mailadres en telefoonnummer in.</p>
-
-                    <label for="straat">Straat</label>
-                    <input class="" name="straat" type="text">
-
-                    <label for="nummer">Nummer</label>
-                    <input class="" name="nummer" type="text">
-
-                    <label for="postcode">Postcode</label>
-                    <input class="" name="postcode" type="text">
-
-                    <label for="plaats">Plaats</label>
-                    <input class="" name="plaats" type="text">
-
-                    <label for="email">Email</label>
-                    <input class="" name="email" type="text">
-
-                    <label for="telefoonnummer">Telefoonnummer</label>
-                    <input class="" name="telefoonnummer" type="text">
-
-                    <button class="">Inzenden</button>
-            </form>
-            @endif
-            @if($roadmap->stage === 5 && $roadmap->extra === 2)
-            <form class="form form--vertical" action="check/stage5/activiteiten" method="post">
-            @csrf   
-                    <p class="form--vertical__title">Activiteiten</p>
-                    <p class="form--vertical__text">Vul het correcte adres in van je administratieve hoofdzetel, dat is hetzelfde adres waarop je je onderneming hebt laten registreren in de KBO. Vul hier ook een correct e-mailadres en telefoonnummer in.</p>
-
-                    <label for="straat">Straat</label>
-                    <input class="" name="straat" type="text">
-
-                    <label for="nummer">Nummer</label>
-                    <input class="" name="nummer" type="text">
-
-                    <label for="postcode">Postcode</label>
-                    <input class="" name="postcode" type="text">
-
-                    <label for="plaats">Plaats</label>
-                    <input class="" name="plaats" type="text">
-
-                    <label for="email">Email</label>
-                    <input class="" name="email" type="text">
-
-                    <label for="telefoonnummer">Telefoonnummer</label>
-                    <input class="" name="telefoonnummer" type="text">
-
-                    <button class="">Inzenden</button>
-            </form>
-            @endif
-            @if($roadmap->stage === 5 && $roadmap->extra === 3)
-            <form class="form form--vertical" action="check/stage5/activiteiten" method="post">
-            @csrf   
-                    <p class="form--vertical__title">Activiteiten</p>
-                    <p class="form--vertical__text">Vul het correcte adres in van je administratieve hoofdzetel, dat is hetzelfde adres waarop je je onderneming hebt laten registreren in de KBO. Vul hier ook een correct e-mailadres en telefoonnummer in.</p>
-
-                    <button class="">Inzenden</button>
-            </form>
-            @endif
-            @if($roadmap->check === 1)
-            <form class="stage__check" action="/check/stage" method="post">
-            @csrf
-                <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
+            
+            <div class="stage5">
+                <div class="stage__field">
+                        <p class="stage__field__title"><strong>Start</strong></p>
+                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
-            </form>
-            @endif
+                <div class="stage5__form">
+                    <form class="form--stage" action="" method="post">
+                        <p class="form--stage__title">Vul hier je ondernemingsnummer in zonder puntjes, 10 cijfers</p>
+                        <div class="form--stage__field">
+                            <input class="form--stage__field__input" type="text" name="ondernemingsnummer">
+                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+
         </div>
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <div class="stage__container stage__container--6">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>

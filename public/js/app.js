@@ -2186,8 +2186,38 @@ if (stageBtn4 !== null) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       var extra = btn.dataset.extra;
-      document.querySelector('.stage4Input').value = extra;
-      document.querySelector('.formStage4').submit();
+      console.log(extra);
+
+      if (extra === "2") {
+        document.querySelector('.stage4Input').value = extra;
+        document.querySelector('.formStage4').submit();
+      } else {
+        document.querySelector('.formStage4').style.display = "none";
+        document.querySelector('.stage__form__number').style.display = "flex";
+      }
+    });
+  });
+} //stage5
+
+
+var stage5 = document.querySelectorAll('.stage5');
+
+if (stage5 !== null) {
+  stage5.forEach(function (stage) {
+    var stageField = stage.querySelector('.stage__field');
+    var check = 0;
+    stageField.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (check === 0) {
+        document.querySelector('.stage__field__icon').style.transform = "rotate(180deg)";
+        document.querySelector('.stage5__form').style.display = "block";
+        check = 1;
+      } else {
+        document.querySelector('.stage__field__icon').style.transform = "rotate(0deg)";
+        document.querySelector('.stage5__form').style.display = "none";
+        check = 0;
+      }
     });
   });
 } //stage6

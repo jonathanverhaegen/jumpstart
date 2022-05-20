@@ -18,6 +18,54 @@ class RoadmapController extends Controller
         return view('roadmap/roadmap', $data);
     }
 
+    public function checkStage(Request $request){
+        //checken of gebruiker al mag checken
+        $roadmap = Auth::user()->roadmap;
+        if($roadmap->check === 0){
+            $request->session()->flash('error', 'Je hebt nog geen keuze gemaakt.');
+            return redirect('/roadmap');
+        }
+        //credentials checken
+        $credentials = $request->validate([
+            'stage' => 'required'
+        ]);
+
+        $stage = intval($request->input('stage'));
+        
+        //volgende stage opslaan
+        $roadmap = Auth::user()->roadmap;
+        if($stage === 4 && $roadmap->extra === 2){
+            $nextStage = 6;
+            $roadmap->stage = $nextStage;
+            $roadmap->check = 0;
+            $roadmap->extra = 0;
+            $roadmap->save();
+            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
+            return redirect('/roadmap');
+        }elseif($roadmap->stage === $stage){
+            $roadmap->stage = $stage + 1;
+            $roadmap->check = 0;
+            $roadmap->extra = 0;
+            $roadmap->save();
+            $nextStage = $stage + 1;
+            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
+            return redirect('/roadmap');
+        }else{
+            $request->session()->flash('message', 'Deze stap is al gechecked');
+            return redirect('/roadmap');
+        }
+    }
+
+    public function checkInputStage6(Request $request){
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->extra = 0;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Je kan nu stap 6 checken');
+        return redirect('/roadmap');
+    }
+
     public function checkIban(Request $request){
         $credentials = $request->validate([
             'iban' => 'required',
@@ -263,54 +311,6 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
-    public function checkStage(Request $request){
-        //checken of gebruiker al mag checken
-        $roadmap = Auth::user()->roadmap;
-        if($roadmap->check === 0){
-            $request->session()->flash('error', 'Je hebt nog geen keuze gemaakt.');
-            return redirect('/roadmap');
-        }
-        //credentials checken
-        $credentials = $request->validate([
-            'stage' => 'required'
-        ]);
-
-        $stage = intval($request->input('stage'));
-        
-        //volgende stage opslaan
-        $roadmap = Auth::user()->roadmap;
-        if($stage === 4 && $roadmap->extra === 1){
-            $nextStage = 6;
-            $roadmap->stage = $nextStage;
-            $roadmap->check = 0;
-            $roadmap->extra = 0;
-            $roadmap->save();
-            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
-            return redirect('/roadmap');
-        }elseif($roadmap->stage === $stage){
-            $roadmap->stage = $stage + 1;
-            $roadmap->check = 0;
-            $roadmap->extra = 0;
-            $roadmap->save();
-            $nextStage = $stage + 1;
-            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
-            return redirect('/roadmap');
-        }else{
-            $request->session()->flash('message', 'Deze stap is al gechecked');
-            return redirect('/roadmap');
-        }
-    }
-
-    public function checkInputStage6(Request $request){
-        $roadmap = Auth::user()->roadmap;
-        $roadmap->check = 1;
-        $roadmap->extra = 0;
-        $roadmap->save();
-
-        $request->session()->flash('success', 'Je kan nu stap 6 checken');
-        return redirect('/roadmap');
-    }
-
     public function checkStart(Request $request){
         $credentials = $request->validate([
             'naam' => 'required|max:255',
@@ -368,13 +368,32 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
-    public function companyInfo(){
+    private function companyInfo($number){
        //soap call doen naar de api van kruispuntbank dankzij de ondernemingsnummer
 
        //company maken in databank en de velden halen uit de soap call
 
-       
+       return $number;
        
     }
-    
+
+    public function checkNumber(Request $request){
+        $credentials = $request->validate([
+            'ondernemingsnummer' => 'required'
+        ]);
+
+        $onderneminsnummer = $request->input('ondernemingsnummer');
+        $res = $this->companyInfo($onderneminsnummer);
+        
+        //company velden invullen
+
+        //roadmap
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->extra = 1;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Ondernemingsnummer is gecontrolleerd, je kan nu stap 4 afchecken');
+        return redirect('/roadmap');
+    }
 }

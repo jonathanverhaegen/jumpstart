@@ -340,6 +340,40 @@
   font-family: "Lato", sans-serif;
 }
 
+.stage5 {
+  margin-top: 20px;
+  background-color: #E4E8F1;
+  padding: 5%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.stage__field {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  align-items: center;
+}
+
+.stage__field:hover {
+  cursor: pointer;
+}
+
+.stage__field__title {
+  font-family: "Montserrat", sans-serif;
+  color: #1E3472;
+}
+
+.stage__field__icon {
+  width: 70%;
+  margin-left: auto;
+}
+
+.stage5__form {
+  display: none;
+}
+
 /*roadmap verdeling */
 .roadmap__stage--1 {
   position: relative;
@@ -390,6 +424,10 @@
 }
 
 .roadmap__next {
+  display: none;
+}
+
+.stage__form__number {
   display: none;
 }
 
@@ -558,6 +596,10 @@
     padding: 2%;
   }
 }
+button:hover {
+  cursor: pointer;
+}
+
 .form--login {
   width: 80%;
   margin-left: auto;
@@ -674,6 +716,34 @@
 .form--vertical__text {
   font-family: "Lato", sans-serif;
   margin-bottom: 20px;
+}
+
+.form--stage {
+  font-family: "Lato", sans-serif;
+}
+
+.form--stage__field {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.form--stage__field__input {
+  background-color: #FAFAFA;
+  padding: 10px;
+  border-radius: 20px 20px 20px 20px;
+  border: none;
+  font-family: "Lato", sans-serif;
+}
+
+.form--stage__field__btn {
+  background-color: #E44402;
+  border: none;
+  padding: 10px;
+  border-radius: 20px 20px 20px 20px;
+  color: white;
+  font-family: "Lato", sans-serif;
 }
 
 @media (min-width: 800px) {

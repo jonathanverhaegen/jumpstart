@@ -1,6 +1,10 @@
 @import '../abstracts/colors';
 @import '../abstracts/fonts';
 
+button:hover{
+    cursor:pointer;
+}
+
 .form--login{
     width:80%;
     margin-left:auto;
@@ -101,6 +105,34 @@
 .form--vertical__text{
     font-family: $normal;
     margin-bottom: 20px;
+}
+
+.form--stage{
+    font-family: $normal;
+}
+
+.form--stage__field{
+    margin-top:10px;
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.form--stage__field__input{
+    background-color: $lightgray;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    border:none;
+    font-family: $normal;
+}
+
+.form--stage__field__btn{
+    background-color: $orange;
+    border: none;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    color: $white;
+    font-family: $normal;
 }
 
 @media(min-width:800px){

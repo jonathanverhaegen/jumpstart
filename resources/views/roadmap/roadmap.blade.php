@@ -98,15 +98,12 @@
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon7">
                 </a>
 
-<<<<<<< HEAD
                 <a @if($roadmap->stage > 7) href="" data-stage="8" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--8">
                     <div class="roadmap__stage__number">8</div>
                     <div class="roadmap__stage__title roadmap__stage__title--right">Student-zelfstandige</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon8">
                 </a>
 
-=======
->>>>>>> 38f40b38c8fe102ed8ab7b61284b1c31c96c00c4
                 <a class="roadmap__next" href="">
                     <img class="nextBtn" src="{{asset('/img/knop3.png')}}" alt="">
                 </a>

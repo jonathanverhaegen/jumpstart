@@ -436,8 +436,33 @@ class RoadmapController extends Controller
 
         $request->session()->flash('success', $number.' opgeslagen');
         return redirect('/roadmap');
+    }
 
+    public function checkHandtekening(Request $request){
+        $credentials = $request->validate([
+            'naam' => 'required',
+            'hoedanigheid' => 'required'
+        ]);
 
+        $name = $request->input('naam');
+        $hoedanigheid = strtolower($request->input('hoedanigheid'));
+
+        if($name !== Auth::user()->name){
+            $request->session()->flash('error', 'Andere naam opgegeven dan op je account staat');
+            return redirect('/roadmap');
+        }
+
+        if($hoedanigheid !== "oprichter van een geregistreerde entiteit-natuurlijk persoon"){
+            $request->session()->flash('error', 'Hoedanigheid is niet correct');
+            return redirect('/roadmap');
+        }
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 6;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Handtekening opgeslagen');
+        return redirect('/roadmap');
     }
 
     private function companyInfo($number){

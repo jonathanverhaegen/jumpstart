@@ -331,13 +331,38 @@
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
                 <div class="stage5__form">
-                    <form class="form--stage" action="/check/stage5/adress" method="post">
-                    @csrf
-                        <p class="form--stage__title">Bij de activiteiten moet je kiezen voor één hoofdactiviteit, dat is de activiteit waarmee je het meeste geld zal verdienen en dus het grootste deel van je omzet zal uitmaken. Duid je hoofdactiviteit aan door naast in de kolom “H” het bolletje aan te klikken</p>
-                        <div class="form--stage__field">
-                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
+
+                    
+                   
+                        @foreach($categories as $cat)
+                        <div class="category__container">
+                            
+                            <div class="category">
+                            <p class="category__text">{{$cat->name}}</p>
+                            <img class="category__icon" src="/img/uitklappen.png" alt="uitklappen">
+                            </div>
+
+                            @foreach($cat->subcategories as $sub)
+                            <div class="subcategory__container">
+                                <div class="subcategory">
+                                    <p class="category__text">{{$sub->name}}</p>
+                                    <img class="category__icon" src="/img/uitklappen.png" alt="uitklappen">
+                                </div>
+
+                                @foreach($sub->activities as $ac)
+                                <div class="activity__container">
+                                    <div class="activity">
+                                        <p class="activity__text">{{$ac->code}}-{{$ac->name}}</p>
+                                        <img class="activity__icon" src="/img/unchecked.png" alt="uitklappen">
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            @endforeach
                         </div>
-                    </form>
+                        @endforeach
+                    
+                    
                 </div>
             </div>
 

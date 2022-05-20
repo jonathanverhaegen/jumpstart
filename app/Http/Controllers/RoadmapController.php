@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Company;
 use App\Models\Roadmap;
 use Illuminate\Http\Request;
@@ -12,9 +13,9 @@ use SoapClient;
 class RoadmapController extends Controller
 {
     public function roadmap(){
-        
         $data['user'] = Auth::user();
         $data['roadmap'] = Auth::user()->roadmap;
+        $data['categories'] = Category::get();
         return view('roadmap/roadmap', $data);
     }
 

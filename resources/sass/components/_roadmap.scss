@@ -321,6 +321,67 @@
 
 
 
+.category__container{
+    background-color: $white;
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.category{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    align-items: center;
+}
+
+.category__text{
+    font-family: $normal;
+    color: $blue;
+}
+
+.category__icon{
+    width: 70%;
+    margin-left: auto;
+}
+
+.subcategory__container{
+    background-color: $gray;
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.subcategory{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    align-items: center;
+}
+
+.activity__container{
+    background-color: $lightblue;
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.activity{
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    align-items: center;
+}
+
+.activity__text{
+    font-family: $normal;
+    color: $blue;
+}
+
+.activity__icon{
+    margin-left: auto;
+}
+
+
+
+
 @media(min-width:800px){
     .roadmap{
         background-image: url('/img/map.png');

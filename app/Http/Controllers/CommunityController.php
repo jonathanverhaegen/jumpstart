@@ -32,6 +32,7 @@ class CommunityController extends Controller
 
     public function communityEdit(){
         $data['groups'] = Group::get();
+        $data['usersgroups'] = UsersGroup::where('user_id', Auth::id())->get();
         return view('community/edit', $data);
     }
 

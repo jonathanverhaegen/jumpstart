@@ -17,7 +17,19 @@
                                 <div class="activity__container">
                                     <div class="activity" wire:click="add({{$ac->id}})">
                                         <p class="activity__text">{{$ac->code}}-{{$ac->name}}</p>
-                                        <img class="activity__icon" src="/img/unchecked.png" alt="uitklappen">
+                                        @if(!empty($ac->briefjes[0]))
+                                            @foreach($ac->briefjes as $b)
+                                                @if($b->user_id === Auth::id())
+                                                    <img class="activity__icon" src="/img/checked.png" alt="uitklappen">
+                                                @endif
+                                            @endforeach
+                                        @else
+                                        <img class="activity__icon" src="/img/unchecked.png" alt="uitklappen"> 
+                                        @endif
+
+                                        
+                                        
+                                        
                                     </div>
                                 </div>
                                 @endforeach

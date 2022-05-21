@@ -2262,46 +2262,70 @@ if (categoryContainers !== null) {
           });
           check2 = 0;
         }
-      }); // let acContainer = sub.querySelectorAll('.activity__container');
-      // console.log(acContainer);
-      // acContainer.forEach((ac) => {
-      //     let activity = ac.querySelector('.activity');
-      //     let check3 = 0;
-      //     activity.addEventListener('click', (e) => {
-      //         if(check3 === 0){
-      //             ac.querySelector('.activity__icon').src = "/img/checked.png";
-      //             let name = ac.querySelector('.activity__text').innerHTML;
-      //             //name toevoegen aan briefje
-      //             let briefje = document.querySelector('.briefje');
-      //             let activityContainer = document.createElement("div");
-      //             activityContainer.classList.add('activity__container--visible');
-      //             let activity = document.createElement("div");
-      //             activity.classList.add('activity');
-      //             let activityText = document.createElement("p");
-      //             let activityIcon = document.createElement("img");
-      //             activityText.classList.add('activity__text');
-      //             activityIcon.classList.add('activity__icon');
-      //             activityText.innerHTML = name;
-      //             activityIcon.src = "/img/checked.png";
-      //             activity.appendChild(activityText);
-      //             activity.appendChild(activityIcon);
-      //             activityContainer.appendChild(activity);
-      //             briefje.appendChild(activityContainer);
-      //             check3 = 1;
-      //         }else{
-      //             ac.querySelector('.activity__icon').src = "/img/unchecked.png";
-      //             let name = ac.querySelector('.activity__text').innerHTML;
-      //             let activityContainer = document.querySelectorAll('.activity__container--visible');
-      //             activityContainer.forEach((ac) => {
-      //                 let text = ac.querySelector('.activity__text').innerHTML;
-      //                 if(text === name){
-      //                     document.querySelector('.briefje').removeChild(ac);
-      //                 }
-      //             })
-      //             check3 = 0;
-      //         }
-      //     })
-      // })
+      });
+      var acContainer = sub.querySelectorAll('.activity__container');
+      console.log(acContainer);
+      acContainer.forEach(function (ac) {
+        var activity = ac.querySelector('.activity');
+        var check3 = 0;
+        activity.addEventListener('click', function (e) {
+          if (check3 === 0) {
+            ac.querySelector('.activity__icon').src = "/img/checked.png";
+            var name = ac.querySelector('.activity__text').innerHTML; //name toevoegen aan briefje
+
+            var briefje = document.querySelector('.briefje');
+            var activityContainer = document.createElement("div");
+            activityContainer.classList.add('activity__container--visible');
+
+            var _activity = document.createElement("div");
+
+            _activity.classList.add('activity');
+
+            var activityText = document.createElement("p");
+            var activityIcon = document.createElement("img");
+            activityText.classList.add('activity__text');
+            activityIcon.classList.add('activity__icon');
+            activityText.innerHTML = name;
+            activityIcon.src = "/img/checked.png";
+
+            _activity.appendChild(activityText);
+
+            _activity.appendChild(activityIcon);
+
+            activityContainer.appendChild(_activity);
+            briefje.appendChild(activityContainer); //toevoegen aan database
+
+            var formData = new FormData();
+            formData.append('name', name);
+            fetch('jumpstart.test/briefjeAdd', {
+              method: 'POST',
+              body: formData
+            }).then(function (response) {
+              return response.json();
+            }).then(function (result) {
+              console.log('Success:', result);
+            })["catch"](function (error) {
+              console.error('Error:', error);
+            });
+            check3 = 1;
+          } else {
+            ac.querySelector('.activity__icon').src = "/img/unchecked.png";
+            var _name = ac.querySelector('.activity__text').innerHTML;
+
+            var _activityContainer = document.querySelectorAll('.activity__container--visible');
+
+            _activityContainer.forEach(function (ac) {
+              var text = ac.querySelector('.activity__text').innerHTML;
+
+              if (text === _name) {
+                document.querySelector('.briefje').removeChild(ac); //uit database verwijderen
+              }
+            });
+
+            check3 = 0;
+          }
+        });
+      });
     });
   });
 } //clicked on briefje

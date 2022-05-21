@@ -241,6 +241,9 @@ if(categoryContainers !== null){
                         activityContainer.appendChild(activity);
                         briefje.appendChild(activityContainer);
 
+                        //toevoegen aan formulier
+                        
+
                         check3 = 1;
                     }else{
                         ac.querySelector('.activity__icon').src = "/img/unchecked.png";
@@ -251,6 +254,8 @@ if(categoryContainers !== null){
                             let text = ac.querySelector('.activity__text').innerHTML;
                             if(text === name){
                                 document.querySelector('.briefje').removeChild(ac);
+
+                                
                             }
                         })
 

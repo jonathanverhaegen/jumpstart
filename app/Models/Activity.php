@@ -12,6 +12,6 @@ class Activity extends Model
     protected $with = ["briefjes"];
 
     public function briefjes(){
-        return $this->belongsTo(\App\Models\Briefje::class);
+        return $this->hasMany(\App\Models\Briefje::class);
     }
 }

@@ -13,6 +13,7 @@ class AddBriefje extends Component
     public function add($id){
         $check = Briefje::where('activity_id', $id)->where('user_id', Auth::id())->first();
         
+        
         if($check === null){
             $briefje = new Briefje();
             $briefje->user_id = Auth::id();
@@ -24,7 +25,8 @@ class AddBriefje extends Component
     public function render()
     {
         return view('livewire.add-briefje', [
-            'categories' => Category::get()
+            'categories' => Category::get(),
+            'briefjes' => Briefje::where('user_id', Auth::id())->get()
         ]);
     }
 }

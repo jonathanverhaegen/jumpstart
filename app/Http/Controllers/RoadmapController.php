@@ -514,4 +514,14 @@ class RoadmapController extends Controller
         $request->session()->flash('success', 'Ondernemingsnummer is gecontrolleerd, je kan nu stap 4 afchecken');
         return redirect('/roadmap');
     }
+
+    public function saveBriefje(Request $request){
+        $response =[
+            'status' => 'success',
+            'message' => 'briefje saved'
+        ];
+    
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
 }

@@ -2293,20 +2293,15 @@ if (categoryContainers !== null) {
             _activity.appendChild(activityIcon);
 
             activityContainer.appendChild(_activity);
-            briefje.appendChild(activityContainer); //toevoegen aan database
+            briefje.appendChild(activityContainer); //toevoegen aan formulier
 
-            var formData = new FormData();
-            formData.append('name', name);
-            fetch('jumpstart.test/briefjeAdd', {
-              method: 'POST',
-              body: formData
-            }).then(function (response) {
-              return response.json();
-            }).then(function (result) {
-              console.log('Success:', result);
-            })["catch"](function (error) {
-              console.error('Error:', error);
-            });
+            var form = document.querySelector('.briefjeAdd');
+            console.log(form);
+            input = document.createElement('input');
+            input.name = "brief";
+            input.type = "hidden";
+            input.value = name;
+            form.appendChild(input);
             check3 = 1;
           } else {
             ac.querySelector('.activity__icon').src = "/img/unchecked.png";
@@ -2318,7 +2313,7 @@ if (categoryContainers !== null) {
               var text = ac.querySelector('.activity__text').innerHTML;
 
               if (text === _name) {
-                document.querySelector('.briefje').removeChild(ac); //uit database verwijderen
+                document.querySelector('.briefje').removeChild(ac);
               }
             });
 

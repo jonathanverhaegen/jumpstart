@@ -242,7 +242,15 @@ if(categoryContainers !== null){
                         briefje.appendChild(activityContainer);
 
                         //toevoegen aan formulier
-                        
+                        let form = document.querySelector('.briefjeAdd');
+                        console.log(form);
+                        input = document.createElement('input');
+                        input.name = "brief";
+                        input.type = "hidden";
+                        input.value = name;
+
+                        form.appendChild(input);
+
 
                         check3 = 1;
                     }else{

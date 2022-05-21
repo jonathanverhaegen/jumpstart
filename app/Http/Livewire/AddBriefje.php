@@ -9,11 +9,16 @@ use Livewire\Component;
 
 class AddBriefje extends Component
 {
+    
     public function add($id){
-        $briefje = new Briefje();
-        $briefje->user_id = Auth::id();
-        $briefje->activity_id = $id;
-        $briefje->save();
+        $check = Briefje::where('activity_id', $id)->where('user_id', Auth::id())->first();
+        
+        if($check === null){
+            $briefje = new Briefje();
+            $briefje->user_id = Auth::id();
+            $briefje->activity_id = $id;
+            $briefje->save();
+        }
     }
 
     public function render()

@@ -331,6 +331,7 @@
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
                 <div class="stage5__form"> 
+                    <livewire:add-briefje /> 
                     <livewire:briefje /> 
                 </div>
             </div>

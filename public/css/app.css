@@ -713,6 +713,21 @@
     z-index: 0;
   }
 
+  .roadmap__back {
+    width: 181px;
+    height: 181px;
+    display: none;
+    justify-content: center;
+    position: relative;
+    margin-top: -500px;
+    margin-left: 340px;
+    z-index: 0;
+  }
+
+  .roadmap__back img {
+    transform: scale(-1);
+  }
+
   .stage__btns {
     margin-top: 30px;
     display: grid;

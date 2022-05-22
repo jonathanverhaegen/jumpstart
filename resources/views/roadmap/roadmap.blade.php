@@ -81,19 +81,19 @@
                 </a>
 
                 <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--5">
-                    <div class="roadmap__stage__title roadmap__stage__title--left">Bank</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--left">Sociaal verzekeringsfonds</div>
                     <div class="roadmap__stage__number">5</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5">
                 </a>
 
                 <a @if($roadmap->stage > 5) href="" data-stage="6" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--6">
                     <div class="roadmap__stage__number">6</div>
-                    <div class="roadmap__stage__title roadmap__stage__title--right">Btw-administratie</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--right">Ondernemingsnummer</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon6">
                 </a>
 
                 <a @if($roadmap->stage > 6) href="" data-stage="7" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--7">
-                    <div class="roadmap__stage__title roadmap__stage__title--left">Ondernemingsnummer</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--left">Student-zelfstandige</div>
                     <div class="roadmap__stage__number">7</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon7">
                 </a>

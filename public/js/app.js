@@ -2086,7 +2086,7 @@ if (roadmapBtns !== null) {
       stap.style.display = "block";
     });
   });
-} //stage back 
+} // stage back 
 
 
 var stageBackBtn = document.querySelector('.stage__header__back');
@@ -2164,7 +2164,6 @@ if (toggleNextBtn !== null) {
     stage8.style.display = "flex";
     toggleNext = 1;
   });
-
 } //faqs open
 
 
@@ -2189,7 +2188,6 @@ if (faqs !== null) {
       }
     });
   });
-
 } //stage3
 
 
@@ -2372,7 +2370,6 @@ if (stageBtn6 !== null) {
       document.querySelector('.formStage6').submit();
     });
   });
-
 }
 
 /***/ }),

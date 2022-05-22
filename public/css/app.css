@@ -442,7 +442,6 @@
   display: none;
 }
 
-
 .stengel__icon1 {
   width: 0px;
   height: 0px;
@@ -481,6 +480,7 @@
 .stengel__icon8 {
   width: 0px;
   height: 0px;
+}
 
 .stage__form__number {
   display: none;
@@ -582,7 +582,6 @@
   font-size: 16px;
   margin-top: 10px;
   margin-bottom: 20px;
-
 }
 
 @media (min-width: 800px) {
@@ -1286,10 +1285,9 @@ button:hover {
   padding-left: 0px;
 }
 
-
 .bio__container {
   width: 516.59px;
-  }
+}
 
 .info__container {
   width: 350px;

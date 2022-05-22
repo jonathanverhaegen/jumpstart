@@ -23,7 +23,7 @@ if(roadmapBtns !== null){
     });
 }
 
-//stage back 
+// stage back 
 
 let stageBackBtn = document.querySelector('.stage__header__back');
 
@@ -131,7 +131,14 @@ if(faqs !== null){
                 check = 0;
                 answer.style.display = "none";
             }
-   }
+        });
+    });
+}
+        
+
+
+   
+
 
 //stage3
 
@@ -307,8 +314,8 @@ if(categoryContainers !== null){
 
         
     })
-}
 
+}
 
 
 //stage6
@@ -318,7 +325,7 @@ if(stageBtn6 !== null){
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             document.querySelector('.formStage6').submit();
-
         })
     })
 }
+        

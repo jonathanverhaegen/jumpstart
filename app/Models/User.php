@@ -51,6 +51,7 @@ class User extends Authenticatable
 
     public function usersgroups(){
         return $this->hasMany(\App\Models\UsersGroup::class);
+    }
 
     public function company(){
         return $this->hasOne(\App\Models\Company::class);

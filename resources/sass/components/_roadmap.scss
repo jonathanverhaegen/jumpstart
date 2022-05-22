@@ -352,8 +352,6 @@
     
 }
 
-
-
 .category__container{
     background-color: $white;
     padding: 10px 15px 10px 15px;
@@ -456,6 +454,7 @@
 
 
 
+
 @media(min-width:800px){
     .roadmap{
         background-image: url('/img/map.png');
@@ -463,7 +462,6 @@
         background-position: left;
         margin-top: 50px;
         height: 647px;
-        
     }
 
     .roadmap__stage--1{

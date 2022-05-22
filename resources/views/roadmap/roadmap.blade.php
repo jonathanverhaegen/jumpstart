@@ -164,7 +164,7 @@
 
             @if($roadmap->stage === 2 && $roadmap->check === 0)
             <div class="stage__btns">
-                <form action="/check/link" method="post">
+                <form class="stage2Form" action="/check/link" method="post">
                 @csrf
                     <input type="hidden" name="link" value="https://www.liantis.be/nacebel/nl">
                     <button class="stagebtn" type="submit">Liantis</button>
@@ -513,24 +513,12 @@
                 </div>
             </form>
             @endif
-
-
-
         </div>
 
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <div class="stage__container stage__container--6">
             <div class="stage__header">
-                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
+                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
                 <div class="stage__header__stap">Stap 6</div>
                 <div class="stage__header__extra"></div>
             </div>

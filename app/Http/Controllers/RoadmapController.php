@@ -472,7 +472,7 @@ class RoadmapController extends Controller
             $roadmap->extra = 7;
             $roadmap->check = 1;
             $roadmap->save();
-            $request->session()->flash('success', 'Je hebt bevestigd');
+            $request->session()->flash('success', 'Je hebt bevestigd en kan nu stap 5 checken');
             return redirect('/roadmap');
         }else{
             $request->session()->flash('error', 'Bevesteging is noodzakelijk');

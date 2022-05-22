@@ -348,12 +348,6 @@
     height: 0px;
 }
 
-.stage__form__number{
-    display:none;
-    
-}
-
-
 
 .category__container{
     background-color: $white;
@@ -453,6 +447,27 @@
     margin-bottom:20px;
 }
 
+.briefjeAdd{
+    display:flex;
+    justify-content: center;
+}
+
+.briefjeAdd button{
+    text-decoration: none;
+    text-align: center;
+    background-color: #E44402;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 35px;
+    padding: 5%;
+    font-size: 14px;
+    border: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:10px;
+}
+
 .roadmap__back{
     display:none;
 }
@@ -467,19 +482,25 @@
 }
 
 .stage__form__number{
-    margin-top: 20px;
-    gap: 20px;
-    grid-template-columns: 8fr 4fr;
-    width: 90%;
+    margin-top: 30px;
+    flex-direction: column;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 75px;
+    display: none;
 }
 
 
 .stage__form__number__input{
     border: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #EAEDF3;
-    padding: 2%;
+    padding: 5%;
     border-radius: 35px;
     color: #1E3472;
 }
@@ -490,14 +511,27 @@
 }
 
 .stage__form__number button{
-    border:none;
-    background-color: $orange;
-    font-family: $title;
-    color: $white;
-    border-radius: 25px;
-    width:80%;
-    margin-left:auto;
-    margin-right:auto;
+    text-decoration: none;
+    text-align: center;
+    background-color: #E44402;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 35px;
+    padding: 5%;
+    font-size: 20px;
+    border: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+@media(max-width:800px){
+    .stage2Form{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 
@@ -723,6 +757,40 @@
 
     .stagebtn6{
         padding: 2%;
+    }
+
+    .stage__form__number{
+        flex-direction: row;
+        width:100%;
+    }
+    
+    
+    .stage__form__number__input{
+        padding: 1%;
+        width: 60%;
+    }
+    
+    
+    
+    .stage__form__number button{
+        padding: 1%;
+        width: 20%;
+    }
+
+    .briefjeAdd button{
+        text-decoration: none;
+        text-align: center;
+        background-color: #E44402;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        border-radius: 35px;
+        padding: 2%;
+        font-size: 14px;
+        border: none;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom:10px;
     }
     
 }

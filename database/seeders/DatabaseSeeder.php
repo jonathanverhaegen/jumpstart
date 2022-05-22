@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             GroupSeeder::class,
             UserGroupSeeder::class,
             FaqSeeder::class,
-            UserSeeder::class,
             CategorySeeder::class,
             SubcategorySeeder::class,
             ActivitySeeder::class,

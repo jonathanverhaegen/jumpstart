@@ -51,7 +51,16 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/inputStage3', [RoadmapController::class, "checkInputStage3"]);
     Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
     Route::post('/check/inputStage6', [RoadmapController::class, "checkInputStage6"]);
-    Route::post('check/stage5/start', [RoadmapController::class, "checkStart"]);
+    Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
+    Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
+    Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);
+    Route::post('/check/stage5/rekening', [RoadmapController::class, "checkRekening"]);
+    Route::post('/check/stage5/handtekening', [RoadmapController::class, "checkHandtekening"]);
+    Route::post('/check/stage5/bevestig', [RoadmapController::class, "checkBevestig"]);
+    Route::post('/check/number', [RoadmapController::class, "checkNumber"]);
+    Route::post('/add/briefje', [RoadmapController::class, "addBriefje"]);
+    Route::post('/delete/briefje', [RoadmapController::class, "deleteBriefje"]);
+    
     
 
     //routes van de community
@@ -64,7 +73,9 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes vab de contacten
     Route::get('/contacten', [ContactController::class, "contacten"]);
+    Route::get('/contacten/instantie/{id}', [ContactController::class, "instantieDetail"]);
     Route::get('/contacten/{id}', [ContactController::class, "contactenDetail"]);
+    
 
     //routes van de instellingen
     Route::get('/instellingen', [SettingsController::class, "settings"]);

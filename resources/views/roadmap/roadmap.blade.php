@@ -285,7 +285,7 @@
                 <p class="stage__text">Ondernemingsnummer: Check! Btw-nummer: Niet check... Om te mogen factureren voor je zelfstandige activiteit, is het wettelijk verplicht je ook te “identificeren” bij de btw-administratie. Dit is niet zo heel moeilijk, je kan gewoon online een formulier invullen. Voor je dit doet willen we zeker zijn dat je weet wat je waar zal moeten invullen. Hieronder vind je voor elke stap een beetje extra uitleg. Het online formulier kan je hier invullen: <a href="https://eservices.minfin.fgov.be/VAT001/">https://eservices.minfin.fgov.be/VAT001/</a>  Kies voor het formulier E604: AANVRAAG TOT BTW-IDENTIFICATIE.</p>
             </div>
             
-            @if(Auth::user()->roadmap->extra === 0)
+            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 0)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -307,7 +307,7 @@
                 </div>
             </div>
 
-            @if(Auth::user()->roadmap->extra === 1)
+            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 1)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -333,7 +333,7 @@
                 </div>
             </div>
 
-            @if(Auth::user()->roadmap->extra > 1)
+            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra > 1)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -409,7 +409,7 @@
                 </div>
             </div>
 
-            @if(Auth::user()->roadmap->extra === 3)
+            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 3)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -439,7 +439,7 @@
                 </div>
             </div>
 
-            @if(Auth::user()->roadmap->extra === 4)
+            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 4)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -482,7 +482,7 @@
                 </div>
             </div>
 
-            @if(Auth::user()->roadmap->extra === 6)
+            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 6)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -504,7 +504,7 @@
                 </div>
             </div>
             
-            @if(Auth::user()->roadmap->check === 1)
+            @if($roadmap->stage === 5 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">

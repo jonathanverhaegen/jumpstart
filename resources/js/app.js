@@ -22,6 +22,19 @@ if(headerLinks !== null){
     })
 }
 
+//logout
+let logoutBtn = document.querySelectorAll('.btn--logout');
+if(logoutBtn !== null){
+    logoutBtn.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('test');
+            window.location.href = "/logout";
+        })
+    })
+    
+}
+
 //roadmap
 
 let roadmapBtns = document.querySelectorAll('.roadmap__stage');

@@ -1,6 +1,10 @@
 @import '../abstracts/colors';
 @import '../abstracts/fonts';
 
+button:hover{
+    cursor:pointer;
+}
+
 .form--login{
     width:80%;
     margin-left:auto;
@@ -83,6 +87,70 @@
 .form--login__link a{
     text-decoration: none;
     color: $orange;
+}
+
+.form--vertical{
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 20px;
+}
+
+.form--vertical__title{
+    font-family: $normal;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form--vertical__text{
+    font-family: $normal;
+    margin-bottom: 20px;
+}
+
+.form--stage{
+    font-family: $normal;
+}
+
+.form--stage__field{
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.form--stage__text{
+    font-size: 14px;
+    font-family: $normal;
+    margin-top: -10px;
+}
+
+.form--stage__field__input{
+    background-color: $lightgray;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    border:none;
+    font-family: $normal;
+}
+
+.form--stage__field__input::placeholder {
+    color: $blue; /*Change the placeholder color*/
+    opacity: 1; /*Change the opacity between 0 and 1*/
+}
+
+.form--stage__field__radio{
+    color: $blue;
+}
+
+.form--stage__field__btn{
+    background-color: $orange;
+    border: none;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    color: $white;
+    font-family: $normal;
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 @media(min-width:800px){

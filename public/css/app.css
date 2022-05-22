@@ -936,7 +936,7 @@ button:hover {
   margin-top: 25px;
   margin-bottom: 25px;
   padding-top: 25px;
-  height: 575px;
+  height: 580px;
 }
 
 .contact {
@@ -950,13 +950,12 @@ button:hover {
   background-position: center;
   background-repeat: no-repeat;
   height: 150px;
-  width: 450px;
+  width: 300px;
 }
 
 .contact__blok {
   text-decoration: none;
   color: #13204A;
-  padding: 20px 60px 20px 40px;
   border-radius: 10px 10px 10px 10px;
   margin: 10px auto 10px auto;
   text-align: left;
@@ -977,7 +976,7 @@ button:hover {
   margin-top: 25px;
   margin-bottom: 25px;
   padding-top: 25px;
-  height: 625px;
+  height: 545px;
 }
 
 .title {
@@ -999,8 +998,8 @@ button:hover {
   border-radius: 20px 20px 20px 20px;
   background-position: center;
   background-repeat: no-repeat;
-  height: 250px;
-  width: 450px;
+  height: 205px;
+  width: 300px;
 }
 
 .contact__blok__zoek {
@@ -1008,7 +1007,6 @@ button:hover {
   text-decoration: none;
   color: #13204A;
   border-radius: 10px 10px 10px 10px;
-  padding: 20px 60px 20px 40px;
   margin: 10px 0px 10px 90px;
   text-align: left;
 }
@@ -1018,19 +1016,19 @@ button:hover {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #E44402;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .contact__zoek__mail {
   font-family: "Lato", sans-serif;
   color: #13204A;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .contact__zoek__link {
   font-family: "Lato", sans-serif;
   color: #13204A;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   flex-direction: row;
   text-decoration: none;
@@ -1047,20 +1045,32 @@ button:hover {
   flex-direction: row;
   max-width: 20%;
   max-height: 20%;
-  margin-top: -100px;
+  margin-top: -90px;
   margin-left: 0px;
-  padding-top: 105px;
+  padding-top: 100px;
   padding-left: 0px;
 }
 
-.icon {
+.icon2 {
+  float: left;
+  display: flex;
+  flex-direction: row;
+  max-width: 20%;
+  max-height: 20%;
+  margin-top: -145px;
+  margin-left: -43px;
+  padding-top: 145px;
+  padding-left: 0px;
+}
+
+.icon3 {
   float: left;
   display: flex;
   flex-direction: row;
   max-width: 20%;
   max-height: 20%;
   margin-top: -150px;
-  margin-left: -52px;
+  margin-left: 0px;
   padding-top: 145px;
   padding-left: 0px;
 }
@@ -1068,20 +1078,20 @@ button:hover {
 .pic1 {
   float: left;
   margin-bottom: 0px;
-  margin-left: -90px;
-  padding-top: 0px;
+  margin-left: -75px;
+  margin-top: -10px;
 }
 
 .pic2 {
   float: left;
   margin-top: -10px;
   margin-bottom: 0px;
-  margin-left: -90px;
+  margin-left: -75px;
   padding-top: -10px;
 }
 
 .detail__container__base {
-  width: 516.59px;
+  width: 350px;
   height: 200px;
   background-color: #CBD3E6;
   border-radius: 20px 20px 20px 20px;
@@ -1105,8 +1115,8 @@ button:hover {
   text-decoration: none;
   color: #13204A;
   border-radius: 10px 10px 10px 10px;
-  padding: 20px 60px 20px 40px;
-  margin: -10px 0px 10px 90px;
+  padding: 20px 0px 20px 0px;
+  margin: -10px 0px 10px 130px;
   text-align: left;
 }
 
@@ -1122,7 +1132,7 @@ button:hover {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #E44402;
-  font-size: 25px;
+  font-size: 20px;
   margin-bottom: 10px;
   margin-left: 10px;
 }
@@ -1130,7 +1140,7 @@ button:hover {
 .detail__functie {
   font-family: "Lato", sans-serif;
   color: #13204A;
-  font-size: 20px;
+  font-size: 18px;
   margin-left: 10px;
 }
 
@@ -1140,8 +1150,8 @@ button:hover {
   flex-direction: row;
   max-width: 25%;
   max-height: 25%;
-  margin-top: -100px;
-  margin-left: -10px;
+  margin-top: -48px;
+  margin-left: -5px;
   padding-top: 95px;
   padding-left: 0px;
 }
@@ -1164,14 +1174,14 @@ button:hover {
   flex-direction: row;
   max-width: 20%;
   max-height: 20%;
-  margin-top: -170px;
-  margin-left: 140px;
+  margin-top: -150px;
+  margin-left: 100px;
   padding-top: 105px;
   padding-left: 0px;
 }
 
 .info__container {
-  width: 516.59px;
+  width: 350px;
   height: 500px;
   background-color: #FAFAFA;
   border-radius: 20px 20px 20px 20px;
@@ -1188,7 +1198,7 @@ button:hover {
   color: #13204A;
   font-size: 20px;
   margin-left: 33.3px;
-  margin-top: 30px;
+  margin-top: 10px;
   padding-bottom: 10px;
 }
 
@@ -1209,7 +1219,7 @@ button:hover {
   color: #13204A;
   font-size: 20px;
   margin-left: 33.3px;
-  margin-top: 30px;
+  margin-top: 15px;
   padding-bottom: 10px;
 }
 
@@ -1220,7 +1230,7 @@ button:hover {
   max-width: 20%;
   max-height: 20%;
   margin-left: 20px;
-  margin-top: -25px;
+  margin-top: -12px;
 }
 
 .icon__clock {
@@ -1229,7 +1239,8 @@ button:hover {
   flex-direction: row;
   max-width: 20%;
   max-height: 20%;
-  margin-left: -95px;
+  margin-left: -70px;
+  margin-top: 0px;
 }
 
 .day {
@@ -1240,35 +1251,38 @@ button:hover {
   margin-right: 20px;
   margin-top: 10px;
   padding-bottom: 10px;
-  line-height: 20pt;
 }
 
 .hour {
   font-family: "Lato", sans-serif;
   color: #13204A;
   font-size: 18px;
-  margin-left: 33.3px;
-  margin-right: 20px;
-  margin-top: 35px;
+  margin-left: 85px;
+  margin-right: 0px;
+  margin-top: 25px;
   padding-bottom: 10px;
-  line-height: 20pt;
 }
 
 @media (min-width: 800px) {
   .contact__container {
-    height: 410px;
+    height: 220px;
     margin-top: 50px;
   }
 
   .contact {
     float: left;
-    margin-left: 25px;
+    margin-left: 30px;
     margin-right: 0px;
+    width: 282px;
+  }
+
+  .contact__blok__title {
+    font-size: 23px;
   }
 
   .contact__container__zoek {
     margin-top: 50px;
-    height: 350px;
+    height: 379px;
   }
 
   .pic1 {
@@ -1277,7 +1291,7 @@ button:hover {
 
   .contact__zoek {
     float: left;
-    margin-left: 25px;
+    margin-left: 30px;
     margin-right: 0px;
   }
 
@@ -1290,23 +1304,38 @@ button:hover {
     margin-top: 50px;
     margin-bottom: 25px;
     padding-top: 25px;
-    height: 810px;
+    height: 649px;
   }
 
   .detail__container__base {
-    margin-top: 50px;
+    margin-top: 23px;
+  }
+
+  .info__container {
+    width: 500px;
+    height: 350px;
+    margin: 20px auto 10px auto;
+    padding: 0px;
   }
 
   .bio {
-    margin-top: 0px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .bio__inhoud {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .tijd {
     margin-bottom: 10px;
+    margin-left: 10px;
   }
 
   .icon__cal {
-    margin-top: -20px;
+    margin-top: -10px;
+    margin-left: -8px;
   }
 
   .day {
@@ -1319,6 +1348,7 @@ button:hover {
 
   .hour {
     padding-top: 5px;
+    margin-left: 60px;
   }
 }
 .comm__container {

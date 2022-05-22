@@ -14,6 +14,10 @@
     align-items: center;
 }
 
+.header--mob:hover{
+    cursor: pointer;
+}
+
 .header--mob__img{
     background-image: url('/img/logo2.png');
     background-position: center;
@@ -52,12 +56,15 @@
 .header__links__mob{
     display: flex;
     flex-direction: column;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
     height: 805px;
-    background-color: $lightgray;
+    background-color: #FAFAFA;
     border-radius: 20px;
+    position: relative;
+    z-index: 15;
+    top: -1000px;
     
 }
 

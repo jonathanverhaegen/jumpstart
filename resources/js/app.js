@@ -2,6 +2,26 @@ const { add, findLastIndex, isSet } = require('lodash');
 
 require('./bootstrap');
 
+//mob header
+let header = document.querySelector('.header--mob');
+if(header !== null){
+    header.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('.header__links__mob').style.top = "0px";
+    })
+}
+
+//mob header links
+let headerLinks = document.querySelectorAll('.header__links__item__mob');
+if(headerLinks !== null){
+    headerLinks.forEach((menu) => {
+        menu.addEventListener('click', (e) => {
+            let name = menu.querySelector('.header__links__item__text__mob').innerHTML.toLowerCase();
+            window.location.href = "/" + name;
+        })
+    })
+}
+
 //roadmap
 
 let roadmapBtns = document.querySelectorAll('.roadmap__stage');

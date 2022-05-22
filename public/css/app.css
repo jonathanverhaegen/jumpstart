@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.header--mob:hover {
+  cursor: pointer;
+}
+
 .header--mob__img {
   background-image: url("/img/logo2.png");
   background-position: center;
@@ -54,6 +58,9 @@
   height: 805px;
   background-color: #FAFAFA;
   border-radius: 20px;
+  position: relative;
+  z-index: 15;
+  top: -1000px;
 }
 
 .header__links__item__mob {

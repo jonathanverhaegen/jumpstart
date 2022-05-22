@@ -42,8 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with = ["roadmap"];
+    protected $with = ["roadmap", "company"];
+
     public function roadmap(){
         return $this->hasOne(\App\Models\Roadmap::class);
+    }
+
+    public function company(){
+        return $this->hasOne(\App\Models\Company::class);
     }
 }

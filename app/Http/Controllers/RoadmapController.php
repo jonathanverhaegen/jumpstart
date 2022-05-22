@@ -540,6 +540,10 @@ class RoadmapController extends Controller
             }
         }
 
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 3;
+        $roadmap->save();
+
         $request->session()->flash('success', 'Briefje is gesaved');
         return redirect('/roadmap');
     }
@@ -557,7 +561,12 @@ class RoadmapController extends Controller
                 $briefje->delete();
             }
         }
-        $request->session()->flash('success', 'Briefje is gewijzigd');
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 2;
+        $roadmap->save();
+        $request->session()->flash('success', 'Briefje is verwijderd');
+
         return redirect('/roadmap');
     }
 }

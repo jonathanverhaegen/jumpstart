@@ -264,6 +264,7 @@
   border-radius: 15px;
   padding: 2%;
   font-size: 24px;
+  border: none;
 }
 
 .stage__check__btn {
@@ -347,7 +348,7 @@
 .stage5 {
   margin-top: 20px;
   background-color: #E4E8F1;
-  padding: 5%;
+  padding: 2% 5% 2% 5%;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -357,7 +358,7 @@
 .stage5Checked {
   margin-top: 20px;
   background-color: #E4E8F1;
-  padding: 5%;
+  padding: 2% 5% 2% 5%;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -381,7 +382,7 @@
 }
 
 .stage__field__icon {
-  width: 70%;
+  width: 40%;
   margin-left: auto;
 }
 
@@ -509,7 +510,7 @@
 }
 
 .category__icon, .subcategory__icon {
-  width: 70%;
+  width: 40%;
   margin-left: auto;
 }
 
@@ -584,6 +585,68 @@
   margin-bottom: 20px;
 }
 
+.roadmap__back {
+  display: none;
+}
+
+.stagebtn3, .stagebtn4, .stagebtn6 {
+  text-decoration: none;
+  color: white;
+  background-color: #E44402;
+  font-family: "Lato", sans-serif;
+  padding: 5%;
+  border-radius: 20px;
+}
+
+.stage__form__number {
+  margin-top: 20px;
+  gap: 20px;
+  grid-template-columns: 8fr 4fr;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stage__form__number__input {
+  border: none;
+  background-color: #EAEDF3;
+  padding: 2%;
+  border-radius: 35px;
+  color: #1E3472;
+}
+
+.stage__form__number__input::-moz-placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.stage__form__number__input:-ms-input-placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.stage__form__number__input::placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.stage__form__number button {
+  border: none;
+  background-color: #E44402;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-radius: 25px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (min-width: 800px) {
   .roadmap {
     background-image: url("/img/map.png");
@@ -634,6 +697,8 @@
   .roadmap__stage--4 {
     margin-top: -25px;
     margin-left: 610px;
+    z-index: 10;
+    position: relative;
   }
 
   .stengel__icon4 {
@@ -732,12 +797,15 @@
     margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     gap: 20px;
+  }
+
+  .stage__btns--small {
+    grid-template-columns: 1fr;
   }
 
   .stageCheckBtn {
@@ -773,7 +841,6 @@
   }
 
   .stage__btns {
-    width: 70%;
     gap: 40px;
   }
 
@@ -792,6 +859,18 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .stage__field__icon {
+    width: 20%;
+  }
+
+  .category__icon, .subcategory__icon {
+    width: 20%;
+  }
+
+  .stagebtn6 {
+    padding: 2%;
   }
 }
 .notification {
@@ -1002,7 +1081,7 @@ button:hover {
   padding: 10px;
   border-radius: 20px 20px 20px 20px;
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 60%;
   margin-left: auto;
   margin-right: auto;

@@ -122,7 +122,7 @@
                 <p class="stage__text"><strong>Let op:</strong> Je zal op dit moment nog geen ondernemingsnummer kunnen toevoegen aan je nieuwe rekening, dit kan pas wanneer je registratie in de Kruispuntbank van Ondernemingen voltooid is. Je hebt nu eenmaal éérst een bankrekening nodig, voor je een ondernemingsnummer kan aanvragen</p>
                 <p class="stage__text"><strong>Tip:</strong> Nog geen uitgewerkt businessplan? Surf naar het startersplatform van VLAIO en werk je businessidee van A tot Z uit! <a target="_blank" href="https://startersgids.vlaio.be/nl">https://startersgids.vlaio.be/nl</a></p>
             </div>
-            @if($roadmap->check === 0)
+            @if($roadmap->stage === 1 && $roadmap->check === 0)
             <div class="stage__btns">
                 <a class="stagebtn stage1btn" href="">ING</a>
                 <a class="stagebtn stage1btn" href="">ARGENTA</a>
@@ -139,7 +139,7 @@
                 <button class="stage__form__check__btn" type="submit">Checken</button>
                 <input class="stage__form__check__extra" type="hidden" name="bank">
             </form>
-            @if($roadmap->check === 1)
+            @if($roadmap->stage === 1 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -162,7 +162,7 @@
                 <p class="stage__text">Voor je kan starten als student-zelfstandige, is het belangrijk om te weten welke activiteiten je zal buitvoeren. Elke activiteit heeft een NACE-code, die codes heb je nodig om je registratie als zelfstandige correct uit te voeren. Klik alle activiteiten die je wenst uit te voeren aan in de onderstaande lijst.</p>
             </div>
 
-            @if($roadmap->check === 0)
+            @if($roadmap->stage === 2 && $roadmap->check === 0)
             <div class="stage__btns">
                 <form action="/check/link" method="post">
                 @csrf
@@ -171,7 +171,7 @@
                 </form>
             </div>
             @endif
-            @if($roadmap->check === 1)
+            @if($roadmap->stage === 2 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -195,17 +195,17 @@
                 <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
                 <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
             </div>
-            @if($roadmap->check === 0)
+            @if($roadmap->stage === 3 && $roadmap->check === 0)
             <form class="formStage3" action="/check/inputStage3" method="post">
             @csrf
                 <div class="stage__btns">
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn stagebtn--large stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
+                    <a class="stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
                 </div>
             </form>
             @endif
-            @if($roadmap->check === 1)
+            @if($roadmap->stage === 3 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -238,7 +238,7 @@
                 </ul>
                 <p class="stage__text"><strong>Tip:</strong> Welk sociaal verzekeringsfonds is het beste voor jou? (blog)</p>
             </div>
-            @if($roadmap->check === 0)
+            @if($roadmap->stage === 4 && $roadmap->check === 0)
             <form class="formStage4" action="/check/inputStage4" method="post">
             @csrf
                 <p class="stage__text">Je sociaal verzekeringsfonds zal je ook vragen of zij je identificatie bij de btw-administratie voor jou in orde moeten maken. Ook dit is wettelijk verplicht, maar je kan er ook voor kiezen om dit zelf te doen, dat spaart je ongeveer 70 euro uit. Wil je zelf de identificatie bij de btw-administratie in orde brengen, begeleiden we je graag bij deze stap.</p>
@@ -252,12 +252,12 @@
             @csrf
                 <p class="stage__text">Bijkomende vraag als de vorige is aangeklikt: “Vul je ondernemingsnummer in om aan te tonen dat je jezelf hebt aangesloten bij een sociaal verzekeringsfonds, en je jezelf hebt laten registreren in de KBO. Als je besloten hebt om je identificatie bij de btw-administratie zelf te doen, leggen we je in de volgende stap uit hoe dit moet.</p>
                 <div class="stage__form__number">
-                    <input type="text" class="" name="ondernemingsnummer">
+                    <input type="text" class="stage__form__number__input" name="ondernemingsnummer" placeholder="Ondernemingsnummer">
                     <button type="submit">Verstuur</button>
                 </div>
             </form>
             @endif
-            
+            @if($roadmap->stage === 4 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
@@ -265,6 +265,7 @@
                     <input type="hidden" name="stage" value="4">
                 </div>
             </form>
+            @endif
         </div>
 
 
@@ -540,8 +541,8 @@
             @if($roadmap->check === 0)
             <form class="formStage6" action="/check/inputStage6" method="post">
             @csrf
-                <div class="stage__btns">
-                    <a class="stagebtn stagebtn--large stagebtn6"  href="#" >Ik bevestig dat ik mijn ondernemingsnummer aan mijn bank heb doorgegeven.</a>
+                <div class="stage__btns stage__btns--small">
+                    <a class="stagebtn6"  href="#" >Ik bevestig dat ik mijn ondernemingsnummer aan mijn bank heb doorgegeven.</a>
                 </div>
             </form>
             @endif

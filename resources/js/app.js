@@ -168,7 +168,7 @@ if(stageBtn4 !== null){
                 document.querySelector('.formStage4').submit();
             }else{
                 document.querySelector('.formStage4').style.display = "none";
-                document.querySelector('.stage__form__number').style.display = "flex";
+                document.querySelector('.stage__form__number').style.display = "grid";
             }
             
         })

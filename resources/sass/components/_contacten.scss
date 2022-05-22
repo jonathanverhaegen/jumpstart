@@ -262,9 +262,14 @@
     padding-left: 0px;
 }
 
+
+.bio__container{
+    width: 516.59px;
+}
+
 .info__container{
     width: 350px;
-    height: 500px;
+  height: 500px;
     background-color:$lightgray;
     border-radius: 20px 20px 20px 20px;
     margin-left:auto;
@@ -387,7 +392,7 @@
     }
 
 //detail desktop
-    .detail__container{
+    .detail__container__{
         width:90%;
         background-color: $lightgray;
         border-radius: 20px 20px 20px 20px;

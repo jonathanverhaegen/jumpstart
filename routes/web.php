@@ -65,8 +65,11 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de community
     Route::get('/community', [CommunityController::class, "community"]);
-    Route::get('/community/{id}', [CommunityController::class, "communityDetail"]);
-    Route::get('/community/{id}', [CommunityController::class, "communityEdit"]);
+    Route::get('/community/edit', [CommunityController::class, "communityEdit"]);
+    Route::get('/community/{name}', [CommunityController::class, "communityDetail"]);
+    
+    
+    
 
     //routes van de chat
     Route::get('/chat', [ChatController::class, "chat"]);

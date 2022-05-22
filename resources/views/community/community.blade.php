@@ -60,48 +60,19 @@
     <div class="comm__container">
     <h1>Mijn community</h1>
     <a href="/community/edit"><img src="{{asset('img/aanpassen.png')}}" alt="edit" class="edit__icon"></a>
-        <div class="comm">
-            <a href="/community/detail" class="comm__blok">
-                    <p class="comm__blok__title">Boekhouden</p>
-             </a>
 
-        </div>
-
-        <div class="comm">
-            <a href="/community/detail" class="comm__blok">
-                    <p class="comm__blok__title">Administratie</p>
-             </a>
-
-        </div>
-
-        <div class="comm">
-            <a href="/community/detail" class="comm__blok">
-                    <p class="comm__blok__title">Adverteren</p>
-             </a>
-
-        </div>
-
-        <div class="comm">
-            <a href="/community/detail" class="comm__blok">
-                    <p class="comm__blok__title">Marketing</p>
-             </a>
-
-        </div>
-
-        <div class="comm">
-            <a href="/community/detail" class="comm__blok">
-                    <p class="comm__blok__title">Sociale Media</p>
-             </a>
-
-        </div>
-
+        @foreach($groups as $g)
+        @if($g->goverment === 1)
         <div class="comm__">
-            <a href="/community/detail" class="comm__blok__">
-                    <p class="comm__blok__title__">ICE CUBE</p>
+        <a href="/community/{{strtolower($g->name)}}" class="comm__blok__">
+        @else
+        <div class="comm">
+        <a href="/community/{{strtolower($g->name)}}" class="comm__blok">
+        @endif
+                    <p class="comm__blok__title">{{$g->name}}</p>
              </a>
-
         </div>
-
+        @endforeach
     </div> 
 
 

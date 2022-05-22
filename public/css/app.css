@@ -139,6 +139,11 @@
   .search__input input {
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-left: -130px;
+  }
+
+  .search__icon {
+    margin-left: -80px;
   }
 }
 .roadmap__container {
@@ -1281,6 +1286,11 @@ button:hover {
   padding-left: 0px;
 }
 
+
+.bio__container {
+  width: 516.59px;
+  }
+
 .info__container {
   width: 350px;
   height: 500px;
@@ -1396,7 +1406,7 @@ button:hover {
     margin-right: 0px;
   }
 
-  .detail__container {
+  .detail__container__ {
     width: 90%;
     background-color: #FAFAFA;
     border-radius: 20px 20px 20px 20px;
@@ -1550,7 +1560,7 @@ h1 {
   height: 1510px;
 }
 
-.back {
+.back__icon {
   max-width: 20%;
   max-height: 20%;
   margin-top: -100px;
@@ -1676,44 +1686,291 @@ h1 {
   margin-right: -25px;
 }
 
-.comm__container {
-  height: 670px;
+.group__container {
+  width: 90%;
+  background-color: #FAFAFA;
+  border-radius: 20px 20px 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  height: 160px;
 }
 
-.edit__icon {
-  float: right;
-  max-width: 5%;
-  max-height: 5%;
-  margin-top: -50px;
-  margin-bottom: -30px;
-  margin-right: 30px;
+.__back__icon__ {
+  float: left;
+  max-width: 20%;
+  max-height: 20%;
+  margin-top: 23px;
+  margin-bottom: -25px;
+  margin-left: 10px;
 }
 
-h1 {
+.group__title {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   font-size: 25px;
-  color: #E44402;
-  margin-left: 40px;
+  color: #13204A;
+  text-align: center;
   padding-bottom: 10px;
+  padding-right: 61px;
 }
 
-.comm {
-  float: left;
+.person {
+  margin: 10px 0px 10px 21px;
+}
+
+.faq__container {
+  width: 90%;
+  background-color: #FAFAFA;
+  border-radius: 20px 20px 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.faq__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #13204A;
+  padding-bottom: 10px;
+  margin-left: 30px;
+}
+
+.faq {
+  margin: 10px auto 30px auto;
   text-align: left;
-  margin-left: 40px;
-  height: 150px;
-  width: 270px;
+  background-color: #DADFEC;
+  border-radius: 20px 20px 20px 20px;
+  padding: 5px 35px 5px 35px;
+  width: 90%;
 }
 
-.comm__ {
+.faq__blok {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  align-items: center;
+}
+
+.question {
   float: left;
-  text-align: left;
-  margin-left: 40px;
-  height: 150px;
-  width: 270px;
+  font-family: "Lato", sans-serif;
+  color: #13204A;
+  font-size: 18px;
 }
 
+.faq__answer {
+  display: none;
+  font-family: "Lato", sans-serif;
+  margin-bottom: 20px;
+}
+
+.fold__icon {
+  width: 90%;
+  margin-left: 50%;
+}
+
+.fold__icon:hover {
+  cursor: pointer;
+}
+
+.ask {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+  margin: 10px 0px 30px Opx;
+  text-align: center;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  background-position: center;
+  height: 50px;
+  width: 300px;
+}
+
+.ask__question {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  padding-bottom: 10px;
+  margin: 35px auto 30px auto;
+}
+
+@media (min-width: 800px) {
+  .comm__container {
+    height: 649px;
+    margin-top: 50px;
+  }
+
+  .edit__icon {
+    float: right;
+    max-width: 7%;
+    max-height: 7%;
+    margin-top: -45px;
+    margin-bottom: -30px;
+    margin-right: 30px;
+  }
+
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #E44402;
+    margin-left: 40px;
+    padding-bottom: 10px;
+  }
+
+  .comm {
+    float: left;
+    text-align: left;
+    margin-left: 40px;
+    height: 150px;
+    width: 270px;
+  }
+
+  .comm__ {
+    float: left;
+    text-align: left;
+    margin-left: 40px;
+    height: 150px;
+    width: 270px;
+  }
+
+  .edit__container {
+    margin-top: 50px;
+    height: 649px;
+  }
+
+  .back__icon {
+    float: left;
+    max-width: 10%;
+    max-height: 10%;
+    margin-top: -35px;
+    margin-bottom: -25px;
+    margin-left: 10px;
+    margin-right: -70px;
+  }
+
+  .edit {
+    float: left;
+    margin: 12px 0px 30px 40px;
+    height: 150px;
+    width: 270px;
+  }
+
+  .edit__ {
+    float: left;
+    margin: 12px 0px 30px 40px;
+    height: 150px;
+    width: 270px;
+  }
+
+  .checked__icon1 {
+    margin-left: 200px;
+    margin-right: -15px;
+  }
+
+  .checked__icon2 {
+    margin-left: 200px;
+    margin-right: -15px;
+  }
+
+  .checked__icon3 {
+    margin-left: 200px;
+    margin-right: -15px;
+  }
+
+  .checked__icon4 {
+    margin-left: 200px;
+    margin-right: -15px;
+  }
+
+  .checked__icon5 {
+    margin-left: 200px;
+    margin-right: -15px;
+  }
+
+  .unchecked__icon1 {
+    margin-left: 200px;
+    margin-right: -15px;
+  }
+
+  .unchecked__icon2 {
+    margin-left: 200px;
+    margin-right: -15px;
+  }
+
+  .unchecked__icon3 {
+    margin-left: 200px;
+    margin-right: -13px;
+  }
+
+  .group__container {
+    margin-top: 50px;
+  }
+
+  .__back__icon__ {
+    max-width: 10%;
+    max-height: 10%;
+    margin-top: 43px;
+    margin-left: 60px;
+  }
+
+  .group__title {
+    text-align: left;
+    margin-top: -4px;
+    padding-bottom: 10px;
+    padding-right: 61px;
+  }
+
+  .person {
+    margin: 15px 0px 10px 27px;
+  }
+
+  .faq__container {
+    width: 90%;
+    background-color: #FAFAFA;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-top: 25px;
+  }
+
+  .ask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px 0px 50px 27px;
+    text-align: center;
+    background-color: #13204A;
+    border-radius: 40px 40px 40px 40px;
+    background-position: center;
+    height: 50px;
+    width: 300px;
+  }
+
+  .ask__question {
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 10px;
+  }
+
+  .faq {
+    width: 95%;
+  }
+
+  .fold__icon {
+    width: 60%;
+    margin-left: 50%;
+  }
+}
 body {
   background-color: #EDEFF5;
 }

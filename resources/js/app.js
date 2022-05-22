@@ -39,7 +39,7 @@ if(stageBackBtn !== null){
 
 let stage1Btns = document.querySelectorAll('.stage1btn');
 
-if(stage1Btns !== false){
+if(stage1Btns !== null){
     stage1Btns.forEach((btn) => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -110,6 +110,28 @@ if(toggleNextBtn !== null){
         toggleNext = 1;
     });
 }
+
+
+//faqs open
+let faqs = document.querySelectorAll('.faq');
+let check = 0;
+if(faqs !== null){
+    faqs.forEach((faq) => {
+        let btn = faq.querySelector('.fold__icon');
+        let answer = faq.querySelector('.faq__answer');
+        btn.addEventListener('click', (e) => {
+            if(check === 0){
+                e.preventDefault();
+                btn.style.transform = "rotate(180deg)";
+                check = 1;
+                answer.style.display = "block";
+            }else{
+                e.preventDefault();
+                btn.style.transform = "rotate(0deg)";
+                check = 0;
+                answer.style.display = "none";
+            }
+   }
 
 //stage3
 
@@ -296,6 +318,7 @@ if(stageBtn6 !== null){
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             document.querySelector('.formStage6').submit();
+
         })
     })
 }

@@ -167,6 +167,7 @@ if(stage5 !== null){
 
 //stage5 activity
 let categoryContainers = document.querySelectorAll('.category__container');
+let teller = 0;
 if(categoryContainers !== null){
     categoryContainers.forEach((cat) => {
         let container = cat.querySelector('.category');
@@ -213,6 +214,7 @@ if(categoryContainers !== null){
             acContainer.forEach((ac) => {
                 let activity = ac.querySelector('.activity');
                 let check3 = 0;
+                
                 activity.addEventListener('click', (e) => {
                     if(check3 === 0){
                         ac.querySelector('.activity__icon').src = "/img/checked.png";
@@ -245,14 +247,16 @@ if(categoryContainers !== null){
                         let form = document.querySelector('.briefjeAdd');
                         console.log(form);
                         input = document.createElement('input');
-                        input.name = "brief";
+                        teller++;
+                        input.name = 'brief[]';
                         input.type = "hidden";
                         input.value = name;
+                        input.classList.add('inputBrief');
 
                         form.appendChild(input);
 
-
                         check3 = 1;
+                        
                     }else{
                         ac.querySelector('.activity__icon').src = "/img/unchecked.png";
                         let name = ac.querySelector('.activity__text').innerHTML;
@@ -261,9 +265,15 @@ if(categoryContainers !== null){
                         activityContainer.forEach((ac) => {
                             let text = ac.querySelector('.activity__text').innerHTML;
                             if(text === name){
-                                document.querySelector('.briefje').removeChild(ac);
+                                document.querySelector('.briefje').removeChild(ac);   
+                            }
+                        })
 
-                                
+                        let inputFields = document.querySelectorAll('.inputBrief');
+                        inputFields.forEach((input) => {
+                            let text2 = input.value;
+                            if(name === text2 ){
+                                input.remove();
                             }
                         })
 
@@ -277,18 +287,7 @@ if(categoryContainers !== null){
     })
 }
 
-//clicked on briefje
 
-let activityContainers = document.querySelector('.activity__container--visible');
-
-if(activityContainers !== null){
-    activityContainers.forEach((ac) => {
-        let activity = ac.querySelector('.activity');
-        activity.addEventListener('click', (e) => {
-            console.log("test");
-        })
-    })
-}
 
 //stage6
 let stageBtn6 = document.querySelectorAll('.stagebtn6');

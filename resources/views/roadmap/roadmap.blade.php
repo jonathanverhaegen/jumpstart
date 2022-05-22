@@ -321,7 +321,7 @@
                 </div>
             </div>
 
-            @if(Auth::user()->roadmap->extra === 2)
+            @if(Auth::user()->roadmap->extra > 1)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -330,7 +330,9 @@
                         <p class="stage__field__title"><strong>Activiteiten</strong></p>
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
+                
                 <div class="stage5__form"> 
+                @if(empty($briefjes[0]))
                 @foreach($categories as $cat)
                         <div class="category__container">
                             
@@ -358,13 +360,39 @@
                             @endforeach
                         </div>
                         @endforeach
+                    @endif
                     
                     <div class="briefje">
                         <p class="briefje__title">Mijn aangeduiden activiteiten</p>
                         <p class="briefje__text">Hou dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
+                        @if(!empty($briefjes[0]))
+                        
+                        @foreach($briefjes as $b)
+                            <div class="activity__container--visible">
+                                <div class="activity">
+                                <p class="activity__text">{{$b->activity->code}}-{{$b->activity->name}}</p>
+                                <img class="activity__icon" src="img/checked.png" alt="">
+                                </div>
+                            </div>
+                        @endforeach
+                        
+                        @endif
                     </div>
                     <form class="briefjeAdd" action="/add/briefje" method="post">
+                    @csrf
+                        @if(empty($briefjes[0]))
                         <button>Save briefje</button>
+                        @endif
+                    </form>
+                    
+                    <form class="briefjeAdd" action="/delete/briefje" method="post">
+                    @csrf
+                    @if(!empty($briefjes[0]))
+                    @foreach($briefjes as $b)
+                            <input type="hidden" value="{{$b->activity->code}}" name="code[]">
+                        @endforeach
+                        <button >Verwijder briefje</button>
+                    @endif
                     </form>
                 </div>
             </div>

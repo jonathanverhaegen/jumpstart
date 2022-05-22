@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Briefje;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Roadmap;
@@ -17,7 +18,7 @@ class RoadmapController extends Controller
         $data['user'] = Auth::user();
         $data['roadmap'] = Auth::user()->roadmap;
         $data['categories'] = Category::get();
-        
+        $data['briefjes'] = Briefje::where('user_id', Auth::id())->get();
         return view('roadmap/roadmap', $data);
     }
 
@@ -515,13 +516,48 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
-    public function saveBriefje(Request $request){
-        $response =[
-            'status' => 'success',
-            'message' => 'briefje saved'
-        ];
-    
-        header('Content-Type: application/json');
-        echo json_encode($response);
+    public function addBriefje(Request $request){
+        $credentials = $request->validate([
+            'brief' => 'required'
+        ]);
+
+        $briefjesInput = $request->input('brief');
+        foreach($briefjesInput as $b){
+            $realCode = explode("-",  $b);
+            $activity = Activity::where('code', $realCode)->first();
+            
+            $check = Briefje::where('user_id', Auth::id())->where('activity_id', $activity->id)->first();
+            if(empty($check)){
+                $briefje = new Briefje();
+                $briefje->user_id = Auth::id();
+                $briefje->activity_id = $activity->id;
+                $briefje->save();
+
+                
+            }else{
+                $request->session()->flash('error', 'Je hebt deze al eens geselecteerd');
+                return redirect('/roadmap');
+            }
+        }
+
+        $request->session()->flash('success', 'Briefje is gesaved');
+        return redirect('/roadmap');
+    }
+
+    public function deleteBriefje(Request $request){
+        $credentials = $request->validate([
+            'code' => 'required'
+        ]);
+
+        $codeInput = $request->input('code');
+        foreach($codeInput as $c){
+            $activity = Activity::where('code', $c)->first();
+            $briefje = Briefje::where('user_id', Auth::id())->where('activity_id', $activity->id)->first();
+            if(!empty($briefje)){
+                $briefje->delete();
+            }
+        }
+        $request->session()->flash('success', 'Briefje is gewijzigd');
+        return redirect('/roadmap');
     }
 }

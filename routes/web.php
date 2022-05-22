@@ -58,7 +58,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/stage5/handtekening', [RoadmapController::class, "checkHandtekening"]);
     Route::post('/check/stage5/bevestig', [RoadmapController::class, "checkBevestig"]);
     Route::post('/check/number', [RoadmapController::class, "checkNumber"]);
-    Route::get('/test', [RoadmapController::class, "companyInfo"]);
+    Route::post('/add/briefje', [RoadmapController::class, "addBriefje"]);
+    Route::post('/delete/briefje', [RoadmapController::class, "deleteBriefje"]);
+    
     
 
     //routes van de community

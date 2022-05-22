@@ -2224,6 +2224,7 @@ if (stage5 !== null) {
 
 
 var categoryContainers = document.querySelectorAll('.category__container');
+var teller = 0;
 
 if (categoryContainers !== null) {
   categoryContainers.forEach(function (cat) {
@@ -2298,9 +2299,11 @@ if (categoryContainers !== null) {
             var form = document.querySelector('.briefjeAdd');
             console.log(form);
             input = document.createElement('input');
-            input.name = "brief";
+            teller++;
+            input.name = 'brief[]';
             input.type = "hidden";
             input.value = name;
+            input.classList.add('inputBrief');
             form.appendChild(input);
             check3 = 1;
           } else {
@@ -2317,22 +2320,18 @@ if (categoryContainers !== null) {
               }
             });
 
+            var inputFields = document.querySelectorAll('.inputBrief');
+            inputFields.forEach(function (input) {
+              var text2 = input.value;
+
+              if (_name === text2) {
+                input.remove();
+              }
+            });
             check3 = 0;
           }
         });
       });
-    });
-  });
-} //clicked on briefje
-
-
-var activityContainers = document.querySelector('.activity__container--visible');
-
-if (activityContainers !== null) {
-  activityContainers.forEach(function (ac) {
-    var activity = ac.querySelector('.activity');
-    activity.addEventListener('click', function (e) {
-      console.log("test");
     });
   });
 } //stage6

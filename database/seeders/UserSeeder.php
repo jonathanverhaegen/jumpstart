@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
         $user->birth_date = "1998-02-18";
         $user->email = "r0670495@student.thomasmore.be";
         $user->password = Hash::make("Test12345");
-        $user->avatar = "persoon1.png";
+        $user->avatar = "person1.png";
         $user->bio = "";
         $user->isAgent = 0;
         $user->save();
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         $user1->birth_date = "1998-02-18";
         $user1->email = "r0547896@student.thomasmore.be";
         $user1->password = Hash::make("Test12345");
-        $user1->avatar = "persoon2.png";
+        $user1->avatar = "person2.png";
         $user1->bio = "";
         $user1->isAgent = 0;
         $user1->save();
@@ -55,7 +55,7 @@ class UserSeeder extends Seeder
         $user2->birth_date = "1998-02-18";
         $user2->email = "r0789456@student.thomasmore.be";
         $user2->password = Hash::make("Test12345");
-        $user2->avatar = "persoon3.png";
+        $user2->avatar = "person3.png";
         $user2->bio = "";
         $user2->isAgent = 0;
         $user2->save();

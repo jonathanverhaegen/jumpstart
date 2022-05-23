@@ -34,5 +34,15 @@ class UserGroupSeeder extends Seeder
         $usergroup4->group_id = 6;
         $usergroup4->save();
 
+        $usergroup5 = new UsersGroup();
+        $usergroup5->user_id = 2;
+        $usergroup5->group_id = 1;
+        $usergroup5->save();
+
+        $usergroup6 = new UsersGroup();
+        $usergroup6->user_id = 3;
+        $usergroup6->group_id = 1;
+        $usergroup6->save();
+
     }
 }

@@ -2086,7 +2086,7 @@ if (roadmapBtns !== null) {
       stap.style.display = "block";
     });
   });
-} //stage back 
+} // stage back 
 
 
 var stageBackBtn = document.querySelector('.stage__header__back');
@@ -2137,20 +2137,14 @@ if (togglePasswordBtn !== null) {
 
 
 var toggleNextBtn = document.querySelector('.nextBtn');
-var toggleNext = 0;
 
 if (toggleNextBtn !== null) {
   toggleNextBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    if (toggleNext === 1) {
-      window.location.href = "/roadmap";
-    } //roadmap veranderen
-
+    e.preventDefault(); //roadmap veranderen
 
     var roadmap = document.querySelector('.roadmap');
     roadmap.style.backgroundPosition = "right";
-    toggleNextBtn.style.transform = "scaleX(-1)"; //.roadmap__stage veranderen
+    toggleNextBtn.style.display = "none"; //.roadmap__stage veranderen
 
     var roadmapStages = document.querySelectorAll('.roadmap__stage');
     roadmapStages.forEach(function (stage) {
@@ -2158,13 +2152,20 @@ if (toggleNextBtn !== null) {
     });
     var stage6 = document.querySelector('.roadmap__stage--6');
     var stage7 = document.querySelector('.roadmap__stage--7');
-    var stage8 = document.querySelector('.roadmap__stage--8');
     stage6.style.display = "flex";
     stage7.style.display = "flex";
-    stage8.style.display = "flex";
-    toggleNext = 1;
+    var backBtn = document.querySelector('.roadmap__back');
+    backBtn.style.display = "flex";
   });
+}
 
+var backBtn = document.querySelector('.backBtn');
+
+if (backBtn !== null) {
+  backBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = "/roadmap";
+  });
 } //faqs open
 
 
@@ -2189,7 +2190,6 @@ if (faqs !== null) {
       }
     });
   });
-
 } //stage3
 
 
@@ -2372,7 +2372,6 @@ if (stageBtn6 !== null) {
       document.querySelector('.formStage6').submit();
     });
   });
-
 }
 
 /***/ }),

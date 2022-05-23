@@ -264,6 +264,7 @@
   border-radius: 15px;
   padding: 2%;
   font-size: 24px;
+  border: none;
 }
 
 .stage__check__btn {
@@ -347,7 +348,7 @@
 .stage5 {
   margin-top: 20px;
   background-color: #E4E8F1;
-  padding: 5%;
+  padding: 2% 5% 2% 5%;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -357,7 +358,7 @@
 .stage5Checked {
   margin-top: 20px;
   background-color: #E4E8F1;
-  padding: 5%;
+  padding: 2% 5% 2% 5%;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -381,7 +382,7 @@
 }
 
 .stage__field__icon {
-  width: 70%;
+  width: 40%;
   margin-left: auto;
 }
 
@@ -442,7 +443,6 @@
   display: none;
 }
 
-
 .stengel__icon1 {
   width: 0px;
   height: 0px;
@@ -481,9 +481,6 @@
 .stengel__icon8 {
   width: 0px;
   height: 0px;
-
-.stage__form__number {
-  display: none;
 }
 
 .category__container {
@@ -509,7 +506,7 @@
 }
 
 .category__icon, .subcategory__icon {
-  width: 70%;
+  width: 40%;
   margin-left: auto;
 }
 
@@ -582,9 +579,107 @@
   font-size: 16px;
   margin-top: 10px;
   margin-bottom: 20px;
-
 }
 
+.briefjeAdd {
+  display: flex;
+  justify-content: center;
+}
+
+.briefjeAdd button {
+  text-decoration: none;
+  text-align: center;
+  background-color: #E44402;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 35px;
+  padding: 5%;
+  font-size: 14px;
+  border: none;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.roadmap__back {
+  display: none;
+}
+
+.stagebtn3, .stagebtn4, .stagebtn6 {
+  text-decoration: none;
+  color: white;
+  background-color: #E44402;
+  font-family: "Lato", sans-serif;
+  padding: 5%;
+  border-radius: 20px;
+}
+
+.stage__form__number {
+  margin-top: 30px;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 75px;
+  display: none;
+}
+
+.stage__form__number__input {
+  border: none;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #EAEDF3;
+  padding: 5%;
+  border-radius: 35px;
+  color: #1E3472;
+}
+
+.stage__form__number__input::-moz-placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.stage__form__number__input:-ms-input-placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.stage__form__number__input::placeholder {
+  color: #1E3472;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+.stage__form__number button {
+  text-decoration: none;
+  text-align: center;
+  background-color: #E44402;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 35px;
+  padding: 5%;
+  font-size: 20px;
+  border: none;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 800px) {
+  .stage2Form {
+    display: flex;
+    justify-content: center;
+  }
+}
 @media (min-width: 800px) {
   .roadmap {
     background-image: url("/img/map.png");
@@ -635,6 +730,8 @@
   .roadmap__stage--4 {
     margin-top: -25px;
     margin-left: 610px;
+    z-index: 10;
+    position: relative;
   }
 
   .stengel__icon4 {
@@ -669,7 +766,7 @@
     width: 20px;
     height: 80px;
     margin-top: 44px;
-    margin-left: -256px;
+    margin-left: -292px;
     margin-bottom: -25px;
   }
 
@@ -714,16 +811,34 @@
     z-index: 0;
   }
 
+  .roadmap__back {
+    width: 181px;
+    height: 181px;
+    display: none;
+    justify-content: center;
+    position: relative;
+    margin-top: -500px;
+    margin-left: 340px;
+    z-index: 0;
+  }
+
+  .roadmap__back img {
+    transform: scale(-1);
+  }
+
   .stage__btns {
     margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     gap: 20px;
+  }
+
+  .stage__btns--small {
+    grid-template-columns: 1fr;
   }
 
   .stageCheckBtn {
@@ -759,7 +874,6 @@
   }
 
   .stage__btns {
-    width: 70%;
     gap: 40px;
   }
 
@@ -778,6 +892,49 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .stage__field__icon {
+    width: 20%;
+  }
+
+  .category__icon, .subcategory__icon {
+    width: 20%;
+  }
+
+  .stagebtn6 {
+    padding: 2%;
+  }
+
+  .stage__form__number {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .stage__form__number__input {
+    padding: 1%;
+    width: 60%;
+  }
+
+  .stage__form__number button {
+    padding: 1%;
+    width: 20%;
+  }
+
+  .briefjeAdd button {
+    text-decoration: none;
+    text-align: center;
+    background-color: #E44402;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 35px;
+    padding: 2%;
+    font-size: 14px;
+    border: none;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
   }
 }
 .notification {
@@ -937,10 +1094,15 @@ button:hover {
 }
 
 .form--stage__field {
-  margin-top: 10px;
-  display: flex;
+  margin-top: 30px;
   flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
   gap: 20px;
+  margin-bottom: 75px;
+  display: flex;
 }
 
 .form--stage__text {
@@ -950,11 +1112,14 @@ button:hover {
 }
 
 .form--stage__field__input {
-  background-color: #FAFAFA;
-  padding: 10px;
-  border-radius: 20px 20px 20px 20px;
   border: none;
-  font-family: "Lato", sans-serif;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 5%;
+  border-radius: 35px;
+  color: #1E3472;
 }
 
 .form--stage__field__input::-moz-placeholder {
@@ -983,13 +1148,16 @@ button:hover {
 }
 
 .form--stage__field__btn {
+  text-decoration: none;
+  text-align: center;
   background-color: #E44402;
-  border: none;
-  padding: 10px;
-  border-radius: 20px 20px 20px 20px;
   color: white;
-  font-family: "Lato", sans-serif;
-  width: 60%;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 35px;
+  padding: 5%;
+  font-size: 20px;
+  border: none;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1002,6 +1170,21 @@ button:hover {
 
   .form--login__img {
     width: auto;
+  }
+
+  .form--stage__field {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form--stage__field__input {
+    padding: 2%;
+    width: 80%;
+  }
+
+  .form--stage__field__btn {
+    padding: 2%;
+    width: 50%;
   }
 }
 .formBtn {
@@ -1286,10 +1469,9 @@ button:hover {
   padding-left: 0px;
 }
 
-
 .bio__container {
   width: 516.59px;
-  }
+}
 
 .info__container {
   width: 350px;

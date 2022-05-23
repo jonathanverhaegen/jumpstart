@@ -123,6 +123,10 @@ h1{
     width: 300px;    
 }
 
+.edit:hover, .edit__:hover{
+    cursor:pointer;
+}
+
 .edit__blok{
     text-decoration: none;
     color: $darkblue;

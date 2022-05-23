@@ -57,27 +57,12 @@
 
 
 
-<div class="edit__container">
-    <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back__icon"></a>  
-
-    @foreach($groups as $group)
-        @if($group->goverment === 1)
-        <div class="edit__">
-        <div class="edit__blok__">
-        @else
-        <div class="edit">
-        <div class="edit__blok">
-        @endif      
-                    
-                    <img src="/img/unchecked.png" alt="checked" class="unchecked__icon1">
-                    <p class="edit__blok__title">{{$group->name}}</p>
-            </div>
+        <div class="edit__container">
+        <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back__icon"></a>  
+            @foreach($groups as $group)
+                <livewire:groups :group_id="$group->id" />
+            @endforeach
         </div>
-    @endforeach
-        
-
-</div> 
-
 
 
 

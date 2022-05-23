@@ -1,6 +1,11 @@
 @import '../abstracts/colors';
 @import '../abstracts/fonts';
 
+.header__container{
+    display:flex;
+    justify-content: center;
+}
+
 .header--mob{
     background-color:$lightgray;
     width:90%;
@@ -59,13 +64,14 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    height: 805px;
     background-color: #FAFAFA;
-    border-radius: 20px;
-    position: relative;
+    border-radius: 0px 0px 20px 20px;
+    position: absolute;
     z-index: 15;
-    top: -1000px;
-    
+    top: -1500px;
+    padding-bottom: 40px;
+    justify-content: center;
+    width:90%;
 }
 
 .header__links__item__mob{
@@ -74,7 +80,19 @@
     display:flex;
     align-items: center;
     text-decoration: none;
-    margin-left: 45px;
+}
+
+.header__links__item__mob--other{
+    background-color: $background;
+}
+
+.header__links__mob__container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header__links__item__img__mob{
@@ -176,6 +194,10 @@
         margin-right: auto;
         display:flex;
         justify-content: center;
+    }
+
+    .header__links__mob{
+        display:none;
     }
 
 

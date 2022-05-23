@@ -2073,19 +2073,8 @@ var header = document.querySelector('.header--mob');
 if (header !== null) {
   header.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelector('.header__links__mob').style.top = "0px";
-  });
-} //mob header links
-
-
-var headerLinks = document.querySelectorAll('.header__links__item__mob');
-
-if (headerLinks !== null) {
-  headerLinks.forEach(function (menu) {
-    menu.addEventListener('click', function (e) {
-      var name = menu.querySelector('.header__links__item__text__mob').innerHTML.toLowerCase();
-      window.location.href = "/" + name;
-    });
+    document.querySelector('.header__links__mob').style.top = "50px";
+    document.querySelector('.header--mob').style.borderRadius = "0px";
   });
 } //roadmap
 

@@ -11,6 +11,10 @@
   align-items: center;
 }
 
+.header--mob:hover {
+  cursor: pointer;
+}
+
 .header--mob__img {
   background-image: url("/img/logo2.png");
   background-position: center;
@@ -22,6 +26,70 @@
 
 .header {
   display: none;
+}
+
+.header__mob {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin-left: 60px;
+  margin-right: 0px;
+  margin-top: 20px;
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+
+.header__img {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10px;
+}
+
+.header__links__mob {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  height: 805px;
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  position: relative;
+  z-index: 15;
+  top: -1000px;
+}
+
+.header__links__item__mob {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 45px;
+}
+
+.header__links__item__img__mob {
+  width: 35%;
+}
+
+.header__links__item__text__mob {
+  font-family: "Lato", sans-serif;
+  color: #1E3472;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.header__logout__mob {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 @media (min-width: 800px) {

@@ -2065,7 +2065,29 @@ var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.j
     findLastIndex = _require.findLastIndex,
     isSet = _require.isSet;
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //roadmap
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //mob header
+
+
+var header = document.querySelector('.header--mob');
+
+if (header !== null) {
+  header.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('.header__links__mob').style.top = "0px";
+  });
+} //mob header links
+
+
+var headerLinks = document.querySelectorAll('.header__links__item__mob');
+
+if (headerLinks !== null) {
+  headerLinks.forEach(function (menu) {
+    menu.addEventListener('click', function (e) {
+      var name = menu.querySelector('.header__links__item__text__mob').innerHTML.toLowerCase();
+      window.location.href = "/" + name;
+    });
+  });
+} //roadmap
 
 
 var roadmapBtns = document.querySelectorAll('.roadmap__stage');

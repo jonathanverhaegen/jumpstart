@@ -349,6 +349,13 @@ h1{
     margin: 35px auto 30px auto;
 }
 
+.community__emptytext{
+    font-family: $normal;
+    color: $blue;
+    margin-top: 20px;
+    margin-left: 33.3px;
+}
+
 
 // community desktop
 @media(min-width:800px){
@@ -528,6 +535,11 @@ h1{
         width:60%;
         margin-left: 50%;
     }
+
+    .community__emptytext{
+        margin-left: 40px;
+    }
+    
 
 
 }

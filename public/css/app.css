@@ -2078,6 +2078,13 @@ h1 {
   margin: 35px auto 30px auto;
 }
 
+.community__emptytext {
+  font-family: "Lato", sans-serif;
+  color: #1E3472;
+  margin-top: 20px;
+  margin-left: 33.3px;
+}
+
 @media (min-width: 800px) {
   .comm__container {
     height: 649px;
@@ -2247,6 +2254,10 @@ h1 {
   .fold__icon {
     width: 60%;
     margin-left: 50%;
+  }
+
+  .community__emptytext {
+    margin-left: 40px;
   }
 }
 body {

@@ -15,6 +15,9 @@ class CommunityController extends Controller
         foreach($usersgroups as $u){
             $groups[] = Group::where('id', $u->group_id)->first();
         }
+        if(!isset($groups)){
+            $groups = "";
+        }
         $data['groups'] = $groups;
         return view('community/community', $data);
     }

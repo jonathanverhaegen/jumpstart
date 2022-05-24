@@ -1483,7 +1483,7 @@ button:hover {
   padding-top: 25px;
 }
 
-.back {
+.back___icon {
   max-width: 50%;
   max-height: 50%;
   margin-top: -80px;
@@ -1531,7 +1531,7 @@ button:hover {
   flex-direction: row;
   max-width: 25%;
   max-height: 25%;
-  margin-top: -48px;
+  margin-top: -30px;
   margin-left: -5px;
   padding-top: 95px;
   padding-left: 0px;

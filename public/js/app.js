@@ -2065,7 +2065,18 @@ var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.j
     findLastIndex = _require.findLastIndex,
     isSet = _require.isSet;
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //roadmap
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //mob header
+
+
+var header = document.querySelector('.header--mob');
+
+if (header !== null) {
+  header.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('.header__links__mob').style.top = "50px";
+    document.querySelector('.header--mob').style.borderRadius = "0px";
+  });
+} //roadmap
 
 
 var roadmapBtns = document.querySelectorAll('.roadmap__stage');
@@ -2086,7 +2097,7 @@ if (roadmapBtns !== null) {
       stap.style.display = "block";
     });
   });
-} //stage back 
+} // stage back 
 
 
 var stageBackBtn = document.querySelector('.stage__header__back');
@@ -2101,7 +2112,7 @@ if (stageBackBtn !== null) {
 
 var stage1Btns = document.querySelectorAll('.stage1btn');
 
-if (stage1Btns !== false) {
+if (stage1Btns !== null) {
   stage1Btns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -2137,20 +2148,14 @@ if (togglePasswordBtn !== null) {
 
 
 var toggleNextBtn = document.querySelector('.nextBtn');
-var toggleNext = 0;
 
 if (toggleNextBtn !== null) {
   toggleNextBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    if (toggleNext === 1) {
-      window.location.href = "/roadmap";
-    } //roadmap veranderen
-
+    e.preventDefault(); //roadmap veranderen
 
     var roadmap = document.querySelector('.roadmap');
     roadmap.style.backgroundPosition = "right";
-    toggleNextBtn.style.transform = "scaleX(-1)"; //.roadmap__stage veranderen
+    toggleNextBtn.style.display = "none"; //.roadmap__stage veranderen
 
     var roadmapStages = document.querySelectorAll('.roadmap__stage');
     roadmapStages.forEach(function (stage) {
@@ -2158,11 +2163,43 @@ if (toggleNextBtn !== null) {
     });
     var stage6 = document.querySelector('.roadmap__stage--6');
     var stage7 = document.querySelector('.roadmap__stage--7');
-    var stage8 = document.querySelector('.roadmap__stage--8');
     stage6.style.display = "flex";
     stage7.style.display = "flex";
-    stage8.style.display = "flex";
-    toggleNext = 1;
+    var backBtn = document.querySelector('.roadmap__back');
+    backBtn.style.display = "flex";
+  });
+}
+
+var backBtn = document.querySelector('.backBtn');
+
+if (backBtn !== null) {
+  backBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = "/roadmap";
+  });
+} //faqs open
+
+
+var faqs = document.querySelectorAll('.faq');
+var check = 0;
+
+if (faqs !== null) {
+  faqs.forEach(function (faq) {
+    var btn = faq.querySelector('.fold__icon');
+    var answer = faq.querySelector('.faq__answer');
+    btn.addEventListener('click', function (e) {
+      if (check === 0) {
+        e.preventDefault();
+        btn.style.transform = "rotate(180deg)";
+        check = 1;
+        answer.style.display = "block";
+      } else {
+        e.preventDefault();
+        btn.style.transform = "rotate(0deg)";
+        check = 0;
+        answer.style.display = "none";
+      }
+    });
   });
 } //stage3
 
@@ -2174,6 +2211,176 @@ if (stageBtn3 !== null) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       document.querySelector('.formStage3').submit();
+    });
+  });
+} //stage4 
+
+
+var stageBtn4 = document.querySelectorAll('.stagebtn4');
+
+if (stageBtn4 !== null) {
+  stageBtn4.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var extra = btn.dataset.extra;
+      console.log(extra);
+
+      if (extra === "2") {
+        document.querySelector('.stage4Input').value = extra;
+        document.querySelector('.formStage4').submit();
+      } else {
+        document.querySelector('.formStage4').style.display = "none";
+        document.querySelector('.stage__form__number').style.display = "flex";
+      }
+    });
+  });
+} //stage5
+
+
+var stage5 = document.querySelectorAll('.stage5');
+
+if (stage5 !== null) {
+  stage5.forEach(function (stage) {
+    var stageField = stage.querySelector('.stage__field');
+    var check = 0;
+    stageField.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (check === 0) {
+        stage.querySelector('.stage__field__icon').style.transform = "rotate(180deg)";
+        stage.querySelector('.stage5__form').style.display = "block";
+        check = 1;
+      } else {
+        stage.querySelector('.stage__field__icon').style.transform = "rotate(0deg)";
+        stage.querySelector('.stage5__form').style.display = "none";
+        check = 0;
+      }
+    });
+  });
+} //stage5 activity
+
+
+var categoryContainers = document.querySelectorAll('.category__container');
+var teller = 0;
+
+if (categoryContainers !== null) {
+  categoryContainers.forEach(function (cat) {
+    var container = cat.querySelector('.category');
+    var check = 0;
+    container.addEventListener('click', function (e) {
+      if (check === 0) {
+        cat.querySelector('.category__icon').style.transform = "rotate(180deg)";
+        cat.querySelectorAll('.subcategory__container').forEach(function (con) {
+          con.style.display = "block";
+        });
+        check = 1;
+      } else {
+        cat.querySelector('.category__icon').style.transform = "rotate(0deg)";
+        cat.querySelectorAll('.subcategory__container').forEach(function (con) {
+          con.style.display = "none";
+        });
+        check = 0;
+      }
+    });
+    var subContainers = cat.querySelectorAll('.subcategory__container');
+    subContainers.forEach(function (sub) {
+      var subcategory = sub.querySelector('.subcategory');
+      var check2 = 0;
+      subcategory.addEventListener('click', function (e) {
+        if (check2 === 0) {
+          sub.querySelector('.subcategory__icon').style.transform = "rotate(180deg)";
+          sub.querySelectorAll('.activity__container').forEach(function (ac) {
+            ac.style.display = "block";
+          });
+          check2 = 1;
+        } else {
+          sub.querySelector('.subcategory__icon').style.transform = "rotate(0deg)";
+          sub.querySelectorAll('.activity__container').forEach(function (ac) {
+            ac.style.display = "none";
+          });
+          check2 = 0;
+        }
+      });
+      var acContainer = sub.querySelectorAll('.activity__container');
+      console.log(acContainer);
+      acContainer.forEach(function (ac) {
+        var activity = ac.querySelector('.activity');
+        var check3 = 0;
+        activity.addEventListener('click', function (e) {
+          if (check3 === 0) {
+            ac.querySelector('.activity__icon').src = "/img/checked.png";
+            var name = ac.querySelector('.activity__text').innerHTML; //name toevoegen aan briefje
+
+            var briefje = document.querySelector('.briefje');
+            var activityContainer = document.createElement("div");
+            activityContainer.classList.add('activity__container--visible');
+
+            var _activity = document.createElement("div");
+
+            _activity.classList.add('activity');
+
+            var activityText = document.createElement("p");
+            var activityIcon = document.createElement("img");
+            activityText.classList.add('activity__text');
+            activityIcon.classList.add('activity__icon');
+            activityText.innerHTML = name;
+            activityIcon.src = "/img/checked.png";
+
+            _activity.appendChild(activityText);
+
+            _activity.appendChild(activityIcon);
+
+            activityContainer.appendChild(_activity);
+            briefje.appendChild(activityContainer); //toevoegen aan formulier
+
+            var form = document.querySelector('.briefjeAdd');
+            console.log(form);
+            input = document.createElement('input');
+            teller++;
+            input.name = 'brief[]';
+            input.type = "hidden";
+            input.value = name;
+            input.classList.add('inputBrief');
+            form.appendChild(input);
+            check3 = 1;
+          } else {
+            ac.querySelector('.activity__icon').src = "/img/unchecked.png";
+            var _name = ac.querySelector('.activity__text').innerHTML;
+
+            var _activityContainer = document.querySelectorAll('.activity__container--visible');
+
+            _activityContainer.forEach(function (ac) {
+              var text = ac.querySelector('.activity__text').innerHTML;
+
+              if (text === _name) {
+                document.querySelector('.briefje').removeChild(ac);
+              }
+            });
+
+            var inputFields = document.querySelectorAll('.inputBrief');
+            inputFields.forEach(function (input) {
+              var text2 = input.value;
+
+              if (_name === text2) {
+                input.remove();
+              }
+            });
+            check3 = 0;
+          }
+        });
+      });
+    });
+  });
+} //stage6
+
+
+var stageBtn6 = document.querySelectorAll('.stagebtn6');
+
+if (stageBtn6 !== null) {
+  stageBtn6.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector('.formStage6').submit();
     });
   });
 }

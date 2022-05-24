@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->integer('stage');
             $table->boolean('check');
+            $table->integer('extra')->nullable();
+            $table->string('regime')->nullable();
             $table->timestamps();
         });
     }

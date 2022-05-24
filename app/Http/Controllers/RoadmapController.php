@@ -2,17 +2,65 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
+use App\Models\Briefje;
+use App\Models\Category;
+use App\Models\Company;
 use App\Models\Roadmap;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RicorocksDigitalAgency\Soap\Facades\Soap;
+use SoapClient;
 
 class RoadmapController extends Controller
 {
     public function roadmap(){
-        
         $data['user'] = Auth::user();
         $data['roadmap'] = Auth::user()->roadmap;
+        $data['categories'] = Category::get();
+        $data['briefjes'] = Briefje::where('user_id', Auth::id())->get();
         return view('roadmap/roadmap', $data);
+    }
+
+    public function checkStage(Request $request){
+        //checken of gebruiker al mag checken
+        $roadmap = Auth::user()->roadmap;
+        if($roadmap->check === 0){
+            $request->session()->flash('error', 'Je hebt nog geen keuze gemaakt.');
+            return redirect('/roadmap');
+        }
+        //credentials checken
+        $credentials = $request->validate([
+            'stage' => 'required'
+        ]);
+
+        $stage = intval($request->input('stage'));
+        
+        //volgende stage opslaan
+        $roadmap = Auth::user()->roadmap;
+
+        if($roadmap->stage === $stage){
+            $roadmap->stage = $stage + 1;
+            $roadmap->check = 0;
+            $roadmap->extra = 0;
+            $roadmap->save();
+            $nextStage = $stage + 1;
+            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
+            return redirect('/roadmap');
+        }else{
+            $request->session()->flash('message', 'Deze stap is al gechecked');
+            return redirect('/roadmap');
+        }
+    }
+
+    public function checkInputStage6(Request $request){
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->extra = 0;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Je kan nu stap 6 checken');
+        return redirect('/roadmap');
     }
 
     public function checkIban(Request $request){
@@ -88,7 +136,57 @@ class RoadmapController extends Controller
         }
 
         array_push($ibanBelfius, "638","657", "672", "680");
+
+        //iban bnp
+
+        for ($x = 1; $x < 10; $x++) {
+            $ibanBnp[] = "00".strval($x);
+        }
+
+        for ($x = 10; $x < 50; $x++) {
+            $ibanBnp[] = "0".strval($x);
+        }
+
+        for ($x = 140; $x < 150; $x++) {
+            $ibanBnp[] = strval($x);
+        }
+
+        for ($x = 200; $x < 215; $x++) {
+            $ibanBnp[] = strval($x);
+        }
+
+        for ($x = 220; $x < 299; $x++) {
+            $ibanBnp[] = strval($x);
+        }
+
+        array_push($ibanBnp, "137","508");
+
+        //iban axa
+        for ($x = 700; $x < 710; $x++) {
+            $ibanAxa[] = strval($x);
+        }
+
+        for ($x = 750; $x < 775; $x++) {
+            $ibanAxa[] = strval($x);
+        }
+
+        for ($x = 800; $x < 817; $x++) {
+            $ibanAxa[] = strval($x);
+        }
         
+        array_push($ibanAxa, "963","975");
+
+        //iban crelan
+        for ($x = 103; $x < 109; $x++) {
+            $ibanCrelan[] = strval($x);
+        }
+
+        for ($x = 850; $x < 854; $x++) {
+            $ibanCrelan[] = strval($x);
+        }
+
+        array_push($ibanCrelan, "859","860", "862", "863", "865", "866");
+
         //checken of de iban nummer klopt voor die bank
         switch($bank){
             case "ing":
@@ -119,7 +217,30 @@ class RoadmapController extends Controller
                     }
                 }
                 break;
+            case "bnp paribas fortis":
+                foreach($ibanBnp as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
+                break;
+            case "axa":
+                foreach($ibanAxa as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
+                break;
+            case "crelan":
+                foreach($ibanCrelan as $i){
+                    if($i === $realIban){
+                        $check = true;
+                    }
+                }
+                break;
         }
+
+        
 
         if(!empty($check)){
             //check opslaan in de roadmap
@@ -141,34 +262,7 @@ class RoadmapController extends Controller
         }
     }
 
-    public function checkStage1(Request $request){
-        //checken of gebruiker al mag checken
-        $roadmap = Auth::user()->roadmap;
-        if($roadmap->check === 0){
-            $request->session()->flash('error', 'Je banknummer is nog niet gechecked');
-            return redirect('/roadmap');
-        }
-        //credentials checken
-        $credentials = $request->validate([
-            'stage' => 'required'
-        ]);
-
-        //volgende stage opslaan
-        $roadmap = Auth::user()->roadmap;
-        if($roadmap->stage = 1){
-            $roadmap->stage = 2;
-            $roadmap->check = 0;
-            $roadmap->save();
-        }else{
-            $request->session()->flash('message', 'Deze stap is al gechecked');
-            return redirect('/roadmap');
-        }
-        
-
-        //redirect en inform
-        $request->session()->flash('success', 'Stap 1 is klaar, je kan nu verder met stap 2');
-        return redirect('/roadmap');
-    }
+    
 
     public function checkLink(Request $request){
         $credentials = $request->validate([
@@ -184,35 +278,9 @@ class RoadmapController extends Controller
         return redirect($link);
     }
 
-    public function checkStage2(Request $request){
-        //checken of gebruiker al mag checken
-        $roadmap = Auth::user()->roadmap;
-        if($roadmap->check === 0){
-            $request->session()->flash('error', 'Je hebt de link nog niet bekeken.');
-            return redirect('/roadmap');
-        }
-        //credentials checken
-        $credentials = $request->validate([
-            'stage' => 'required'
-        ]);
+    
 
-        //volgende stage opslaan
-        $roadmap = Auth::user()->roadmap;
-        if($roadmap->stage = 1){
-            $roadmap->stage = 3;
-            $roadmap->check = 0;
-            $roadmap->save();
-        }else{
-            $request->session()->flash('message', 'Deze stap is al gechecked');
-            return redirect('/roadmap');
-        }
-        
-        //redirect en inform
-        $request->session()->flash('success', 'Stap 2 is klaar, je kan nu verder met stap 3');
-        return redirect('/roadmap');
-    }
-
-    public function checkInput(Request $request){
+    public function checkInputStage3(Request $request){
         $roadmap = Auth::user()->roadmap;
         $roadmap->check = 1;
         $roadmap->save();
@@ -221,32 +289,277 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
-    public function checkstage3(Request $request){
-        //checken of gebruiker al mag checken
-        $roadmap = Auth::user()->roadmap;
-        if($roadmap->check === 0){
-            $request->session()->flash('error', 'Je hebt nog geen keuze gemaakt.');
-            return redirect('/roadmap');
-        }
+    
+
+    public function checkInputStage4(Request $request){
         //credentials checken
         $credentials = $request->validate([
-            'stage' => 'required'
+            'extra' => 'required'
         ]);
 
-        //volgende stage opslaan
-        $roadmap = Auth::user()->roadmap;
-        if($roadmap->stage = 1){
-            $roadmap->stage = 4;
-            $roadmap->check = 0;
-            $roadmap->save();
-        }else{
-            $request->session()->flash('message', 'Deze stap is al gechecked');
-            return redirect('/roadmap');
-        }
+        $extra = $request->input('extra');
         
-        //redirect en inform
-        $request->session()->flash('success', 'Stap 3 is klaar, je kan nu verder met stap 4');
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->extra = $extra;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Je kan nu stap 4 checken');
         return redirect('/roadmap');
     }
-    
+
+    public function checkStart(Request $request){
+        $credentials = $request->validate([
+            'naam' => 'required|max:255',
+            'ondernemingsnummer' => 'required'
+        ]);
+
+        $naam = $request->input('naam');
+        $onderneminsnummer = $request->input('ondernemingsnummer');
+        
+        $company = new Company();
+        $company->name = $naam;
+        $company->company_number = $onderneminsnummer;
+        $company->user_id = Auth::id();
+        $company->save();
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 1;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Naam en ondernemingsnummer zijn opgeslagen.');
+        return redirect('/roadmap');
+    }
+
+    public function checkAdress(Request $request){
+        $credentials = $request->validate([
+            'straat' => 'required|max:255',
+            'nummer' => 'required',
+            'postcode' => 'required',
+            'plaats' => 'required',
+            'email' => 'required|email',
+            'telefoonnummer' => 'required'
+        ]);
+
+        $straat = $request->input('straat');
+        $nummer = $request->input('nummer');
+        $postcode = $request->input('postcode');
+        $plaats = $request->input('plaats');
+        $email = $request->input('email');
+        $telefoonnummer = $request->input('telefoonnummer');
+
+        $company = Auth::user()->company;
+        $company->street = $straat;
+        $company->number = $nummer;
+        $company->postal = $postcode;
+        $company->city = $plaats;
+        $company->email = $email;
+        $company->phone = $telefoonnummer;
+        $company->save();
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 2;
+        $roadmap->save();
+        
+        $request->session()->flash('success', 'locatie, email en telefoonnummer zijn opgeslagen');
+        return redirect('/roadmap');
+    }
+
+    public function checkRegime(Request $request){
+        $credentials = $request->validate([
+            'optie' => 'required',
+        ]);
+
+        $letter = $request->input('optie');
+        
+        if($letter === 'a'){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->regime = 'a';
+            $roadmap->extra = 4;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Optie A opgeslagen');
+            return redirect('/roadmap');
+        }
+
+        if($letter === 'b'){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->regime = 'b';
+            $roadmap->extra = 4;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Optie B opgeslagen');
+            return redirect('/roadmap');
+        }
+
+        if($letter === 'c'){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->regime = 'c';
+            $roadmap->extra = 4;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Optie C opgeslagen');
+            return redirect('/roadmap');
+        }
+    }
+
+    public function checkRekening(Request $request){
+        $credentials = $request->validate([
+            'rekeningsnummer' => 'required',
+        ]);
+
+        $number = $request->input('rekeningsnummer');
+
+        if($number === "geen"){
+            $company = Auth::user()->company;
+            $company->account_number = null;
+            $company->save();
+
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->extra = 5;
+            $roadmap->save();
+
+            $request->session()->flash('success', 'Geen rekeninsnummer opgeslagen');
+            return redirect('/roadmap');
+        }
+
+        $company = Auth::user()->company;
+        $company->account_number = $number;
+        $company->save();
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 5;
+        $roadmap->save();
+
+        $request->session()->flash('success', $number.' opgeslagen');
+        return redirect('/roadmap');
+    }
+
+    public function checkHandtekening(Request $request){
+        $credentials = $request->validate([
+            'naam' => 'required',
+            'hoedanigheid' => 'required'
+        ]);
+
+        $name = $request->input('naam');
+        $hoedanigheid = strtolower($request->input('hoedanigheid'));
+
+        if($name !== Auth::user()->name){
+            $request->session()->flash('error', 'Andere naam opgegeven dan op je account staat');
+            return redirect('/roadmap');
+        }
+
+        if($hoedanigheid !== "oprichter van een geregistreerde entiteit-natuurlijk persoon"){
+            $request->session()->flash('error', 'Hoedanigheid is niet correct');
+            return redirect('/roadmap');
+        }
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 6;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Handtekening opgeslagen');
+        return redirect('/roadmap');
+    }
+
+    public function checkBevestig(Request $request){
+        $credentials = $request->validate([
+            'bevestig' => 'required',
+        ]);
+
+        if(!empty($request->input('bevestig'))){
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->extra = 7;
+            $roadmap->check = 1;
+            $roadmap->save();
+            $request->session()->flash('success', 'Je hebt bevestigd en kan nu stap 5 checken');
+            return redirect('/roadmap');
+        }else{
+            $request->session()->flash('error', 'Bevesteging is noodzakelijk');
+            return redirect('/roadmap');
+        }
+    }
+
+    private function companyInfo($number){
+       //soap call doen naar de api van kruispuntbank dankzij de ondernemingsnummer
+
+       //company maken in databank en de velden halen uit de soap call
+
+       return $number;
+       
+    }
+
+    public function checkNumber(Request $request){
+        $credentials = $request->validate([
+            'ondernemingsnummer' => 'required'
+        ]);
+
+        $onderneminsnummer = $request->input('ondernemingsnummer');
+        $res = $this->companyInfo($onderneminsnummer);
+        
+        //company velden invullen
+
+        //roadmap
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->extra = 1;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Ondernemingsnummer is gecontrolleerd, je kan nu stap 4 afchecken');
+        return redirect('/roadmap');
+    }
+
+    public function addBriefje(Request $request){
+        $credentials = $request->validate([
+            'brief' => 'required'
+        ]);
+
+        $briefjesInput = $request->input('brief');
+        foreach($briefjesInput as $b){
+            $realCode = explode("-",  $b);
+            $activity = Activity::where('code', $realCode)->first();
+            
+            $check = Briefje::where('user_id', Auth::id())->where('activity_id', $activity->id)->first();
+            if(empty($check)){
+                $briefje = new Briefje();
+                $briefje->user_id = Auth::id();
+                $briefje->activity_id = $activity->id;
+                $briefje->save();
+
+                
+            }else{
+                $request->session()->flash('error', 'Je hebt deze al eens geselecteerd');
+                return redirect('/roadmap');
+            }
+        }
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 3;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Briefje is opgeslagen');
+        return redirect('/roadmap');
+    }
+
+    public function deleteBriefje(Request $request){
+        $credentials = $request->validate([
+            'code' => 'required'
+        ]);
+
+        $codeInput = $request->input('code');
+        foreach($codeInput as $c){
+            $activity = Activity::where('code', $c)->first();
+            $briefje = Briefje::where('user_id', Auth::id())->where('activity_id', $activity->id)->first();
+            if(!empty($briefje)){
+                $briefje->delete();
+            }
+        }
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->extra = 2;
+        $roadmap->save();
+        $request->session()->flash('success', 'Briefje is verwijderd');
+
+        return redirect('/roadmap');
+    }
 }

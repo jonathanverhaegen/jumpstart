@@ -17,6 +17,7 @@ class CreateGroupsTable extends Migration
             $table->id();
             $table->string('name');
             $table->longText('bio');
+            $table->boolean('goverment');
             $table->timestamps();
         });
     }

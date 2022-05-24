@@ -45,18 +45,31 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de roadmap
     Route::get('/roadmap', [RoadmapController::class, "roadmap"]);
-    Route::post('/check/stage1', [RoadmapController::class, "checkStage1"]);
-    Route::post('/check/stage2', [RoadmapController::class, "checkStage2"]);
-    Route::post('/check/stage3', [RoadmapController::class, "checkStage3"]);
+    Route::post('/check/stage', [RoadmapController::class, "checkStage"]);
     Route::post('/check/iban', [RoadmapController::class, "checkIban"]);
     Route::post('/check/link', [RoadmapController::class, "checkLink"]);
-    Route::post('/check/input', [RoadmapController::class, "checkInput"]);
+    Route::post('/check/inputStage3', [RoadmapController::class, "checkInputStage3"]);
+    Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
+    Route::post('/check/inputStage6', [RoadmapController::class, "checkInputStage6"]);
+    Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
+    Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
+    Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);
+    Route::post('/check/stage5/rekening', [RoadmapController::class, "checkRekening"]);
+    Route::post('/check/stage5/handtekening', [RoadmapController::class, "checkHandtekening"]);
+    Route::post('/check/stage5/bevestig', [RoadmapController::class, "checkBevestig"]);
+    Route::post('/check/number', [RoadmapController::class, "checkNumber"]);
+    Route::post('/add/briefje', [RoadmapController::class, "addBriefje"]);
+    Route::post('/delete/briefje', [RoadmapController::class, "deleteBriefje"]);
+    
     
 
     //routes van de community
     Route::get('/community', [CommunityController::class, "community"]);
-    Route::get('/community/{id}', [CommunityController::class, "communityDetail"]);
-    Route::get('/community/{id}', [CommunityController::class, "communityEdit"]);
+    Route::get('/community/edit', [CommunityController::class, "communityEdit"]);
+    Route::get('/community/{name}', [CommunityController::class, "communityDetail"]);
+    
+    
+    
 
     //routes van de chat
     Route::get('/chat', [ChatController::class, "chat"]);

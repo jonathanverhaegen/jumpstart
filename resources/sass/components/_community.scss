@@ -240,8 +240,7 @@ h1{
     margin-right:auto;
     margin-top:25px;
     margin-bottom:25px;
-    height: 160px;
-
+    padding-bottom: 20px;
 }
 
 .group__icon{
@@ -468,29 +467,43 @@ h1{
         margin-right: -13px;
     }
 
-//detail desktop
+    // detail mobile
     .group__container{
-        margin-top: 50px;
+        width:90%;
+        background-color: $lightgray;
+        border-radius: 20px 20px 20px 20px;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top:25px;
+        margin-bottom:25px;
+
+    }
+
+    .group__icon{
+        display:grid;
+        grid-template-columns: 1fr 6fr;
+        align-items: center;
+        margin-top:-10px;
     }
 
     .__back__icon__{
-        max-width: 10%;
-        max-height: 10%;
-        margin-top: 43px;
-        margin-left: 60px;
+        width:100%;
+    
     }
 
     .group__title{
-        text-align: left;
-        margin-top: -4px;
-        padding-bottom: 10px;
-        padding-right: 61px;
+        margin-left: 0px;
     }
 
-    .person{
-        margin: 15px 0px 10px 27px;
-    
+    .group__blok{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display:flex;
+        gap:20px;
     }
+
+        
 
     .faq__container{
         width:90%;
@@ -502,10 +515,6 @@ h1{
         margin-bottom:25px;
         padding-top:25px;
     }
-
-    
-
-    
 
     .ask{
         display:flex;

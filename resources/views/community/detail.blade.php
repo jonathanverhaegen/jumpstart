@@ -56,13 +56,17 @@
 
 
 
-        <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="__back__icon__"></a>  
+        
         <div class="group__container">
-        <h1 class="group__title">{{$group->name}}</h1>
+            <div class="group__icon">
+                <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="__back__icon__"></a>  
+                <h1 class="group__title">{{$group->name}}</h1>
+            </div>
             <div class="group__blok">
+                <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
                 @foreach($users as $user)
                     <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
-                @endforeach
+                 @endforeach
             </div>
         </div>
 

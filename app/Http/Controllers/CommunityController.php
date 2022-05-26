@@ -24,11 +24,12 @@ class CommunityController extends Controller
 
     public function communityDetail($name){
         $data['group'] = Group::where('name', $name)->first();
-        $usersgroups = $data['group']->usersgroups;
+        $usersgroups = UsersGroup::where('user_id', '!=', Auth::id())->get();
         foreach($usersgroups as $u){
             $users[] = User::where('id', $u->user_id)->first();
         }    
-        $data['users'] = $users;  
+        $data['users'] = $users;
+        $data['user'] = Auth::user(); 
         $data['faqs'] = $data['group']->faqs;
         return view('community/detail', $data);
     }

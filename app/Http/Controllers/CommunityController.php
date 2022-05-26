@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class CommunityController extends Controller
 {
     public function community(){
-        $usersgroups = Auth::user()->usersgroups;
+        $usersgroups = UsersGroup::where('user_id', Auth::id())->orderBy('group_id', 'asc')->get();
         foreach($usersgroups as $u){
             $groups[] = Group::where('id', $u->group_id)->first();
         }
@@ -36,7 +36,7 @@ class CommunityController extends Controller
 
     public function communityEdit(){
         $data['groups'] = Group::get();
-        $data['usersgroups'] = UsersGroup::where('user_id', Auth::id())->get();
+        $data['usersgroups'] = UsersGroup::where('user_id', Auth::id())->orderByDesc('group_id')->get();
         return view('community/edit', $data);
     }
 

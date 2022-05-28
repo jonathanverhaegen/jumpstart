@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\RoadmapController;
+use App\Http\Controllers\WebserviceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,8 @@ Route::get('/logout', [LoginController::class, "logout"]);
 Route::post('/user/addStudent', [LoginController::class, "addStudent"]);
 Route::post('/user/addZelfstandige', [LoginController::class, "addZelfstandige"]);
 Route::post('user/login', [LoginController::class, "handleLogin"]);
+
+Route::get('/test', [WebserviceController::class, "getUserByNumber"]);
 
 
 //achter security

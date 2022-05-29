@@ -40,14 +40,12 @@ Route::get('/complete-registration', [RegisterController::class, 'completeRegist
 
 
 //achter security
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['2fa']], function() {
 
-    Route::get('/', function(){
-        return redirect('/dashboard');
-    });
+    
 
     //routes van het dashboard
-    Route::get('/dashboard', [LoginController::class, "homepage"]);
+    Route::get('/dashboard', [LoginController::class, "homepage"])->name('dashboard');
 
     //routes van de roadmap
     Route::get('/roadmap', [RoadmapController::class, "roadmap"]);
@@ -77,6 +75,10 @@ Route::group(['middleware' => ['auth']], function() {
     //routes van het profiel
     Route::get('/profiel', [ProfileController::class, "profile"]);
     Route::get('/profiel/edit', [ProfileController::class, "editProfile"]);
+
+    Route::post('/2fa', function () {
+        return redirect(route('dashboard'));
+        })->name('2fa');
     
 
 });

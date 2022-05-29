@@ -8,8 +8,8 @@ xmlns:dat="http://economie.fgov.be/kbopub/webservices/v1/datamodel">
 <wsu:Expires>2009-09-07T11:32:10.748Z</wsu:Expires>
 </wsu:Timestamp>
 <wsse:UsernameToken>
-<wsse:Username>userid</wsse:Username>
-<wsse:Password>x3+DQlYgeVm3BAkobZivkDJ13zo=</wsse:Password>
+<wsse:Username>wsot1847</wsse:Username>
+<wsse:Password>PJbaPE5Rs6GSfMTwEHL8tNA4</wsse:Password>
 <wsse:Nonce>ENp2ha7j2Ar9cvWQeUybTQ==</wsse:Nonce>
 <wsu:Created>2009-09-07T11:27:10.716Z</wsu:Created>
 </wsse:UsernameToken>

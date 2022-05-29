@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Roadmap;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,7 +38,7 @@ class RegisterController extends Controller
          // Generate the QR image. This is the image the user will scan with their app
       // to set up two factor authentication
          $QR_Image = $google2fa->getQRCodeInline(
-             config('app.name'),
+             config('jumpstart.test'),
              $registration_data['email'],
              $registration_data['google2fa_secret']
          );
@@ -94,6 +95,8 @@ class RegisterController extends Controller
         $map->stage = 1;
         $map->check = 0;
         $map->save();
+
+        event(new Registered($user));
 
         $request->session()->flash('success', 'Je account is aangemaakt');
         return redirect('/login');

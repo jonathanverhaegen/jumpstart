@@ -23,6 +23,7 @@ return new class extends Migration
             $table->longText('bio')->nullable();
             $table->boolean('isAgent')->default(0);
             $table->text('google2fa_secret');
+            $table->dateTime('email_verified_at')->nullable();
             $table->timestamps();
         });
     }

@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\RoadmapController;
+use App\Http\Controllers\VerificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,8 +42,21 @@ route::get('/', function(){
 });
 
 
+
+
 //achter security
-Route::group(['middleware' => ['2fa']], function() {
+Route::group(['middleware' => ['auth']], function() {
+    
+    /**
+    * Verification Routes
+    */
+    Route::get('/email/verify', [VerificationController::class, "show"])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, "verify"])->name('verification.verify')->middleware(['signed']);
+    Route::post('/email/resend', [VerificationController::class, "resend"])->name('verification.resend');
+
+    Route::group(['middleware' => ['2fa']], function() {
+    Route::group(['middleware' => ['verified']], function() {
+    
 
     
 
@@ -83,4 +97,6 @@ Route::group(['middleware' => ['2fa']], function() {
         })->name('2fa');
     
 
+});
+});
 });

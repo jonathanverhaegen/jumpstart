@@ -36,7 +36,9 @@ Route::post('/user/addZelfstandige', [RegisterController::class, "addZelfstandig
 
 Route::get('/complete-registration', [RegisterController::class, 'completeRegistration'])->name('complete-registration');
 
-
+route::get('/', function(){
+    return redirect(route('login'));
+});
 
 
 //achter security

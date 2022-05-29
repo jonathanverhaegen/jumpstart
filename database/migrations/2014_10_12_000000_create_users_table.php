@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('avatar')->default('test.png');
             $table->longText('bio')->nullable();
             $table->boolean('isAgent')->default(0);
-            $table->text('google2fa_secret');
+            $table->text('google2fa_secret')->nullable();
             $table->dateTime('email_verified_at')->nullable();
             $table->timestamps();
         });

@@ -24,6 +24,15 @@
     @endcomponent
     @endif
 
+    @if($flash = session('success'))
+    @component('components/notification')
+    @slot('type') success @endslot
+        <ul>
+            <li>{{ $flash }}</li>
+        </ul>
+    @endcomponent
+    @endif
+
 
     <form class="form--login" action="/user/login" method="post">
     @csrf

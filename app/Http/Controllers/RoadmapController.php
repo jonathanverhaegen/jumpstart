@@ -7,6 +7,7 @@ use App\Models\Briefje;
 use App\Models\Category;
 use App\Models\Company;
 use App\Models\Roadmap;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RicorocksDigitalAgency\Soap\Facades\Soap;
@@ -252,6 +253,11 @@ class RoadmapController extends Controller
                 $request->session()->flash('message', 'Iban is al gechecked');
                 return redirect('/roadmap');
             }
+
+            //iban opslaan
+            $company = new Company();
+            $company->company_number = $iban;
+            $company->save();
             
             $request->session()->flash('success', 'Iban is juist, je kan deze stap nu laten checken');
             return redirect('/roadmap');

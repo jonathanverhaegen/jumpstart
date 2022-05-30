@@ -162,15 +162,71 @@
                 <p class="stage__text">Voor je kan starten als student-zelfstandige, is het belangrijk om te weten welke activiteiten je zal buitvoeren. Elke activiteit heeft een NACE-code, die codes heb je nodig om je registratie als zelfstandige correct uit te voeren. Klik alle activiteiten die je wenst uit te voeren aan in de onderstaande lijst.</p>
             </div>
 
-            @if($roadmap->stage === 2 && $roadmap->check === 0)
-            <div class="stage__btns">
-                <form class="stage2Form" action="/check/link" method="post">
-                @csrf
-                    <input type="hidden" name="link" value="https://www.liantis.be/nacebel/nl">
-                    <button class="stagebtn" type="submit">Liantis</button>
-                </form>
-            </div>
-            @endif
+            <div class="stage5__form"> 
+                @if(empty($briefjes[0]))
+                @foreach($categories as $cat)
+                        <div class="category__container">
+                            
+                            <div class="category">
+                            <p class="category__text">{{$cat->name}}</p>
+                            <img class="category__icon" src="/img/uitklappen.png" alt="uitklappen">
+                            </div>
+
+                            @foreach($cat->subcategories as $sub)
+                            <div class="subcategory__container">
+                                <div class="subcategory">
+                                    <p class="subcategory__text">{{$sub->name}}</p>
+                                    <img class="subcategory__icon" src="/img/uitklappen.png" alt="uitklappen">
+                                </div>
+
+                                @foreach($sub->activities as $ac)
+                                <div class="activity__container">
+                                    <div class="activity">
+                                        <p class="activity__text">{{$ac->code}}-{{$ac->name}}</p>
+                                        <img class="activity__icon" src="/img/unchecked.png" alt="uitklappen">
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            @endforeach
+                        </div>
+                        @endforeach
+                    @endif
+                    
+                    <div class="briefje">
+                        <p class="briefje__title">Mijn aangeduiden activiteiten</p>
+                        <p class="briefje__text">Hou dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
+                        @if(!empty($briefjes[0]))
+                        
+                        @foreach($briefjes as $b)
+                            <div class="activity__container--visible">
+                                <div class="activity">
+                                <p class="activity__text">{{$b->activity->code}}-{{$b->activity->name}}</p>
+                                <img class="activity__icon" src="img/checked.png" alt="">
+                                </div>
+                            </div>
+                        @endforeach
+                        
+                        @endif
+                    </div>
+                    <form class="briefjeAdd" action="/add/briefje" method="post">
+                    @csrf
+                        @if(empty($briefjes[0]))
+                        <button>Save briefje</button>
+                        @endif
+                    </form>
+                    
+                    <form class="briefjeAdd" action="/delete/briefje" method="post">
+                    @csrf
+                    @if(!empty($briefjes[0]))
+                    @foreach($briefjes as $b)
+                            <input type="hidden" value="{{$b->activity->code}}" name="code[]">
+                        @endforeach
+                        <button >Verwijder briefje</button>
+                    @endif
+                    </form>
+                </div>
+
             @if($roadmap->stage === 2 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf

@@ -20,6 +20,7 @@ class RoadmapController extends Controller
         $data['roadmap'] = Auth::user()->roadmap;
         $data['categories'] = Category::get();
         $data['briefjes'] = Briefje::where('user_id', Auth::id())->get();
+        $data['company'] = Company::where('user_id', Auth::id())->first();
         return view('roadmap/roadmap', $data);
     }
 

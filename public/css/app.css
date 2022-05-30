@@ -773,6 +773,21 @@
   margin-right: auto;
 }
 
+.stage__info {
+  font-family: "Lato", sans-serif;
+  display: none;
+}
+
+.stage__info__title {
+  font-size: 16px;
+  color: #1E3472;
+  margin-bottom: 20px;
+}
+
+.stage__info__text {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 800px) {
   .stage2Form {
     display: flex;
@@ -895,7 +910,7 @@
     width: 20px;
     height: 80px;
     margin-top: 44px;
-    margin-left: -277px;
+    margin-left: -48px;
     margin-bottom: -25px;
   }
 
@@ -916,7 +931,7 @@
     display: none;
     justify-content: center;
     position: relative;
-    margin-top: -500px;
+    margin-top: -650px;
     margin-left: 340px;
     z-index: 0;
   }

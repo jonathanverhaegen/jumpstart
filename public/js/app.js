@@ -2250,11 +2250,23 @@ if (stage5 !== null) {
 
       if (check === 0) {
         stage.querySelector('.stage__field__icon').style.transform = "rotate(180deg)";
-        stage.querySelector('.stage5__form').style.display = "block";
+
+        if (stage.querySelector('.stage__info') !== null) {
+          stage.querySelector('.stage__info').style.display = "block";
+        } else {
+          stage.querySelector('.stage5__form').style.display = "block";
+        }
+
         check = 1;
       } else {
         stage.querySelector('.stage__field__icon').style.transform = "rotate(0deg)";
-        stage.querySelector('.stage5__form').style.display = "none";
+
+        if (stage.querySelector('.stage__info') !== null) {
+          stage.querySelector('.stage__info').style.display = "none";
+        } else {
+          stage.querySelector('.stage5__form').style.display = "none";
+        }
+
         check = 0;
       }
     });

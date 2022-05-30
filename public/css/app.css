@@ -2310,7 +2310,7 @@ h1 {
 
 .chat__list__overview {
   overflow-y: scroll;
-  height: calc(100vh - 175px);
+  height: calc(100vh - 150px);
 }
 
 .chat__list__overview::-webkit-scrollbar-track {

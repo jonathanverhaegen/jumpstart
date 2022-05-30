@@ -540,10 +540,10 @@ class RoadmapController extends Controller
         }
 
         $roadmap = Auth::user()->roadmap;
-        $roadmap->extra = 3;
+        $roadmap->check = 1;
         $roadmap->save();
 
-        $request->session()->flash('success', 'Briefje is opgeslagen');
+        $request->session()->flash('success', 'Briefje is opgeslagen. Je kan nu stap 2 afchecken');
         return redirect('/roadmap');
     }
 

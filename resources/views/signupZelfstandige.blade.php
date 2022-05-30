@@ -38,7 +38,7 @@
     <h1 class="h__reg__sz">Registreren</h1>
       <form action="user/addZelfstandige" method="post" class="form__sz">
       @csrf
-      <h1 class="h__signup__sz">Word lid van onze community</h1>
+      <h1 class="h__signup__sz">Word lid van onze <br>community</br></h1>
       
         <div class="">
         <input class="name__sz" type="text" name="name" placeholder="Naam en voornaam" value="">
@@ -54,19 +54,24 @@
 
         <div class="">
         <input class="pass__sz" type="password" name="password" placeholder="Wachtwoord" value="">
+        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
         <div class="">
         <input class="pass__sz__" type="password" name="password_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
+        <img class="togglePunt__" src="/img/ill__sz__1.png" alt="punt">
+    
+    </form>
       
     <div class="">
         <button class="reg__sz" type="submit"><p class="__reg__sz">Registreer</p></button>
     </div>
       
-      </form>
 
+    
 
 
 

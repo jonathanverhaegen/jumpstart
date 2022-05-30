@@ -2065,7 +2065,18 @@ var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.j
     findLastIndex = _require.findLastIndex,
     isSet = _require.isSet;
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //roadmap
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); //mob header
+
+
+var header = document.querySelector('.header--mob');
+
+if (header !== null) {
+  header.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('.header__links__mob').style.top = "50px";
+    document.querySelector('.header--mob').style.borderRadius = "0px";
+  });
+} //roadmap
 
 
 var roadmapBtns = document.querySelectorAll('.roadmap__stage');
@@ -2086,7 +2097,7 @@ if (roadmapBtns !== null) {
       stap.style.display = "block";
     });
   });
-} //stage back 
+} // stage back 
 
 
 var stageBackBtn = document.querySelector('.stage__header__back');
@@ -2101,7 +2112,7 @@ if (stageBackBtn !== null) {
 
 var stage1Btns = document.querySelectorAll('.stage1btn');
 
-if (stage1Btns !== false) {
+if (stage1Btns !== null) {
   stage1Btns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
@@ -2137,20 +2148,14 @@ if (togglePasswordBtn !== null) {
 
 
 var toggleNextBtn = document.querySelector('.nextBtn');
-var toggleNext = 0;
 
 if (toggleNextBtn !== null) {
   toggleNextBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    if (toggleNext === 1) {
-      window.location.href = "/roadmap";
-    } //roadmap veranderen
-
+    e.preventDefault(); //roadmap veranderen
 
     var roadmap = document.querySelector('.roadmap');
     roadmap.style.backgroundPosition = "right";
-    toggleNextBtn.style.transform = "scaleX(-1)"; //.roadmap__stage veranderen
+    toggleNextBtn.style.display = "none"; //.roadmap__stage veranderen
 
     var roadmapStages = document.querySelectorAll('.roadmap__stage');
     roadmapStages.forEach(function (stage) {
@@ -2158,11 +2163,43 @@ if (toggleNextBtn !== null) {
     });
     var stage6 = document.querySelector('.roadmap__stage--6');
     var stage7 = document.querySelector('.roadmap__stage--7');
-    var stage8 = document.querySelector('.roadmap__stage--8');
     stage6.style.display = "flex";
     stage7.style.display = "flex";
-    stage8.style.display = "flex";
-    toggleNext = 1;
+    var backBtn = document.querySelector('.roadmap__back');
+    backBtn.style.display = "flex";
+  });
+}
+
+var backBtn = document.querySelector('.backBtn');
+
+if (backBtn !== null) {
+  backBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.location.href = "/roadmap";
+  });
+} //faqs open
+
+
+var faqs = document.querySelectorAll('.faq');
+var check = 0;
+
+if (faqs !== null) {
+  faqs.forEach(function (faq) {
+    var btn = faq.querySelector('.fold__icon');
+    var answer = faq.querySelector('.faq__answer');
+    btn.addEventListener('click', function (e) {
+      if (check === 0) {
+        e.preventDefault();
+        btn.style.transform = "rotate(180deg)";
+        check = 1;
+        answer.style.display = "block";
+      } else {
+        e.preventDefault();
+        btn.style.transform = "rotate(0deg)";
+        check = 0;
+        answer.style.display = "none";
+      }
+    });
   });
 } //stage3
 

@@ -54,9 +54,9 @@
         @endif
 
 
-<div class="detail__container">
+<div class="detail__container__">
     <div class="detail__container__base">
-        <a href="/contacten"><img src="{{asset('img/back.png')}}" alt="back" class="back"></a>
+        <a href="/contacten"><img src="{{asset('img/back.png')}}" alt="back" class="back___icon"></a>
         <div class="detail">
                     <img class="detail__pic" src="/img/{{$agent->avatar}}" alt="{{$agent->firstname}}"><p class="detail__name">{{$agent->firstname}} {{$agent->lastname}}</p>
                     <p class="detail__functie">{{$agent->info}}</p>
@@ -67,7 +67,7 @@
 
     </div> 
 
-    <div class="info__container">
+    <div class="bio__container">
      <h1 class="bio">Bio</h1>
         <p class="bio__inhoud">
             {{$agent->bio}}

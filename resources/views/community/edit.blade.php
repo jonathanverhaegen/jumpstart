@@ -57,67 +57,12 @@
 
 
 
-<div class="edit__container">
-    <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back"></a>  
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon1">
-                    <p class="edit__blok__title">Boekhouden</p>
-            </div>
+        <div class="edit__container">
+        <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back__icon"></a>  
+            @foreach($groups as $group)
+                <livewire:groups :group_id="$group->id" />
+            @endforeach
         </div>
-
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon2">
-                    <p class="edit__blok__title">Administratie</p>
-            </div>
-        </div>
-
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon3">
-                    <p class="edit__blok__title">Adverteren</p>
-            </div>
-        </div>
-
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon4">
-                    <p class="edit__blok__title">Marketing</p>
-            </div>
-        </div>
-
-        <div class="edit">
-            <div class="edit__blok">
-                    <img src="{{asset('img/checked.png')}}" alt="checked" class="checked__icon5">
-                    <p class="edit__blok__title">Sociale Media</p>
-            </div>       
-        </div>
-
-        <div class="edit__">
-            <div class="edit__blok__">
-                <img src="{{asset('img/unchecked.png')}}" alt="unchecked" class="unchecked__icon1">
-                <p class="edit__blok__title__">ICE CUBE</p>
-            </div>
-        </div>
-
-        <div class="edit__">
-            <div class="edit__blok__">
-                <img src="{{asset('img/unchecked.png')}}" alt="unchecked" class="unchecked__icon2">
-                <p class="edit__blok__title__">SINC</p>
-            </div>
-        </div>
-
-
-        <div class="edit__">
-            <div class="edit__blok__">
-                <img src="{{asset('img/unchecked.png')}}" alt="unchecked" class="unchecked__icon3">
-                <p class="edit__blok__title__">MANESTARTERS</p>
-            </div>
-        </div>
-
-</div> 
-
 
 
 

@@ -74,7 +74,8 @@
         @foreach($agents as $agent)
         <div class="contact__zoek">
              <div class="contact__blok__zoek">
-                    <img class="pic1" src="img/{{ $agent->avatar }}" alt="sarah"><a href="contacten/detail" class="contact__zoek__name">{{$agent->firstname}} {{$agent->lastname}}</a>
+
+                    <img class="pic1" src="img/{{ $agent->avatar }}" alt="sarah"><p class="contact__zoek__name">{{$agent->firstname}} {{$agent->lastname}}</p>
                     <p class="contact__zoek__mail">{{$agent->email}}</p>
                     <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="/contacten/{{$agent->id}}" class="contact__zoek__link">profiel bekijken</a>
                     <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon2"><a href="" class="contact__zoek__link">bericht sturen</a>

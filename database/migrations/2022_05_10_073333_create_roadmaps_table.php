@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('stage');
             $table->boolean('check');
             $table->integer('extra')->nullable();
-            $table->varchar('regime')->nullable();
+            $table->string('regime')->nullable();
             $table->timestamps();
         });
     }

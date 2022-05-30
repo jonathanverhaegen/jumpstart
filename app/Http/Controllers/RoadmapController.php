@@ -38,15 +38,8 @@ class RoadmapController extends Controller
         
         //volgende stage opslaan
         $roadmap = Auth::user()->roadmap;
-        if($stage === 4 && $roadmap->extra === 2){
-            $nextStage = 6;
-            $roadmap->stage = $nextStage;
-            $roadmap->check = 0;
-            $roadmap->extra = 0;
-            $roadmap->save();
-            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
-            return redirect('/roadmap');
-        }elseif($roadmap->stage === $stage){
+
+        if($roadmap->stage === $stage){
             $roadmap->stage = $stage + 1;
             $roadmap->check = 0;
             $roadmap->extra = 0;
@@ -479,7 +472,7 @@ class RoadmapController extends Controller
             $roadmap->extra = 7;
             $roadmap->check = 1;
             $roadmap->save();
-            $request->session()->flash('success', 'Je hebt bevestigd');
+            $request->session()->flash('success', 'Je hebt bevestigd en kan nu stap 5 checken');
             return redirect('/roadmap');
         }else{
             $request->session()->flash('error', 'Bevesteging is noodzakelijk');
@@ -544,7 +537,7 @@ class RoadmapController extends Controller
         $roadmap->extra = 3;
         $roadmap->save();
 
-        $request->session()->flash('success', 'Briefje is gesaved');
+        $request->session()->flash('success', 'Briefje is opgeslagen');
         return redirect('/roadmap');
     }
 

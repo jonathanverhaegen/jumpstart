@@ -56,10 +56,38 @@
 
 
 
+        
+        <div class="group__container">
+            <div class="group__icon">
+                <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="__back__icon__"></a>  
+                <h1 class="group__title">{{$group->name}}</h1>
+            </div>
+            <div class="group__blok">
+                <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
+                @foreach($users as $user)
+                    <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
+                 @endforeach
+            </div>
+        </div>
 
-      <div>
-          <h1>Hier staat de d</h1>
-      </div>
+        <div class="faq__container">
+        <h1 class="faq__title">FAQ {{$group->name}}</h1>
+            
+            @foreach($faqs as $faq)
+            <div class="faq">
+                <div class="faq__blok">
+                    <p class="question">{{$faq->question}}</p>
+                    <img src="{{asset('img/uitklappen.png')}}" alt="fold" class="fold__icon">
+                </div>
+                <div class="faq__answer">
+                <p>{!! $faq->answer !!}</p>
+            </div>
+            </div>
+            @endforeach
+
+        <a href="/community/addFaq/{{$group->id}}" class="ask"><p class="ask__question">Vraag stellen</p></a>  
+        </div>
+
 
 
 

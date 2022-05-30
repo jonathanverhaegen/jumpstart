@@ -20,6 +20,7 @@ class AddBriefje extends Component
             $briefje->activity_id = $id;
             $briefje->save();
         }
+
     }
 
     public function render()

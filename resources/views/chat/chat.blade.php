@@ -173,6 +173,7 @@
 
                 <div class="chat__detail__send-message">
                     <input type="text" name="send-message" id="send-message" class="chat__detail__send-message__input" placeholder="Typ hier iets…">
+                    <input type="submit" value="Verzenden"/>
                 </div>
 
             </div>

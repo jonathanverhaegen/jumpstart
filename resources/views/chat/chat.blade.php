@@ -78,9 +78,9 @@
                     </div>
 
                     <div class="chat__list__person chat__list__person--active">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
+                        <img src="./img/Thomas.png" alt="Thomas" class="chat__list__profile">
+                        <span class="chat__list__name">Thomas Gabriëls</span>
+                        <span class="chat__list__preview">Hey Thomas, met welke stap va…</span>
                     </div>
 
                     <div class="chat__list__person chat__list__person--unread">
@@ -135,7 +135,7 @@
                         <span class="chat__list__name">Sarah Peeters</span>
                         <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
                     </div>
-                    
+
                     <div class="chat__list__person">
                         <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">Sarah Peeters</span>
@@ -148,11 +148,11 @@
             <div class="chat__detail">
 
                 <div class="chat__detail__heading">
-                    <img src="" alt="" class="chat__detail__heading__profile">
+                    <img src="./img/Thomas.png" alt="Thomas" class="chat__detail__heading__profile">
                     <h2 class="chat__detail__heading__name">Thomas Gabriëls</h2>
                     <div class="chat__detail__icons">
-                        <img src="" alt="" class="chat__detail__icons__search">
-                        <img src="" alt="" class="chat__detail__icons__settings">
+                        <img src="./img/search-icon-chat.svg" alt="Search in chat" class="chat__detail__icons__search">
+                        <img src="./img/options-icon-chat.svg" alt="Options" class="chat__detail__icons__settings">
                     </div>
                 </div>
 

@@ -2298,8 +2298,6 @@ h1 {
 .chat__list {
   min-width: 300px;
   width: 35%;
-  padding: 15px;
-  overflow-y: scroll;
 }
 
 .chat__detail {
@@ -2308,11 +2306,20 @@ h1 {
   background-color: white;
 }
 
+.chat__list__overview {
+  overflow-y: scroll;
+  height: calc(100vh - 175px);
+}
+
+.chat__list__overview::-webkit-scrollbar-track {
+  background-color: #13204A;
+}
+
 .chat__list__heading {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 
 .chat__list__heading__h1 {
@@ -2348,24 +2355,24 @@ h1 {
 
 .chat__search-bar {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
+  padding: 15px;
 }
 
 .chat__search-bar__icon {
   position: absolute;
   top: 50%;
-  left: 10px;
+  left: 25px;
   transform: translateY(-50%);
   height: 18px;
 }
 
 .chat__list__person {
-  width: calc(100% + 30px);
+  width: auto;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr 1fr;
   padding: 15px;
-  margin-left: -15px;
   cursor: pointer;
   transition: background-color 0.2s ease-in;
 }
@@ -2400,6 +2407,42 @@ h1 {
 .chat__list__preview {
   font-size: 0.9em;
   color: #13204A;
+}
+
+.chat__detail__heading {
+  background-color: #CBD3E6;
+  border-radius: 0 20px 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 70px;
+}
+
+.chat__detail__heading__profile {
+  height: 40px;
+}
+
+.chat__detail__heading__name {
+  font-size: 1.35em;
+  color: #13204A;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.chat__detail__icons {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.chat__detail__icons img {
+  height: 25px;
+  cursor: pointer;
+}
+
+.chat__detail__icons img:first-child {
+  margin-right: 15px;
 }
 
 body {

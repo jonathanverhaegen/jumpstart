@@ -2465,6 +2465,7 @@ h1 {
   flex-direction: column;
   justify-content: flex-end;
   gap: 20px;
+  overflow: auto;
 }
 
 .chat__message {

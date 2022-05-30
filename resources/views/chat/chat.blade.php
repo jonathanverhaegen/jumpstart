@@ -169,30 +169,6 @@
                     <span class="chat__message chat__message--to">
                         Soort van, in mijn opleiding hebben we een docent die online cursussen maakt, maar die enkel toegankelijk zijn voor zijn studenten. Ik vrees dus dat jij hier geen gebruik van zal kunnen maken.
                     </span>
-                    <span class="chat__message chat__message--from">
-                        Hallo Surinde, ik wou je graag een berichtje sturen omdat ik zeer benieuwd was naar hoe jij juist begonnen bent met het leren van Laravel.
-                    </span>
-                    <span class="chat__message chat__message--to">
-                        Dag Thomas, wat leuk dat je een berichtje stuurt! Ik ben nog maar net begonnen met het leren van Laravel, dus ben er nog niet zo goed in.
-                    </span>
-                    <span class="chat__message chat__message--from">
-                        Oh, dat wist ik niet. Volg jij dan een bepaalde online cursus ofzo?
-                    </span>
-                    <span class="chat__message chat__message--to">
-                        Soort van, in mijn opleiding hebben we een docent die online cursussen maakt, maar die enkel toegankelijk zijn voor zijn studenten. Ik vrees dus dat jij hier geen gebruik van zal kunnen maken.
-                    </span>
-                    <span class="chat__message chat__message--from">
-                        Hallo Surinde, ik wou je graag een berichtje sturen omdat ik zeer benieuwd was naar hoe jij juist begonnen bent met het leren van Laravel.
-                    </span>
-                    <span class="chat__message chat__message--to">
-                        Dag Thomas, wat leuk dat je een berichtje stuurt! Ik ben nog maar net begonnen met het leren van Laravel, dus ben er nog niet zo goed in.
-                    </span>
-                    <span class="chat__message chat__message--from">
-                        Oh, dat wist ik niet. Volg jij dan een bepaalde online cursus ofzo?
-                    </span>
-                    <span class="chat__message chat__message--to">
-                        XXXXXXXXXXXXXXXXXXX
-                    </span>
                 </div>
 
                 <div class="chat__detail__send-message">

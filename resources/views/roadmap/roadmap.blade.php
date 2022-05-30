@@ -57,42 +57,48 @@
             <div class="roadmap">
 
                 <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
-                    <p class="roadmap__stage__title roadmap__stage__title--left">Bank</p>
+                    <p class="roadmap__stage__title roadmap__stage__title--left">Bedrijfsgegevens</p>
                     <p class="roadmap__stage__number">1</p>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon1">
                 </a>
 
                 <a @if($roadmap->stage > 1) href="" data-stage="2" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2">
                     <div class="roadmap__stage__number">2</div>
-                    <div class="roadmap__stage__title roadmap__stage__title--right">Activiteiten</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--right">Bank</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon2">
                 </a>
 
                 <a @if($roadmap->stage > 2) href="" data-stage="3" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--3">
-                    <div class="roadmap__stage__title roadmap__stage__title--left">Sociale bijdragen</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--left">Activiteiten</div>
                     <div class="roadmap__stage__number">3</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon3">
                 </a>
 
                 <a @if($roadmap->stage > 3) href="" data-stage="4" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--4">
                     <div class="roadmap__stage__number">4</div>
-                    <div class="roadmap__stage__title roadmap__stage__title--right">Sociaal- <br> verzekeringsfonds</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--right">Sociale bijdragen</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon4">
                 </a>
 
                 <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--5">
-                    <div class="roadmap__stage__title roadmap__stage__title--left">Btw-administratie</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--left">Sociaal- <br> verzekeringsfonds</div>
                     <div class="roadmap__stage__number">5</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5">
                 </a>
 
                 <a @if($roadmap->stage > 5) href="" data-stage="6" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--6">
                     <div class="roadmap__stage__number">6</div>
-                    <div class="roadmap__stage__title roadmap__stage__title--right">Ondernemingsnummer</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--right">Btw-administratie</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon6">
                 </a>
 
                 <a @if($roadmap->stage > 6) href="" data-stage="7" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--7">
+                    <div class="roadmap__stage__title roadmap__stage__title--left">Ondernemingsnummer</div>
+                    <div class="roadmap__stage__number">7</div>
+                    <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon7">
+                </a>
+
+                <a @if($roadmap->stage > 7) href="" data-stage="7" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--8">
                     <div class="roadmap__stage__title roadmap__stage__title--left">Student-zelfstandige</div>
                     <div class="roadmap__stage__number">7</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon7">
@@ -111,8 +117,46 @@
 
         <div class="stage__container stage__container--1">
             <div class="stage__header">
+                    <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
+                    <div class="stage__header__stap">Stap 1</div>
+                    <div class="stage__header__extra"></div>
+                </div>
+            <div class="stage">
+                <p class="stage__title">Bedrijfsgegevens</p>
+                <p class="stage__text">Vul hieronder je bedrijfsgegevens in. Ze worden voor jou opgeslagen in onze database.</p>
+            </div>
+            @if($roadmap->stage === 1 && $roadmap->check === 0)
+            <form class="form--stage" action="/add/company" method="post">
+                @csrf
+                    <div class="form--stage__field">
+                        <p class="form--stage__field__text">Bedrijfsgegevens</p>
+                        <input type="text" class="form--stage__field__input" name="naam" placeholder="Naam onderneming">
+                        <input type="text" class="form--stage__field__input" name="emailadress" placeholder="Emailadress onderneming">
+                        <input type="number" class="form--stage__field__input" name="telefoon" placeholder="Telefoon onderneming">
+                        <p class="form--stage__field__text">Adress bedrijf</p>
+                        <input type="text" class="form--stage__field__input" name="straat" placeholder="Straat">
+                        <input type="number" class="form--stage__field__input" name="nummer" placeholder="Nummer">
+                        <input type="text" class="form--stage__field__input" name="plaats" placeholder="Plaats">
+                        <input type="number" class="form--stage__field__input" name="postcode" placeholder="Postcode">
+                        <button type="submit" class="form--stage__field__btn">Verzend</button>
+                    </div>
+            </form>
+            @endif
+            @if($roadmap->stage === 1 && $roadmap->check === 1)
+            <form class="stage__check" action="/check/stage" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <input type="hidden" name="stage" value="1">
+                </div>
+            </form>
+            @endif
+        </div>
+
+        <div class="stage__container stage__container--2">
+            <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
-                <div class="stage__header__stap">Stap 1</div>
+                <div class="stage__header__stap">Stap 2</div>
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
@@ -122,7 +166,7 @@
                 <p class="stage__text"><strong>Let op:</strong> Je zal op dit moment nog geen ondernemingsnummer kunnen toevoegen aan je nieuwe rekening, dit kan pas wanneer je registratie in de Kruispuntbank van Ondernemingen voltooid is. Je hebt nu eenmaal éérst een bankrekening nodig, voor je een ondernemingsnummer kan aanvragen</p>
                 <p class="stage__text"><strong>Tip:</strong> Nog geen uitgewerkt businessplan? Surf naar het startersplatform van VLAIO en werk je businessidee van A tot Z uit! <a target="_blank" href="https://startersgids.vlaio.be/nl">https://startersgids.vlaio.be/nl</a></p>
             </div>
-            @if($roadmap->stage === 1 && $roadmap->check === 0)
+            @if($roadmap->stage === 2 && $roadmap->check === 0)
             <div class="stage__btns">
                 <a class="stagebtn stage1btn" href="">ING</a>
                 <a class="stagebtn stage1btn" href="">ARGENTA</a>
@@ -139,19 +183,19 @@
                 <button class="stage__form__check__btn" type="submit">Checken</button>
                 <input class="stage__form__check__extra" type="hidden" name="bank">
             </form>
-            @if($roadmap->stage === 1 && $roadmap->check === 1)
+            @if($roadmap->stage === 2 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="1">
+                    <input type="hidden" name="stage" value="2">
                 </div>
             </form>
             @endif
         </div>
 
 
-        <div class="stage__container stage__container--2">
+        <div class="stage__container stage__container--3">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 2</div>
@@ -162,7 +206,7 @@
                 <p class="stage__text">Voor je kan starten als student-zelfstandige, is het belangrijk om te weten welke activiteiten je zal buitvoeren. Elke activiteit heeft een NACE-code, die codes heb je nodig om je registratie als zelfstandige correct uit te voeren. Klik alle activiteiten die je wenst uit te voeren aan in de onderstaande lijst.</p>
             </div>
 
-            <div class="stage5__form"> 
+            <div class="stage2__form"> 
                 @if(empty($briefjes[0]))
                 @foreach($categories as $cat)
                         <div class="category__container">
@@ -238,7 +282,7 @@
             @endif
         </div>
 
-        <div class="stage__container stage__container--3">
+        <div class="stage__container stage__container--4">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 3</div>
@@ -272,7 +316,7 @@
             @endif
         </div>
 
-        <div class="stage__container stage__container--4">
+        <div class="stage__container stage__container--5">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 4</div>
@@ -330,7 +374,7 @@
 
         
         <!-- stap 5 nog helemaal uitwerken -->
-        <div class="stage__container stage__container--5">
+        <div class="stage__container stage__container--6">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 5</div>
@@ -572,7 +616,7 @@
         </div>
 
         
-        <div class="stage__container stage__container--6">
+        <div class="stage__container stage__container--7">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
                 <div class="stage__header__stap">Stap 6</div>
@@ -601,7 +645,7 @@
             @endif
         </div>
 
-        <div class="stage__container stage__container--7">
+        <div class="stage__container stage__container--8">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 7</div>

@@ -64,6 +64,49 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
+    public function addCompany(Request $request){
+        $credentials = $request->validate([
+            'naam' => 'required',
+            'emailadress' => 'required|email',
+            'telefoon' => 'required|max:255',
+            'straat' => 'required',
+            'nummer' => 'required',
+            'plaats' => 'required',
+            'postcode' => 'required|max:4'
+        ]);
+
+        $request->flash();
+
+        $name = $request->input('naam');
+        $email = $request->input('emailadress');
+        $phone = $request->input('telefoon');
+        $street = $request->input('straat');
+        $number = $request->input('nummer');
+        $city = $request->input('plaats');
+        $postal = $request->input('postcode');
+
+        //bedrijf opslaan
+        $company = new Company();
+        $company->user_id = Auth::id();
+        $company->name = $name;
+        $company->email = $email;
+        $company->phone = $phone;
+        $company->street = $street;
+        $company->number = $number;
+        $company->city = $city;
+        $company->postal = $postal;
+        $company->save();
+
+        //roadmap
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Bedrijf is opgeslagen, je kan nu stap1 afronden');
+        return redirect('/roadmap');
+
+    }
+
     public function checkIban(Request $request){
         $credentials = $request->validate([
             'iban' => 'required',
@@ -246,7 +289,7 @@ class RoadmapController extends Controller
         if(!empty($check)){
             //check opslaan in de roadmap
             $roadmap = Auth::user()->roadmap;
-            if($roadmap->stage === 1){
+            if($roadmap->stage === 2){
                 $roadmap->check = 1;
                 $roadmap->save();
             }else{
@@ -255,7 +298,7 @@ class RoadmapController extends Controller
             }
 
             //iban opslaan
-            $company = new Company();
+            $company = Auth::user()->company;
             $company->company_number = $iban;
             $company->save();
             
@@ -568,4 +611,6 @@ class RoadmapController extends Controller
 
         return redirect('/roadmap');
     }
+
+    
 }

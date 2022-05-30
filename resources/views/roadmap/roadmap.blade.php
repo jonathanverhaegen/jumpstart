@@ -198,7 +198,7 @@
         <div class="stage__container stage__container--3">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
-                <div class="stage__header__stap">Stap 2</div>
+                <div class="stage__header__stap">Stap 3</div>
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
@@ -271,40 +271,6 @@
                     </form>
                 </div>
 
-            @if($roadmap->stage === 2 && $roadmap->check === 1)
-            <form class="stage__check" action="/check/stage" method="post">
-            @csrf
-                <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="2">
-                </div>
-            </form>
-            @endif
-        </div>
-
-        <div class="stage__container stage__container--4">
-            <div class="stage__header">
-                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
-                <div class="stage__header__stap">Stap 3</div>
-                <div class="stage__header__extra"></div>
-            </div>
-            <div class="stage">
-                <p class="stage__title">Bepaal of je gebruik wil maken van de vrijstellingsregeling voor sociale
-                                        bijdragen</p>
-                <p class="stage__text">Iedere werknemer in dit land betaalt sociale bijdragen, ook zelfstandigen. Van deze sociale bijdragen worden onder andere de pensioenen, ziekte- en invaliditeitsuitkeringen en gezinsbijslag uitbetaald. Als student-zelfstandige krijg je de keuze om gebruik te maken van een vrijstellingsregeling voor deze sociale bijdragen. Dit kan enkel als je weet dat je netto niet meer dan 7.329,21 euro zal verdienen in het jaar 2022. Kies je niet voor de <strong>vrijstellingsregeling</strong> betaal je als starter een voorlopige minimumbijdrage van ongeveer 85 euro per kwartaal.</p>
-                <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
-                <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
-            </div>
-            @if($roadmap->stage === 3 && $roadmap->check === 0)
-            <form class="formStage3" action="/check/inputStage3" method="post">
-            @csrf
-                <div class="stage__btns">
-                    <a class="stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
-                </div>
-            </form>
-            @endif
             @if($roadmap->stage === 3 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
@@ -316,10 +282,44 @@
             @endif
         </div>
 
-        <div class="stage__container stage__container--5">
+        <div class="stage__container stage__container--4">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
                 <div class="stage__header__stap">Stap 4</div>
+                <div class="stage__header__extra"></div>
+            </div>
+            <div class="stage">
+                <p class="stage__title">Bepaal of je gebruik wil maken van de vrijstellingsregeling voor sociale
+                                        bijdragen</p>
+                <p class="stage__text">Iedere werknemer in dit land betaalt sociale bijdragen, ook zelfstandigen. Van deze sociale bijdragen worden onder andere de pensioenen, ziekte- en invaliditeitsuitkeringen en gezinsbijslag uitbetaald. Als student-zelfstandige krijg je de keuze om gebruik te maken van een vrijstellingsregeling voor deze sociale bijdragen. Dit kan enkel als je weet dat je netto niet meer dan 7.329,21 euro zal verdienen in het jaar 2022. Kies je niet voor de <strong>vrijstellingsregeling</strong> betaal je als starter een voorlopige minimumbijdrage van ongeveer 85 euro per kwartaal.</p>
+                <p class="stage__text">Ligt je inkomen uiteindelijk onder de grens van 7.329,21 euro, krijg je de sociale bijdragen die je al betaald had teruggestort. Ligt je inkomen tussen 7.329,21 euro en 14.658,44 euro, dan betaal je een verminderde bijdrage die wordt berekend op het inkomen boven het grensbedrag. Bedraagt je inkomen 14.658,44 euro of meer, dan betaal je dezelfde bijdrage als in hoofdberoep! Ben je niet zeker of je over de grenswaarde van 7.329,21 euro zal zitten, is het veiliger om de minimumbijdrage van 85 euro per kwartaal te betalen en niet te kiezen voor de vrijstellingsregeling..</p>
+                <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
+            </div>
+            @if($roadmap->stage === 4 && $roadmap->check === 0)
+            <form class="formStage3" action="/check/inputStage3" method="post">
+            @csrf
+                <div class="stage__btns">
+                    <a class="stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
+                </div>
+            </form>
+            @endif
+            @if($roadmap->stage === 4 && $roadmap->check === 1)
+            <form class="stage__check" action="/check/stage" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <input type="hidden" name="stage" value="4">
+                </div>
+            </form>
+            @endif
+        </div>
+
+        <div class="stage__container stage__container--5">
+            <div class="stage__header">
+                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
+                <div class="stage__header__stap">Stap 5</div>
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
@@ -338,8 +338,8 @@
                 </ul>
                 <p class="stage__text"><strong>Tip:</strong> Welk sociaal verzekeringsfonds is het beste voor jou? (blog)</p>
             </div>
-            @if($roadmap->stage === 4 && $roadmap->check === 0)
-            <form class="formStage4" action="/check/inputStage4" method="post">
+            @if($roadmap->stage === 5 && $roadmap->check === 0)
+            <form class="formStage4" action="/check/inputStage5" method="post">
             @csrf
                 <p class="stage__text">Je sociaal verzekeringsfonds zal je ook vragen of zij je identificatie bij de btw-administratie voor jou in orde moeten maken. Ook dit is wettelijk verplicht, maar je kan er ook voor kiezen om dit zelf te doen, dat spaart je ongeveer 70 euro uit. Wil je zelf de identificatie bij de btw-administratie in orde brengen, begeleiden we je graag bij deze stap.</p>
                 <div class="stage__btns">
@@ -357,12 +357,12 @@
                 </div>
             </form>
             @endif
-            @if($roadmap->stage === 4 && $roadmap->check === 1)
+            @if($roadmap->stage === 5 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="4">
+                    <input type="hidden" name="stage" value="5">
                 </div>
             </form>
             @endif
@@ -377,7 +377,7 @@
         <div class="stage__container stage__container--6">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
-                <div class="stage__header__stap">Stap 5</div>
+                <div class="stage__header__stap">Stap 6</div>
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
@@ -619,7 +619,7 @@
         <div class="stage__container stage__container--7">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
-                <div class="stage__header__stap">Stap 6</div>
+                <div class="stage__header__stap">Stap 7</div>
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">
@@ -627,7 +627,7 @@
                 <p class="stage__text">Oef, dit is gelukkig maar een kleine stap. Nu je geregistreerd bent in de Kruispuntbank van Ondernemingen, heb je een ondernemingsnummer gekregen. Geef bij dit door aan je bank zodat zij jouw pas geopende rekening kunnen omzetten naar een rekening voor professioneel gebruik.</p>
             </div>
             @if($roadmap->check === 0)
-            <form class="formStage6" action="/check/inputStage6" method="post">
+            <form class="formStage6" action="/check/inputStage7" method="post">
             @csrf
                 <div class="stage__btns stage__btns--small">
                     <a class="stagebtn6"  href="#" >Ik bevestig dat ik mijn ondernemingsnummer aan mijn bank heb doorgegeven.</a>

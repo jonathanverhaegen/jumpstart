@@ -49,9 +49,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/stage', [RoadmapController::class, "checkStage"]);
     Route::post('/check/iban', [RoadmapController::class, "checkIban"]);
     Route::post('/check/link', [RoadmapController::class, "checkLink"]);
-    Route::post('/check/inputStage3', [RoadmapController::class, "checkInputStage3"]);
     Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
-    Route::post('/check/inputStage6', [RoadmapController::class, "checkInputStage6"]);
+    Route::post('/check/inputStage5', [RoadmapController::class, "checkInputStage5"]);
+    Route::post('/check/inputStage7', [RoadmapController::class, "checkInputStage7"]);
     Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
     Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
     Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);

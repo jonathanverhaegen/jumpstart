@@ -40,6 +40,16 @@ class RoadmapController extends Controller
         //volgende stage opslaan
         $roadmap = Auth::user()->roadmap;
 
+        if($roadmap->stage === 5 && $roadmap->extra === 1){
+            $roadmap->stage = $stage + 2;
+            $roadmap->check = 0;
+            $roadmap->extra = 0;
+            $roadmap->save();
+            $nextStage = $stage + 2;
+            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
+            return redirect('/roadmap');
+        }
+
         if($roadmap->stage === $stage){
             $roadmap->stage = $stage + 1;
             $roadmap->check = 0;
@@ -52,16 +62,6 @@ class RoadmapController extends Controller
             $request->session()->flash('message', 'Deze stap is al gechecked');
             return redirect('/roadmap');
         }
-    }
-
-    public function checkInputStage6(Request $request){
-        $roadmap = Auth::user()->roadmap;
-        $roadmap->check = 1;
-        $roadmap->extra = 0;
-        $roadmap->save();
-
-        $request->session()->flash('success', 'Je kan nu stap 6 checken');
-        return redirect('/roadmap');
     }
 
     public function addCompany(Request $request){
@@ -329,18 +329,7 @@ class RoadmapController extends Controller
 
     
 
-    public function checkInputStage3(Request $request){
-        $roadmap = Auth::user()->roadmap;
-        $roadmap->check = 1;
-        $roadmap->save();
-
-        $request->session()->flash('success', 'Je kan stap 3 nu checken');
-        return redirect('/roadmap');
-    }
-
-    
-
-    public function checkInputStage4(Request $request){
+    public function checkInputStage5(Request $request){
         //credentials checken
         $credentials = $request->validate([
             'extra' => 'required'
@@ -353,7 +342,7 @@ class RoadmapController extends Controller
         $roadmap->extra = $extra;
         $roadmap->save();
 
-        $request->session()->flash('success', 'Je kan nu stap 4 checken');
+        $request->session()->flash('success', 'Je kan nu stap 5 checken');
         return redirect('/roadmap');
     }
 
@@ -547,6 +536,9 @@ class RoadmapController extends Controller
         $res = $this->companyInfo($onderneminsnummer);
         
         //company velden invullen
+        $company = Auth::user()->company;
+        $company->account_number = $onderneminsnummer;
+        $company->save();
 
         //roadmap
         $roadmap = Auth::user()->roadmap;
@@ -554,7 +546,7 @@ class RoadmapController extends Controller
         $roadmap->extra = 1;
         $roadmap->save();
 
-        $request->session()->flash('success', 'Ondernemingsnummer is gecontrolleerd, je kan nu stap 4 afchecken');
+        $request->session()->flash('success', 'Ondernemingsnummer is gecontrolleerd, je kan nu stap 5 afchecken');
         return redirect('/roadmap');
     }
 
@@ -609,6 +601,16 @@ class RoadmapController extends Controller
         $roadmap->save();
         $request->session()->flash('success', 'Briefje is verwijderd');
 
+        return redirect('/roadmap');
+    }
+
+    public function checkInputStage7(Request $request){
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->extra = 0;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Je kan nu stap 7 checken');
         return redirect('/roadmap');
     }
 

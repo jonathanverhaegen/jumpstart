@@ -1,0 +1,244 @@
+.chat__container {
+    width: 90%;
+    background-color: #CBD3E6;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.chat__container span, .chat__container div, .chat__container input {
+    font-family: 'Lato', sans-serif;
+}
+
+.chat__list {
+    min-width: 300px;
+    width: 35%;
+}
+
+.chat__detail {
+    width: 65%;
+    border-radius: 0 20px 20px 0;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.chat__list__overview {
+    overflow-y: scroll;
+    height: calc(100vh - 175px);
+}
+
+.chat__list__overview::-webkit-scrollbar-track {
+    background-color: #13204A;
+}
+
+.chat__list__heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+}
+
+.chat__list__heading__h1 {
+    color: #13204A;
+    margin: 0;
+    padding: 0;
+}
+
+.chat__list__heading__profile {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.chat__list__heading__new-message {
+    display: flex;
+    margin-left: auto;
+}
+
+.chat__list__heading__new-message img {
+    height: 40px;
+}
+
+#search-chat {
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 35px;
+    font-size: 1em;
+    padding-bottom: 3px;
+}
+
+#search-chat::placeholder {
+    color: #13204A;
+}
+
+.chat__search-bar {
+    position: relative;
+    margin-bottom: 35px; 
+    padding: 15px;
+}
+
+.chat__search-bar__icon {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    height: 18px;
+}
+
+.chat__list__person {
+    width: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color .2s ease-in;
+}
+
+.chat__list__person:hover {
+    background-color: #B5C0D9;
+    transition: background-color .2s ease-out;
+}
+
+.chat__list__person--active, .chat__list__person--active:hover {
+    background-color: #99A9CE;
+}
+
+.chat__list__person--unread {
+    font-weight: 600;
+}
+
+.chat__list__profile {
+    height: 55px;
+    margin-right: 10px;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.chat__list__name {
+    font-size: 1.3em;
+    color: #13204A;
+}
+
+.chat__list__preview {
+    font-size: .9em;
+    color: #13204A;
+}
+
+.chat__detail__heading {
+    background-color: #CBD3E6;
+    border-radius: 0 20px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 70px;
+}
+
+.chat__detail__heading__profile {
+    height: 40px;
+}
+
+.chat__detail__heading__name {
+    font-size: 1.35em;
+    color: #13204A;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.chat__detail__icons {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.chat__detail__icons img {
+    height: 25px;
+    cursor: pointer;
+}
+
+.chat__detail__icons img:first-child {
+    margin-right: 15px;
+}
+
+.chat__detail__messages {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    overflow: auto;
+}
+
+.chat__message {
+    width: 60%;
+    display: flex;
+    padding: 10px;
+    border-radius: 15px;
+    line-height: 24px;
+}
+
+.chat__message--from {
+    background-color: #CBD3E6;
+    color: #1E3472;
+}
+
+.chat__message--to {
+    background-color: #1E3472;
+    color: #CBD3E6;
+    margin-left: auto;
+}
+
+.chat__detail__send-message {
+    margin-top: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.chat__detail__send-message input {
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background-color: #DADFEC;
+    font-size: 1em;
+    color: #13204A;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 3px;
+}
+
+.chat__detail__send-message input:first-child {
+    flex: 1 0;
+}
+
+.chat__detail__send-message input[type=submit] {
+    background-color: #13204A;
+    color: #DADFEC;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.chat__detail__send-message input::placeholder {
+    color: #13204A;
+}
+
+.chat__detail__messages {
+    height: 100%;
+}

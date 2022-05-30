@@ -54,3 +54,26 @@
 .chat__list__heading__new-message img {
     height: 40px;
 }
+
+#search-chat {
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 35px;
+    font-size: 1em;
+    padding-bottom: 3px;
+}
+
+.chat__search-bar {
+    position: relative;
+}
+
+.chat__search-bar__icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    height: 18px;
+}

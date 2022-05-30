@@ -65,7 +65,11 @@
                     </a>
                 </div>
 
-                <input type="text" name="search-chat" id="search-chat" placeholder="Zoeken...">
+                <div class="chat__search-bar">
+                    <input type="text" name="search-chat" id="search-chat" placeholder="Zoeken...">
+                    <img src="./img/search-icon.svg" alt="Search" class="chat__search-bar__icon">
+                </div>
+                
 
                 <div class="chat__list__overview">
                     <div class="chat__list__person">

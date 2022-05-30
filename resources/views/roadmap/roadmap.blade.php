@@ -131,7 +131,7 @@
                     <div class="form--stage__field">
                         <p class="form--stage__field__text">Bedrijfsgegevens</p>
                         <input type="text" class="form--stage__field__input" name="naam" placeholder="Naam onderneming">
-                        <input type="text" class="form--stage__field__input" name="emailadress" placeholder="Emailadress onderneming">
+                        <input type="text" class="form--stage__field__input" name="emailadres" placeholder="Emailadres onderneming">
                         <input type="number" class="form--stage__field__input" name="telefoon" placeholder="Telefoon onderneming">
                         <p class="form--stage__field__text">Adress bedrijf</p>
                         <input type="text" class="form--stage__field__input" name="straat" placeholder="Straat">
@@ -404,64 +404,20 @@
                         <p class="stage__field__title"><strong>Adres(sen)</strong></p>
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
-                <div class="stage5__form">
-                    <form class="form--stage" action="" method="post">
-                    @csrf
-                        <p class="form--stage__title">Vul het correcte adres in van je administratieve hoofdzetel, dat is hetzelfde adres waarop je je onderneming hebt laten registreren in de KBO. Vul hier ook een correct e-mailadres en telefoonnummer in</p>
-                        <div class="form--stage__field">
-                            <input class="form--stage__field__input" type="text" name="straat" placeholder="Straat">
-                            <input class="form--stage__field__input" type="number" name="nummer" placeholder="Nummer">
-                            <input class="form--stage__field__input" type="number" name="postcode" placeholder="Postcode">
-                            <input class="form--stage__field__input" type="text" name="plaats" placeholder="Plaats">
-                            <input class="form--stage__field__input" type="text" name="email" placeholder="Email">
-                            <input class="form--stage__field__input" type="number" name="telefoonnummer" placeholder="Telefoon">
-                            
-                        </div>
-                    </form>
+                <div class="stage__info">
+                    <p class="stage__info__title">Hieronder zie je adres waarop je administratieve hoofdzetel is gevestigd</p>
+                    <p class="stage__info__text">Straat  nummer: {{$company->street}} {{$company->number}}</p>
+                    <p class="stage__info__text">Plaats: {{$company->postal}} {{$company->city}}</p>
                 </div>
             </div>
 
-            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra > 1)
+            
             <div class="stage5">
-            @else
-            <div class="stage5Checked">
-            @endif
                 <div class="stage__field">
                         <p class="stage__field__title"><strong>Activiteiten</strong></p>
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
-                
-                <div class="stage5__form"> 
-                @if(empty($briefjes[0]))
-                @foreach($categories as $cat)
-                        <div class="category__container">
-                            
-                            <div class="category">
-                            <p class="category__text">{{$cat->name}}</p>
-                            <img class="category__icon" src="/img/uitklappen.png" alt="uitklappen">
-                            </div>
-
-                            @foreach($cat->subcategories as $sub)
-                            <div class="subcategory__container">
-                                <div class="subcategory">
-                                    <p class="subcategory__text">{{$sub->name}}</p>
-                                    <img class="subcategory__icon" src="/img/uitklappen.png" alt="uitklappen">
-                                </div>
-
-                                @foreach($sub->activities as $ac)
-                                <div class="activity__container">
-                                    <div class="activity">
-                                        <p class="activity__text">{{$ac->code}}-{{$ac->name}}</p>
-                                        <img class="activity__icon" src="/img/unchecked.png" alt="uitklappen">
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                            @endforeach
-                        </div>
-                        @endforeach
-                    @endif
-                    
+                <div class="stage__info">
                     <div class="briefje">
                         <p class="briefje__title">Mijn aangeduiden activiteiten</p>
                         <p class="briefje__text">Hou dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
@@ -478,77 +434,22 @@
                         
                         @endif
                     </div>
-                    <form class="briefjeAdd" action="/add/briefje" method="post">
-                    @csrf
-                        @if(empty($briefjes[0]))
-                        <button>Save briefje</button>
-                        @endif
-                    </form>
-                    
-                    <form class="briefjeAdd" action="/delete/briefje" method="post">
-                    @csrf
-                    @if(!empty($briefjes[0]))
-                    @foreach($briefjes as $b)
-                            <input type="hidden" value="{{$b->activity->code}}" name="code[]">
-                        @endforeach
-                        <button >Verwijder briefje</button>
-                    @endif
-                    </form>
                 </div>
             </div>
 
-            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 3)
+
             <div class="stage5">
-            @else
-            <div class="stage5Checked">
-            @endif
-                <div class="stage__field">
-                        <p class="stage__field__title"><strong>Regime</strong></p>
-                        <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
-                </div>
-                <div class="stage5__form">
-                    <form class="form--stage" action="/check/stage5/regime" method="post">
-                    @csrf
-                        <p class="form--stage__title">In deze stap moet je kiezen welk btw-regime je op jouw onderneming wil toepassen, er zijn een aantal opties, maar in de meeste gevallen zal je kiezen voor optie “B”, “Belastingplichtige onderworpen aan de vrijstellingsregeling van de belasting”.</p>
-                        <div class="form--stage__field">
-                            <div class="form--stage__field__radio"><input type="radio" name="optie" value="a"><label for="a">A. Belastingplichtige gehouden tot het indienen van periodieke btw-aangiften</label></div>
-                            <p class="form--stage__text">Kies je voor deze optie dan ben je verplicht elke maand of elk kwartaal een btw-aangifte in te dienen. Dit is werk voor boekhouders, als je voor deze optie kiest ben je vrijwel altijd genoodzaakt een boekhouder aan te stellen. Als je deze optie kiest, ben je verplicht het correcte btw-percentage aan te rekenen aan de klant, en door te storten aan de btw-administratie. Je krijgt op die manier ook het recht om btw terug te vorderen op elke aankoop die je doet.</p>
-                            
-                            <div class="form--stage__field__radio"><input type="radio" name="optie" value="b"><label for="b">B. Belastingplichtige onderworpen aan de vrijstellingsregeling van de belasting</label></div>
-                            <p class="form--stage__text">Ondernemers met een jaaromzet lager dan 25.000,00 euro kunnen ervoor kiezen om vrijgesteld te worden van hun btw-plicht. Je bent dan wel btw-onderworpen en je hebt een btw-hoedanigheid, maar je hoeft geen (drie)maandelijkse aangifte in te dienen en je klanten geen btw aan te rekenen. Dit is veruit de eenvoudigste optie, je kan helaas geen btw terugvorderen op je aankopen.</p>
-                            
-                            <div class="form--stage__field__radio"><input type="radio" name="optie" value="c"><label for="c">Optie C, D, E en F</label></div>
-                            <p class="form--stage__text">Deze andere opties zijn uitzonderlijke situaties waar je als student-zelfstandige hoogstwaarschijnlijk niet mee te maken zult krijgen. Denk je toch dat één van deze btw-regimes op jou van toepassing zal zijn, lees er hier dan meer over: <a href="https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/btw-regime#q1">https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/btw-regime#q1</a></p>
-
-                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 4)
-            <div class="stage5">
-            @else
-            <div class="stage5Checked">
-            @endif
                 <div class="stage__field">
                         <p class="stage__field__title"><strong>Rekening</strong></p>
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
-                <div class="stage5__form">
-                    <form class="form--stage" action="/check/stage5/rekening" method="post">
-                    @csrf
-                        <p class="form--stage__title">Als je gekozen hebt voor de vrijstellingsregeling, hoef je hier geen rekeningnummer in te vullen. Koos je voor een maandelijkse of driemaandelijkse btw-aangifte, vul dan hier het correcte rekeningnummer in van je onderneming.</p>
-                        <div class="form--stage__field">
-                            <input class="form--stage__field__input" @if($roadmap->regime === "b")type="hidden" value="geen" @else type="text" @endif name="rekeningsnummer" placeholder="Rekeningsnummer">
-                            <button class="form--stage__field__btn" type="submit">Verstuur</button>
-                        </div>
-                    </form>
+                <div class="stage__info">
+                    <p class="stage__info__title">Hieronder zie je je rekeningnummer</p>
+                    <p class="stage__info__text">{{$company->account_number}}</p>
                 </div>
             </div>
 
-            @if(Auth::user()->roadmap->extra === 5)
+            @if(Auth::user()->roadmap->stage === 6 && Auth::user()->roadmap->extra === 0)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -558,7 +459,7 @@
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
                 <div class="stage5__form">
-                    <form class="form--stage" action="/check/stage5/handtekening" method="post">
+                    <form class="form--stage" action="/check/stage6/handtekening" method="post">
                     @csrf
                         <p class="form--stage__title">Vul hier gewoon je naam en hoedanigheid in. Jij bent de “Oprichter van een geregistreerde entiteit-natuurlijk persoon”.</p>
                         <div class="form--stage__field">
@@ -570,7 +471,7 @@
                 </div>
             </div>
 
-            @if($roadmap->stage === 5 && Auth::user()->roadmap->extra === 6)
+            @if($roadmap->stage === 6 && Auth::user()->roadmap->extra === 1)
             <div class="stage5">
             @else
             <div class="stage5Checked">
@@ -580,7 +481,7 @@
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
                 <div class="stage5__form">
-                    <form class="form--stage" action="/check/stage5/bevestig" method="post">
+                    <form class="form--stage" action="/check/stage6/bevestig" method="post">
                     @csrf
                         <p class="form--stage__title">Bevestig hier je aanvraag tot btw-identificatie. Je krijgt een brief via de post die je zal vertellen wanneer je btw-identificatie in orde is. Vanaf dat moment mag je beginnen met factureren.</p>
                         <div class="form--stage__field">
@@ -592,12 +493,12 @@
                 </div>
             </div>
             
-            @if($roadmap->stage === 5 && $roadmap->check === 1)
+            @if($roadmap->stage === 6 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
                     <button type="submit" class="stageCheckBtn">Stap afronden</button>
-                    <input type="hidden" name="stage" value="5">
+                    <input type="hidden" name="stage" value="6">
                 </div>
             </form>
             @endif
@@ -613,6 +514,7 @@
             <div class="stage">
                 <p class="stage__title">Laat aan de bank weten wat je ondernemingsnummer is</p>
                 <p class="stage__text">Oef, dit is gelukkig maar een kleine stap. Nu je geregistreerd bent in de Kruispuntbank van Ondernemingen, heb je een ondernemingsnummer gekregen. Geef bij dit door aan je bank zodat zij jouw pas geopende rekening kunnen omzetten naar een rekening voor professioneel gebruik.</p>
+                <p class="stage__text">Ondernemingsnummer: {{$company->account_number}}</p>
             </div>
             @if($roadmap->check === 0)
             <form class="formStage6" action="/check/inputStage7" method="post">

@@ -788,6 +788,10 @@
   margin-bottom: 10px;
 }
 
+.stage__info .briefje {
+  margin-top: 0px;
+}
+
 @media (max-width: 800px) {
   .stage2Form {
     display: flex;

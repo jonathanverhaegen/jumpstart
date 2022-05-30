@@ -52,12 +52,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
     Route::post('/check/inputStage5', [RoadmapController::class, "checkInputStage5"]);
     Route::post('/check/inputStage7', [RoadmapController::class, "checkInputStage7"]);
-    Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
-    Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
-    Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);
-    Route::post('/check/stage5/rekening', [RoadmapController::class, "checkRekening"]);
-    Route::post('/check/stage5/handtekening', [RoadmapController::class, "checkHandtekening"]);
-    Route::post('/check/stage5/bevestig', [RoadmapController::class, "checkBevestig"]);
+    // Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
+    // Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
+    // Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);
+    // Route::post('/check/stage5/rekening', [RoadmapController::class, "checkRekening"]);
+    Route::post('/check/stage6/handtekening', [RoadmapController::class, "checkHandtekening"]);
+    Route::post('/check/stage6/bevestig', [RoadmapController::class, "checkBevestig"]);
     Route::post('/check/number', [RoadmapController::class, "checkNumber"]);
     Route::post('/add/briefje', [RoadmapController::class, "addBriefje"]);
     Route::post('/delete/briefje', [RoadmapController::class, "deleteBriefje"]);

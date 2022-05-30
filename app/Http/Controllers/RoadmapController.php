@@ -68,7 +68,7 @@ class RoadmapController extends Controller
     public function addCompany(Request $request){
         $credentials = $request->validate([
             'naam' => 'required',
-            'emailadress' => 'required|email',
+            'emailadres' => 'required|email',
             'telefoon' => 'required|max:255',
             'straat' => 'required',
             'nummer' => 'required',
@@ -79,7 +79,7 @@ class RoadmapController extends Controller
         $request->flash();
 
         $name = $request->input('naam');
-        $email = $request->input('emailadress');
+        $email = $request->input('emailadres');
         $phone = $request->input('telefoon');
         $street = $request->input('straat');
         $number = $request->input('nummer');
@@ -494,7 +494,7 @@ class RoadmapController extends Controller
         }
 
         $roadmap = Auth::user()->roadmap;
-        $roadmap->extra = 6;
+        $roadmap->extra = 1;
         $roadmap->save();
 
         $request->session()->flash('success', 'Handtekening opgeslagen');
@@ -508,10 +508,10 @@ class RoadmapController extends Controller
 
         if(!empty($request->input('bevestig'))){
             $roadmap = Auth::user()->roadmap;
-            $roadmap->extra = 7;
+            $roadmap->extra = 2;
             $roadmap->check = 1;
             $roadmap->save();
-            $request->session()->flash('success', 'Je hebt bevestigd en kan nu stap 5 checken');
+            $request->session()->flash('success', 'Je hebt bevestigd en kan nu stap 6 checken');
             return redirect('/roadmap');
         }else{
             $request->session()->flash('error', 'Bevesteging is noodzakelijk');

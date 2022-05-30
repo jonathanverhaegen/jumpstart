@@ -2163,8 +2163,10 @@ if (toggleNextBtn !== null) {
     });
     var stage6 = document.querySelector('.roadmap__stage--6');
     var stage7 = document.querySelector('.roadmap__stage--7');
+    var stage8 = document.querySelector('.roadmap__stage--8');
     stage6.style.display = "flex";
     stage7.style.display = "flex";
+    stage8.style.display = "flex";
     var backBtn = document.querySelector('.roadmap__back');
     backBtn.style.display = "flex";
   });

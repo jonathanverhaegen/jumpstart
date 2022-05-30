@@ -106,10 +106,12 @@ if(toggleNextBtn !== null){
 
         let stage6 = document.querySelector('.roadmap__stage--6');
         let stage7 = document.querySelector('.roadmap__stage--7');
+        let stage8 = document.querySelector('.roadmap__stage--8');
         
 
         stage6.style.display = "flex";
         stage7.style.display = "flex";
+        stage8.style.display = "flex";
         
         let backBtn = document.querySelector('.roadmap__back');
         backBtn.style.display = "flex";

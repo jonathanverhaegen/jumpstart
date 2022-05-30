@@ -1,0 +1,88 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
+//signup mobile
+.ill__su{
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+.h_signup{
+    font-family: $title;
+    font-size: 30px;
+    color: $orange;
+}
+
+.cont__btn__s{
+    width:351px;
+    background-color: $btngray;
+    border-radius: 15px 15px 15px 15px;
+    margin-left:auto;
+    margin-right:auto;
+    height:100px;
+    margin-top: 20px;
+    text-align: center;
+    padding-top:15px;
+}
+
+.cont__btn__sz{
+    width:351px;
+    background-color: $btngray;
+    border-radius: 15px 15px 15px 15px;
+    margin-left:auto;
+    margin-right:auto;
+    height:100px;
+    margin-top: 90px;
+    text-align: center;
+    padding-top:15px;
+}
+
+.btn__student{
+    text-decoration: none;
+    font-family: $normal;
+    font-size: 30px;
+    color: $darkblue;
+    margin-top:50px;
+    
+}
+
+
+.btn__sz{
+    text-decoration: none;
+    font-family: $normal;
+    font-size: 30px;
+    color: $darkblue;
+    margin: auto;
+
+}
+
+
+// signup desktop
+@media(min-width:800px){
+    .ill__su{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 450px;
+        margin-top: 60px;
+    }
+    
+    .h_signup{
+        margin-left: 300px;
+        margin-top: 50px;
+    }
+
+    .cont__btn__s{
+       margin-left: 300px;
+       margin-right:0px;
+    }
+
+    .cont__btn__sz{
+        margin-left: 500px;
+        margin-right:0px;
+        margin-top: -75px;
+     }
+    
+}
+
+

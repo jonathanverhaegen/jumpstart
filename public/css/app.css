@@ -2343,10 +2343,6 @@ h1 {
   margin-bottom: 10px;
 }
 
-input {
-  width: 330px;
-}
-
 input::-moz-placeholder {
   color: #13204A;
   /*Change the placeholder color*/
@@ -2380,6 +2376,7 @@ input.name {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #EDEFF5;
+  width: 330px;
 }
 
 input.date {
@@ -2394,6 +2391,7 @@ input.date {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #EDEFF5;
+  width: 330px;
 }
 
 input.mail {
@@ -2408,6 +2406,7 @@ input.mail {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #EDEFF5;
+  width: 330px;
 }
 
 input.pass {
@@ -2422,6 +2421,7 @@ input.pass {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #EDEFF5;
+  width: 330px;
 }
 
 input.pass__ {
@@ -2436,6 +2436,7 @@ input.pass__ {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #EDEFF5;
+  width: 330px;
 }
 
 .togglePass {
@@ -2501,10 +2502,6 @@ button.reg__student {
   padding-bottom: 20px;
 }
 
-input {
-  width: 310px;
-}
-
 input::-moz-placeholder {
   color: #13204A;
   /*Change the placeholder color*/
@@ -2538,6 +2535,7 @@ input.name__sz {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #FAFAFA;
+  width: 310px;
 }
 
 input.date__sz {
@@ -2552,6 +2550,7 @@ input.date__sz {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #FAFAFA;
+  width: 310px;
 }
 
 input.mail__sz {
@@ -2566,6 +2565,7 @@ input.mail__sz {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #FAFAFA;
+  width: 310px;
 }
 
 input.pass__sz {
@@ -2580,6 +2580,7 @@ input.pass__sz {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #FAFAFA;
+  width: 310px;
 }
 
 input.pass__sz__ {
@@ -2594,6 +2595,7 @@ input.pass__sz__ {
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #FAFAFA;
+  width: 310px;
 }
 
 .togglePass__ {
@@ -2667,10 +2669,6 @@ button.reg__sz {
     margin-left: 733px;
     margin-bottom: 10px;
     margin-top: -475px;
-  }
-
-  input {
-    width: 330px;
   }
 
   input.name {

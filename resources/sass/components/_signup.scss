@@ -59,7 +59,7 @@
 
 //signup student mobile
 .ill__su__s{
-    max-width: 400px;
+    width: 400px;
     margin-top: 10px;
 }
 .h__signup__s{
@@ -196,7 +196,81 @@ button.reg__student{
     
 
 //signup student desktop
+    .ill__su__s{
+        width: 600px;
+        height: 600px;
+        margin-top: 100px;
+    }
 
+    .h__signup__s{
+        margin-left: 733px;
+        margin-bottom: 10px;
+        margin-top: -475px;
+    }
+    
+    label{
+        margin-left: 733px;
+        padding-bottom: 20px;
+    }
+    
+    input{
+        width: 330px;
+    }
+    
+    input.name{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 77px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    input.date{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 105px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    input.mail{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 198px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    input.pass{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 132px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    input.pass__{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 33px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .__reg__student{
+       
+        margin-left: 0px;
+    }
+    
+    button.reg__student{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-top: 40px;
+        margin-bottom: 25px;
+        margin-left:952px;
+    }
 
 
 }

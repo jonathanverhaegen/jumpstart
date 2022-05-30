@@ -81,7 +81,7 @@
                 </a>
 
                 <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--5">
-                    <div class="roadmap__stage__title roadmap__stage__title--left">btw-administartie</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--left">Btw-administratie</div>
                     <div class="roadmap__stage__number">5</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5">
                 </a>
@@ -248,9 +248,9 @@
                     <input class="stage4Input" type="hidden" name="extra" value="">
                 </div>
             </form>
-            <form action="/check/number" method="post">
+            <form class="checkNumber4" action="/check/number" method="post">
             @csrf
-                <p class="stage__text">Bijkomende vraag als de vorige is aangeklikt: “Vul je ondernemingsnummer in om aan te tonen dat je jezelf hebt aangesloten bij een sociaal verzekeringsfonds, en je jezelf hebt laten registreren in de KBO. Als je besloten hebt om je identificatie bij de btw-administratie zelf te doen, leggen we je in de volgende stap uit hoe dit moet.</p>
+            <p class="stage__text">Vul je ondernemingsnummer in om aan te tonen dat je jezelf hebt aangesloten bij een sociaal verzekeringsfonds, en je jezelf hebt laten registreren in de KBO. Als je besloten hebt om je identificatie bij de btw-administratie zelf te doen, leggen we je in de volgende stap uit hoe dit moet.</p>
                 <div class="stage__form__number">
                     <input type="text" class="stage__form__number__input" name="ondernemingsnummer" placeholder="Ondernemingsnummer">
                     <button type="submit">Verstuur</button>

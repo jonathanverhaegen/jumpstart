@@ -2283,14 +2283,15 @@ h1 {
   margin-top: 10px;
 }
 
-.h_signup {
+.h__signup {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   color: #E44402;
+  margin-left: 33px;
 }
 
 .cont__btn__s {
-  width: 351px;
+  width: 339px;
   background-color: #B2BEDA;
   border-radius: 15px 15px 15px 15px;
   margin-left: auto;
@@ -2302,7 +2303,7 @@ h1 {
 }
 
 .cont__btn__sz {
-  width: 351px;
+  width: 339px;
   background-color: #B2BEDA;
   border-radius: 15px 15px 15px 15px;
   margin-left: auto;
@@ -2329,6 +2330,116 @@ h1 {
   margin: auto;
 }
 
+.ill__su__s {
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+.h__signup__s {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #E44402;
+  margin-left: 33px;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-left: 33px;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: #13204A;
+  padding-bottom: 20px;
+}
+
+input {
+  width: 330px;
+}
+
+input.name {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 33px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.date {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 33px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.mail {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 33px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.pass {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 33px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.pass__ {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 33px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+.__reg__student {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0px;
+}
+
+button.reg__student {
+  text-align: center;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  margin-left: 100px;
+}
+
 @media (min-width: 800px) {
   .ill__su {
     display: block;
@@ -2338,7 +2449,7 @@ h1 {
     margin-top: 60px;
   }
 
-  .h_signup {
+  .h__signup {
     margin-left: 300px;
     margin-top: 50px;
   }

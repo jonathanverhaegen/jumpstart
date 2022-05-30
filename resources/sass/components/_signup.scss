@@ -7,14 +7,15 @@
     margin-top: 10px;
 }
 
-.h_signup{
+.h__signup{
     font-family: $title;
     font-size: 30px;
     color: $orange;
+    margin-left: 33px;
 }
 
 .cont__btn__s{
-    width:351px;
+    width:339px;
     background-color: $btngray;
     border-radius: 15px 15px 15px 15px;
     margin-left:auto;
@@ -26,7 +27,7 @@
 }
 
 .cont__btn__sz{
-    width:351px;
+    width:339px;
     background-color: $btngray;
     border-radius: 15px 15px 15px 15px;
     margin-left:auto;
@@ -56,6 +57,116 @@
 
 }
 
+//signup student mobile
+.ill__su__s{
+    max-width: 400px;
+    margin-top: 10px;
+}
+.h__signup__s{
+    font-family: $title;
+    font-size: 30px;
+    color: $orange;
+    margin-left: 33px;
+    margin-bottom: 10px;
+}
+
+label{
+    margin-left: 33px;
+    font-family: $normal;
+    font-size: 20px;
+    color: $darkblue;
+    padding-bottom: 20px;
+}
+
+input{
+    width: 330px;
+}
+
+input.name{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 33px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.date{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 33px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.mail{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 33px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.pass{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 33px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.pass__{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 33px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+.__reg__student{
+    font-family: $normal;
+    font-size: 20px;
+    color:$white;
+    margin-left: 0px;
+}
+
+button.reg__student{
+    text-align: center;
+    background-color: $darkblue;
+    border-radius: 40px 40px 40px 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+}
+
 
 // signup desktop
 @media(min-width:800px){
@@ -67,7 +178,7 @@
         margin-top: 60px;
     }
     
-    .h_signup{
+    .h__signup{
         margin-left: 300px;
         margin-top: 50px;
     }
@@ -83,6 +194,11 @@
         margin-top: -75px;
      }
     
+
+//signup student desktop
+
+
+
 }
 
 

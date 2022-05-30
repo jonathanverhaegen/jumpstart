@@ -19,12 +19,38 @@
 .chat__list {
     min-width: 300px;
     width: 35%;
+    padding: 15px;
 }
 
 .chat__detail {
     width: 65%;
+    border-radius: 0 20px 20px 0;
+    background-color: white;
+}
+
+.chat__list__heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 15px;
 }
 
 .chat__list__heading__h1 {
     color: #13204A;
+    margin: 0;
+    padding: 0;
+}
+
+.chat__list__heading__profile {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.chat__list__heading__new-message {
+    display: flex;
+    margin-left: auto;
+}
+
+.chat__list__heading__new-message img {
+    height: 40px;
 }

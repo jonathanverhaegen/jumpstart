@@ -58,10 +58,10 @@
             <div class="chat__list">
 
                 <div class="chat__list__heading">
-                    <img src="" alt="" class="chat__list__heading__profile">
+                    <img src="./img/Laurens.png" alt="Laurens" class="chat__list__heading__profile">
                     <h1 class="chat__list__heading__h1">Berichten</h1>
                     <a href="" class="chat__list__heading__new-message">
-                        <img src="" alt="">
+                        <img src="./img/edit-chat.svg" alt="New chat">
                     </a>
                 </div>
 

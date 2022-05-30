@@ -2212,6 +2212,8 @@ if (stageBtn3 !== null) {
   stageBtn3.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
+      var exemption = btn.dataset.exemption;
+      document.querySelector('.exemption').value = exemption;
       document.querySelector('.formStage3').submit();
     });
   });

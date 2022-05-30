@@ -296,13 +296,14 @@
                 <p class="stage__text"><strong>Tip:</strong> Wil je meer weten over de sociale bijdragen die je moet betalen als student-zelfstandige? Lees er meer over op de website van VLAIO: <a target="_blank" href="https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige">https://www.vlaio.be/nl/begeleiding-advies/start/je-statuut-als-zelfstandige/statuut-van-student-zelfstandige</a></p>
             </div>
             @if($roadmap->stage === 4 && $roadmap->check === 0)
-            <form class="formStage3" action="/check/inputStage3" method="post">
+            <form class="formStage3" action="/check/inputStage4" method="post">
             @csrf
                 <div class="stage__btns">
-                    <a class="stagebtn3" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn3" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn3" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
+                    <a class="stagebtn3" data-exemption="0" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" data-exemption="1" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" data-exemption="2" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
                 </div>
+                <input type="hidden" name="vrijstelling" class="exemption">
             </form>
             @endif
             @if($roadmap->stage === 4 && $roadmap->check === 1)

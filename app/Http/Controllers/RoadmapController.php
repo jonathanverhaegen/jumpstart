@@ -328,6 +328,26 @@ class RoadmapController extends Controller
         return redirect($link);
     }
 
+    public function checkInputStage4(Request $request){
+        $credentials = $request->validate([
+            'vrijstelling' => 'required',
+        ]);
+
+        $exemption = intval($request->input('vrijstelling'));
+        
+        $company = Auth::user()->company;
+        $company->exemption = $exemption;
+        $company->save();
+
+        $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 1;
+        $roadmap->save();
+
+        $request->session()->flash('success', 'Vrijstelling doorgegeven. Je kan stap 4 nu laten checken');
+        return redirect('/roadmap');
+
+    }
+
     
 
     public function checkInputStage5(Request $request){

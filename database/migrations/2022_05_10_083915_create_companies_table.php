@@ -26,6 +26,7 @@ class CreateCompaniesTable extends Migration
             $table->string('phone')->nullable();
             $table->date('start_date')->nullable();
             $table->foreignId('user_id')->nullable();
+            $table->string('exemption')->nullable();
             $table->timestamps();
         });
     }

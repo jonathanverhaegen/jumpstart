@@ -46,14 +46,14 @@ button:hover{
 .form--login__input{
     margin-top: 40px;
     border:none;
-    border-bottom: $blue 2px solid;
+    border-bottom: $darkblue 2px solid;
     background-color: $background;
     font-size:18px;
     font-family: $normal;
 }
 
 .form--login__input::placeholder {
-    color: $blue; /*Change the placeholder color*/
+    color: $darkblue; /*Change the placeholder color*/
     opacity: 1; /*Change the opacity between 0 and 1*/
 }
 

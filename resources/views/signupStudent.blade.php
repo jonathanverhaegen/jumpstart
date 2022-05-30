@@ -41,28 +41,25 @@
       <h1 class="h__signup__s">Word nu student-zelfstandige!</h1>
       
         <div class="">
-        <label class="" for="name">Naam en voornaam</label>
-        <input class="name" type="text" name="name" placeholder="" value="">
+        <input class="name" type="text" name="name" placeholder="Naam en voornaam" value="">
         </div>
 
         <div class="">
-        <label class="" for="birthdate">Geboortedatum</label>
-        <input class="date" type="date" name="birthdate" placeholder="" value="">
+        <input class="date" type="date" name="birthdate" placeholder="Geboortedatum" value="">
         </div>
 
         <div class="">
-        <label class="" for="email">Email</label>
-        <input class="mail" type="text" name="email" placeholder="" value="">
+        <input class="mail" type="text" name="email" placeholder="Email" value="">
         </div>
 
         <div class="">
-        <label class="" for="password">Wachtwoord</label>
-        <input class="pass" type="password" name="password" placeholder="" value="">
+        <input class="pass" type="password" name="password" placeholder="Wachtwoord" value="">
+        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
         <div class="">
-        <label class="" for="password_confirmation">Wachtwoord bevestigen</label>
-        <input class="pass__" type="password" name="password_confirmation" placeholder="" value="">
+        <input class="pass__" type="password" name="password_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
       

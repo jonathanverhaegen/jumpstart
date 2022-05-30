@@ -70,16 +70,13 @@
     margin-bottom: 10px;
 }
 
-label{
-    margin-left: 33px;
-    font-family: $normal;
-    font-size: 20px;
-    color: $darkblue;
-    padding-bottom: 20px;
-}
-
 input{
     width: 330px;
+}
+
+input::placeholder {
+    color: $darkblue; /*Change the placeholder color*/
+    opacity: 1; /*Change the opacity between 0 and 1*/
 }
 
 input.name{
@@ -87,12 +84,16 @@ input.name{
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
     margin-left: 33px;
-    padding-bottom: 20px;
-    border-radius: 10px 10px 10px 10px;
-    border-color: $lightblue;
+    padding-bottom: 10px;
+    
+
+    
+    border:none;
+    border-bottom: $darkblue 2px solid;
+    background-color: $background;
 }
 
 input.date{
@@ -103,9 +104,11 @@ input.date{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 33px;
-    padding-bottom: 20px;
-    border-radius: 10px 10px 10px 10px;
-    border-color: $lightblue;
+    padding-bottom: 10px;
+    
+    border:none;
+    border-bottom: $darkblue 2px solid;
+    background-color: $background;
 }
 
 input.mail{
@@ -116,9 +119,12 @@ input.mail{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 33px;
-    padding-bottom: 20px;
-    border-radius: 10px 10px 10px 10px;
-    border-color: $lightblue;
+    padding-bottom: 10px;
+    
+    border:none;
+    border-bottom: $darkblue 2px solid;
+    background-color: $background;
+    
 }
 
 input.pass{
@@ -129,9 +135,12 @@ input.pass{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 33px;
-    padding-bottom: 20px;
-    border-radius: 10px 10px 10px 10px;
-    border-color: $lightblue;
+    padding-bottom: 10px;
+    
+    border:none;
+    border-bottom: $darkblue 2px solid;
+    background-color: $background;
+    
 }
 
 input.pass__{
@@ -142,9 +151,20 @@ input.pass__{
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 33px;
-    padding-bottom: 20px;
-    border-radius: 10px 10px 10px 10px;
-    border-color: $lightblue;
+    padding-bottom: 10px;
+    
+    border:none;
+    border-bottom: $darkblue 2px solid;
+    background-color: $background;
+}
+
+.togglePass{
+    width:30px;
+    margin-left: 335px; 
+    cursor: pointer;
+    position:relative;
+    margin-top:-80px;
+    margin-bottom: 30px;
 }
 
 .__reg__student{
@@ -162,11 +182,131 @@ button.reg__student{
     padding-bottom: 15px;
     padding-left: 50px;
     padding-right: 50px;
-    margin-top: 20px;
+    margin-top: 3px;
     margin-bottom: 25px;
     margin-left: 100px;
 }
 
+
+//signup student-zelfstandige mobile -- registratie
+
+.h__reg__sz{
+    font-family: $title;
+    font-size: 30px;
+    color: $darkblue;
+    margin-left: 33px;
+    margin-bottom: 10px;
+}
+
+.form__sz{
+    width:90%;
+    background-color: $lightgray;
+    border-radius: 20px 20px 20px 20px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:25px;
+    margin-bottom:25px;
+    padding-top:25px;
+    height: 580px;
+}
+
+.h__signup__sz{
+    font-family: $title;
+    font-size: 20px;
+    color: $orange;
+    margin-left: 13px;
+    margin-bottom: 10px;
+}
+
+
+input{
+    width: 330px;
+}
+
+input.name__sz{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 13px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.date__sz{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 13px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.mail__sz{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 13px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.pass__sz{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 13px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+input.pass__sz__{
+    margin-left: 0px;
+    font-family: $normal;
+    font-size: 18px;
+    color: $darkblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 13px;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: $lightblue;
+}
+
+.__reg__sz{
+    font-family: $normal;
+    font-size: 20px;
+    color:$white;
+    margin-left: 0px;
+}
+
+button.reg__sz{
+    text-align: center;
+    background-color: $darkblue;
+    border-radius: 40px 40px 40px 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+}
 
 // signup desktop
 @media(min-width:800px){
@@ -208,57 +348,65 @@ button.reg__student{
         margin-top: -475px;
     }
     
-    label{
-        margin-left: 733px;
-        padding-bottom: 20px;
-    }
-    
     input{
         width: 330px;
     }
     
     input.name{
+        width: 480px;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 77px;
+        margin-left: 733px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
     
     input.date{
+        width: 480px;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 105px;
+        margin-left: 733px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
     
     input.mail{
+        width: 480px;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 198px;
+        margin-left: 733px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
     
     input.pass{
+        width: 480px;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 132px;
+        margin-left: 733px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
     
     input.pass__{
+        width: 480px;
         margin-top: 10px;
         margin-bottom: 10px;
-        margin-left: 33px;
+        margin-left: 733px;
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
+    .togglePass{
+        width:30px;
+        margin-left: -30px; 
+        cursor: pointer;
+        position:relative;
+        margin-top:-90px;
+        margin-bottom:-10px;
+    }
     
     .__reg__student{
-       
         margin-left: 0px;
     }
     
@@ -269,7 +417,7 @@ button.reg__student{
         padding-right: 30px;
         margin-top: 40px;
         margin-bottom: 25px;
-        margin-left:952px;
+        margin-left:894px;
     }
 
 

@@ -1103,28 +1103,28 @@ button:hover {
 .form--login__input {
   margin-top: 40px;
   border: none;
-  border-bottom: #1E3472 2px solid;
+  border-bottom: #13204A 2px solid;
   background-color: #EDEFF5;
   font-size: 18px;
   font-family: "Lato", sans-serif;
 }
 
 .form--login__input::-moz-placeholder {
-  color: #1E3472;
+  color: #13204A;
   /*Change the placeholder color*/
   opacity: 1;
   /*Change the opacity between 0 and 1*/
 }
 
 .form--login__input:-ms-input-placeholder {
-  color: #1E3472;
+  color: #13204A;
   /*Change the placeholder color*/
   opacity: 1;
   /*Change the opacity between 0 and 1*/
 }
 
 .form--login__input::placeholder {
-  color: #1E3472;
+  color: #13204A;
   /*Change the placeholder color*/
   opacity: 1;
   /*Change the opacity between 0 and 1*/
@@ -2343,16 +2343,29 @@ h1 {
   margin-bottom: 10px;
 }
 
-label {
-  margin-left: 33px;
-  font-family: "Lato", sans-serif;
-  font-size: 20px;
-  color: #13204A;
-  padding-bottom: 20px;
-}
-
 input {
   width: 330px;
+}
+
+input::-moz-placeholder {
+  color: #13204A;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+input:-ms-input-placeholder {
+  color: #13204A;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
+}
+
+input::placeholder {
+  color: #13204A;
+  /*Change the placeholder color*/
+  opacity: 1;
+  /*Change the opacity between 0 and 1*/
 }
 
 input.name {
@@ -2360,12 +2373,13 @@ input.name {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   color: #13204A;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
   margin-left: 33px;
-  padding-bottom: 20px;
-  border-radius: 10px 10px 10px 10px;
-  border-color: #D1D8E8;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: #13204A 2px solid;
+  background-color: #EDEFF5;
 }
 
 input.date {
@@ -2376,9 +2390,10 @@ input.date {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 33px;
-  padding-bottom: 20px;
-  border-radius: 10px 10px 10px 10px;
-  border-color: #D1D8E8;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: #13204A 2px solid;
+  background-color: #EDEFF5;
 }
 
 input.mail {
@@ -2389,9 +2404,10 @@ input.mail {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 33px;
-  padding-bottom: 20px;
-  border-radius: 10px 10px 10px 10px;
-  border-color: #D1D8E8;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: #13204A 2px solid;
+  background-color: #EDEFF5;
 }
 
 input.pass {
@@ -2402,9 +2418,10 @@ input.pass {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 33px;
-  padding-bottom: 20px;
-  border-radius: 10px 10px 10px 10px;
-  border-color: #D1D8E8;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: #13204A 2px solid;
+  background-color: #EDEFF5;
 }
 
 input.pass__ {
@@ -2415,9 +2432,19 @@ input.pass__ {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 33px;
-  padding-bottom: 20px;
-  border-radius: 10px 10px 10px 10px;
-  border-color: #D1D8E8;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: #13204A 2px solid;
+  background-color: #EDEFF5;
+}
+
+.togglePass {
+  width: 30px;
+  margin-left: 335px;
+  cursor: pointer;
+  position: relative;
+  margin-top: -80px;
+  margin-bottom: 30px;
 }
 
 .__reg__student {
@@ -2428,6 +2455,123 @@ input.pass__ {
 }
 
 button.reg__student {
+  text-align: center;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 3px;
+  margin-bottom: 25px;
+  margin-left: 100px;
+}
+
+.h__reg__sz {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #13204A;
+  margin-left: 33px;
+  margin-bottom: 10px;
+}
+
+.form__sz {
+  width: 90%;
+  background-color: #FAFAFA;
+  border-radius: 20px 20px 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  height: 580px;
+}
+
+.h__signup__sz {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #E44402;
+  margin-left: 13px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 330px;
+}
+
+input.name__sz {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.date__sz {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.mail__sz {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.pass__sz {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+input.pass__sz__ {
+  margin-left: 0px;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #13204A;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 13px;
+  padding-bottom: 20px;
+  border-radius: 10px 10px 10px 10px;
+  border-color: #D1D8E8;
+}
+
+.__reg__sz {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 0px;
+}
+
+button.reg__sz {
   text-align: center;
   background-color: #13204A;
   border-radius: 40px 40px 40px 40px;
@@ -2477,53 +2621,62 @@ button.reg__student {
     margin-top: -475px;
   }
 
-  label {
-    margin-left: 733px;
-    padding-bottom: 20px;
-  }
-
   input {
     width: 330px;
   }
 
   input.name {
+    width: 480px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 77px;
+    margin-left: 733px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   input.date {
+    width: 480px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 105px;
+    margin-left: 733px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   input.mail {
+    width: 480px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 198px;
+    margin-left: 733px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   input.pass {
+    width: 480px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 132px;
+    margin-left: 733px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   input.pass__ {
+    width: 480px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 33px;
+    margin-left: 733px;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .togglePass {
+    width: 30px;
+    margin-left: -30px;
+    cursor: pointer;
+    position: relative;
+    margin-top: -90px;
+    margin-bottom: -10px;
   }
 
   .__reg__student {
@@ -2537,7 +2690,7 @@ button.reg__student {
     padding-right: 30px;
     margin-top: 40px;
     margin-bottom: 25px;
-    margin-left: 952px;
+    margin-left: 894px;
   }
 }
 body {

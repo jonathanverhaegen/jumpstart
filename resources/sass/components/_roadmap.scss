@@ -243,9 +243,15 @@
     margin-left: auto;
 }
 
+.stage2__form{
+    margin-top:20px;
+}
+
 .stage5__form{
     display:none;
 }
+
+
 
 /*roadmap verdeling */
 
@@ -481,6 +487,10 @@
     border-radius: 20px;
 }
 
+.checkNumber4{
+    display:none;
+}
+
 .stage__form__number{
     margin-top: 30px;
     flex-direction: column;
@@ -490,7 +500,7 @@
     justify-content: center;
     gap: 20px;
     margin-bottom: 75px;
-    display: none;
+    display: flex;
 }
 
 
@@ -523,6 +533,25 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.stage__info{
+    font-family: $normal;
+    display:none;
+}
+
+.stage__info__title{
+    font-size:16px;
+    color: $blue;
+    margin-bottom: 20px;
+}
+
+.stage__info__text{
+    margin-bottom: 10px;
+}
+
+.stage__info .briefje{
+    margin-top: 0px;
 }
 
 
@@ -647,7 +676,7 @@
         width: 20px;
         height: 80px;
         margin-top:44px;
-        margin-left: -277px;
+        margin-left: -48px;
         margin-bottom: -25px;
     }
     
@@ -669,7 +698,7 @@
         display: none;
         justify-content: center;
         position: relative;
-        margin-top: -500px;
+        margin-top: -650px;
         margin-left: 340px;
         z-index: 0;
     }

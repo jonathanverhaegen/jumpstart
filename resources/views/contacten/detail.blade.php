@@ -53,7 +53,7 @@
         @endcomponent
         @endif
 
-
+<div class="contact__detail">
 <div class="detail__container__">
     <div class="detail__container__base">
         <div class="detail">
@@ -107,6 +107,7 @@
         </div>
     </div>
 
+</div>
 </div>
 
 @endsection

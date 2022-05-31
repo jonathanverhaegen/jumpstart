@@ -1,0 +1,16 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
+.verification{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:5%;
+}
+
+.verification__title{
+    text-align: center;
+    font-family: $title;
+    color: $blue;
+    font-size:24px;
+}

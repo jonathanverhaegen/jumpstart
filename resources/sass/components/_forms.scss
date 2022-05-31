@@ -207,6 +207,22 @@ button:hover{
     padding: 10px 25px 10px 25px;
 }
 
+.form--verification{
+    display:flex;
+    justify-content: center;
+    margin-top:20px;
+}
+
+.form--verification button{
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    color: white;
+    background-color: #13204A;
+    border-radius: 40px 40px 40px 40px;
+    border:none;
+    padding: 10px 25px 10px 25px;
+}
+
 @media(min-width:800px){
     .form--login{
         display:grid;

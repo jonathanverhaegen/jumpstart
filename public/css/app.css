@@ -1332,6 +1332,22 @@ button:hover {
   padding: 10px 25px 10px 25px;
 }
 
+.form--verification {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form--verification button {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  border: none;
+  padding: 10px 25px 10px 25px;
+}
+
 @media (min-width: 800px) {
   .form--login {
     display: grid;
@@ -3100,6 +3116,20 @@ button.reg__sz {
 
 .chat__detail__messages {
   height: 100%;
+}
+
+.verification {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+}
+
+.verification__title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #1E3472;
+  font-size: 24px;
 }
 
 body {

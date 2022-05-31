@@ -2809,7 +2809,6 @@ button.reg__sz {
     margin-left: 894px;
   }
 }
-
 .auth {
   width: 80%;
   margin-left: auto;
@@ -2873,7 +2872,6 @@ button.reg__sz {
     align-items: center;
   }
 }
-
 .chat__container {
   width: 90%;
   background-color: #CBD3E6;
@@ -3130,7 +3128,6 @@ button.reg__sz {
   height: 100%;
 }
 
-
 .verification {
   width: 80%;
   margin-left: auto;
@@ -3150,7 +3147,6 @@ button.reg__sz {
     padding: 5%;
   }
 }
-
 body {
   background-color: #EDEFF5;
 }

@@ -100,7 +100,7 @@ class RegisterController extends Controller
         $map->check = 0;
         $map->save();
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
         $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');
         return redirect('/login');

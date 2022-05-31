@@ -163,6 +163,7 @@ button.reg__student{
     margin-top: 3px;
     margin-bottom: 25px;
     margin-left: 100px;
+    border:none;
 }
 
 
@@ -324,6 +325,12 @@ button.reg__sz{
     margin-left: 101px;
     margin-bottom: 10px;
     margin-top: 70px;
+}
+
+.container__signup__student{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
 }
 
 // signup desktop

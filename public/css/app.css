@@ -2485,6 +2485,7 @@ button.reg__student {
   margin-top: 3px;
   margin-bottom: 25px;
   margin-left: 100px;
+  border: none;
 }
 
 .h__reg__sz {
@@ -2653,6 +2654,12 @@ button.reg__sz {
   margin-top: 70px;
 }
 
+.container__signup__student {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
 @media (min-width: 800px) {
   .ill__su {
     display: block;
@@ -2747,6 +2754,59 @@ button.reg__sz {
     margin-left: 894px;
   }
 }
+.auth {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+}
+
+.auth__title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #1E3472;
+  font-size: 24px;
+}
+
+.auth__info {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__info__title {
+  font-family: "Lato", sans-serif;
+}
+
+.auth__info__title--bold {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.auth__info__img {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.auth__btn {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.auth__btn a button {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  border: none;
+  padding: 10px 20px 10px 25px;
+}
+
 .chat__container {
   width: 90%;
   background-color: #CBD3E6;

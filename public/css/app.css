@@ -1335,7 +1335,7 @@ button:hover {
 .form--verification {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .form--verification button {
@@ -3132,7 +3132,7 @@ button.reg__sz {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  padding: 5%;
+  padding: 20% 5% 20% 5%;
 }
 
 .verification__title {
@@ -3142,6 +3142,11 @@ button.reg__sz {
   font-size: 24px;
 }
 
+@media (min-width: 800px) {
+  .verification {
+    padding: 5%;
+  }
+}
 body {
   background-color: #EDEFF5;
 }

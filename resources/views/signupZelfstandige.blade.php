@@ -38,7 +38,7 @@
     <h1 class="h__reg__sz">Registreren</h1>
       <form action="user/addZelfstandige" method="post" class="form__sz">
       @csrf
-      <h1 class="h__signup__sz">Word lid van onze <br>community</br></h1>
+      <h1 class="h__signup__sz">Word lid van onze community</h1>
       
         <div class="">
         <input class="name__sz" type="text" name="name" placeholder="Naam en voornaam" value="">

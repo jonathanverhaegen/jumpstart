@@ -40,7 +40,7 @@
       @csrf
 
       <a href=""><img src="{{asset('img/aanpassen.png')}}" alt="edit" class="edit__icon__"></a>
-      <h1 class="h__signup__sz">Word lid van onze <br>community</br></h1>
+      <h1 class="h__signup__sz">Word lid van onze community</h1>
       
         <div class="">
         <input class="name__sz" type="text" name="name" placeholder="Bedrijfsnaam" value="">

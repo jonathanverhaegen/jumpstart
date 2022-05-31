@@ -2163,8 +2163,10 @@ if (toggleNextBtn !== null) {
     });
     var stage6 = document.querySelector('.roadmap__stage--6');
     var stage7 = document.querySelector('.roadmap__stage--7');
+    var stage8 = document.querySelector('.roadmap__stage--8');
     stage6.style.display = "flex";
     stage7.style.display = "flex";
+    stage8.style.display = "flex";
     var backBtn = document.querySelector('.roadmap__back');
     backBtn.style.display = "flex";
   });
@@ -2210,6 +2212,8 @@ if (stageBtn3 !== null) {
   stageBtn3.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
+      var exemption = btn.dataset.exemption;
+      document.querySelector('.exemption').value = exemption;
       document.querySelector('.formStage3').submit();
     });
   });
@@ -2230,7 +2234,7 @@ if (stageBtn4 !== null) {
         document.querySelector('.formStage4').submit();
       } else {
         document.querySelector('.formStage4').style.display = "none";
-        document.querySelector('.stage__form__number').style.display = "flex";
+        document.querySelector('.checkNumber4').style.display = "block";
       }
     });
   });
@@ -2248,11 +2252,23 @@ if (stage5 !== null) {
 
       if (check === 0) {
         stage.querySelector('.stage__field__icon').style.transform = "rotate(180deg)";
-        stage.querySelector('.stage5__form').style.display = "block";
+
+        if (stage.querySelector('.stage__info') !== null) {
+          stage.querySelector('.stage__info').style.display = "block";
+        } else {
+          stage.querySelector('.stage5__form').style.display = "block";
+        }
+
         check = 1;
       } else {
         stage.querySelector('.stage__field__icon').style.transform = "rotate(0deg)";
-        stage.querySelector('.stage5__form').style.display = "none";
+
+        if (stage.querySelector('.stage__info') !== null) {
+          stage.querySelector('.stage__info').style.display = "none";
+        } else {
+          stage.querySelector('.stage5__form').style.display = "none";
+        }
+
         check = 0;
       }
     });

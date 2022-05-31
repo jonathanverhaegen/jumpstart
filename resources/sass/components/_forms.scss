@@ -164,6 +164,9 @@ button:hover{
     margin-right: auto;
 }
 
+.form--stage__field__text{
+    text-align: center;
+}
 @media(min-width:800px){
     .form--login{
         display:grid;

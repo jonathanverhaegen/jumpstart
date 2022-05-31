@@ -39,7 +39,7 @@
       <form action="user/addZelfstandige" method="post" class="form__sz">
       @csrf
 
-      <h1 class="h__signup__sz">Word lid van onze <br>community</br></h1>
+      <h1 class="h__signup__sz">Word lid van onze community</h1>
 
 
         <img class="sz__pic" src="/img/thomas.png" alt="profile pic">

@@ -2318,7 +2318,6 @@ h1 {
     margin-left: 40px;
   }
 }
-
 .ill__su {
   max-width: 400px;
   margin-top: 10px;
@@ -2331,28 +2330,12 @@ h1 {
   margin-left: 33px;
 }
 
-.cont__btn__s {
-  width: 339px;
-  background-color: #B2BEDA;
-  border-radius: 15px 15px 15px 15px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100px;
+.cont__btns {
+  display: flex;
+  flex-direction: row;
+  gap: 20%;
+  justify-content: center;
   margin-top: 20px;
-  text-align: center;
-  padding-top: 15px;
-}
-
-.cont__btn__sz {
-  width: 339px;
-  background-color: #B2BEDA;
-  border-radius: 15px 15px 15px 15px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100px;
-  margin-top: 90px;
-  text-align: center;
-  padding-top: 15px;
 }
 
 .btn__student {
@@ -2360,15 +2343,10 @@ h1 {
   font-family: "Lato", sans-serif;
   font-size: 30px;
   color: #13204A;
-  margin-top: 50px;
-}
-
-.btn__sz {
-  text-decoration: none;
-  font-family: "Lato", sans-serif;
-  font-size: 30px;
-  color: #13204A;
-  margin: auto;
+  text-align: center;
+  background-color: #B2BEDA;
+  border-radius: 15px 15px 15px 15px;
+  padding: 15px 25px 15px 25px;
 }
 
 .ill__su__s {
@@ -2689,17 +2667,6 @@ button.reg__sz {
     margin-top: 50px;
   }
 
-  .cont__btn__s {
-    margin-left: 300px;
-    margin-right: 0px;
-  }
-
-  .cont__btn__sz {
-    margin-left: 500px;
-    margin-right: 0px;
-    margin-top: -75px;
-  }
-
   .ill__su__s {
     width: 600px;
     height: 600px;
@@ -2780,7 +2747,6 @@ button.reg__sz {
     margin-left: 894px;
   }
 }
-
 .chat__container {
   width: 90%;
   background-color: #CBD3E6;
@@ -3036,7 +3002,6 @@ button.reg__sz {
 .chat__detail__messages {
   height: 100%;
 }
-
 
 body {
   background-color: #EDEFF5;

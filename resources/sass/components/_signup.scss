@@ -14,28 +14,12 @@
     margin-left: 33px;
 }
 
-.cont__btn__s{
-    width:339px;
-    background-color: $btngray;
-    border-radius: 15px 15px 15px 15px;
-    margin-left:auto;
-    margin-right:auto;
-    height:100px;
-    margin-top: 20px;
-    text-align: center;
-    padding-top:15px;
-}
-
-.cont__btn__sz{
-    width:339px;
-    background-color: $btngray;
-    border-radius: 15px 15px 15px 15px;
-    margin-left:auto;
-    margin-right:auto;
-    height:100px;
-    margin-top: 90px;
-    text-align: center;
-    padding-top:15px;
+.cont__btns{
+    display:flex;
+    flex-direction: row;
+    gap:20%;
+    justify-content: center;
+    margin-top:20px;
 }
 
 .btn__student{
@@ -43,19 +27,12 @@
     font-family: $normal;
     font-size: 30px;
     color: $darkblue;
-    margin-top:50px;
-    
+    text-align: center;
+    background-color: $btngray;
+    border-radius: 15px 15px 15px 15px;
+    padding: 15px 25px 15px 25px;
 }
 
-
-.btn__sz{
-    text-decoration: none;
-    font-family: $normal;
-    font-size: 30px;
-    color: $darkblue;
-    margin: auto;
-
-}
 
 //signup student mobile
 .ill__su__s{
@@ -364,16 +341,6 @@ button.reg__sz{
         margin-top: 50px;
     }
 
-    .cont__btn__s{
-       margin-left: 300px;
-       margin-right:0px;
-    }
-
-    .cont__btn__sz{
-        margin-left: 500px;
-        margin-right:0px;
-        margin-top: -75px;
-     }
     
 
 //signup student desktop

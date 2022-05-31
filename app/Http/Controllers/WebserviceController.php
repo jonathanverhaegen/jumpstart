@@ -3,34 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use RicorocksDigitalAgency\Soap\Facades\Soap;
 use SoapClient;
-use RicorocksDigitalAgency\Soap\Header;
 use SoapHeader;
+use CodeDredd\Soap\Facades\Soap;
+
 
 class WebserviceController extends Controller
 {
     public function getUserByNumber(){
         $number = 	"0737388654";
 
-        $header = Soap::header()
-            ->name('Authentication')
-            ->namespace('test.com')
-            ->data([
-                'Username' => 'wsot1847',
-                'Password' => 'PJbaPE5Rs6GSfMTwEHL8tNA4'   
-            ])
-            ->mustUnderstand()
-            ->actor('foo.co.uk');
+        $response = Soap::baseWsdl('https://kbopub-acc.economie.fgov.be/kbopubws100000/services/wsKBOPub?wsdl')->withWsse([
+            'userTokenName' => 'wsot1847',
+            'userTokenPassword' => 'PJbaPE5Rs6GSfMTwEHL8tNA4',
+        ])
+        ->call('ReadEstablishmentByEnterpriseNumber', ['EnterpriseNumber' => $number, 'TypeOfResult' => 'short']);
 
+        dd($response->body());
         
-        $res = Soap::to('https://kbopub-acc.economie.fgov.be/kbopubws100000/services/wsKBOPub?wsdl')->withHeaders($header)->call('ReadEstablishmentByEnterpriseNumber', ['EnterpriseNumber' => $number, 'TypeOfResult' => 'short']);
-        dd($res);
+       
     }
 
     public function test(){
-        $res = Soap::to('https://www.dataaccess.com/webservicesserver/NumberConversion.wso?wsdl')->call('NumberToWords', ['ubiNum' => 12]);
-        dd($res->response);
+        
+        
     }
 
     public function test2(){

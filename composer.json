@@ -7,13 +7,15 @@
     "require": {
         "php": "^7.3|^8.0",
         "bacon/bacon-qr-code": "^2.0",
+        "codedredd/laravel-soap": "v2.0.0-rc.1",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.10",
-        "ricorocks-digital-agency/soap": "^1.6"
+        "pragmarx/google2fa-laravel": "^2.0",
+        "robrichards/xmlseclibs": "^3.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

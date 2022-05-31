@@ -35,39 +35,36 @@
 
 
       
-        
+    <img class="ill__su__s" src="/img/ill_signup_s.png" alt="illustration">  
       <form action="/user/addStudent" method="post" class="">
       @csrf
-      <h1 class="">Register als student</h1>
+      <h1 class="h__signup__s">Word nu student-zelfstandige!</h1>
       
         <div class="">
-        <label class="" for="name">Naam en voornaam</label>
-        <input class="" type="text" name="name" placeholder="" value="">
+        <input class="name" type="text" name="name" placeholder="Naam en voornaam" value="">
         </div>
 
         <div class="">
-        <label class="" for="birthdate">Geboortedatum</label>
-        <input class="" type="date" name="birthdate" placeholder="" value="">
+        <input class="date" type="date" name="birthdate" placeholder="Geboortedatum" value="">
         </div>
 
         <div class="">
-        <label class="" for="email">Email</label>
-        <input class="" type="text" name="email" placeholder="" value="">
+        <input class="mail" type="text" name="email" placeholder="Email" value="">
         </div>
 
         <div class="">
-        <label class="" for="password">wachtwoord</label>
-        <input class="" type="password" name="password" placeholder="" value="">
+        <input class="pass" type="password" name="password" placeholder="Wachtwoord" value="">
+        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
         <div class="">
-        <label class="" for="password_confirmation">Wachtwoord bevestigen</label>
-        <input class="" type="password" name="password_confirmation" placeholder="" value="">
+        <input class="pass__" type="password" name="password_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
       
     <div class="">
-        <button class="" type="submit">Register</button>
+        <button class="reg__student" type="submit"><p class="__reg__student">Registreer</p></button>
     </div>
       
       </form>

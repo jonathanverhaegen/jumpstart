@@ -43,6 +43,8 @@ class RegisterController extends Controller
              $registration_data['google2fa_secret']
          );
 
+         
+
          // Pass the QR barcode image to our view
          return view('google2fa.register', ['QR_Image' => $QR_Image, 'secret' => $registration_data['google2fa_secret']]);
     }

@@ -1,41 +1,59 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center align-items-center " style="height: 70vh;S">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading font-weight-bold">Register</div>
-                <hr>
-                @if($errors->any())
-                    <b>{{$errors->first()}}</b>
-                @endif
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('2fa') }}">
-                        {{ csrf_field() }}
+@if($errors->any())
+    @component('components/notification')
+    @slot('type') error @endslot
+        <ul>
+            @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endcomponent
+    @endif
 
-                        <div class="form-group">
-                            <p>Please enter the  <strong>OTP</strong> generated on your Authenticator App. <br> Ensure you submit the current one because it refreshes every 30 seconds.</p>
-                            <label for="one_time_password" class="col-md-4 control-label">One Time Password</label>
+    @if($flash = session('error'))
+    @component('components/notification')
+    @slot('type') error @endslot
+        <ul>
+            <li>{{ $flash }}</li>
+        </ul>
+    @endcomponent
+    @endif
 
+    @if($flash = session('success'))
+    @component('components/notification')
+    @slot('type') success @endslot
+        <ul>
+            <li>{{ $flash }}</li>
+        </ul>
+    @endcomponent
+    @endif
+    
+    <div class="auth">
+        <p class="auth__title">Register</p>
 
-                            <div class="col-md-6">
-                                <input id="one_time_password" type="number" class="form-control" name="one_time_password" required autofocus>
-                            </div>
-                        </div>
+        <form class="auth__form" action="{{ route('2fa') }}" method="post">
+        @csrf
+            <div class="auth__form__group">
+                <p class="auth__form__text">Please enter the  <strong>OTP</strong> generated on your Authenticator App. <br> Ensure you submit the current one because it refreshes every 30 seconds.</p>
+                
+                <div class="auth__input">
+                    <input id="one_time_password" type="number" class="form--login__input" name="one_time_password" required autofocus>
+                </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+            </div>
+
+            <div class="auth__form__group">
+                <div class="auth__form__btn">
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </div>
             </div>
-        </div>
+
+        </form>
+
+       
     </div>
-</div>
+
 @endsection

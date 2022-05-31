@@ -9,7 +9,7 @@
             <p class="auth__info__title">Set up your two factor authentication by scanning the barcode below. Alternatively, you can use the code:</p>
             <p class="auth__info__title auth__info__title--bold">{{$secret}}</p>
             <div class="auth__info__img">
-                <img class="auth__qr" src="{{ $QR_Image }}">
+                {!! $QR_Image !!}
             </div>
         </div>
 

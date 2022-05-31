@@ -1293,6 +1293,45 @@ button:hover {
   text-align: center;
 }
 
+.auth__form {
+  margin-top: 20px;
+}
+
+.auth__form__group {
+  margin-bottom: 20px;
+}
+
+.auth__form__text {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+
+.auth__input {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.auth__form__btn {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.auth__form__btn button {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  border: none;
+  padding: 10px 25px 10px 25px;
+}
+
 @media (min-width: 800px) {
   .form--login {
     display: grid;

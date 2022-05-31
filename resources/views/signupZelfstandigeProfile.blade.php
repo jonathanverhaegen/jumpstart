@@ -50,11 +50,11 @@
         </div>
 
         <div class="">
-        <input class="pass__sz" type="text" name="phone" placeholder="Telefoonnummer" value="">
+        <input class="pass__sz" type="number" name="phone" placeholder="Telefoonnummer" value="">
         </div>
 
         <div class="">
-        <input class="name__sz" type="text" max="2000" name="bio" placeholder="Bio" value="">
+        <input class="pass__sz" type="text" max="2000" name="bio" placeholder="Bio" value="">
         </div>
 
 

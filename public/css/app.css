@@ -2833,7 +2833,7 @@ input.pass__sz__ {
     text-align: center;
     font-size: 35px;
     margin-left: 0%;
-    margin-top: 1%;
+    margin-top: 2%;
     margin-bottom: 1%;
     padding-bottom: 1%;
   }
@@ -2868,7 +2868,7 @@ input.pass__sz__ {
 
   input.name__sz {
     margin-left: 29%;
-    margin-top: 0%;
+    margin-top: 1%;
     margin-bottom: 2%;
     padding-bottom: 1%;
     width: 42%;
@@ -2936,14 +2936,14 @@ input.pass__sz__ {
     width: 100px;
     margin-left: 45%;
     margin-bottom: 2%;
-    margin-top: 5%;
+    margin-top: 4%;
   }
 
   .togglePunt2 {
     width: 100px;
     margin-left: 45%;
     margin-bottom: 2%;
-    margin-top: 5%;
+    margin-top: 4%;
   }
 
   .togglePunt3 {

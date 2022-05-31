@@ -369,12 +369,6 @@
             @endif
         </div>
 
-
-
-
-
-        
-        <!-- stap 5 nog helemaal uitwerken -->
         <div class="stage__container stage__container--6">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
@@ -386,7 +380,7 @@
                 <p class="stage__text">Ondernemingsnummer: Check! Btw-nummer: Niet check... Om te mogen factureren voor je zelfstandige activiteit, is het wettelijk verplicht je ook te “identificeren” bij de btw-administratie. Dit is niet zo heel moeilijk, je kan gewoon online een formulier invullen. Voor je dit doet willen we zeker zijn dat je weet wat je waar zal moeten invullen. Hieronder vind je voor elke stap een beetje extra uitleg. Het online formulier kan je hier invullen: <a href="https://eservices.minfin.fgov.be/VAT001/">https://eservices.minfin.fgov.be/VAT001/</a>  Kies voor het formulier E604: AANVRAAG TOT BTW-IDENTIFICATIE.</p>
             </div>
             
-            
+            @if(!empty($company))
             <div class="stage5">
                 <div class="stage__field">
                         <p class="stage__field__title"><strong>Naam en ondernemingsnummer</strong></p>
@@ -493,7 +487,8 @@
                     </form>
                 </div>
             </div>
-            
+            @endif
+
             @if($roadmap->stage === 6 && $roadmap->check === 1)
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
@@ -515,7 +510,9 @@
             <div class="stage">
                 <p class="stage__title">Laat aan de bank weten wat je ondernemingsnummer is</p>
                 <p class="stage__text">Oef, dit is gelukkig maar een kleine stap. Nu je geregistreerd bent in de Kruispuntbank van Ondernemingen, heb je een ondernemingsnummer gekregen. Geef bij dit door aan je bank zodat zij jouw pas geopende rekening kunnen omzetten naar een rekening voor professioneel gebruik.</p>
+                @if(!empty($company))
                 <p class="stage__text">Ondernemingsnummer: {{$company->account_number}}</p>
+                @endif
             </div>
             @if($roadmap->check === 0)
             <form class="formStage6" action="/check/inputStage7" method="post">

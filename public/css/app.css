@@ -1694,6 +1694,12 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .bio__extra__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
 }
 .comm__container {
   width: 90%;

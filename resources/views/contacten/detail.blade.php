@@ -83,6 +83,8 @@
 
 
             <p class="bio__title">Beschikbaarheid</p>
+
+            <div class="bio__extra__container">
             
             <div class="bio__extra">
                 <div class="bio__extra__img">
@@ -102,6 +104,8 @@
                     <p class="bio__extra__text__text">Gewenste uren</p>
                     <p class="bio__extra__text__title">{{$agent->uren}}</p>
                 </div>
+            </div>
+
             </div>
             
         </div>

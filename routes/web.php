@@ -24,6 +24,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/signup', [LoginController::class, "signup"]);
 Route::get('/signup/student', [LoginController::class, "signupStudent"]);
 Route::get('/signup/student-zelfstandige', [LoginController::class, "signupZelfstandige"]);
+Route::get('/signup/student-zelfstandige/kbo', [LoginController::class, "signupZelfstandigeKbo"]);
+Route::get('/signup/student-zelfstandige/{name}', [LoginController::class, "signupZelfstandigeProfile"]);
+
 
 Route::get('/login', [LoginController::class, "login"])->name('login');
 Route::get('/logout', [LoginController::class, "logout"]);

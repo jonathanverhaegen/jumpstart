@@ -189,15 +189,15 @@ button.reg__student{
 }
 
 
-//signup student-zelfstandige mobile -- registratie
+//signup student-zelfstandige mobile -- registratie & kbo
 
 .h__reg__sz{
     font-family: $title;
     font-size: 30px;
     color: $darkblue;
-    margin-left: 0px;
-    margin-top: 30px;
-    margin-bottom: 0px;
+    margin-left: 0%;
+    margin-top: 12%;
+    margin-bottom: 12%;
     padding-bottom: 0px;
     text-align: center;
 }
@@ -208,10 +208,10 @@ button.reg__student{
     border-radius: 20px 20px 20px 20px;
     margin-left:auto;
     margin-right:auto;
-    margin-top:25px;
-    margin-bottom:25px;
-    padding-top:20px;
-    padding-bottom:20px;
+    margin-top:10%;
+    margin-bottom:5%;
+    padding-top:5%;
+    padding-bottom:5%;
     height: 580px;
 }
 
@@ -219,12 +219,17 @@ button.reg__student{
     font-family: $title;
     font-size: 25px;
     color: $orange;
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-bottom:20px;
+    margin-left:6%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-bottom: 5%;
 }
 
+.edit__icon__{
+    float: right;
+    width:15%;
+    margin-top: 0%;
+}
 
 input::placeholder {
     color: $darkblue; /*Change the placeholder color*/
@@ -236,12 +241,10 @@ input.name__sz{
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    padding-bottom: 10px;
-    
-
+    margin-left:6%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
     
     border:none;
     border-bottom: $darkblue 2px solid;
@@ -254,10 +257,10 @@ input.date__sz{
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    padding-bottom: 10px;
+    margin-left:6%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
     
     border:none;
     border-bottom: $darkblue 2px solid;
@@ -270,10 +273,10 @@ input.mail__sz{
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    padding-bottom: 10px;
+    margin-left:6%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
     
     border:none;
     border-bottom: $darkblue 2px solid;
@@ -286,11 +289,11 @@ input.pass__sz{
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    padding-bottom: 10px;
-    
+    margin-left:6%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
+
     border:none;
     border-bottom: $darkblue 2px solid;
     background-color: $lightgray;
@@ -302,10 +305,10 @@ input.pass__sz__{
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    padding-bottom: 10px;
+    margin-left:6%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    padding-bottom: 3%;
     
     border:none;
     border-bottom: $darkblue 2px solid;
@@ -315,38 +318,73 @@ input.pass__sz__{
 
 .togglePass__{
     width:30px;
-    margin-left: 305px; 
+    margin-left: 86%; 
     cursor: pointer;
     position:relative;
-    margin-top:-80px;
-    margin-bottom: 40px;
+    margin-top:-22%;
+    margin-bottom: 16%;
 }
 
 .__reg__sz{
+    text-decoration: none;
     font-family: $normal;
     font-size: 20px;
     color:$white;
     margin-left: 0px;
 }
 
-button.reg__sz{
+.reg__sz{
     text-align: center;
     background-color: $darkblue;
     border-radius: 40px 40px 40px 40px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-top: 35px;
-    margin-bottom: 10px;
-    margin-left: 100px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 58%;
+    margin-top: 12%;
+    margin-bottom: 5%;
+    margin-left: 21%;
 }
 
-.togglePunt__{
+.togglePunt1{ //reg
     width:150px;
-    margin-left: 101px;
-    margin-bottom: 10px;
-    margin-top: 70px;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    margin-top: 15%;
+}
+
+.togglePunt2{ //kbo
+    width:150px;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    margin-top: 24%;
+}
+
+.togglePunt3{ //kbo
+    width:150px;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    margin-top: 24%;
+}
+
+.sz__pic{ //profile pic
+    width: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.a__prof__sz{//profile edit
+    color: $orange;
+}
+
+.__prof__sz{
+    text-align: center;
+    margin-bottom:5%;
+    color: $orange;
+    font-family: $normal;
+    font-size: 18px;
 }
 
 // signup desktop

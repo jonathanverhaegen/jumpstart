@@ -22,6 +22,14 @@ class LoginController extends Controller
         return view('signupZelfstandige');
     }
 
+    public function signupZelfstandigeKbo(){
+        return view('signupZelfstandigeKbo');
+    }
+
+    public function signupZelfstandigeProfile(){
+        return view('signupZelfstandigeProfile');
+    }
+
     public function login(){
         return view('/login');
     }

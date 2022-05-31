@@ -2144,6 +2144,25 @@ if (togglePasswordBtn !== null) {
 
     document.querySelector('.password').type = passwordType;
   });
+} //showpassword signup
+
+
+var togglePassword = document.querySelectorAll('.passwordToggle');
+
+if (togglePassword !== null) {
+  togglePassword.forEach(function (toggle) {
+    var toggleBtn = toggle.querySelector('.togglePass');
+    var check = 0;
+    toggleBtn.addEventListener('click', function (e) {
+      if (check === 0) {
+        toggle.querySelector('#pass').type = "text";
+        check = 1;
+      } else {
+        toggle.querySelector('#pass').type = "password";
+        check = 0;
+      }
+    });
+  });
 } //next page
 
 

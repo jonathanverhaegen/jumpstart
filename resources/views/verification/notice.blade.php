@@ -1,21 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="bg-light p-5 rounded">
-        <h1>Dashboard</h1>
-        
-        @if (session('resent'))
-            <div class="alert alert-success" role="alert">
-                A fresh verification link has been sent to your email address.
-            </div>
-        @endif
+@if($flash = session('resent'))
+    @component('components/notification')
+    @slot('type') success @endslot
+        <ul>
+            <li>Eeen nieuwe verificatie link is verstuurd naar je emailadres</li>
+        </ul>
+    @endcomponent
+    @endif
 
-        Before proceeding, please check your email for a verification link. If you did not receive the email,
-        <form action="{{ route('verification.resend') }}" method="POST" class="d-inline">
-            @csrf
-            <button type="submit" class="d-inline btn btn-link p-0">
-                click here to request another
+    <div class="verification">
+        <p class="verification__title">Voor je verdergaat, verifieer eerst je emailadres. Als je nog geen link hebt ontvangen,</p>
+        <form class="form--verification" action="{{ route('verification.resend') }}" method="POST">
+        @csrf
+            <button type="submit" class="">
+                Klik hier om een nieuwe aan te vragen
             </button>.
         </form>
+
     </div>
 @endsection

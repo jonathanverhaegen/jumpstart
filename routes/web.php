@@ -56,9 +56,6 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::group(['middleware' => ['2fa']], function() {
     Route::group(['middleware' => ['verified']], function() {
-    
-
-    
 
     //routes van het dashboard
     Route::get('/dashboard', [LoginController::class, "homepage"])->name('dashboard');

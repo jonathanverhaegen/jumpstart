@@ -5,30 +5,42 @@
 @section('content')
 
 @if($errors->any())
-    @component('components/notification')
-        <ul>
-            @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    @endcomponent
-@endif
+        @component('components/notification')
+        @slot('type') error @endslot
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endcomponent
+        @endif
 
-@if($flash = session('error'))
-@component('components/notification')
-        <ul>
-            <li>{{ $flash }}</li>
-        </ul>
-    @endcomponent
-@endif
+        @if($flash = session('error'))
+        @component('components/notification')
+        @slot('type') error @endslot
+            <ul>
+                <li>{{ $flash }}</li>
+            </ul>
+        @endcomponent
+        @endif
 
-@if($flash = session('success'))
-@component('components/notification')
-        <ul>
-            <li>{{ $flash }}</li>
-        </ul>
-    @endcomponent
-@endif
+        @if($flash = session('success'))
+        @component('components/notification')
+        @slot('type') success @endslot
+            <ul>
+                <li>{{ $flash }}</li>
+            </ul>
+        @endcomponent
+        @endif
+
+        @if($flash = session('message'))
+        @component('components/notification')
+        @slot('type') message @endslot
+            <ul>
+                <li>{{ $flash }}</li>
+            </ul>
+        @endcomponent
+        @endif
 
 
 
@@ -41,24 +53,24 @@
       <h1 class="h__signup__s">Word nu student-zelfstandige!</h1>
       
         <div class="">
-        <input class="name" type="text" name="name" placeholder="Naam en voornaam" value="">
+        <input class="name" type="text" name="naam" placeholder="Naam en voornaam" value="{{ old('naam') }}">
         </div>
 
         <div class="">
-        <input class="date" type="date" name="birthdate" placeholder="Geboortedatum" value="">
+        <input class="date" type="date" name="geboortedatum" placeholder="Geboortedatum" value="{{ old('geboortedatum') }}">
         </div>
 
         <div class="">
-        <input class="mail" type="text" name="email" placeholder="Email" value="">
+        <input class="mail" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
         </div>
 
-        <div class="">
-        <input class="pass" type="password" name="password" placeholder="Wachtwoord" value="">
+        <div class="passwordToggle">
+        <input id="pass" class="pass" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
         <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
-        <div class="">
-        <input class="pass__" type="password" name="password_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <div class="passwordToggle">
+        <input id="pass" class="pass__" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
         <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         

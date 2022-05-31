@@ -1293,6 +1293,61 @@ button:hover {
   text-align: center;
 }
 
+.auth__form {
+  margin-top: 20px;
+}
+
+.auth__form__group {
+  margin-bottom: 20px;
+}
+
+.auth__form__text {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+}
+
+.auth__input {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.auth__form__btn {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.auth__form__btn button {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  border: none;
+  padding: 10px 25px 10px 25px;
+}
+
+.form--verification {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.form--verification button {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  border: none;
+  padding: 10px 25px 10px 25px;
+}
+
 @media (min-width: 800px) {
   .form--login {
     display: grid;
@@ -2330,28 +2385,12 @@ h1 {
   margin-left: 33px;
 }
 
-.cont__btn__s {
-  width: 339px;
-  background-color: #B2BEDA;
-  border-radius: 15px 15px 15px 15px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100px;
+.cont__btns {
+  display: flex;
+  flex-direction: row;
+  gap: 20%;
+  justify-content: center;
   margin-top: 20px;
-  text-align: center;
-  padding-top: 15px;
-}
-
-.cont__btn__sz {
-  width: 339px;
-  background-color: #B2BEDA;
-  border-radius: 15px 15px 15px 15px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100px;
-  margin-top: 90px;
-  text-align: center;
-  padding-top: 15px;
 }
 
 .btn__student {
@@ -2359,15 +2398,10 @@ h1 {
   font-family: "Lato", sans-serif;
   font-size: 30px;
   color: #13204A;
-  margin-top: 50px;
-}
-
-.btn__sz {
-  text-decoration: none;
-  font-family: "Lato", sans-serif;
-  font-size: 30px;
-  color: #13204A;
-  margin: auto;
+  text-align: center;
+  background-color: #B2BEDA;
+  border-radius: 15px 15px 15px 15px;
+  padding: 15px 25px 15px 25px;
 }
 
 .ill__su__s {
@@ -2506,6 +2540,7 @@ button.reg__student {
   margin-top: 3px;
   margin-bottom: 25px;
   margin-left: 100px;
+  border: none;
 }
 
 .h__reg__sz {
@@ -2674,6 +2709,12 @@ button.reg__sz {
   margin-top: 70px;
 }
 
+.container__signup__student {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
 @media (min-width: 800px) {
   .ill__su {
     display: block;
@@ -2686,17 +2727,6 @@ button.reg__sz {
   .h__signup {
     margin-left: 300px;
     margin-top: 50px;
-  }
-
-  .cont__btn__s {
-    margin-left: 300px;
-    margin-right: 0px;
-  }
-
-  .cont__btn__sz {
-    margin-left: 500px;
-    margin-right: 0px;
-    margin-top: -75px;
   }
 
   .ill__su__s {
@@ -2779,6 +2809,71 @@ button.reg__sz {
     margin-left: 894px;
   }
 }
+
+.auth {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20% 5% 20% 5%;
+}
+
+.auth__title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #1E3472;
+  font-size: 24px;
+}
+
+.auth__info {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth__info__title {
+  font-family: "Lato", sans-serif;
+}
+
+.auth__info__title--bold {
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.auth__info__img {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth__btn {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+.auth__btn a button {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #13204A;
+  border-radius: 40px 40px 40px 40px;
+  border: none;
+  padding: 10px 20px 10px 25px;
+}
+
+@media (min-width: 800px) {
+  .auth {
+    padding: 5%;
+  }
+
+  .auth__info {
+    align-items: center;
+  }
+}
+
 .chat__container {
   width: 90%;
   background-color: #CBD3E6;
@@ -3033,6 +3128,27 @@ button.reg__sz {
 
 .chat__detail__messages {
   height: 100%;
+}
+
+
+.verification {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20% 5% 20% 5%;
+}
+
+.verification__title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #1E3472;
+  font-size: 24px;
+}
+
+@media (min-width: 800px) {
+  .verification {
+    padding: 5%;
+  }
 }
 
 body {

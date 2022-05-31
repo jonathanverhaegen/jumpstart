@@ -1,8 +1,59 @@
 <div class="header--mob">
     <div class="header--mob__img">
+    
 
     </div>
 </div>
+
+<div class="header__links__mob">
+
+        <a href="/dashboard" class="header__links__item__mob header__links__item__mob--other">
+            <div class="header__links__mob__container">
+                <img class="header__links__item__img__mob" src="{{asset('/img/business.png')}}" alt="">
+                <p class="header__links__item__text__mob">Mijn business</p>
+            </div>
+        </a>
+
+        <a href="/roadmap" class="header__links__item__mob">
+            <div class="header__links__mob__container">
+                <img class="header__links__item__img__mob" src="{{asset('/img/roadmap.png')}}" alt="">
+                <p class="header__links__item__text__mob">Roadmap</p>
+            </div>
+        </a>
+
+        <a href="/community" class="header__links__item__mob header__links__item__mob--other">
+            <div class="header__links__mob__container">
+                <img class="header__links__item__img__mob" src="{{asset('/img/comm.png')}}" alt="">
+                <p class="header__links__item__text__mob">Community</p>
+            </div>
+        </a>
+
+        <a href="/chat" class="header__links__item__mob">
+            <div class="header__links__mob__container">
+                <img class="header__links__item__img__mob" src="{{asset('/img/chat.png')}}" alt="">
+                <p class="header__links__item__text__mob">Chat</p>
+            </div>
+        </a>
+
+        <a href="/contacten" class="header__links__item__mob header__links__item__mob--other">
+            <div class="header__links__mob__container">
+                <img class="header__links__item__img__mob" src="{{asset('/img/contacten.png')}}" alt="">
+                <p class="header__links__item__text__mob">Contacten</p>
+            </div>
+        </a>
+
+        <a href="/instellingen" class="header__links__item__mob">
+            <div class="header__links__mob__container">
+                <img class="header__links__item__img__mob" src="{{asset('/img/instellingen.png')}}" alt="">
+                <p class="header__links__item__text__mob">Instellingen</p>
+            </div>
+        </a>
+
+        <div class="header__logout__mob">
+            <a class="btn btn--logout" href="/logout">Afmelden</a>
+        </div>
+
+    </div>
 
 <div class="header">
     <div class="header__img">

@@ -44,10 +44,13 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    protected $with = ["roadmap"];
+
+    protected $with = ["roadmap", "usersgroups", "company"];
+
     public function roadmap(){
         return $this->hasOne(\App\Models\Roadmap::class);
     }
+
 
     public function setGoogle2faSecretAttribute($value)
     {
@@ -57,5 +60,14 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getGoogle2faSecretAttribute($value)
     {
         return decrypt($value);
+    }
+
+    public function usersgroups(){
+        return $this->hasMany(\App\Models\UsersGroup::class);
+    }
+
+    public function company(){
+        return $this->hasOne(\App\Models\Company::class);
+
     }
 }

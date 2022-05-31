@@ -35,43 +35,43 @@
 
 
       
-        
-      <form action="user/addZelfstandige" method="post" class="">
+    <h1 class="h__reg__sz">Registreren</h1>
+      <form action="user/addZelfstandige" method="post" class="form__sz">
       @csrf
-      <h1 class="">Register als zelfstandige</h1>
+      <h1 class="h__signup__sz">Word lid van onze <br>community</br></h1>
       
         <div class="">
-        <label class="" for="name">Naam en voornaam</label>
-        <input class="" type="text" name="name" placeholder="" value="">
+        <input class="name__sz" type="text" name="name" placeholder="Naam en voornaam" value="">
         </div>
 
         <div class="">
-        <label class="" for="birthdate">Geboortedatum</label>
-        <input class="" type="date" name="birthdate" placeholder="" value="">
+        <input class="date__sz" type="date" name="birthdate" placeholder="Geboortedatum" value="">
         </div>
 
         <div class="">
-        <label class="" for="email">Email</label>
-        <input class="" type="text" name="email" placeholder="" value="">
+        <input class="mail__sz" type="text" name="email" placeholder="Email" value="">
         </div>
 
         <div class="">
-        <label class="" for="password">wachtwoord</label>
-        <input class="" type="password" name="password" placeholder="" value="">
+        <input class="pass__sz" type="password" name="password" placeholder="Wachtwoord" value="">
+        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
         <div class="">
-        <label class="" for="password_confirmation">Wachtwoord bevestigen</label>
-        <input class="" type="password" name="password_confirmation" placeholder="" value="">
+        <input class="pass__sz__" type="password" name="password_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
+        <img class="togglePunt__" src="/img/ill__sz__1.png" alt="punt">
+    
+    </form>
       
     <div class="">
-        <button class="" type="submit">Register</button>
+        <button class="reg__sz" type="submit"><p class="__reg__sz">Registreer</p></button>
     </div>
       
-      </form>
 
+    
 
 
 

@@ -32,12 +32,12 @@
     @endif
     
     <div class="auth">
-        <p class="auth__title">Register</p>
+        <p class="auth__title">Inloggen met Google Authenticatie</p>
 
         <form class="auth__form" action="{{ route('2fa') }}" method="post">
         @csrf
             <div class="auth__form__group">
-                <p class="auth__form__text">Please enter the  <strong>OTP</strong> generated on your Authenticator App. <br> Ensure you submit the current one because it refreshes every 30 seconds.</p>
+                <p class="auth__form__text">Vul hier je <strong>OTP</strong> die gegenereerd is via Google Authenticator <br> Wees er zeker van dat je de huidige invoert.</p>
                 
                 <div class="auth__input">
                     <input id="one_time_password" type="number" class="form--login__input" name="one_time_password" required autofocus>

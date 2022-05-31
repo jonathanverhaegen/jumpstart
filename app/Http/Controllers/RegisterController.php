@@ -23,6 +23,16 @@ class RegisterController extends Controller
     }
 
     public function addStudentQR(Request $request){
+        //checking
+        $credentials = $request->validate([
+            'naam' => 'required|max:255',
+            'geboortedatum' => 'required|before:today',
+            'email' => 'required|email',
+            'wachtwoord' => 'required|confirmed|min:8'
+        ]);
+
+        $request->flash();
+        
          // Initialise the 2FA class
          $google2fa = app('pragmarx.google2fa');
 
@@ -55,7 +65,8 @@ class RegisterController extends Controller
      }
 
      public function completeRegistration(Request $request)
-      {        
+      {   
+
           // add the session data back to the request input
           $request->merge(session('registration_data'));
 
@@ -65,15 +76,6 @@ class RegisterController extends Controller
 
      public function addStudent($request){
         
-        //checking
-        $credentials = $request->validate([
-            'name' => 'required|max:255',
-            'birthdate' => 'required|before:today',
-            'email' => 'required|email',
-            'password' => 'required|confirmed|min:8'
-        ]);
-
-
         //enkel user added als het een thomasmore account is
         $inputEmail = $request->input('email');
         $explodeEmail = explode('@', $inputEmail);
@@ -83,10 +85,10 @@ class RegisterController extends Controller
         }
 
         $user = new User();
-        $user->name = $request->input('name');
-        $user->birth_date = $request->input('birthdate');
+        $user->name = $request->input('naam');
+        $user->birth_date = $request->input('geboortedatum');
         $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password'));
+        $user->password = Hash::make($request->input('wachtwoord'));
         $user->bio = $request->input('bio');
         $user->google2fa_secret = $request->input('google2fa_secret');
         $user->save();
@@ -100,7 +102,7 @@ class RegisterController extends Controller
 
         event(new Registered($user));
 
-        $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadress te verifieren');
+        $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');
         return redirect('/login');
         
      }

@@ -5,17 +5,17 @@
     @component('components/notification')
     @slot('type') success @endslot
         <ul>
-            <li>A fresh verification link has been sent to your email address.</li>
+            <li>Eeen nieuwe verificatie link is verstuurd naar je emailadres</li>
         </ul>
     @endcomponent
     @endif
 
     <div class="verification">
-        <p class="verification__title"> Before proceeding, please check your email for a verification link. If you did not receive the email,</p>
+        <p class="verification__title">Voor je verdergaat, verifieer eerst je emailadres. Als je nog geen link hebt ontvangen,</p>
         <form class="form--verification" action="{{ route('verification.resend') }}" method="POST">
         @csrf
             <button type="submit" class="">
-                click here to request another
+                Klik hier om een nieuwe aan te vragen
             </button>.
         </form>
 

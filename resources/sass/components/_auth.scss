@@ -5,7 +5,7 @@
     width:80%;
     margin-left:auto;
     margin-right:auto;
-    padding:5%;
+    padding:20% 5% 20% 5%;
 }
 
 .auth__title{
@@ -19,8 +19,6 @@
     margin-top:50px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .auth__info__title{
@@ -29,19 +27,22 @@
 
 .auth__info__title--bold{
     font-weight: bold;
-    margin-top:10px;
+    margin-top:20px;
+    text-align:center;
 }
 
 .auth__info__img{
     margin-top:20px;
     display:flex;
     align-items: center;
+    justify-content:center;
 }
 
 .auth__btn{
     display:flex;
     align-items: center;
     margin-top:25px;
+    justify-content:center;
 }
 
 .auth__btn a button{
@@ -52,4 +53,14 @@
     border-radius: 40px 40px 40px 40px;
     border:none;
     padding: 10px 20px 10px 25px;
+}
+
+@media(min-width:800px){
+    .auth{
+        padding:5%;
+    }
+
+    .auth__info{
+        align-items: center;
+    }
 }

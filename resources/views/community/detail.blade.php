@@ -110,9 +110,12 @@
             <div class="post__user">
                 <img class="post__user__img" src="/img/default.png" alt="">
                 <div class="post__user__info">
-                    <p class="post__user__info__name">Naam</p>
-                    <p class="post__user__info__date">Datum</p>
+                    <p class="post__user__info__name">{{$post->user->name}}</p>
+                    <p class="post__user__info__date">{{ date('d/m/Y H:i:s', strtotime($post->created_at))}}</p>
                 </div>
+            </div>
+            <div class="post__text">
+                <p>{{$post->text}}</p>
             </div>
         </div>
         @endforeach

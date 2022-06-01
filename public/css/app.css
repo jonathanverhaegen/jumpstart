@@ -3256,9 +3256,6 @@ input.pass__sz__ {
 }
 
 .post__user {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-items: center;
@@ -3278,6 +3275,11 @@ input.pass__sz__ {
   margin-top: 10px;
   font-family: "Lato", sans-serif;
   font-style: italic;
+}
+
+.post__text {
+  margin-top: 20px;
+  font-family: "Lato", sans-serif;
 }
 
 body {

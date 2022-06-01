@@ -88,6 +88,7 @@
 
 .post__img img{
     width:80%;
+    margin-bottom:10px;
 }
 
 .post__att{
@@ -143,6 +144,9 @@
     align-items: center;
     gap: 20px;
     margin-top:20px;
+    background-color: $darkgray;
+    border-radius: 20px;
+    padding: 2%;
 }
 
 .reaction__img{

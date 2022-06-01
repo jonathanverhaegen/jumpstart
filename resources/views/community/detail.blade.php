@@ -97,7 +97,7 @@
     
                 <textarea id="myeditorinstance" class="form--post__textarea"  name="tekst" cols="30" rows="10" placeholder="Waar denk je aan..."></textarea>
 
-                <input class="form--post__files" type="file" name="files[]" multiple>
+                <input class="form--post__files" type="file" name="files[]" accept='.png, .jpg, .jpeg, .pfd, .doc, .docx, .ppt' multiple>
                 
                 <input type="hidden" name="group_id" value="{{$group->id}}">
                 

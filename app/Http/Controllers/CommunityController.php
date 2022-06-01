@@ -47,7 +47,7 @@ class CommunityController extends Controller
         $credentials = $request->validate([
             'tekst' => 'required',
             'group_id' => 'required',
-            'files[]' => 'mimes:png,jpg,jpeg,pfd,doc,docx,ppt'
+            'files[]' => 'max:10240'
         ]);
 
         $request->flash();

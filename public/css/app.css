@@ -3295,6 +3295,7 @@ input.pass__sz__ {
 
 .post__img img {
   width: 80%;
+  margin-bottom: 10px;
 }
 
 .post__att {
@@ -3349,6 +3350,9 @@ input.pass__sz__ {
   align-items: center;
   gap: 20px;
   margin-top: 20px;
+  background-color: #DADFEC;
+  border-radius: 20px;
+  padding: 2%;
 }
 
 .reaction__img {

@@ -2418,6 +2418,40 @@ if (stageBtn6 !== null) {
       document.querySelector('.formStage6').submit();
     });
   });
+} //avatar
+
+
+var avatarPick = document.querySelector('.avatar');
+
+if (avatarPick !== null) {
+  avatarPick.addEventListener('change', function (e) {
+    var src = URL.createObjectURL(e.target.files[0]);
+    document.querySelector('.sz__pic').src = src;
+  });
+} //signup Zelfstandige
+
+
+var signupZelf = document.querySelector('.signupZelf');
+
+if (signupZelf !== null) {
+  var title = signupZelf.querySelector('.h__reg__sz');
+  var form1 = signupZelf.querySelector('.addZelf1');
+  var form2 = signupZelf.querySelector('.addZelf2');
+  var form3 = signupZelf.querySelector('.addZelf3');
+  var btn1 = signupZelf.querySelector('.btn1');
+  var btn2 = signupZelf.querySelector('.btn2');
+  btn1.addEventListener('click', function (e) {
+    e.preventDefault();
+    title.innerHTML = "KBO";
+    form1.style.display = "none";
+    form2.style.display = "block";
+  });
+  btn2.addEventListener('click', function (e) {
+    e.preventDefault();
+    title.innerHTML = "Vertel meer over jezelf";
+    form2.style.display = "none";
+    form3.style.display = "block";
+  });
 }
 
 /***/ }),

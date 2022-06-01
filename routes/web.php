@@ -28,10 +28,9 @@ Route::get('/signup', [RegisterController::class, "signup"]);
 Route::get('/signup/student', [RegisterController::class, "signupStudent"]);
 
 Route::get('/signup/student-zelfstandige', [RegisterController::class, "signupZelfstandige"]);
-Route::get('/signup/student-zelfstandige/kbo', [RegisterController::class, "signupZelfstandigeKbo"]);
-Route::get('/signup/student-zelfstandige/{name}', [RegisterController::class, "signupZelfstandigeProfile"]);
 
-Route::post('/user/addZelfstandige', [RegisterController::class, "addZelfstandige1"]);
+Route::post('/user/addZelfstandige', [RegisterController::class, "addZelfstandigeQR"]);
+
 
 
 Route::get('/login', [LoginController::class, "login"])->name('login');
@@ -39,7 +38,9 @@ Route::get('/logout', [LoginController::class, "logout"]);
 Route::post('user/login', [LoginController::class, "handleLogin"]);
 
 Route::post('/user/addStudent', [RegisterController::class, "addStudentQR"]);
+
 Route::get('/complete-registration', [RegisterController::class, 'completeRegistration'])->name('complete-registration');
+Route::get('/complete-registrationZelf', [RegisterController::class, 'completeRegistrationZelf'])->name('complete-registrationZelf');
 
 
 
@@ -61,7 +62,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/email/resend', [VerificationController::class, "resend"])->name('verification.resend');
 
     Route::group(['middleware' => ['2fa']], function() {
-    // Route::group(['middleware' => ['verified']], function() {
+    Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard
     Route::get('/dashboard', [LoginController::class, "homepage"])->name('dashboard');
@@ -118,4 +119,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 });
-// });
+});

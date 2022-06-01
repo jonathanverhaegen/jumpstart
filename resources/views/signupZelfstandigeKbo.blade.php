@@ -6,29 +6,32 @@
 
 @if($errors->any())
     @component('components/notification')
+    @slot('type') error @endslot
         <ul>
             @foreach($errors->all() as $error)
             <li>{{ $error }}</li>
             @endforeach
         </ul>
     @endcomponent
-@endif
+    @endif
 
-@if($flash = session('error'))
-@component('components/notification')
+    @if($flash = session('error'))
+    @component('components/notification')
+    @slot('type') error @endslot
         <ul>
             <li>{{ $flash }}</li>
         </ul>
     @endcomponent
-@endif
+    @endif
 
-@if($flash = session('success'))
-@component('components/notification')
+    @if($flash = session('success'))
+    @component('components/notification')
+    @slot('type') success @endslot
         <ul>
             <li>{{ $flash }}</li>
         </ul>
     @endcomponent
-@endif
+    @endif
 
 
 
@@ -36,39 +39,40 @@
 
       
     <h1 class="h__reg__sz">KBO</h1>
-      <form action="user/addZelfstandige" method="post" class="form__sz">
+      <form action="/user/addZelfstandige2" method="post" class="form__sz">
       @csrf
 
       <a href=""><img src="{{asset('img/aanpassen.png')}}" alt="edit" class="edit__icon__"></a>
       <h1 class="h__signup__sz">Word lid van onze community</h1>
       
         <div class="">
-        <input class="name__sz" type="text" name="name" placeholder="Bedrijfsnaam" value="">
+        <input class="name__sz" type="text" name="bedrijfsnaam" placeholder="Bedrijfsnaam" value="">
         </div>
 
         <div class="">
-        <input class="date__sz" type="text" name="number" placeholder="Ondernemingsnummer" value="">
+        <input class="date__sz" type="text" name="ondernemingsnummer" placeholder="Ondernemingsnummer" value="">
         </div>
 
         <div class="">
-        <input class="mail__sz" type="text" name="email" placeholder="Bedrijfsmail" value="">
+        <input class="mail__sz" type="text" name="bedrijfsemail" placeholder="Bedrijfsmail" value="">
         </div>
 
         <div class="">
-        <input class="pass__sz" type="text" name="phone" placeholder="Telefoonnummer" value="">
+        <input class="pass__sz" type="number" name="telefoon" placeholder="Telefoonnummer" value="">
         </div>
 
         <div class="">
-        <input class="pass__sz__" type="date" name="date start" placeholder="Opstartdatum" value="">
+        <input class="pass__sz__" type="date" name="opstartdatum" placeholder="Opstartdatum" value="">
         </div>
         
         <img class="togglePunt2" src="/img/ill__sz__2.png" alt="punt">
+
+        <div class="reg__sz">
+            <button class="__reg__sz" type="submit">Volgende</button>
+        </div>
     
     </form>
       
-    <div class="reg__sz">
-        <a href="/signup/student-zelfstandige/profile" class="__reg__sz" type="submit"><p>Volgende</p></a>
-    </div>
       
 
     

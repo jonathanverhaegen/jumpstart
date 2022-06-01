@@ -373,4 +373,44 @@ if(stageBtn6 !== null){
         })
     })
 }
+
+//avatar
+let avatarPick = document.querySelector('.avatar');
+if(avatarPick !== null){
+    avatarPick.addEventListener('change', (e) => {
+        var src = URL.createObjectURL(e.target.files[0]);
+        document.querySelector('.sz__pic').src = src;
+        
+    })
+}
+
+//signup Zelfstandige
+let signupZelf = document.querySelector('.signupZelf');
+if(signupZelf !== null){
+
+    let title = signupZelf.querySelector('.h__reg__sz');
+   
+    let form1 = signupZelf.querySelector('.addZelf1');
+    let form2 = signupZelf.querySelector('.addZelf2');
+    let form3 = signupZelf.querySelector('.addZelf3');
+
+    let btn1 = signupZelf.querySelector('.btn1');
+    let btn2 = signupZelf.querySelector('.btn2');
+
+    btn1.addEventListener('click', (e) => {
+        e.preventDefault();
+        title.innerHTML = "KBO";
+        form1.style.display = "none";
+        form2.style.display = "block";
+    });
+
+    btn2.addEventListener('click', (e) => {
+        e.preventDefault();
+        title.innerHTML = "Vertel meer over jezelf";
+        form2.style.display = "none";
+        form3.style.display = "block";
+    })
+
+
+}
         

@@ -35,39 +35,37 @@
 
 
       
-    <h1 class="h__reg__sz">Registreren</h1>
+    <h1 class="h__reg__sz">Vertel meer over jezelf</h1>
       <form action="user/addZelfstandige" method="post" class="form__sz">
       @csrf
+
       <h1 class="h__signup__sz">Word lid van onze community</h1>
+
+
+        <img class="sz__pic" src="/img/thomas.png" alt="profile pic">
+        <a href="" class="a__prof__sz" ><p class="__prof__sz">Profiel foto wijzigen</p></a>
       
         <div class="">
-        <input class="name__sz" type="text" name="name" placeholder="Naam en voornaam" value="">
+        <input class="mail__sz" type="text" name="email" placeholder="Bedrijfsmail" value="">
         </div>
 
         <div class="">
-        <input class="date__sz" type="date" name="birthdate" placeholder="Geboortedatum" value="">
+        <input class="pass__sz" type="number" name="phone" placeholder="Telefoonnummer" value="">
         </div>
 
         <div class="">
-        <input class="mail__sz" type="text" name="email" placeholder="Email" value="">
+        <input class="pass__sz" type="text" max="2000" name="bio" placeholder="Bio" value="">
         </div>
 
-        <div class="">
-        <input class="pass__sz" type="password" name="password" placeholder="Wachtwoord" value="">
-        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
-        </div>
 
-        <div class="">
-        <input class="pass__sz__" type="password" name="password_confirmation" placeholder="Wachtwoord bevestigen" value="">
-        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
-        </div>
         
-        <img class="togglePunt1" src="/img/ill__sz__1.png" alt="punt">
+        
+        <img class="togglePunt3" src="/img/ill__sz__3.png" alt="punt">
     
     </form>
       
     <div class="reg__sz">
-        <a href="/signup/student-zelfstandige/kbo" class="__reg__sz" type="submit"><p>Volgende</p></a>
+        <a href="/signup/student-zelfstandige/profile" class="__reg__sz" type="submit"><p>Registreren afronden</p></a>
     </div>
       
 

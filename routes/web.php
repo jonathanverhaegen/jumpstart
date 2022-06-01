@@ -23,9 +23,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 //register
+
 Route::get('/signup', [RegisterController::class, "signup"]);
 Route::get('/signup/student', [RegisterController::class, "signupStudent"]);
 Route::get('/signup/student-zelfstandige', [RegisterController::class, "signupZelfstandige"]);
+
 
 Route::get('/login', [LoginController::class, "login"])->name('login');
 Route::get('/logout', [LoginController::class, "logout"]);

@@ -120,15 +120,19 @@
             <div class="post__text">
                 <p>{!!$post->text!!}</p>
             </div>
+            @if(!empty($post->attachments[0]))
             <div class="post__img">
                 <img src="/img/default.png" alt="">
             </div>
+            @endif
+
+            @if(!empty($post->attachments[0]))
             <div class="post__att">
                 <a href="">test.png</a>
             </div>
-
-            <livewire:likes :post_id="$post->id" />
+            @endif
             
+            <livewire:likes :post_id="$post->id" />
             <livewire:reactions :post_id="$post->id" />
 
         </div>

@@ -16,10 +16,13 @@
 
 .cont__btns{
     display:flex;
-    flex-direction: row;
-    gap:20%;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
     margin-top:20px;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .btn__student{
@@ -592,6 +595,10 @@ input.pass__sz__{
         color: $orange;
         font-family: $normal;
         font-size: 18px;
+    }
+
+    .cont__btns{
+        flex-direction: row;
     }
 
 

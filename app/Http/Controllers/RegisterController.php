@@ -170,6 +170,7 @@ class RegisterController extends Controller
         // Save the registration data in an array
         $registration_data = $request->all();
 
+
         // Add the secret key to the registration data
         $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
 
@@ -201,6 +202,8 @@ class RegisterController extends Controller
       }
 
     public function addZelfstandige($request){
+
+        dd($request);
         
         //user maken
         $user = new User();
@@ -213,13 +216,17 @@ class RegisterController extends Controller
         $user->save();
 
         //foto opslaan in de public map en bij de user
-        if(!empty($request->input('file'))){
-            $imageName = time().'.'.$request->file->extension();
-            $request->avatar->move(public_path('img'), $imageName);
-            $user = User::find($user->id);
-            $user->avatar = $imageName;
-            $user->save();
-        }
+        // if(!empty($request->file('avatar'))){
+        //         $file = $request->file('avatar');
+        //         $imageSrc = time().'.'.$file->extension();
+        //         $file->move(public_path('attachments'), $imageSrc);
+
+        //         $user = User::find($user->id);
+        //         $user->avatar = $imageSrc;
+        //         $user->save();
+        // }
+
+        
         
         //company maken
         $company = new Company();

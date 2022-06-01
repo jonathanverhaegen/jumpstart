@@ -92,11 +92,12 @@
         <div class="addPost">
             <p class="addPost__title">Post plaatsen</p>
 
-            <form class="form--post" action="/add/post" method="post">
+            <form class="form--post" action="/add/post" method="post" enctype="multipart/form-data">
                 @csrf
     
                 <textarea id="myeditorinstance" class="form--post__textarea"  name="tekst" cols="30" rows="10" placeholder="Waar denk je aan..."></textarea>
 
+                <input class="form--post__files" type="file" name="files[]" multiple>
                 
                 <input type="hidden" name="group_id" value="{{$group->id}}">
                 
@@ -131,7 +132,7 @@
                 <a href="">test.png</a>
             </div>
             @endif
-            
+
             <livewire:likes :post_id="$post->id" />
             <livewire:reactions :post_id="$post->id" />
 

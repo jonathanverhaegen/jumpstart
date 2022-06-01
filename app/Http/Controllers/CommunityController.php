@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AttachmentsPost;
 use App\Models\Group;
 use App\Models\Post;
 use App\Models\User;
@@ -45,7 +46,8 @@ class CommunityController extends Controller
     public function addPost(Request $request){
         $credentials = $request->validate([
             'tekst' => 'required',
-            'group_id' => 'required'
+            'group_id' => 'required',
+            'files[]' => 'mimes:png,jpg,jpeg,pfd,doc,docx,ppt'
         ]);
 
         $request->flash();
@@ -58,6 +60,24 @@ class CommunityController extends Controller
         $post->group_id = $group_id;
         $post->user_id = Auth::id();
         $post->save();
+
+        if(!empty($request->file('files'))){
+            foreach($request->file('files') as $file){
+                $imageSrc = time().'.'.$file->extension();
+                $file->move(public_path('attachments'), $imageSrc);
+
+                //attachment opslaan in database
+                $newAttach = new AttachmentsPost();
+                $newAttach->name = $file->getClientOriginalName();
+                $newAttach->source = $imageSrc;
+                $newAttach->post_id = $post->id;
+                $newAttach->save();
+                sleep(1);
+            }
+        }
+        
+        
+        
 
         $group = Group::where('id', $group_id)->first();
 

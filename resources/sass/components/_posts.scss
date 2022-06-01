@@ -23,7 +23,7 @@
 
 .form--post{
     margin-top:25px;
-    width:90%;
+    width:95%;
     margin-left:auto;
     margin-right:auto;
 }
@@ -35,6 +35,10 @@
     font-family: $normal;
     color: $blue;
     width:100%;
+}
+
+.form--post__files{
+    margin-top:20px;
 }
 
 .post{
@@ -149,3 +153,4 @@
 .reaction__text{
     font-family: $normal;
 }
+

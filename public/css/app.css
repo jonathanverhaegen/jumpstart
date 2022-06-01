@@ -2549,6 +2549,8 @@ input.pass__sz__ {
   font-size: 20px;
   color: white;
   margin-left: 0px;
+  border: none;
+  background-color: #13204A;
 }
 
 .reg__sz {

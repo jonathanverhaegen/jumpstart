@@ -123,13 +123,21 @@
             </div>
             @if(!empty($post->attachments[0]))
             <div class="post__img">
-                <img src="/img/default.png" alt="">
+            @foreach($post->attachments as $att)
+                @if(str_contains($att->source, "png") || str_contains($att->source, "jpg") || str_contains($att->source, "jpeg"))
+                <img src="/attachments/{{$att->source}}" alt="">
+                @endif
+            @endforeach
             </div>
             @endif
 
             @if(!empty($post->attachments[0]))
             <div class="post__att">
-                <a href="">test.png</a>
+                @foreach($post->attachments as $att)
+                @if(str_contains($att->source, "pdf") || str_contains($att->source, "doc") || str_contains($att->source, "docx") || str_contains($att->source, "ppt"))
+                    <a href="/attachments/{{$att->source}}" target="_blank" download>{{$att->name}}</a>
+                @endif
+                @endforeach
             </div>
             @endif
 

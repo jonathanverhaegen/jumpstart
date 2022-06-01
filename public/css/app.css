@@ -3282,6 +3282,80 @@ input.pass__sz__ {
   font-family: "Lato", sans-serif;
 }
 
+.post__img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.post__img img {
+  width: 80%;
+}
+
+.post__att {
+  margin-top: 20px;
+}
+
+.post__att a {
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+  color: #1E3472;
+}
+
+.post__likes {
+  margin-top: 20px;
+}
+
+.post__likes img {
+  width: 25px;
+  color: #1E3472;
+}
+
+.post__likes img:hover {
+  cursor: pointer;
+}
+
+.post__react {
+  margin-top: 20px;
+  border-top: 1px solid black;
+}
+
+.reaction__add {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.reaction__add__input {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px 10px 20px;
+  border: none;
+  background-color: #DADFEC;
+  font-family: "Lato", sans-serif;
+  color: #1E3472;
+  border-radius: 20px;
+}
+
+.reaction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.reaction__img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.reaction__text {
+  font-family: "Lato", sans-serif;
+}
+
 body {
   background-color: #EDEFF5;
 }

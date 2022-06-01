@@ -81,7 +81,7 @@
                 </a>
 
                 <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--5">
-                    <div class="roadmap__stage__title roadmap__stage__title--left">Sociaal- <br> verzekeringsfonds</div>
+                    <div class="roadmap__stage__title roadmap__stage__title--left">Sociaal<br> verzekeringsfonds</div>
                     <div class="roadmap__stage__number">5</div>
                     <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5">
                 </a>
@@ -123,22 +123,22 @@
                 </div>
             <div class="stage">
                 <p class="stage__title">Bedrijfsgegevens</p>
-                <p class="stage__text">Vul hieronder je bedrijfsgegevens in. Ze worden voor jou opgeslagen in onze database.</p>
+                <p class="stage__text">Vul hieronder de gegevens in die je zal gebruiken voor je toekomstig bedrijf. Wij slagen ze voor jou op in onze database!</p>
             </div>
             @if($roadmap->stage === 1 && $roadmap->check === 0)
             <form class="form--stage" action="/add/company" method="post">
                 @csrf
                     <div class="form--stage__field">
-                        <p class="form--stage__field__text">Bedrijfsgegevens</p>
-                        <input type="text" class="form--stage__field__input" name="naam" placeholder="Naam onderneming">
-                        <input type="text" class="form--stage__field__input" name="emailadres" placeholder="Emailadres onderneming">
-                        <input type="number" class="form--stage__field__input" name="telefoon" placeholder="Telefoon onderneming">
-                        <p class="form--stage__field__text">Adress bedrijf</p>
-                        <input type="text" class="form--stage__field__input" name="straat" placeholder="Straat">
-                        <input type="number" class="form--stage__field__input" name="nummer" placeholder="Nummer">
+                        <p class="form--stage__field__text">Algemene bedrijfsgegevens</p>
+                        <input type="text" class="form--stage__field__input" name="naam" placeholder="Naam van je toekomstige onderneming">
+                        <input type="text" class="form--stage__field__input" name="emailadres" placeholder="E-mailadres van je onderneming">
+                        <input type="number" class="form--stage__field__input" name="telefoon" placeholder="Telefoonnummer van je onderneming">
+                        <p class="form--stage__field__text">Adresgegevens</p>
+                        <input type="text" class="form--stage__field__input" name="straat" placeholder="Straatnaam">
+                        <input type="number" class="form--stage__field__input" name="nummer" placeholder="Huisnummer">
                         <input type="text" class="form--stage__field__input" name="plaats" placeholder="Plaats">
                         <input type="number" class="form--stage__field__input" name="postcode" placeholder="Postcode">
-                        <button type="submit" class="form--stage__field__btn">Verzend</button>
+                        <button type="submit" class="form--stage__field__btn">Verzenden</button>
                     </div>
             </form>
             @endif
@@ -146,7 +146,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
                     <input type="hidden" name="stage" value="1">
                 </div>
             </form>
@@ -187,7 +187,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
                     <input type="hidden" name="stage" value="2">
                 </div>
             </form>
@@ -238,8 +238,8 @@
                     @endif
                     
                     <div class="briefje">
-                        <p class="briefje__title">Mijn aangeduiden activiteiten</p>
-                        <p class="briefje__text">Hou dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
+                        <p class="briefje__title">Mijn aangeduide activiteiten</p>
+                        <p class="briefje__text">Houd dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
                         @if(!empty($briefjes[0]))
                         
                         @foreach($briefjes as $b)
@@ -256,7 +256,7 @@
                     <form class="briefjeAdd" action="/add/briefje" method="post">
                     @csrf
                         @if(empty($briefjes[0]))
-                        <button>Save briefje</button>
+                        <button>Briefje opslaan</button>
                         @endif
                     </form>
                     
@@ -275,7 +275,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
                     <input type="hidden" name="stage" value="3">
                 </div>
             </form>
@@ -310,7 +310,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik heb mijzelf aangesloten bij een sociaal verzekeringsfonds</button>
                     <input type="hidden" name="stage" value="4">
                 </div>
             </form>
@@ -337,7 +337,7 @@
                     <li>Avixi</li>
                     <li>Nationale Hulpkas</li>
                 </ul>
-                <p class="stage__text"><strong>Tip:</strong> Welk sociaal verzekeringsfonds is het beste voor jou? (blog)</p>
+                <p class="stage__text"><strong>Tip:</strong> Welk sociaal verzekeringsfonds is het beste voor jou?</p>
             </div>
             @if($roadmap->stage === 5 && $roadmap->check === 0)
             <form class="formStage4" action="/check/inputStage5" method="post">
@@ -362,7 +362,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
                     <input type="hidden" name="stage" value="5">
                 </div>
             </form>
@@ -387,7 +387,7 @@
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
                 <div class="stage__info">
-                    <p class="stage__info__title">Hieronder zie je je naam en ondernemingsnummer</p>
+                    <p class="stage__info__title">Hieronder zie je de naam en het ondernemingsnummer dat je moet invullen in het formulier.</p>
                     <p class="stage__info__text">Naam: {{$company->name}}</p>
                     <p class="stage__info__text">Ondernemingsnummer: {{$company->company_number}}</p>
                 </div>
@@ -400,8 +400,8 @@
                         <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
                 </div>
                 <div class="stage__info">
-                    <p class="stage__info__title">Hieronder zie je adres waarop je administratieve hoofdzetel is gevestigd</p>
-                    <p class="stage__info__text">Straat  nummer: {{$company->street}} {{$company->number}}</p>
+                    <p class="stage__info__title">Hieronder zie je het adres waarop je administratieve hoofdzetel is gevestigd.</p>
+                    <p class="stage__info__text">Straatnaam en huisnummer: {{$company->street}} {{$company->number}}</p>
                     <p class="stage__info__text">Plaats: {{$company->postal}} {{$company->city}}</p>
                 </div>
             </div>
@@ -414,8 +414,10 @@
                 </div>
                 <div class="stage__info">
                     <div class="briefje">
-                        <p class="briefje__title">Mijn aangeduiden activiteiten</p>
-                        <p class="briefje__text">Hou dit lijstje bij de hand wanneer je je gaat aansluiten bij een sociaal verzekeringsfonds</p>
+                        <p class="briefje__title">Mijn aangeduide activiteiten</p>
+                        <p class="briefje__text">Bij de activiteiten moet je kiezen voor één hoofdactiviteit, dat is de activiteit waarmee je het meeste geld zal verdienen en dus het grootste deel van je omzet zal uitmaken. Duid je hoofdactiviteit aan door naast in de kolom “H” het bolletje aan te klikken.</p>
+                        <p class="briefje__text">Je kan in dit formulier maximaal 6 activiteiten toevoegen, heb je meer activiteiten laten toevoegen in de Kruispuntbank van Ondernemingen, kies dan voor de 6 activiteiten waarmee je verwacht het meeste omzet te realiseren. Je kan activiteiten toevoegen door de juiste NACEBE-codes in te vullen.</p>
+                        <p class="briefje__text">Vul ook voor elke activiteit een startdatum in, deze datum maakt op zich niet veel uit, maar let wel op dat je pas vanaf die datum zal mogen factureren aan je klanten. De “Stop”-kolom laat je leeg.</p>
                         @if(!empty($briefjes[0]))
                         
                         @foreach($briefjes as $b)
@@ -429,6 +431,22 @@
                         
                         @endif
                     </div>
+                </div>
+            </div>
+
+            <div class="stage5">
+                <div class="stage__field">
+                    <p class="stage__field__title"><strong>Regime</strong></p>
+                    <img class="stage__field__icon" src="/img/uitklappen.png" alt="uitklappen">
+                </div>
+                <div class="stage__info">
+                    <p class="stage__info__text">In deze stap moet je kiezen welk btw-regime je op jouw onderneming wil toepassen, er zijn een aantal opties, maar in de meeste gevallen zal je kiezen voor optie “B”, “Belastingplichtige onderworpen aan de vrijstellingsregeling van de belasting”.</p>
+                    <p class="stage__info__text"><i>A. Belastingplichtige gehouden tot het indienen van periodieke btw-aangiften</i></p>
+                    <p class="stage__info__text">Kies je voor deze optie dan ben je verplicht elke maand of elk kwartaal een btw-aangifte in te dienen. Dit is werk voor boekhouders, als je voor deze optie kiest ben je vrijwel altijd genoodzaakt een boekhouder aan te stellen. Als je deze optie kiest, ben je verplicht het correcte btw-percentage aan te rekenen aan de klant, en door te storten aan de btw-administratie. Je krijgt op die manier ook het recht om btw terug te vorderen op elke aankoop die je doet.</p>
+                    <p class="stage__info__text"><i>B. Belastingplichtige onderworpen aan de vrijstellingsregeling van de belasting</i></p>
+                    <p class="stage__info__text">Ondernemers met een jaaromzet lager dan 25.000,00 euro kunnen ervoor kiezen om vrijgesteld te worden van hun btw-plicht. Je bent dan wel btw-onderworpen en je hebt een btw-hoedanigheid, maar je hoeft geen (drie)maandelijkse aangifte in te dienen en je klanten geen btw aan te rekenen. Dit is veruit de eenvoudigste optie, je kan helaas geen btw terugvorderen op je aankopen.</p>
+                    <p class="stage__info__text"><i>A. Belastingplichtige gehouden tot het indienen van periodieke btw-aangiften</i></p>
+                    <p class="stage__info__text">Deze andere opties zijn uitzonderlijke situaties waar je als student-zelfstandige hoogstwaarschijnlijk niet mee te maken zult krijgen. Denk je toch dat één van deze btw-regimes op jou van toepassing zal zijn, lees er hier dan meer over: <a href="https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/btw-regime#q1" target="_blank">https://financien.belgium.be/nl/ondernemingen/btw/btw-plicht/btw-regime#q1</a></p>
                 </div>
             </div>
 
@@ -456,7 +474,7 @@
                 <div class="stage5__form">
                     <form class="form--stage" action="/check/stage6/handtekening" method="post">
                     @csrf
-                        <p class="form--stage__title">Vul hier gewoon je naam en hoedanigheid in. Jij bent de “Oprichter van een geregistreerde entiteit-natuurlijk persoon”.</p>
+                        <p class="form--stage__title">Vul in deze stap van het formulier gewoon je naam en hoedanigheid in. Jouw hoedaning is de “Oprichter van een geregistreerde entiteit-natuurlijk persoon”, dat moet je dus ook invullen in het formulier van de btw-administratie bij "Hoedanigheid".</p>
                         <div class="form--stage__field">
                             <input class="form--stage__field__input" type="text" name="naam" placeholder="Naam">
                             <input class="form--stage__field__input" type="text" name="hoedanigheid" placeholder="Hoedanigheid">
@@ -493,7 +511,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
                     <input type="hidden" name="stage" value="6">
                 </div>
             </form>
@@ -526,7 +544,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
                     <input type="hidden" name="stage" value="7">
                 </div>
             </form>

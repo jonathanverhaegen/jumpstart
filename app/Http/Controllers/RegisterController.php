@@ -72,7 +72,6 @@ class RegisterController extends Controller
 
      public function completeRegistration(Request $request)
       {   
-
           // add the session data back to the request input
           $request->merge(session('registration_data'));
 
@@ -141,8 +140,6 @@ class RegisterController extends Controller
            'opstartdatum' => 'required|before:today'
         ]);
 
-        //opslaan in de session
-        $request->merge(session('dataZelfstandige1'));
         $dataZelfstandige2 = $request->all();
         $request->session()->flash('dataZelfstandige2', $dataZelfstandige2);
         
@@ -151,13 +148,19 @@ class RegisterController extends Controller
 
     }
 
-    public function addZelfstandige3(Request $request){
+    public function addZelfstandigeQR(Request $request){
         $credentials = $request->validate([
+            'naam' => 'required|max:255',
+            'geboortedatum' => 'required|before:today',
+            'email' => 'required|email',
+            'wachtwoord' => 'required|confirmed|min:8',
+            'bedrijfsnaam' => 'required|max:255',
+            'ondernemingsnummer' => 'required',
+            'bedrijfsemail' => 'required|email',
+            'telefoon' => 'required',
+            'opstartdatum' => 'required|before:today',
             'bio' => 'required'
-         ]);
-
-         //opslaan in de session
-        $request->merge(session('dataZelfstandige2'));
+        ]);
         
         $request->flash();
 
@@ -198,8 +201,7 @@ class RegisterController extends Controller
       }
 
     public function addZelfstandige($request){
-        //avatar opslaan in public
-
+        
         //user maken
         $user = new User();
         $user->name = $request->input('naam');
@@ -210,6 +212,15 @@ class RegisterController extends Controller
         $user->google2fa_secret = $request->input('google2fa_secret');
         $user->save();
 
+        //foto opslaan in de public map en bij de user
+        if(!empty($request->input('file'))){
+            $imageName = time().'.'.$request->file->extension();
+            $request->avatar->move(public_path('img'), $imageName);
+            $user = User::find($user->id);
+            $user->avatar = $imageName;
+            $user->save();
+        }
+        
         //company maken
         $company = new Company();
         $company->name = $request->input('bedrijfsnaam');

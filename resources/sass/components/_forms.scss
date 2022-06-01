@@ -5,6 +5,11 @@ button:hover{
     cursor:pointer;
 }
 
+.form__btn{
+    display:flex;
+    justify-content: center;
+}
+
 .form--login{
     width:80%;
     margin-left:auto;

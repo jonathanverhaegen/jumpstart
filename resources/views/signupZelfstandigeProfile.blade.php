@@ -37,30 +37,37 @@
 
 
 
-      
+    <div class="signupZelf">
+
     <h1 class="h__reg__sz">Vertel meer over jezelf</h1>
-      <form action="/user/addZelfstandige3" method="post" class="form__sz">
+      <form action="/user/addZelfstandige" method="post" class="form__sz">
       @csrf
 
       <h1 class="h__signup__sz">Word lid van onze community</h1>
 
+      
         <div class="form__avatar">
-        <img class="sz__pic" src="/img/thomas.png" alt="profile pic">
-        <label class="__prof__sz"><input class="avatar" name="avatar" type="file" accept=".png, .jpg, .jpeg"/>Profiel foto wijzigen</label>
+            <img class="sz__pic" src="/img/default.png" alt="profile pic">
+            <label class="__prof__sz"><input class="avatar" name="avatar" type="file" accept=".png, .jpg, .jpeg"/>Profiel foto wijzigen</label>
         </div>
 
         <div class="">
-        <input class="pass__sz" type="text" max="2000" name="bio" placeholder="Bio" value="">
+            <input class="pass__sz" type="text" max="2000" name="bio" placeholder="Bio" value="">
         </div>
 
         <img class="togglePunt3" src="/img/ill__sz__3.png" alt="punt">
 
-        <div class="reg__sz">
-            <button class="__reg__sz" type="submit">Volgende</button>
+      
+
+        
+
+        <div class="form__btns">
+            <button class="reg__sz" type="submit">Volgende</button>
         </div>
     
     </form>
-      
+
+    </div>   
     
       
 

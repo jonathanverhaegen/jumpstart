@@ -28,12 +28,9 @@ Route::get('/signup', [RegisterController::class, "signup"]);
 Route::get('/signup/student', [RegisterController::class, "signupStudent"]);
 
 Route::get('/signup/student-zelfstandige', [RegisterController::class, "signupZelfstandige"]);
-Route::get('/signup/student-zelfstandige/kbo', [RegisterController::class, "signupZelfstandigeKbo"]);
-Route::get('/signup/student-zelfstandige/profile', [RegisterController::class, "signupZelfstandigeProfile"]);
 
-Route::post('/user/addZelfstandige1', [RegisterController::class, "addZelfstandige1"]);
-Route::post('/user/addZelfstandige2', [RegisterController::class, "addZelfstandige2"]);
-Route::post('/user/addZelfstandige3', [RegisterController::class, "addZelfstandige3"]);
+Route::post('/user/addZelfstandige', [RegisterController::class, "addZelfstandigeQR"]);
+
 
 
 Route::get('/login', [LoginController::class, "login"])->name('login');

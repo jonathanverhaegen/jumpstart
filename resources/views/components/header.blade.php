@@ -13,13 +13,14 @@
                 <p class="header__links__item__text__mob">Mijn business</p>
             </div>
         </a>
-
+        @if(!empty(Auth::user()->roadmap))
         <a href="/roadmap" class="header__links__item__mob">
             <div class="header__links__mob__container">
                 <img class="header__links__item__img__mob" src="{{asset('/img/roadmap.png')}}" alt="">
                 <p class="header__links__item__text__mob">Roadmap</p>
             </div>
         </a>
+        @endif
 
         <a href="/community" class="header__links__item__mob header__links__item__mob--other">
             <div class="header__links__mob__container">
@@ -68,10 +69,12 @@
             <p class="header__links__item__text">Mijn business</p>
         </a>
 
+        @if(!empty(Auth::user()->roadmap))
         <a href="/roadmap" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/roadmap.png')}}" alt="">
             <p class="header__links__item__text">Roadmap</p>
         </a>
+        @endif
 
         <a href="/community" class="header__links__item">
             <img class="header__links__item__img" src="{{asset('/img/comm.png')}}" alt="">

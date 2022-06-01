@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Company;
 use App\Models\Roadmap;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
@@ -105,7 +106,7 @@ class RegisterController extends Controller
         $map->check = 0;
         $map->save();
 
-        // event(new Registered($user));
+        event(new Registered($user));
 
         $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');
         return redirect('/login');
@@ -135,7 +136,7 @@ class RegisterController extends Controller
         $credentials = $request->validate([
            'bedrijfsnaam' => 'required|max:255',
            'ondernemingsnummer' => 'required',
-           'email' => 'required|email',
+           'bedrijfsemail' => 'required|email',
            'telefoon' => 'required',
            'opstartdatum' => 'required|before:today'
         ]);
@@ -154,7 +155,78 @@ class RegisterController extends Controller
         $credentials = $request->validate([
             'bio' => 'required'
          ]);
+
+         //opslaan in de session
+        $request->merge(session('dataZelfstandige2'));
+        
+        $request->flash();
+
+        // Initialise the 2FA class
+        $google2fa = app('pragmarx.google2fa');
+
+        // Save the registration data in an array
+        $registration_data = $request->all();
+
+        // Add the secret key to the registration data
+        $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
+
+        // Save the registration data to the user session for just the next request
+        $request->session()->flash('registration_data', $registration_data);
+
+        // Generate the QR image. This is the image the user will scan with their app
+        // to set up two factor authentication
+        $QR_Image = $google2fa->getQRCodeInline(
+            config('jumpstart.test'),
+            $registration_data['email'],
+            $registration_data['google2fa_secret']
+        );
+
+        // Pass the QR barcode image to our view
+        return view('google2fa.registerZelf', ['QR_Image' => $QR_Image, 'secret' => $registration_data['google2fa_secret']]);
+
          
+    }
+
+    public function completeRegistrationZelf(Request $request)
+      {   
+
+          // add the session data back to the request input
+          $request->merge(session('registration_data'));
+
+          // Call the default laravel authentication
+          return $this->addZelfstandige($request);
+      }
+
+    public function addZelfstandige($request){
+        //avatar opslaan in public
+
+        //user maken
+        $user = new User();
+        $user->name = $request->input('naam');
+        $user->birth_date = $request->input('geboortedatum');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('wachtwoord'));
+        $user->bio = $request->input('bio');
+        $user->google2fa_secret = $request->input('google2fa_secret');
+        $user->save();
+
+        //company maken
+        $company = new Company();
+        $company->name = $request->input('bedrijfsnaam');
+        $company->account_number = $request->input('ondernemingsnummer');
+        $company->email = $request->input('bedrijfsemail');
+        $company->phone = $request->input('telefoon');
+        $company->start_date = $request->input('opstartdatum');
+        $company->user_id = $user->id;
+        $company->save();
+
+
+        //email verzenden voor verificatie
+        event(new Registered($user));
+
+        //redirecten naar login
+        $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');
+        return redirect('/login');
     }
 
 }

@@ -54,7 +54,7 @@
         </div>
 
         <div class="">
-        <input class="mail__sz" type="text" name="email" placeholder="Bedrijfsmail" value="">
+        <input class="mail__sz" type="text" name="bedrijfsemail" placeholder="Bedrijfsmail" value="">
         </div>
 
         <div class="">

@@ -41,7 +41,9 @@ Route::get('/logout', [LoginController::class, "logout"]);
 Route::post('user/login', [LoginController::class, "handleLogin"]);
 
 Route::post('/user/addStudent', [RegisterController::class, "addStudentQR"]);
+
 Route::get('/complete-registration', [RegisterController::class, 'completeRegistration'])->name('complete-registration');
+Route::get('/complete-registrationZelf', [RegisterController::class, 'completeRegistrationZelf'])->name('complete-registrationZelf');
 
 
 
@@ -63,7 +65,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/email/resend', [VerificationController::class, "resend"])->name('verification.resend');
 
     Route::group(['middleware' => ['2fa']], function() {
-    // Route::group(['middleware' => ['verified']], function() {
+    Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard
     Route::get('/dashboard', [LoginController::class, "homepage"])->name('dashboard');
@@ -120,4 +122,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 });
-// });
+});

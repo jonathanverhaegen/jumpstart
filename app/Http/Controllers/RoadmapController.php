@@ -16,6 +16,10 @@ use SoapClient;
 class RoadmapController extends Controller
 {
     public function roadmap(){
+        if(empty(Auth::user()->roadmap)){
+            abort(403);
+        }
+
         $data['user'] = Auth::user();
         $data['roadmap'] = Auth::user()->roadmap;
         $data['categories'] = Category::get();

@@ -2452,6 +2452,16 @@ if (signupZelf !== null) {
     form2.style.display = "none";
     form3.style.display = "block";
   });
+} //post plaatsen
+
+
+var addPostBtn = document.querySelector('.ask');
+
+if (addPostBtn !== null) {
+  addPostBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('.addPost').style.display = "flex";
+  });
 }
 
 /***/ }),

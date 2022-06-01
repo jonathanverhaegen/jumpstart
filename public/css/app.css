@@ -1409,6 +1409,15 @@ button:hover {
   border-radius: 15px;
 }
 
+.addPost__btn {
+  border: none;
+  background-color: #13204A;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  border-radius: 20px;
+}
+
 @media (min-width: 800px) {
   .formBtn {
     padding: 2%;
@@ -1972,6 +1981,8 @@ h1 {
   margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 20px;
 }
 
 .faq__container {
@@ -2058,6 +2069,11 @@ h1 {
   color: #1E3472;
   margin-top: 20px;
   margin-left: 33.3px;
+}
+
+.person {
+  width: 70%;
+  border-radius: 50%;
 }
 
 @media (min-width: 800px) {
@@ -3194,6 +3210,76 @@ input.pass__sz__ {
     padding: 5%;
   }
 }
+.addPost {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+  background-color: white;
+  border-radius: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.addPost__title {
+  text-align: center;
+  color: #1E3472;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form--post {
+  margin-top: 25px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form--post__textarea {
+  border: none;
+  background-color: #E4E8F1;
+  padding: 2%;
+  font-family: "Lato", sans-serif;
+  color: #1E3472;
+  width: 100%;
+}
+
+.post {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5%;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.post__user {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+}
+
+.post__user__img {
+  width: 80%;
+  border-radius: 50%;
+}
+
+.post__user__info__name {
+  font-family: "Montserrat", sans-serif;
+  color: #1E3472;
+}
+
+.post__user__info__date {
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+  font-style: italic;
+}
+
 body {
   background-color: #EDEFF5;
 }

@@ -88,6 +88,35 @@
         <a href="/community/addFaq/{{$group->id}}" class="ask"><p class="ask__question">Vraag stellen</p></a>  
         </div>
 
+        <div class="addPost">
+            <p class="addPost__title">Post plaatsen</p>
+
+            <form class="form--post" action="/add/post" method="post">
+                @csrf
+                <textarea class="form--post__textarea" name="tekst" id="" cols="30" rows="10" placeholder="Waar denk je aan..."></textarea>
+                
+                <input type="hidden" name="group_id" value="{{$group->id}}">
+                
+                <div class="form__btn">
+                    <button class="addPost__btn" type="submit">Post plaatsen</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        @foreach($posts as $post)
+        <div class="post">
+            <div class="post__user">
+                <img class="post__user__img" src="/img/default.png" alt="">
+                <div class="post__user__info">
+                    <p class="post__user__info__name">Naam</p>
+                    <p class="post__user__info__date">Datum</p>
+                </div>
+            </div>
+        </div>
+        @endforeach
+
 
 
 

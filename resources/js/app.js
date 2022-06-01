@@ -413,4 +413,13 @@ if(signupZelf !== null){
 
 
 }
+
+//post plaatsen
+let addPostBtn = document.querySelector('.ask');
+if(addPostBtn !== null){
+    addPostBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector('.addPost').style.display = "flex";
+    })
+}
         

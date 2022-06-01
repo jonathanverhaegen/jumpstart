@@ -1,0 +1,73 @@
+@import '../abstracts/colors';
+@import '../abstracts/fonts';
+
+.addPost{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 5%;
+    background-color: $white;
+    border-radius: 20px;
+    display:none;
+    flex-direction: column;
+    justify-content:center;
+    margin-bottom: 25px;
+
+}
+
+.addPost__title{
+    text-align: center;
+    color:$blue;
+    font-family: $title;
+}
+
+.form--post{
+    margin-top:25px;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.form--post__textarea{
+    border:none;
+    background-color: $gray;
+    padding: 2%;
+    font-family: $normal;
+    color: $blue;
+    width:100%;
+}
+
+.post{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 5%;
+    background-color: $white;
+    border-radius: 20px;
+    margin-bottom:20px;
+}
+
+.post__user{
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+.post__user__img{
+    width:80%;
+    border-radius: 50%;
+}
+
+.post__user__info__name{
+    font-family: $title;
+    color: $blue;
+}
+
+.post__user__info__date{
+    margin-top:10px;
+    font-family: $normal;
+    font-style: italic;
+}

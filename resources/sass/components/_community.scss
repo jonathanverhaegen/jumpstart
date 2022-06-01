@@ -264,6 +264,8 @@ h1{
     margin-right: auto;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 20px;
 }
 
 
@@ -353,6 +355,11 @@ h1{
     color: $blue;
     margin-top: 20px;
     margin-left: 33.3px;
+}
+
+.person{
+    width: 70%;
+    border-radius: 50%;
 }
 
 

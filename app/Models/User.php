@@ -68,6 +68,5 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function company(){
         return $this->hasOne(\App\Models\Company::class);
-
     }
 }

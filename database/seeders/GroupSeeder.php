@@ -45,20 +45,20 @@ class GroupSeeder extends Seeder
         $group5->save();
 
         $group6 = new Group();
-        $group6->name = "Ice Cube";
-        $group6->bio = "Bio ice cube";
+        $group6->name = "ICE CUBE";
+        $group6->bio = "Bio ICE CUBE";
         $group6->goverment = 1;
         $group6->save();
 
         $group7 = new Group();
-        $group7->name = "Sinc";
-        $group7->bio = "Bio sinc";
+        $group7->name = "SINC";
+        $group7->bio = "Bio SINC";
         $group7->goverment = 1;
         $group7->save();
 
         $group8 = new Group();
-        $group8->name = "Manenstarters";
-        $group8->bio = "Bio manenstarters";
+        $group8->name = "Manestarters";
+        $group8->bio = "Bio mMnestarters";
         $group8->goverment = 1;
         $group8->save();
     }

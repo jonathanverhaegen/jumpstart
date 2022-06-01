@@ -32,7 +32,7 @@ class CommunityController extends Controller
         $data['users'] = $users;
         $data['user'] = Auth::user(); 
         $data['faqs'] = $data['group']->faqs;
-        $data['posts'] = Post::where('group_id', $data['group']->id)->get();
+        $data['posts'] = Post::where('group_id', $data['group']->id)->orderByDesc('id')->get();
         return view('community/detail', $data);
     }
 

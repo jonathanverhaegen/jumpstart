@@ -22,6 +22,16 @@ class RegisterController extends Controller
         return view('signupZelfstandige');
     }
 
+    public function signupZelfstandigeKbo(){
+        return view('signupZelfstandigeKbo');
+    }
+
+    public function signupZelfstandigeProfile(){
+        return view('signupZelfstandigeProfile');
+    }
+
+
+
     public function addStudentQR(Request $request){
         //checking
         $credentials = $request->validate([
@@ -59,11 +69,6 @@ class RegisterController extends Controller
          return view('google2fa.register', ['QR_Image' => $QR_Image, 'secret' => $registration_data['google2fa_secret']]);
     }
 
-    public function addZelfstandige(Request $request){
-        //add student + company
-        dd('add student-zelfstandige');
-     }
-
      public function completeRegistration(Request $request)
       {   
 
@@ -100,10 +105,28 @@ class RegisterController extends Controller
         $map->check = 0;
         $map->save();
 
-        event(new Registered($user));
+        // event(new Registered($user));
 
         $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');
         return redirect('/login');
         
+     }
+
+
+     public function addZelfstandige1(Request $request){
+         //credentials checken
+         $credentials = $request->validate([
+            'naam' => 'required|max:255',
+            'geboortedatum' => 'required|before:today',
+            'email' => 'required|email',
+            'wachtwoord' => 'required|confirmed|min:8'
+        ]);
+
+         //opslaan in de session
+         $dataZelfstandige1 = $request->all();
+         $request->session()->flash('dataZelfstandige1', $dataZelfstandige1);
+
+         //redirecten naar de volgende
+         return view('signupZelfstandigeKbo');
      }
 }

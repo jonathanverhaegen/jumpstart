@@ -53,35 +53,65 @@
         @endcomponent
         @endif
 
-
+<div class="contact__detail">
 <div class="detail__container__">
     <div class="detail__container__base">
-        <a href="/contacten"><img src="{{asset('img/back.png')}}" alt="back" class="back___icon"></a>
         <div class="detail">
-                    <img class="detail__pic" src="/img/{{$agent->avatar}}" alt="{{$agent->firstname}}"><p class="detail__name">{{$agent->firstname}} {{$agent->lastname}}</p>
-                    <p class="detail__functie">{{$agent->info}}</p>
-                    <a href="mailto:{{$agent->email}}" ><img src="{{asset('img/mail.png')}}" alt="mail" class="detail__icon1"></a>
-                    <a href="" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="detail__icon2"></a>
-                    <a href="tel:{{$agent->phone}}" ><img src="{{asset('img/tel.png')}}" alt="call" class="detail__icon3"></a>
-        </div>
+            <div class="detail__img">
+                <img class="detail__pic" src="/img/{{$agent->avatar}}" alt="{{$agent->firstname}}">
+            </div>
 
-    </div> 
+            <div class="detail__extra">
+            <p class="detail__name">{{$agent->firstname}} {{$agent->lastname}}</p>
+            <p class="detail__functie">{{$agent->info}}</p>
+            <div class="detail__extra__icons">
+                <a href="tel:{{$agent->phone}}" ><img src="{{asset('img/tel.png')}}" alt="call" class="detail__icon3"></a>
+                <a href="mailto:{{$agent->email}}" ><img src="{{asset('img/mail.png')}}" alt="mail" class="detail__icon1"></a>
+                <a href="" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="detail__icon2"></a>
+            </div>
+            </div>
+    </div>
+</div> 
+</div>
 
     <div class="bio__container">
-     <h1 class="bio">Bio</h1>
-        <p class="bio__inhoud">
+        <div class="bio">
+            <p class="bio__title">Bio</p>
+            <p class="bio__inhoud">
             {{$agent->bio}}
-        </p>
+            </p>
 
 
-     <h1 class="tijd">Beschikbaarheid</h1>
-        <img src="{{asset('img/kalender.png')}}" alt="calender" class="icon__cal"><p class="day">{{$agent->vergaderdagen}}</p>
-        <img src="{{asset('img/klok.png')}}" alt="clock" class="icon__clock"><p class="hour">{{$agent->uren}}</p>
+            <p class="bio__title">Beschikbaarheid</p>
 
+            <div class="bio__extra__container">
+            
+            <div class="bio__extra">
+                <div class="bio__extra__img">
+                    <img src="{{asset('img/kalender.png')}}" alt="calender" class="">
+                </div>
+                <div class="bio__extra__text">
+                    <p class="bio__extra__text__text">Gewenste vergaderdagen</p>
+                    <p class="bio__extra__text__title">{{$agent->vergaderdagen}}</p>
+                </div>
+            </div>
 
+            <div class="bio__extra">
+                <div class="bio__extra__img">
+                <img src="{{asset('img/klok.png')}}" alt="clock" class="">
+                </div>
+                <div class="bio__extra__text">
+                    <p class="bio__extra__text__text">Gewenste uren</p>
+                    <p class="bio__extra__text__title">{{$agent->uren}}</p>
+                </div>
+            </div>
 
+            </div>
+            
+        </div>
     </div>
 
+</div>
 </div>
 
 @endsection

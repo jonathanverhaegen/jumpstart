@@ -52,8 +52,8 @@ class UserSeeder extends Seeder
 
         $user2 = new User();
         $user2->name = "Storms Bob";
-        $user2->birth_date = "2001-10-04";
-        $user2->email = "r0785346@student.thomasmore.be";
+        $user2->birth_date = "1998-02-18";
+        $user2->email = "r0789456@student.thomasmore.be";
         $user2->password = Hash::make("Test12345");
         $user2->avatar = "person3.png";
         $user2->bio = "";

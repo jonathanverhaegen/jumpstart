@@ -190,7 +190,7 @@ button.reg__student{
     margin-bottom:5%;
     padding-top:5%;
     padding-bottom:5%;
-    height: 580px;
+
 }
 
 .h__signup__sz{
@@ -315,44 +315,25 @@ input.pass__sz__{
     padding-top: 5%;
     padding-bottom: 5%;
     width: 58%;
-    margin-top: 12%;
-    margin-bottom: 5%;
     border: none;
     color:$white;
     font-family: $normal;
 }
 
-.togglePunt1{ //reg
-    width:150px;
-    margin-left: 30%;
-    margin-bottom: 5%;
-    margin-top: 15%;
+.togglePunt{ //reg
+    width:40%;
 }
 
-.togglePunt2{ //kbo
-    width:150px;
-    margin-left: 30%;
-    margin-bottom: 5%;
-    margin-top: 24%;
-}
-
-.togglePunt3{ //kbo
-    width:150px;
-    margin-left: 30%;
-    margin-bottom: 5%;
-    margin-top: 24%;
-}
 
 .sz__pic{ //profile pic
-    width: 20%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
     margin-bottom: 5%;
     border-radius:50%;
-    width:50px;
-    height:60px;
+    width:75px;
+    
 }
 
 .a__prof__sz{//profile edit
@@ -502,7 +483,6 @@ input.pass__sz__{
         margin-bottom:3%;
         padding-top:2%;
         padding-bottom:2%;
-        height: 550px;
     }
 
     .h__signup__sz{
@@ -579,8 +559,6 @@ input.pass__sz__{
         padding-top: 2%;
         padding-bottom: 2%;
         width: 18%;
-        margin-top: 0%;
-        margin-bottom: 5%;
         text-decoration: none;
         font-family: $normal;
         font-size: 20px;
@@ -588,26 +566,11 @@ input.pass__sz__{
         border: none;
     }
 
-    .togglePunt1{ //reg
-        width:100px;
-        margin-left: 45%;
-        margin-bottom: 2%;
-        margin-top: 4%;
+    .togglePunt{ //reg
+        width:10%;
     }
 
-    .togglePunt2{ //kbo
-        width:100px;
-        margin-left: 45%;
-        margin-bottom: 2%;
-        margin-top: 4%;
-    }
-
-    .togglePunt3{ //kbo
-        width:100px;
-        margin-left: 45%;
-        margin-bottom: 2%;
-        margin-top: 2%;
-    }
+    
 
     .sz__pic{ //profile pic
         width: 6%;

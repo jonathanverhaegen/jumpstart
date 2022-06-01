@@ -5,9 +5,16 @@ button:hover{
     cursor:pointer;
 }
 
+.form__punt{
+    display:flex;
+    justify-content: center;
+}
+
 .form__btn{
     display:flex;
     justify-content: center;
+    align-items: center;
+    margin-top:5%;
 }
 
 .form--login{

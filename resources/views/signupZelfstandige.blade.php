@@ -64,7 +64,10 @@
         <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
-        <img class="togglePunt1" src="/img/ill__sz__1.png" alt="punt">
+        <div class="form__punt">
+            <img class="togglePunt" src="/img/ill__sz__1.png" alt="punt">
+        </div>
+        
 
         <div class="form__btn">
             <button class="reg__sz btn1" type="submit">Volgende</button>
@@ -92,8 +95,10 @@
             <input class="pass__sz__" type="date" name="opstartdatum" placeholder="Opstartdatum" value="{{old('opstartdatum')}}">
             </div>
             
-            <img class="togglePunt2" src="/img/ill__sz__2.png" alt="punt">
-
+            <div class="form__punt">
+                <img class="togglePunt" src="/img/ill__sz__2.png" alt="punt">
+            </div>
+            
             <div class="form__btn">
                 <button class="reg__sz btn2" type="submit">Volgende</button>
             </div>
@@ -109,7 +114,10 @@
                 <input class="pass__sz" type="text" max="2000" name="bio" placeholder="Bio" value="{{old('bio')}}">
             </div>
 
-            <img class="togglePunt3" src="/img/ill__sz__3.png" alt="punt">
+            <div class="form__punt">
+                <img class="togglePunt" src="/img/ill__sz__3.png" alt="punt">
+            </div>
+            
 
             <div class="form__btn">
                 <button class="reg__sz btn3" type="submit">Volgende</button>

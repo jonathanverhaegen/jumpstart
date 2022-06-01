@@ -129,4 +129,32 @@ class RegisterController extends Controller
          //redirecten naar de volgende
          return view('signupZelfstandigeKbo');
      }
+
+     public function addZelfstandige2(Request $request){
+        //credentials checken
+        $credentials = $request->validate([
+           'bedrijfsnaam' => 'required|max:255',
+           'ondernemingsnummer' => 'required',
+           'email' => 'required|email',
+           'telefoon' => 'required',
+           'opstartdatum' => 'required|before:today'
+        ]);
+
+        //opslaan in de session
+        $request->merge(session('dataZelfstandige1'));
+        $dataZelfstandige2 = $request->all();
+        $request->session()->flash('dataZelfstandige2', $dataZelfstandige2);
+        
+        //redirecten naar de volgende
+        return view('signupZelfstandigeProfile');
+
+    }
+
+    public function addZelfstandige3(Request $request){
+        $credentials = $request->validate([
+            'bio' => 'required'
+         ]);
+         
+    }
+
 }

@@ -2593,6 +2593,9 @@ input.pass__sz__ {
   margin-right: auto;
   margin-top: 5%;
   margin-bottom: 5%;
+  border-radius: 50%;
+  width: 50px;
+  height: 60px;
 }
 
 .a__prof__sz {
@@ -2612,6 +2615,20 @@ input.pass__sz__ {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
+}
+
+.avatar {
+  display: none;
+}
+
+.__prof__sz:hover {
+  cursor: pointer;
+}
+
+.form__avatar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 800px) {

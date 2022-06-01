@@ -2418,6 +2418,16 @@ if (stageBtn6 !== null) {
       document.querySelector('.formStage6').submit();
     });
   });
+} //avatar
+
+
+var avatarPick = document.querySelector('.avatar');
+
+if (avatarPick !== null) {
+  avatarPick.addEventListener('change', function (e) {
+    var src = URL.createObjectURL(e.target.files[0]);
+    document.querySelector('.sz__pic').src = src;
+  });
 }
 
 /***/ }),

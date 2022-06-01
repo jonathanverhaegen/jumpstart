@@ -373,4 +373,14 @@ if(stageBtn6 !== null){
         })
     })
 }
+
+//avatar
+let avatarPick = document.querySelector('.avatar');
+if(avatarPick !== null){
+    avatarPick.addEventListener('change', (e) => {
+        var src = URL.createObjectURL(e.target.files[0]);
+        document.querySelector('.sz__pic').src = src;
+        
+    })
+}
         

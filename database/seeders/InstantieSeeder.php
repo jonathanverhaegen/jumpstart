@@ -15,7 +15,7 @@ class InstantieSeeder extends Seeder
     public function run()
     {
         $instantie1 = new Instantie();
-        $instantie1->name = "Overheidsinstantie";
+        $instantie1->name = "Overheidsinstanties";
         $instantie1->save();
 
         $instantie2 = new Instantie();

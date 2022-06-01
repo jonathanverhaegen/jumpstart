@@ -22,6 +22,14 @@ class RegisterController extends Controller
         return view('signupZelfstandige');
     }
 
+    public function signupZelfstandigeKbo(){
+        return view('signupZelfstandigeKbo');
+    }
+
+    public function signupZelfstandigeProfile(){
+        return view('signupZelfstandigeProfile');
+    }
+
     public function addStudentQR(Request $request){
         //checking
         $credentials = $request->validate([

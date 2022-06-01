@@ -21,6 +21,8 @@
   </head>
   <body class="antialiased bg-body text-body font-body">
 
+    
+
     @yield('content')
 
     

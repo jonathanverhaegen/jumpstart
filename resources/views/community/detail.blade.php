@@ -5,6 +5,7 @@
 @section('content')
 
 
+    <x-head.tinymce-config/>
 
     <div class="container">
 
@@ -93,7 +94,9 @@
 
             <form class="form--post" action="/add/post" method="post">
                 @csrf
-                <textarea class="form--post__textarea" name="tekst" id="" cols="30" rows="10" placeholder="Waar denk je aan..."></textarea>
+    
+                <textarea id="myeditorinstance" class="form--post__textarea"  name="tekst" cols="30" rows="10" placeholder="Waar denk je aan..."></textarea>
+
                 
                 <input type="hidden" name="group_id" value="{{$group->id}}">
                 
@@ -115,7 +118,7 @@
                 </div>
             </div>
             <div class="post__text">
-                <p>{{$post->text}}</p>
+                <p>{!!$post->text!!}</p>
             </div>
             <div class="post__img">
                 <img src="/img/default.png" alt="">

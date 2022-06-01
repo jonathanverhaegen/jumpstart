@@ -5,8 +5,10 @@ use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\RoadmapController;
+use App\Http\Controllers\VerificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,30 +23,44 @@ use Illuminate\Support\Facades\Route;
 */
 
 //register
-Route::get('/signup', [LoginController::class, "signup"]);
-Route::get('/signup/student', [LoginController::class, "signupStudent"]);
-Route::get('/signup/student-zelfstandige', [LoginController::class, "signupZelfstandige"]);
-Route::get('/signup/student-zelfstandige/kbo', [LoginController::class, "signupZelfstandigeKbo"]);
-Route::get('/signup/student-zelfstandige/{name}', [LoginController::class, "signupZelfstandigeProfile"]);
+
+Route::get('/signup', [RegisterController::class, "signup"]);
+Route::get('/signup/student', [RegisterController::class, "signupStudent"]);
+Route::get('/signup/student-zelfstandige', [RegisterController::class, "signupZelfstandige"]);
 
 
 Route::get('/login', [LoginController::class, "login"])->name('login');
 Route::get('/logout', [LoginController::class, "logout"]);
-
-Route::post('/user/addStudent', [LoginController::class, "addStudent"]);
-Route::post('/user/addZelfstandige', [LoginController::class, "addZelfstandige"]);
 Route::post('user/login', [LoginController::class, "handleLogin"]);
+
+Route::post('/user/addStudent', [RegisterController::class, "addStudentQR"]);
+
+Route::post('/user/addZelfstandige', [RegisterController::class, "addZelfstandige"]);
+
+Route::get('/complete-registration', [RegisterController::class, 'completeRegistration'])->name('complete-registration');
+
+route::get('/', function(){
+    return redirect(route('login'));
+});
+
+
 
 
 //achter security
 Route::group(['middleware' => ['auth']], function() {
+    
+    /**
+    * Verification Routes
+    */
+    Route::get('/email/verify', [VerificationController::class, "show"])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, "verify"])->name('verification.verify')->middleware(['signed']);
+    Route::post('/email/resend', [VerificationController::class, "resend"])->name('verification.resend');
 
-    Route::get('/', function(){
-        return redirect('/dashboard');
-    });
+    Route::group(['middleware' => ['2fa']], function() {
+    // Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard
-    Route::get('/dashboard', [LoginController::class, "homepage"]);
+    Route::get('/dashboard', [LoginController::class, "homepage"])->name('dashboard');
 
     //routes van de roadmap
     Route::get('/roadmap', [RoadmapController::class, "roadmap"]);
@@ -90,6 +106,12 @@ Route::group(['middleware' => ['auth']], function() {
     //routes van het profiel
     Route::get('/profiel', [ProfileController::class, "profile"]);
     Route::get('/profiel/edit', [ProfileController::class, "editProfile"]);
+
+    Route::post('/2fa', function () {
+        return redirect(route('dashboard'));
+        })->name('2fa');
     
 
 });
+});
+// });

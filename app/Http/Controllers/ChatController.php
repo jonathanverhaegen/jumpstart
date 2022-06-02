@@ -12,7 +12,7 @@ class ChatController extends Controller
 {
     public function chat(Request $request){
         $data['user'] = Auth::user();
-        $data['conversations'] = Conversation::where('user_one', Auth::id())->orWhere('user_two', Auth::id())->get();
+        $data['conversations'] = Conversation::where('user_one', Auth::id())->orWhere('user_two', Auth::id())->orderByDesc('id')->get();
         
         $conversation_id = $request->input('chat');
         if(!empty($conversation_id)){

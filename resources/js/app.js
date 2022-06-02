@@ -443,4 +443,28 @@ if(addPostBtn !== null){
         document.querySelector('.addPost').style.display = "flex";
     })
 }
+
+//zoekfunctie chat
+
+let searchBarDiv = document.querySelector('.chat__search-bar');
+
+if(searchBarDiv !== null){
+    let input = searchBarDiv.querySelector('#search-chat');
+    let chats = document.querySelectorAll('.chat__list__person');
+
+    input.addEventListener('keyup', (e) => {
+        e.preventDefault();
+        let value = input.value;
+        chats.forEach((chat) => {
+            chat.style.display = "none";
+
+            let name = chat.querySelector('.chat__list__name').innerHTML;
+            let filterName = name.toLowerCase().indexOf(value.toLowerCase());
+
+            if(filterName > -1){
+                chat.style.display = "grid";
+            }
+        })
+    })
+}
         

@@ -2483,6 +2483,29 @@ if (addPostBtn !== null) {
     e.preventDefault();
     document.querySelector('.addPost').style.display = "flex";
   });
+} //zoekfunctie chat
+
+
+var searchBarDiv = document.querySelector('.chat__search-bar');
+
+if (searchBarDiv !== null) {
+  var _input = searchBarDiv.querySelector('#search-chat');
+
+  var chats = document.querySelectorAll('.chat__list__person');
+
+  _input.addEventListener('keyup', function (e) {
+    e.preventDefault();
+    var value = _input.value;
+    chats.forEach(function (chat) {
+      chat.style.display = "none";
+      var name = chat.querySelector('.chat__list__name').innerHTML;
+      var filterName = name.toLowerCase().indexOf(value.toLowerCase());
+
+      if (filterName > -1) {
+        chat.style.display = "grid";
+      }
+    });
+  });
 }
 
 /***/ }),

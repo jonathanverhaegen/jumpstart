@@ -34,8 +34,10 @@
                 </div>
 
                 <div class="chat__detail__send-message">
-                    <input type="text" name="send-message" id="send-message" class="chat__detail__send-message__input" placeholder="Typ hier iets…">
-                    <input type="submit" value="Verzenden"/>
+                    <input wire:model="textChat" type="text" name="send-message" id="send-message" class="chat__detail__send-message__input" placeholder="Typ hier iets…">
+                    <input wire:click="addChat('{{$conversation->id}}')" type="submit" value="Verzenden"/>
                 </div>
+
+                
 
 </div>

@@ -58,7 +58,7 @@
     <div class="detail__container__base">
         <div class="detail">
             <div class="detail__img">
-                <img class="detail__pic" src="/img/{{$agent->avatar}}" alt="{{$agent->firstname}}">
+                <img class="detail__pic" src="/attachments/{{$agent->avatar}}" alt="{{$agent->firstname}}">
             </div>
 
             <div class="detail__extra">

@@ -62,7 +62,7 @@
             <div class="chat__list">
 
                 <div class="chat__list__heading">
-                    <img src="/img/{{$user->avatar}}" alt="profile" class="chat__list__heading__profile">
+                    <img src="/attachments/{{$user->avatar}}" alt="profile" class="chat__list__heading__profile">
                     <h1 class="chat__list__heading__h1">Berichten</h1>
                     <a href="" class="chat__list__heading__new-message">
                         <img src="./img/edit-chat.svg" alt="New chat">
@@ -91,11 +91,11 @@
                         @endif 
                     @endif
                         @if($con->user_one === Auth::id())
-                        <img src="/img/{{$con->usertwo->avatar}}" alt="Sarah" class="chat__list__profile">
+                        <img src="/attachments/{{$con->usertwo->avatar}}" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">{{$con->usertwo->name}}</span>
                         <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,20)}}...</span>
                         @else
-                        <img src="/img/{{$con->userone->avatar}}" alt="Sarah" class="chat__list__profile">
+                        <img src="/attachments/{{$con->userone->avatar}}" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">{{$con->userone->name}}</span>
                         <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text, 0, 20)}}...</span>
                         @endif

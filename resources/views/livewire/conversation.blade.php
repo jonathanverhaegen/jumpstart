@@ -51,7 +51,6 @@
 
                 <div class="chat__detail__send-message">
                     <input wire:model="textChat" type="text" name="send-message" id="send-message" class="chat__detail__send-message__input" placeholder="Typ hier iets…">
-                    
                     <label for="attachment"><img src="/img/back.png" alt=""></label>
                     <input wire:model="attachment" class="reaction__add__files" accept=".png, .jpg, .jpeg, .ppt, .pdf, .doc, .docx" id="attachment" name="attachment" type="file">
                     <input wire:click="addChat('{{$conversation->id}}')" type="submit" value="Verzenden"/>

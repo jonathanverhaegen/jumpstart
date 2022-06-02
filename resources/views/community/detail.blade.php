@@ -64,9 +64,9 @@
                 <h1 class="group__title">{{$group->name}}</h1>
             </div>
             <div class="group__blok">
-                <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
+                <img src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" class="person">
                 @foreach($users as $user)
-                    <a class="person" href="/chat/addConversation/{{$user->id}}"><img src="/img/{{$user->avatar}}" alt="{{$user->name}}" ></a>
+                    <a class="person" href="/chat/addConversation/{{$user->id}}"><img src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" ></a>
                  @endforeach
             </div>
         </div>

@@ -54,7 +54,7 @@
         <div class="settings__container__mobile">
 
             <div class="settings__list__mobile">
-                <a href="#" class="settings__list__item__mobile">
+                <a href="/instellingen" class="settings__list__item__mobile">
                     Profiel bewerken
                 </a>
                 <a href="/instellingen/wachtwoord-wijzigen" class="settings__list__item__mobile">

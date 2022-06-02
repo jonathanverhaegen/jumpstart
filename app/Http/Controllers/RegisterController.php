@@ -152,11 +152,11 @@ class RegisterController extends Controller
         $credentials = $request->validate([
             'naam' => 'required|max:255',
             'geboortedatum' => 'required|before:today',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'wachtwoord' => 'required|confirmed|min:8',
             'bedrijfsnaam' => 'required|max:255',
             'ondernemingsnummer' => 'required',
-            'bedrijfsemail' => 'required|email',
+            'bedrijfsemail' => 'required|email|unique:companies,email',
             'telefoon' => 'required',
             'opstartdatum' => 'required|before:today',
             'bio' => 'required'
@@ -164,11 +164,31 @@ class RegisterController extends Controller
         
         $request->flash();
 
+        //foto opslaan in de public map en bij de user
+        if(!empty($request->file('avatar'))){
+                $file = $request->file('avatar');
+                $imageSrc = time().'.'.$file->extension();
+                $file->move(public_path('attachments'), $imageSrc);
+                $fileName = $imageSrc;
+        }
+
         // Initialise the 2FA class
         $google2fa = app('pragmarx.google2fa');
 
         // Save the registration data in an array
-        $registration_data = $request->all();
+        $registration_data = [
+            'naam' => $request->input('naam'), 
+            'geboortedatum' => $request->input('geboortedatum'), 
+            'email' => $request->input('email'), 
+            'wachtwoord' => $request->input('wachtwoord'),
+            'bio' => $request->input('bio'),
+            'bedrijfsnaam' => $request->input('bedrijfsnaam'),
+            'ondernemingsnummer' => $request->input('ondernemingsnummer'),
+            'bedrijfsemail' => $request->input('bedrijfsemail'),
+            'telefoon' => $request->input('telefoon'),
+            'opstartdatum' => $request->input('opstartdatum'),
+            'fileName' => $fileName
+        ];
 
 
         // Add the secret key to the registration data
@@ -211,19 +231,10 @@ class RegisterController extends Controller
         $user->password = Hash::make($request->input('wachtwoord'));
         $user->bio = $request->input('bio');
         $user->google2fa_secret = $request->input('google2fa_secret');
+        if(!empty($request->input('fileName'))){
+            $user->avatar = $request->input('fileName');
+        }
         $user->save();
-
-        //foto opslaan in de public map en bij de user
-        // if(!empty($request->file('avatar'))){
-        //         $file = $request->file('avatar');
-        //         $imageSrc = time().'.'.$file->extension();
-        //         $file->move(public_path('attachments'), $imageSrc);
-
-        //         $user = User::find($user->id);
-        //         $user->avatar = $imageSrc;
-        //         $user->save();
-        // }
-
         
         
         //company maken
@@ -235,6 +246,8 @@ class RegisterController extends Controller
         $company->start_date = $request->input('opstartdatum');
         $company->user_id = $user->id;
         $company->save();
+
+
 
 
         //email verzenden voor verificatie

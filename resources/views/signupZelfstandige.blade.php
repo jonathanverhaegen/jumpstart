@@ -37,7 +37,7 @@
     <div class="signupZelf">  
 
     <h1 class="h__reg__sz">Registreren</h1>
-      <form action="/user/addZelfstandige" method="post" class="form__sz" >
+      <form action="/user/addZelfstandige" method="post" class="form__sz" enctype="multipart/form-data">
       @csrf
       <h1 class="h__signup__sz">Word lid van onze community</h1>
 

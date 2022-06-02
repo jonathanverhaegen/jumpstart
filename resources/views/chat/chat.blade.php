@@ -77,7 +77,11 @@
                 <div class="chat__list__overview">
 
                     @foreach($conversations as $con)
-                    <a href="/chat?chat={{$con->id}}" class="chat__list__person">
+                    @if($con->chats[count($con->chats)-1]->read === 0)
+                        <a href="/chat?chat={{$con->id}}" class="chat__list__person chat__list__person--unread">
+                    @else
+                        <a href="/chat?chat={{$con->id}}" class="chat__list__person">
+                    @endif
                         @if($con->user_one === Auth::id())
                         <img src="/img/{{$con->usertwo->avatar}}" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">{{$con->usertwo->name}}</span>

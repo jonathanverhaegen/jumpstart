@@ -3265,6 +3265,42 @@ input.pass__sz__ {
     border-radius: 0 20px 0 0;
   }
 }
+.settings__container {
+  width: 90%;
+  background-color: #FAFAFA;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: row;
+}
+
+.settings__list {
+  background-color: #CBD3E6;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.settings__list__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 60px 20px 15px;
+  font-family: "Lato", sans-serif;
+  color: #13204A;
+  text-decoration: none;
+}
+
+.settings__list__item--active {
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset -8px 0 0 0 white;
+}
+
 .verification {
   width: 80%;
   margin-left: auto;

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AttachmentsChat;
 use App\Models\Chat;
 use App\Models\Conversation;
 use App\Models\User;
@@ -60,6 +61,21 @@ class ChatController extends Controller
         $chat->text = $text;
         $chat->read = 0;
         $chat->save();
+
+        //add attachments chat
+        if(!empty($request->file('file'))){
+                $file = $request->file('file');
+                $imageSrc = time().'.'.$file->extension();
+                $file->move(public_path('attachments'), $imageSrc);
+
+                //attachment opslaan in database
+                $newAttach = new AttachmentsChat();
+                $newAttach->name = $file->getClientOriginalName();
+                $newAttach->source = $imageSrc;
+                $newAttach->chat_id = $chat->id;
+                $newAttach->save();
+                sleep(1);
+        }
 
         return redirect('/chat?chat='. $convo->id);
 

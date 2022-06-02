@@ -60,7 +60,7 @@
                 @csrf
     
                 <textarea id="myeditorinstance" class="form--post__textarea"  name="tekst" cols="20" rows="5" placeholder="Waar denk je aan..."></textarea>
-
+                <input class="form--post__files" type="file" name="file" accept='.png, .jpg, .jpeg, .pfd, .doc, .docx, .ppt'>
                 <input type="hidden" name="reciever_id" value="{{$user->id}}">
                 
                 <div class="form__btn">

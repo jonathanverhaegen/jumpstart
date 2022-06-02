@@ -22,11 +22,27 @@
                     @foreach($conversation->chats as $chat)
                         @if($chat->sender_id === Auth::id())
                         <span class="chat__message chat__message--to">
-                            {{$chat->text}}
+                            <p>{{$chat->text}}</p>
+                            @if(!empty($chat->attachment))
+                                @if(str_contains($chat->attachment->source, "png") || str_contains($chat->attachment->source, "jpg") || str_contains($chat->attachment->source, "jpeg"))
+                                    <img class="chat__attach__img" src="/attachments/{{$chat->attachment->source}}" alt="">
+                                @endif
+                                @if(str_contains($chat->attachment->source, "pdf") || str_contains($chat->attachment->source, "ppt") || str_contains($chat->attachment->source, "doc") || str_contains($chat->attachment->source, "docx"))
+                                    <a class="chat__attach__down" href="/attachments/{{$chat->attachment->source}}" download>{{$chat->attachment->name}}</a>
+                                @endif
+                            @endif
                         </span>
                         @else
                         <span class="chat__message chat__message--from">
-                            {{$chat->text}}
+                            <p>{{$chat->text}}</p>
+                            @if(!empty($chat->attachment))
+                                @if(str_contains($chat->attachment->source, "png") || str_contains($chat->attachment->source, "jpg") || str_contains($chat->attachment->source, "jpeg"))
+                                    <img class="chat__attach__img" src="/attachments/{{$chat->attachment->source}}" alt="">
+                                @endif
+                                @if(str_contains($chat->attachment->source, "pdf") || str_contains($chat->attachment->source, "ppt") || str_contains($chat->attachment->source, "doc") || str_contains($chat->attachment->source, "docx"))
+                                    <a class="chat__attach__down" href="/attachments/{{$chat->attachment->source}}" download>{{$chat->attachment->name}}</a>
+                                @endif
+                            @endif
                         </span>
                         @endif
                     @endforeach

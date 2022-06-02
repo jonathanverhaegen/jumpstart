@@ -9,5 +9,9 @@ class Chat extends Model
 {
     use HasFactory;
 
-    
+    protected $with = ["attachment"];
+
+    public function attachment(){
+        return $this->hasOne(\App\Models\AttachmentsChat::class);
+    }
 }

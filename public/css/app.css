@@ -3186,6 +3186,7 @@ input.pass__sz__ {
   padding: 10px;
   border-radius: 15px;
   line-height: 24px;
+  flex-direction: column;
 }
 
 .chat__message--from {
@@ -3244,6 +3245,16 @@ input.pass__sz__ {
 
 .chat__detail__messages {
   height: 100%;
+}
+
+.chat__attach__img {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.chat__attach__down {
+  text-decoration: none;
+  color: white;
 }
 
 @media screen and (min-width: 1000px) {

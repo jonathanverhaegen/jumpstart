@@ -18,28 +18,30 @@ class Conversation extends Component
     public $attachment;
 
     public function addChat($conversation_id){
-        $chat = new Chat();
-        $chat->text = $this->textChat;
-        $chat->conversation_id = $conversation_id;
-        $chat->read = 0;
-        $chat->sender_id = Auth::id();
-        $chat->save();
+        if (!empty($this->textChat)) {
+            $chat = new Chat();
+            $chat->text = $this->textChat;
+            $chat->conversation_id = $conversation_id;
+            $chat->read = 0;
+            $chat->sender_id = Auth::id();
+            $chat->save();
 
-        if(!empty($this->attachment)){
-            $file = $this->attachment;
-            $imageSrc = time().'.'.$file->extension();
-            $this->attachment->storeAs('attachments', $imageSrc, 'real_public');
+            if (!empty($this->attachment)) {
+                $file = $this->attachment;
+                $imageSrc = time().'.'.$file->extension();
+                $this->attachment->storeAs('attachments', $imageSrc, 'real_public');
 
-            //attachment opslaan in database
-            $newAttach = new AttachmentsChat();
-            $newAttach->name = $file->getClientOriginalName();
-            $newAttach->source = $imageSrc;
-            $newAttach->chat_id = $chat->id;
-            $newAttach->save();
+                //attachment opslaan in database
+                $newAttach = new AttachmentsChat();
+                $newAttach->name = $file->getClientOriginalName();
+                $newAttach->source = $imageSrc;
+                $newAttach->chat_id = $chat->id;
+                $newAttach->save();
+            }
+
+            $this->textChat = "";
+            $this->attachment = "";
         }
-
-        $this->textChat = "";
-        $this->attachment = "";
     }
 
     public function render()

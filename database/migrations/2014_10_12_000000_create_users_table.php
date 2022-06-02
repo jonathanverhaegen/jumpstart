@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('birth_date');
             $table->string('email');
             $table->string('password');
-            $table->string('avatar')->default('deafult.png');
+            $table->string('avatar')->default('default.png');
             $table->longText('bio')->nullable();
             $table->boolean('isAgent')->default(0);
             $table->text('google2fa_secret')->nullable();

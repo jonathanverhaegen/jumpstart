@@ -46,7 +46,7 @@
 
             <div class="form--login__fields">
 
-                <input class="form--login__input" type="text" name="email" placeholder="Email">
+                <input class="form--login__input" type="text" name="email" placeholder="Email" value="{{old('email')}}">
                 <input class="form--login__input password" type="password" name="password" placeholder="Wachtwoord">
                 <img class="togglePassword" src="{{asset('img/verborgen.png')}}" alt="toggle">
                 <p class="form--login__forgot">Wachtwoord vergeten?</p>

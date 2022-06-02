@@ -43,12 +43,25 @@ class RegisterController extends Controller
         ]);
 
         $request->flash();
+
+        if(!empty($request->file('avatar'))){
+            $file = $request->file('avatar');
+            $imageSrc = time().'.'.$file->extension();
+            $file->move(public_path('attachments'), $imageSrc);
+            $fileName = $imageSrc;
+        }
         
          // Initialise the 2FA class
          $google2fa = app('pragmarx.google2fa');
 
          // Save the registration data in an array
-         $registration_data = $request->all();
+         $registration_data = [
+            'naam' => $request->input('naam'), 
+            'geboortedatum' => $request->input('geboortedatum'), 
+            'email' => $request->input('email'), 
+            'wachtwoord' => $request->input('wachtwoord'),
+            'fileName' => $fileName
+        ];
 
          // Add the secret key to the registration data
          $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
@@ -86,7 +99,7 @@ class RegisterController extends Controller
         $explodeEmail = explode('@', $inputEmail);
         if(str_contains($explodeEmail[1], "thomasmore.be") === false){
             $request->session()->flash('error', 'Je ingegeven email is geen thomasmore email');
-            return redirect('/signup');
+            return redirect('/signup/student');
         }
 
         $user = new User();
@@ -96,6 +109,10 @@ class RegisterController extends Controller
         $user->password = Hash::make($request->input('wachtwoord'));
         $user->bio = $request->input('bio');
         $user->google2fa_secret = $request->input('google2fa_secret');
+        if(!empty($request->input('fileName'))){
+            $user->avatar = $request->input('fileName');
+        }
+
         $user->save();
 
         //add roadmap
@@ -113,50 +130,17 @@ class RegisterController extends Controller
      }
 
 
-     public function addZelfstandige1(Request $request){
-         //credentials checken
-         $credentials = $request->validate([
-            'naam' => 'required|max:255',
-            'geboortedatum' => 'required|before:today',
-            'email' => 'required|email',
-            'wachtwoord' => 'required|confirmed|min:8'
-        ]);
-
-         //opslaan in de session
-         $dataZelfstandige1 = $request->all();
-         $request->session()->flash('dataZelfstandige1', $dataZelfstandige1);
-
-         //redirecten naar de volgende
-         return view('signupZelfstandigeKbo');
-     }
-
-     public function addZelfstandige2(Request $request){
-        //credentials checken
-        $credentials = $request->validate([
-           'bedrijfsnaam' => 'required|max:255',
-           'ondernemingsnummer' => 'required',
-           'bedrijfsemail' => 'required|email',
-           'telefoon' => 'required',
-           'opstartdatum' => 'required|before:today'
-        ]);
-
-        $dataZelfstandige2 = $request->all();
-        $request->session()->flash('dataZelfstandige2', $dataZelfstandige2);
-        
-        //redirecten naar de volgende
-        return view('signupZelfstandigeProfile');
-
-    }
+     
 
     public function addZelfstandigeQR(Request $request){
         $credentials = $request->validate([
             'naam' => 'required|max:255',
             'geboortedatum' => 'required|before:today',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'wachtwoord' => 'required|confirmed|min:8',
             'bedrijfsnaam' => 'required|max:255',
             'ondernemingsnummer' => 'required',
-            'bedrijfsemail' => 'required|email',
+            'bedrijfsemail' => 'required|email|unique:companies,email',
             'telefoon' => 'required',
             'opstartdatum' => 'required|before:today',
             'bio' => 'required'
@@ -164,11 +148,32 @@ class RegisterController extends Controller
         
         $request->flash();
 
+        //foto opslaan in de public map en bij de user
+        if(!empty($request->file('avatar'))){
+                $file = $request->file('avatar');
+                $imageSrc = time().'.'.$file->extension();
+                $file->move(public_path('attachments'), $imageSrc);
+                $fileName = $imageSrc;
+        }
+
         // Initialise the 2FA class
         $google2fa = app('pragmarx.google2fa');
 
         // Save the registration data in an array
-        $registration_data = $request->all();
+        $registration_data = [
+            'naam' => $request->input('naam'), 
+            'geboortedatum' => $request->input('geboortedatum'), 
+            'email' => $request->input('email'), 
+            'wachtwoord' => $request->input('wachtwoord'),
+            'bio' => $request->input('bio'),
+            'bedrijfsnaam' => $request->input('bedrijfsnaam'),
+            'ondernemingsnummer' => $request->input('ondernemingsnummer'),
+            'bedrijfsemail' => $request->input('bedrijfsemail'),
+            'telefoon' => $request->input('telefoon'),
+            'opstartdatum' => $request->input('opstartdatum'),
+            'fileName' => $fileName
+        ];
+
 
         // Add the secret key to the registration data
         $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
@@ -210,16 +215,11 @@ class RegisterController extends Controller
         $user->password = Hash::make($request->input('wachtwoord'));
         $user->bio = $request->input('bio');
         $user->google2fa_secret = $request->input('google2fa_secret');
-        $user->save();
-
-        //foto opslaan in de public map en bij de user
-        if(!empty($request->input('file'))){
-            $imageName = time().'.'.$request->file->extension();
-            $request->avatar->move(public_path('img'), $imageName);
-            $user = User::find($user->id);
-            $user->avatar = $imageName;
-            $user->save();
+        if(!empty($request->input('fileName'))){
+            $user->avatar = $request->input('fileName');
         }
+        $user->save();
+        
         
         //company maken
         $company = new Company();
@@ -230,6 +230,8 @@ class RegisterController extends Controller
         $company->start_date = $request->input('opstartdatum');
         $company->user_id = $user->id;
         $company->save();
+
+
 
 
         //email verzenden voor verificatie

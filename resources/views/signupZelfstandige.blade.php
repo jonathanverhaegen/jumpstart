@@ -37,7 +37,7 @@
     <div class="signupZelf">  
 
     <h1 class="h__reg__sz">Registreren</h1>
-      <form action="/user/addZelfstandige" method="post" class="form__sz">
+      <form action="/user/addZelfstandige" method="post" class="form__sz" enctype="multipart/form-data">
       @csrf
       <h1 class="h__signup__sz">Word lid van onze community</h1>
 
@@ -54,13 +54,13 @@
         <input class="mail__sz" type="text" name="email" placeholder="Email" value="{{old('email')}}">
         </div>
 
-        <div class="">
+        <div class="passwordToggleZelf">
         <input class="pass__sz" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
         <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
-        <div class="">
-        <input class="pass__sz__" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <div class="passwordToggleZelf">
+        <input class="pass__sz" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
         <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         

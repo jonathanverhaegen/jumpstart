@@ -92,6 +92,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/community', [CommunityController::class, "community"]);
     Route::get('/community/edit', [CommunityController::class, "communityEdit"]);
     Route::get('/community/{name}', [CommunityController::class, "communityDetail"]);
+    Route::post('/add/post', [CommunityController::class, "addPost"]);
     
     
     

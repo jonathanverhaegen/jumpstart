@@ -5,6 +5,7 @@
 @section('content')
 
 
+    <x-head.tinymce-config/>
 
     <div class="container">
 
@@ -87,6 +88,64 @@
 
         <a href="/community/addFaq/{{$group->id}}" class="ask"><p class="ask__question">Vraag stellen</p></a>  
         </div>
+
+        <div class="addPost">
+            <p class="addPost__title">Post plaatsen</p>
+
+            <form class="form--post" action="/add/post" method="post" enctype="multipart/form-data">
+                @csrf
+    
+                <textarea id="myeditorinstance" class="form--post__textarea"  name="tekst" cols="30" rows="10" placeholder="Waar denk je aan..."></textarea>
+
+                <input class="form--post__files" type="file" name="files[]" accept='.png, .jpg, .jpeg, .pfd, .doc, .docx, .ppt' multiple>
+                
+                <input type="hidden" name="group_id" value="{{$group->id}}">
+                
+                <div class="form__btn">
+                    <button class="addPost__btn" type="submit">Post plaatsen</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        @foreach($posts as $post)
+        <div class="post">
+            <div class="post__user">
+                <img class="post__user__img" src="/img/default.png" alt="">
+                <div class="post__user__info">
+                    <p class="post__user__info__name">{{$post->user->name}}</p>
+                    <p class="post__user__info__date">{{ date('d/m/Y H:i:s', strtotime($post->created_at))}}</p>
+                </div>
+            </div>
+            <div class="post__text">
+                <p>{!!$post->text!!}</p>
+            </div>
+            @if(!empty($post->attachments[0]))
+            <div class="post__img">
+            @foreach($post->attachments as $att)
+                @if(str_contains($att->source, "png") || str_contains($att->source, "jpg") || str_contains($att->source, "jpeg"))
+                <img src="/attachments/{{$att->source}}" alt="">
+                @endif
+            @endforeach
+            </div>
+            @endif
+
+            @if(!empty($post->attachments[0]))
+            <div class="post__att">
+                @foreach($post->attachments as $att)
+                @if(str_contains($att->source, "pdf") || str_contains($att->source, "doc") || str_contains($att->source, "docx") || str_contains($att->source, "ppt"))
+                    <a href="/attachments/{{$att->source}}" target="_blank" download>{{$att->name}}</a>
+                @endif
+                @endforeach
+            </div>
+            @endif
+
+            <livewire:likes :post_id="$post->id" />
+            <livewire:reactions :post_id="$post->id" />
+
+        </div>
+        @endforeach
 
 
 

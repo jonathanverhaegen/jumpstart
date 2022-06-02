@@ -6,7 +6,7 @@
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 25px;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 180px);
 
     display: flex;
     flex-direction: row;
@@ -33,4 +33,86 @@
 .settings__list__item--active {
     background-color: rgb(255, 255, 255, 0.5);
     box-shadow: inset -8px 0 0 0 white;
+}
+
+.settings__detail {
+    flex: 1 0;
+    padding: 50px 50px;
+}
+
+.settings__detail__profile-picture {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    grid-column-gap: 40px;
+}
+
+.settings__detail__profile-picture img {
+    margin-left: auto;
+}
+
+.settings__detail__profile-picture__name {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.settings__user-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #526A98;
+}
+
+.settings__upload-profile-picture {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    color: #E44402;
+    cursor: pointer;
+}
+
+.settings__detail__info form {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 25px;
+    font-family: 'Lato', sans-serif;
+}
+
+.settings__detail__info form label {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 600;
+    color: #161B4B;
+}
+
+.settings__detail__info form label:last-of-type {
+    margin-top: 0;
+    margin-bottom: auto;
+}
+
+.settings__detail__info__input, .settings__detail__info form textarea {
+    border: none;
+    border-bottom: 2px solid #50679A;
+    padding: 8px;
+    font-size: 1em;
+    color: #526A98;
+    background-color: #FAFAFA;
+}
+
+.settings__detail__info form input[type=submit] {
+    grid-column-start: -2;
+    grid-column-end: -1;
+    width: 150px;
+
+    background-color: #E44402;
+    color: #FAFAFA;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+
+    font-size: 1em;
+    cursor: pointer;
 }

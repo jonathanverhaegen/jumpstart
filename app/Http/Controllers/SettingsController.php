@@ -13,4 +13,8 @@ class SettingsController extends Controller
     public function settingsMobile(){
         return view('instellingen/instellingenMobiel');
     }
+
+    public function settingsStatuutStopzetten(){
+        return view('instellingen/instellingenStatuutStopzetten');
+    }
 }

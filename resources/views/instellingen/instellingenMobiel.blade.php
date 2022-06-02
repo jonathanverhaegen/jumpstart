@@ -69,7 +69,7 @@
                 <a href="#" class="settings__list__item__mobile">
                     Privacy en beveiliging
                 </a>
-                <a href="/instellingen/statuut" class="settings__list__item__mobile">
+                <a href="/instellingen/statuut-stopzetten" class="settings__list__item__mobile">
                     Statuut
                 </a>
                 <a href="#" class="settings__list__item__mobile">

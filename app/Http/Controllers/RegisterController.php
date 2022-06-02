@@ -55,13 +55,23 @@ class RegisterController extends Controller
          $google2fa = app('pragmarx.google2fa');
 
          // Save the registration data in an array
-         $registration_data = [
-            'naam' => $request->input('naam'), 
-            'geboortedatum' => $request->input('geboortedatum'), 
-            'email' => $request->input('email'), 
-            'wachtwoord' => $request->input('wachtwoord'),
-            'fileName' => $fileName
-        ];
+         if(!empty($fileName)){
+            $registration_data = [
+                'naam' => $request->input('naam'), 
+                'geboortedatum' => $request->input('geboortedatum'), 
+                'email' => $request->input('email'), 
+                'wachtwoord' => $request->input('wachtwoord'),
+                'fileName' => $fileName
+            ];
+         }else{
+            $registration_data = [
+                'naam' => $request->input('naam'), 
+                'geboortedatum' => $request->input('geboortedatum'), 
+                'email' => $request->input('email'), 
+                'wachtwoord' => $request->input('wachtwoord')
+            ];
+         }
+         
 
          // Add the secret key to the registration data
          $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
@@ -160,19 +170,35 @@ class RegisterController extends Controller
         $google2fa = app('pragmarx.google2fa');
 
         // Save the registration data in an array
-        $registration_data = [
-            'naam' => $request->input('naam'), 
-            'geboortedatum' => $request->input('geboortedatum'), 
-            'email' => $request->input('email'), 
-            'wachtwoord' => $request->input('wachtwoord'),
-            'bio' => $request->input('bio'),
-            'bedrijfsnaam' => $request->input('bedrijfsnaam'),
-            'ondernemingsnummer' => $request->input('ondernemingsnummer'),
-            'bedrijfsemail' => $request->input('bedrijfsemail'),
-            'telefoon' => $request->input('telefoon'),
-            'opstartdatum' => $request->input('opstartdatum'),
-            'fileName' => $fileName
-        ];
+        if(!empty($fileName)){
+            $registration_data = [
+                'naam' => $request->input('naam'), 
+                'geboortedatum' => $request->input('geboortedatum'), 
+                'email' => $request->input('email'), 
+                'wachtwoord' => $request->input('wachtwoord'),
+                'bio' => $request->input('bio'),
+                'bedrijfsnaam' => $request->input('bedrijfsnaam'),
+                'ondernemingsnummer' => $request->input('ondernemingsnummer'),
+                'bedrijfsemail' => $request->input('bedrijfsemail'),
+                'telefoon' => $request->input('telefoon'),
+                'opstartdatum' => $request->input('opstartdatum'),
+                'fileName' => $fileName
+            ];
+        }else{
+            $registration_data = [
+                'naam' => $request->input('naam'), 
+                'geboortedatum' => $request->input('geboortedatum'), 
+                'email' => $request->input('email'), 
+                'wachtwoord' => $request->input('wachtwoord'),
+                'bio' => $request->input('bio'),
+                'bedrijfsnaam' => $request->input('bedrijfsnaam'),
+                'ondernemingsnummer' => $request->input('ondernemingsnummer'),
+                'bedrijfsemail' => $request->input('bedrijfsemail'),
+                'telefoon' => $request->input('telefoon'),
+                'opstartdatum' => $request->input('opstartdatum')
+            ];
+        }
+        
 
 
         // Add the secret key to the registration data

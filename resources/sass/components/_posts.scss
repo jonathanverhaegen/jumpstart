@@ -126,6 +126,22 @@
     display:flex;
     justify-content: center;
     margin-top:20px;
+    align-items: center;
+}
+
+.reaction__add__files{
+    display:none;
+}
+
+.reaction__add img{
+    width: 50px;
+    position: absolute;
+    right: 20%;
+    margin-top: -4%;
+}
+
+.reaction__add img:hover{
+    cursor:pointer;
 }
 
 .reaction__add__input{
@@ -169,6 +185,12 @@
     cursor:pointer;
 }
 
+.reaction__attachment{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 @media(min-width:800px){
     .post__user{
         grid-template-columns: 1fr 11fr;
@@ -181,5 +203,13 @@
     .reaction__add__input{
         width: 60%;
         padding: 2%;
+    }
+
+    .reaction__add img{
+        margin-top: -1.5%;
+    }
+
+    .reaction__attachment{
+        width:60%;
     }
 }

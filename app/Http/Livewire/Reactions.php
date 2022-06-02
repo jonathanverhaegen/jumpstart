@@ -2,24 +2,46 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\AttachmentsReaction;
 use App\Models\Reaction;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Reactions extends Component
 {
+    use WithFileUploads;
+    
     public $post_id;
     public $newReaction;
+    public $attachment;
     
 
     public function addReaction($post_id){
-        $reaction = new Reaction();
-        $reaction->user_id = Auth::id();
-        $reaction->post_id = $post_id;
-        $reaction->text = $this->newReaction;
-        $reaction->save();
+        if(!empty($this->newReaction)){
+            $reaction = new Reaction();
+            $reaction->user_id = Auth::id();
+            $reaction->post_id = $post_id;
+            $reaction->text = $this->newReaction;
+            $reaction->save();
 
-        $this->newReaction = "";
+            if(!empty($this->attachment)){
+                $file = $this->attachment;
+                $imageSrc = time().'.'.$file->extension();
+                $this->attachment->storeAs('/public/attachments', $imageSrc);
+
+                //attachment opslaan in database
+                $newAttach = new AttachmentsReaction();
+                $newAttach->name = $file->getClientOriginalName();
+                $newAttach->source = $imageSrc;
+                $newAttach->reaction_id = $reaction->id;
+                $newAttach->save();
+            }
+
+            $this->newReaction = "";
+            $this->attachment = "";
+        }
+        
     }
 
     public function delete($reaction_id){

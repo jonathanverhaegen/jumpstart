@@ -1,6 +1,13 @@
 <div class="post__react">
     <div class="reaction__add">
         <input wire:model="newReaction" class="reaction__add__input" type="text" name="reaction" placeholder="Reactie..." wire:keydown.enter="addReaction('{{$post_id}}')">
+        <label for="attachment"><img src="/img/back.png" alt=""></label>
+        <input wire:model="attachment" class="reaction__add__files" accept=".png, .jpg, .jpeg" id="attachment" name="attachment" type="file">
+
+        
+    </div>
+    <div class="reaction__attachment">
+        <p class="name__attachment">{{$attachment}}</p>
     </div>
     
 

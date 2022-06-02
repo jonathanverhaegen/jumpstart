@@ -9,6 +9,7 @@
         <div class="reaction">
             <img class="reaction__img" src="/img/{{$react->user->avatar}}" alt="">
             <p class="reaction__text">{{$react->text}}</p>
+            <img class="reaction__delete" src="/img/back.png" alt="delete" wire:click="delete('{{$react->id}}')">
         </div>
         @endforeach
     </div>

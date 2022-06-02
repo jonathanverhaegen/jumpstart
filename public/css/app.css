@@ -3375,6 +3375,15 @@ input.pass__sz__ {
   font-family: "Lato", sans-serif;
 }
 
+.reaction__delete {
+  width: 50px;
+  margin-left: auto;
+}
+
+.reaction__delete:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 800px) {
   .post__user {
     grid-template-columns: 1fr 11fr;

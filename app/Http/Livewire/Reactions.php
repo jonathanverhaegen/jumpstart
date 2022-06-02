@@ -22,6 +22,14 @@ class Reactions extends Component
         $this->newReaction = "";
     }
 
+    public function delete($reaction_id){
+        $reaction = Reaction::where('id', $reaction_id)->first();
+        if(!empty($reaction)){
+            $reaction->delete();
+        }
+
+    }
+
     public function render()
     {
         return view('livewire.reactions',[

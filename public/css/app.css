@@ -3042,6 +3042,7 @@ input.pass__sz__ {
 .chat__list__heading__profile {
   height: 40px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .chat__list__heading__new-message {
@@ -3098,6 +3099,7 @@ input.pass__sz__ {
   padding: 15px;
   cursor: pointer;
   transition: background-color 0.2s ease-in;
+  text-decoration: none;
 }
 
 .chat__list__person:hover {

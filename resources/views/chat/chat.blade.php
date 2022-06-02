@@ -62,7 +62,7 @@
             <div class="chat__list">
 
                 <div class="chat__list__heading">
-                    <img src="./img/Laurens.png" alt="Laurens" class="chat__list__heading__profile">
+                    <img src="/img/{{$user->avatar}}" alt="Laurens" class="chat__list__heading__profile">
                     <h1 class="chat__list__heading__h1">Berichten</h1>
                     <a href="" class="chat__list__heading__new-message">
                         <img src="./img/edit-chat.svg" alt="New chat">
@@ -75,76 +75,19 @@
                 </div>
 
                 <div class="chat__list__overview">
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
 
-                    <div class="chat__list__person chat__list__person--active">
-                        <img src="./img/Thomas.png" alt="Thomas" class="chat__list__profile">
-                        <span class="chat__list__name">Thomas Gabriëls</span>
-                        <span class="chat__list__preview">Hey Thomas, met welke stap va…</span>
-                    </div>
+                    @foreach($chats as $chat)
+                    @if($chat->read === 0)
+                    <a href=""class="chat__list__person chat__list__person--unread">
+                    @else
+                    <a href="" class="chat__list__person">
+                    @endif
+                        <img src="/img/{{$chat->reciever->avatar}}" alt="Sarah" class="chat__list__profile">
+                        <span class="chat__list__name">{{$chat->reciever->name}}</span>
+                        <span class="chat__list__preview">{{ substr($chat->text, 0, 20) }}</span>
+                    </a>
+                    @endforeach
 
-                    <div class="chat__list__person chat__list__person--unread">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
-
-                    <div class="chat__list__person">
-                        <img src="./img/Sarah.png" alt="Sarah" class="chat__list__profile">
-                        <span class="chat__list__name">Sarah Peeters</span>
-                        <span class="chat__list__preview">Hey Kelly, met welke stap va…</span>
-                    </div>
                 </div>
 
             </div>

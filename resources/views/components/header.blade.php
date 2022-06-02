@@ -44,7 +44,7 @@
             </div>
         </a>
 
-        <a href="/instellingen" class="header__links__item__mob">
+        <a href="/instellingen-mobiel" class="header__links__item__mob">
             <div class="header__links__mob__container">
                 <img class="header__links__item__img__mob" src="{{asset('/img/instellingen.png')}}" alt="">
                 <p class="header__links__item__text__mob">Instellingen</p>
@@ -89,7 +89,7 @@
             </div>
         </a>
 
-        <a href="/instellingen" class="header__links__item__mob header__links__item__mob--other">
+        <a href="/instellingen-mobiel" class="header__links__item__mob header__links__item__mob--other">
             <div class="header__links__mob__container">
                 <img class="header__links__item__img__mob" src="{{asset('/img/instellingen.png')}}" alt="">
                 <p class="header__links__item__text__mob">Instellingen</p>

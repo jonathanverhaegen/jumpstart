@@ -127,6 +127,41 @@
     cursor: pointer;
 }
 
+.settings__container__mobile {
+    width: 90%;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: row;
+
+    box-shadow: 0 1px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.settings__list__mobile {
+    display: flex;
+    flex-direction: column;
+    background-color: #CBD3E6;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.settings__list__item__mobile {
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    color: #13204A;
+    padding: 25px 30px;
+    font-size: 1.1em;
+}
+
+.settings__list__item__mobile:nth-child(2n) {
+    background-color: rgba(237, 239, 245, .43);
+}
+
 @media screen and (min-width: 800px) {
 
     .settings__container {

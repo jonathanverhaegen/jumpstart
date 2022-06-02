@@ -43,12 +43,25 @@ class RegisterController extends Controller
         ]);
 
         $request->flash();
+
+        if(!empty($request->file('avatar'))){
+            $file = $request->file('avatar');
+            $imageSrc = time().'.'.$file->extension();
+            $file->move(public_path('attachments'), $imageSrc);
+            $fileName = $imageSrc;
+        }
         
          // Initialise the 2FA class
          $google2fa = app('pragmarx.google2fa');
 
          // Save the registration data in an array
-         $registration_data = $request->all();
+         $registration_data = [
+            'naam' => $request->input('naam'), 
+            'geboortedatum' => $request->input('geboortedatum'), 
+            'email' => $request->input('email'), 
+            'wachtwoord' => $request->input('wachtwoord'),
+            'fileName' => $fileName
+        ];
 
          // Add the secret key to the registration data
          $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
@@ -86,7 +99,7 @@ class RegisterController extends Controller
         $explodeEmail = explode('@', $inputEmail);
         if(str_contains($explodeEmail[1], "thomasmore.be") === false){
             $request->session()->flash('error', 'Je ingegeven email is geen thomasmore email');
-            return redirect('/signup');
+            return redirect('/signup/student');
         }
 
         $user = new User();
@@ -96,6 +109,10 @@ class RegisterController extends Controller
         $user->password = Hash::make($request->input('wachtwoord'));
         $user->bio = $request->input('bio');
         $user->google2fa_secret = $request->input('google2fa_secret');
+        if(!empty($request->input('fileName'))){
+            $user->avatar = $request->input('fileName');
+        }
+
         $user->save();
 
         //add roadmap
@@ -113,40 +130,7 @@ class RegisterController extends Controller
      }
 
 
-     public function addZelfstandige1(Request $request){
-         //credentials checken
-         $credentials = $request->validate([
-            'naam' => 'required|max:255',
-            'geboortedatum' => 'required|before:today',
-            'email' => 'required|email',
-            'wachtwoord' => 'required|confirmed|min:8'
-        ]);
-
-         //opslaan in de session
-         $dataZelfstandige1 = $request->all();
-         $request->session()->flash('dataZelfstandige1', $dataZelfstandige1);
-
-         //redirecten naar de volgende
-         return view('signupZelfstandigeKbo');
-     }
-
-     public function addZelfstandige2(Request $request){
-        //credentials checken
-        $credentials = $request->validate([
-           'bedrijfsnaam' => 'required|max:255',
-           'ondernemingsnummer' => 'required',
-           'bedrijfsemail' => 'required|email',
-           'telefoon' => 'required',
-           'opstartdatum' => 'required|before:today'
-        ]);
-
-        $dataZelfstandige2 = $request->all();
-        $request->session()->flash('dataZelfstandige2', $dataZelfstandige2);
-        
-        //redirecten naar de volgende
-        return view('signupZelfstandigeProfile');
-
-    }
+     
 
     public function addZelfstandigeQR(Request $request){
         $credentials = $request->validate([

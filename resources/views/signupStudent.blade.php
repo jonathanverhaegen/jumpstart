@@ -48,9 +48,14 @@
 
       
     <img class="ill__su__s" src="/img/ill_signup_s.png" alt="illustration">  
-      <form action="/user/addStudent" method="post" class="">
+      <form action="/user/addStudent" method="post" class="" enctype="multipart/form-data">
       @csrf
       <h1 class="h__signup__s">Word nu student-zelfstandige!</h1>
+
+        <div class="form__avatar">
+            <img class="sz__pic" src="/img/default.png" alt="profile pic">
+            <label class="__prof__sz"><input class="avatar" name="avatar" type="file" accept=".png, .jpg, .jpeg"/>Profiel foto wijzigen</label>
+        </div>
       
         <div class="">
         <input class="name" type="text" name="naam" placeholder="Naam en voornaam" value="{{ old('naam') }}">

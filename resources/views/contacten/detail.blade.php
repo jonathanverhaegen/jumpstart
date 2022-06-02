@@ -67,7 +67,7 @@
             <div class="detail__extra__icons">
                 <a href="tel:{{$agent->agent->phone}}" ><img src="{{asset('img/tel.png')}}" alt="call" class="detail__icon3"></a>
                 <a href="mailto:{{$agent->email}}" ><img src="{{asset('img/mail.png')}}" alt="mail" class="detail__icon1"></a>
-                <a href="" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="detail__icon2"></a>
+                <a href="/chat/addConversation/{{$agent->id}}" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="detail__icon2"></a>
             </div>
             </div>
     </div>

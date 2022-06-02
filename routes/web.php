@@ -76,10 +76,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
     Route::post('/check/inputStage5', [RoadmapController::class, "checkInputStage5"]);
     Route::post('/check/inputStage7', [RoadmapController::class, "checkInputStage7"]);
-    // Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
-    // Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
-    // Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);
-    // Route::post('/check/stage5/rekening', [RoadmapController::class, "checkRekening"]);
     Route::post('/check/stage6/handtekening', [RoadmapController::class, "checkHandtekening"]);
     Route::post('/check/stage6/bevestig', [RoadmapController::class, "checkBevestig"]);
     Route::post('/check/number', [RoadmapController::class, "checkNumber"]);
@@ -99,6 +95,8 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de chat
     Route::get('/chat', [ChatController::class, "chat"]);
+    Route::get('/chat/addConversation/{id}', [ChatController::class, 'addChatView']);
+    Route::post('/add/chat', [ChatController::class, "addChat"]);
 
     //routes vab de contacten
     Route::get('/contacten', [ContactController::class, "contacten"]);

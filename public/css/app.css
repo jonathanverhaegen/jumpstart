@@ -3300,6 +3300,11 @@ input.pass__sz__ {
   margin-bottom: 25px;
 }
 
+.addPost--chat {
+  display: flex;
+  margin-top: 25px;
+}
+
 .addPost__title {
   text-align: center;
   color: #1E3472;

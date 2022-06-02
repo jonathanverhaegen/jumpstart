@@ -92,7 +92,26 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
-                
+                <h2 class="settings__detail__heading">Stopzetten statuut student-zelfstandige</h2>
+                <p class="settings__detail__text">
+                    Je staat op het punt jouw statuut student-zelfstandige stop te zetten. Het stopzetten van dit statuut vergt enkele stappen, naargelang de reden om het statuut stop te zetten in het afsluitingsproces anders. Daarom vragen we jou om enkele vragen in te vullen, zodat wij dit afsluitingsproces kunnen personaliseren naar jou.
+                </p>
+                <form action="#" method="POST" class="settings__status-form">
+                    <h3>Ik wens mijn statuut stop te zetten omwille van de volgende reden</h3>
+                    <div class="settings__status-form__radio">
+                        <input type="radio" id="option1" name="reason1" value="Ik ga afstuderen.">
+                        <label for="reason1">Ik ga afstuderen.</label>
+                    </div>
+                    <div class="settings__status-form__radio">
+                        <input type="radio" id="option2" name="reason1" value="Ik ga/ben 25 jaar (ge)worden.">
+                        <label for="reason2">Ik ga/ben 25 jaar (ge)worden.</label>
+                    </div>
+                    <div class="settings__status-form__radio">
+                        <input type="radio" id="option3" name="reason1" value="Ik zie het ondernemen niet meer zitten.">
+                        <label for="reason3">Ik zie het ondernemen niet meer zitten.</label>
+                    </div>
+                    <input type="submit" value="Volgende">
+                </form>
             </div>
 
         </div>

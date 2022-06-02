@@ -80,7 +80,11 @@
                     @if($con->chats[count($con->chats)-1]->read === 0)
                         <a href="/chat?chat={{$con->id}}" class="chat__list__person chat__list__person--unread">
                     @else
-                        <a href="/chat?chat={{$con->id}}" class="chat__list__person">
+                        @if($con->id === $conversation_id)
+                            <a href="/chat?chat={{$con->id}}" class="chat__list__person chat__list__person--active">
+                        @else
+                            <a href="/chat?chat={{$con->id}}" class="chat__list__person">
+                        @endif 
                     @endif
                         @if($con->user_one === Auth::id())
                         <img src="/img/{{$con->usertwo->avatar}}" alt="Sarah" class="chat__list__profile">

@@ -3257,6 +3257,16 @@ input.pass__sz__ {
   color: white;
 }
 
+.chat__detail__send-message img {
+  width: 50px;
+  position: absolute;
+  right: 12%;
+}
+
+.chat__detail__send-message img:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1000px) {
   .chat__button__container {
     display: none;

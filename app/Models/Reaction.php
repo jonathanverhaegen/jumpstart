@@ -9,9 +9,13 @@ class Reaction extends Model
 {
     use HasFactory;
 
-    protected $with = ["user"];
+    protected $with = ["user", "attachment"];
 
     public function user(){
         return $this->belongsTo(\App\Models\User::class);
+    }
+
+    public function attachment(){
+        return $this->hasOne(\App\Models\AttachmentsReaction::class);
     }
 }

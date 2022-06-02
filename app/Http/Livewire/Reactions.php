@@ -28,7 +28,7 @@ class Reactions extends Component
             if(!empty($this->attachment)){
                 $file = $this->attachment;
                 $imageSrc = time().'.'.$file->extension();
-                $this->attachment->storeAs('attachments', $imageSrc);
+                $this->attachment->storeAs('attachments', $imageSrc, 'real_public');
 
                 //attachment opslaan in database
                 $newAttach = new AttachmentsReaction();

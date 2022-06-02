@@ -157,14 +157,39 @@
 }
 
 .reaction{
+    background-color: $darkgray;
+    border-radius: 20px;
+    padding: 2%;
+    margin-top:20px;
+}
+
+.reaction__text{
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
-    margin-top:20px;
-    background-color: $darkgray;
-    border-radius: 20px;
-    padding: 2%;
+}
+
+.reaction__attach__img{
+    margin-top:10px;
+    display:flex;
+    justify-content: center;
+}
+
+.reaction__attach__img img{
+    width:60%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.reaction__attach{
+    margin-top: 20px;
+}
+
+.reaction__attach a {
+    color: $blue;
+    font-family: $normal;
+    text-decoration: none;
 }
 
 .reaction__img{

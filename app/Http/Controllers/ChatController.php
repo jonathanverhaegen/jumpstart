@@ -15,7 +15,7 @@ class ChatController extends Controller
         
         $conversation_id = $request->input('chat');
         if(!empty($conversation_id)){
-            $data['conversation'] = Conversation::where('id', $conversation_id)->first();
+            $data['conversation_id'] = $conversation_id;
         }
         
         return view('chat/chat', $data);

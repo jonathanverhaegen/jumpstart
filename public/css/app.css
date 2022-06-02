@@ -3282,6 +3282,7 @@ input.pass__sz__ {
 .post__user__info__name {
   font-family: "Montserrat", sans-serif;
   color: #1E3472;
+  font-size: 18px;
 }
 
 .post__user__info__date {
@@ -3293,6 +3294,7 @@ input.pass__sz__ {
 .post__text {
   margin-top: 20px;
   font-family: "Lato", sans-serif;
+  font-size: 20px;
 }
 
 .post__img {
@@ -3345,7 +3347,7 @@ input.pass__sz__ {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 20px 10px 20px;
+  padding: 5%;
   border: none;
   background-color: #DADFEC;
   font-family: "Lato", sans-serif;
@@ -3373,6 +3375,20 @@ input.pass__sz__ {
   font-family: "Lato", sans-serif;
 }
 
+@media (min-width: 800px) {
+  .post__user {
+    grid-template-columns: 1fr 11fr;
+  }
+
+  .post__text {
+    margin-top: 40px;
+  }
+
+  .reaction__add__input {
+    width: 60%;
+    padding: 2%;
+  }
+}
 body {
   background-color: #EDEFF5;
 }

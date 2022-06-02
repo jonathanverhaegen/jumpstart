@@ -66,6 +66,7 @@
 .post__user__info__name{
     font-family: $title;
     color: $blue;
+    font-size: 18px;
 }
 
 .post__user__info__date{
@@ -77,6 +78,7 @@
 .post__text{
     margin-top:20px;
     font-family: $normal;
+    font-size: 20px;
 }
 
 .post__img{
@@ -130,7 +132,7 @@
     width:80%;
     margin-left:auto;
     margin-right:auto;
-    padding: 10px 20px 10px 20px;
+    padding: 5%;
     border:none;
     background-color: $darkgray;
     font-family: $normal;
@@ -158,3 +160,17 @@
     font-family: $normal;
 }
 
+@media(min-width:800px){
+    .post__user{
+        grid-template-columns: 1fr 11fr;
+    }
+
+    .post__text{
+        margin-top: 40px;
+    }
+
+    .reaction__add__input{
+        width: 60%;
+        padding: 2%;
+    }
+}

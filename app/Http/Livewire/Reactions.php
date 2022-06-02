@@ -18,6 +18,8 @@ class Reactions extends Component
         $reaction->post_id = $post_id;
         $reaction->text = $this->newReaction;
         $reaction->save();
+
+        $this->newReaction = "";
     }
 
     public function render()

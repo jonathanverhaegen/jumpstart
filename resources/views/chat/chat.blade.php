@@ -77,8 +77,12 @@
                 <div class="chat__list__overview">
 
                     @foreach($conversations as $con)
-                    @if($con->chats[count($con->chats)-1]->read === 0)
-                        <a href="/chat?chat={{$con->id}}" class="chat__list__person chat__list__person--unread">
+                    @if($con->chats[count($con->chats)-1]->read === 0 && $con->chats[count($con->chats)-1]->sender_id !== Auth::id())
+                        @if($con->id === $conversation_id)
+                            <a href="/chat?chat={{$con->id}}" class="chat__list__person chat__list__person--active">
+                        @else
+                            <a href="/chat?chat={{$con->id}}" class="chat__list__person chat__list__person--unread">
+                        @endif 
                     @else
                         @if($con->id === $conversation_id)
                             <a href="/chat?chat={{$con->id}}" class="chat__list__person chat__list__person--active">

@@ -104,6 +104,27 @@ if(togglePassword !== null){
     })
 }
 
+//showpassword signup zelfstandige
+
+let passwordToggle = document.querySelectorAll('.passwordToggleZelf');
+
+if(passwordToggle !== null){
+    passwordToggle.forEach((password) => {
+        let btn = password.querySelector('.togglePass__');
+        let check = 0;
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(check === 0){
+                password.querySelector('.pass__sz').type = "text";
+                check = 1;
+            }else{
+                password.querySelector('.pass__sz').type = "password";
+                check = 1;
+            }
+        })
+    })
+}
+
 //next page
 
 let toggleNextBtn = document.querySelector('.nextBtn');

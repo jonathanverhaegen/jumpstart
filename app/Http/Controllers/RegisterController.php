@@ -202,8 +202,6 @@ class RegisterController extends Controller
       }
 
     public function addZelfstandige($request){
-
-        dd($request);
         
         //user maken
         $user = new User();

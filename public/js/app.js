@@ -2163,6 +2163,27 @@ if (togglePassword !== null) {
       }
     });
   });
+} //showpassword signup zelfstandige
+
+
+var passwordToggle = document.querySelectorAll('.passwordToggleZelf');
+
+if (passwordToggle !== null) {
+  passwordToggle.forEach(function (password) {
+    var btn = password.querySelector('.togglePass__');
+    var check = 0;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (check === 0) {
+        password.querySelector('.pass__sz').type = "text";
+        check = 1;
+      } else {
+        password.querySelector('.pass__sz').type = "password";
+        check = 1;
+      }
+    });
+  });
 } //next page
 
 

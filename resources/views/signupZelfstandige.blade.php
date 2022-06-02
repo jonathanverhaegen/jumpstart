@@ -54,13 +54,13 @@
         <input class="mail__sz" type="text" name="email" placeholder="Email" value="{{old('email')}}">
         </div>
 
-        <div class="">
+        <div class="passwordToggleZelf">
         <input class="pass__sz" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
         <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
-        <div class="">
-        <input class="pass__sz__" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <div class="passwordToggleZelf">
+        <input class="pass__sz" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
         <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         

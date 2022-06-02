@@ -18,6 +18,7 @@ class CreateChatsTable extends Migration
             $table->foreignId('conversation_id');
             $table->longText('text');
             $table->boolean('read');
+            $table->foreignId('sender_id');
             $table->timestamps();
         });
     }

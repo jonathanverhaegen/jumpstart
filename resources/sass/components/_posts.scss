@@ -138,10 +138,10 @@
 }
 
 .reaction__add img{
-    width: 50px;
+    width: 25px;
     position: absolute;
-    right: 20%;
-    margin-top: -4%;
+    right: 22%;
+    margin-top: -3%;
 }
 
 .reaction__add img:hover{
@@ -163,7 +163,7 @@
 .reaction{
     background-color: $darkgray;
     border-radius: 20px;
-    padding: 2%;
+    padding: 5%;
     margin-top:20px;
 }
 
@@ -206,7 +206,7 @@
 }
 
 .reaction__delete{
-    width: 50px;
+    width: 20px;
     margin-left:auto;
 }
 
@@ -229,13 +229,17 @@
         margin-top: 40px;
     }
 
+    .reaction{
+        padding: 2%;
+    }
+
     .reaction__add__input{
         width: 60%;
         padding: 2%;
     }
 
     .reaction__add img{
-        margin-top: -1.5%;
+        margin-top: -0.5%;
     }
 
     .reaction__attachment{

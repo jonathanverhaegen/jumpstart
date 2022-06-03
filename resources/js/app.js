@@ -446,11 +446,11 @@ if(addPostBtn !== null){
 
 //zoekfunctie chat
 
-let searchBarDiv = document.querySelector('.chat__search-bar');
+let searchBarDesk = document.querySelector('.chat__container--desk');
 
-if(searchBarDiv !== null){
-    let input = searchBarDiv.querySelector('#search-chat');
-    let chats = document.querySelectorAll('.chat__list__person');
+if(searchBarDesk !== null){
+    let input = searchBarDesk.querySelector('#search-chat');
+    let chats = searchBarDesk.querySelectorAll('.chat__list__person');
 
     input.addEventListener('keyup', (e) => {
         e.preventDefault();

@@ -18,7 +18,13 @@ class ChatController extends Controller
         $conversation_id = $request->input('chat');
         if(!empty($conversation_id)){
             $data['conversation_id'] = intval($conversation_id);
+            $conversation = Conversation::where('id', $conversation_id)->first();
             $chat = Chat::where('conversation_id', $conversation_id)->orderByDesc('id')->first();
+            
+            if($conversation->user_one !== Auth::id() && $conversation->user_two !== Auth::id()){
+                abort(403);
+            }
+            
             $chat->read = 1;
             $chat->save();
         }else{
@@ -82,6 +88,13 @@ class ChatController extends Controller
 
 
 
+    }
+
+    public function mobileChat($conversation_id){
+        $data['user'] = Auth::user();
+        $data['conversations'] = Conversation::where('user_one', Auth::id())->orWhere('user_two', Auth::id())->orderByDesc('id')->get();
+        $data['conversation_id'] = $conversation_id;
+        return view('chat/chatMobile', $data);
     }
 
 }

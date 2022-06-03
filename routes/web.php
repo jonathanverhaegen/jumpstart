@@ -95,8 +95,10 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de chat
     Route::get('/chat', [ChatController::class, "chat"]);
+    Route::get('/chat/{id}', [ChatController::class, "mobileChat"]);
     Route::get('/chat/addConversation/{id}', [ChatController::class, 'addChatView']);
     Route::post('/add/chat', [ChatController::class, "addChat"]);
+    
 
     //routes vab de contacten
     Route::get('/contacten', [ContactController::class, "contacten"]);

@@ -1,4 +1,4 @@
-<div class="chat__detail">
+<div class="chat__detail__mobile">
 
                 <div class="chat__detail__heading">
                     @if($conversation->user_one === Auth::id())
@@ -56,6 +56,4 @@
                     <input wire:click="addChat('{{$conversation->id}}')" type="submit" value="Verzenden"/>
                 </div>
 
-                
-
-</div>
+            </div>

@@ -3012,7 +3012,7 @@ input.pass__sz__ {
   width: 100%;
   border-radius: 20px;
   background-color: white;
-  display: none;
+  display: flex;
   /* MOET NORMAAL OP FLEX STAAN */
   flex-direction: column;
 }
@@ -3267,6 +3267,14 @@ input.pass__sz__ {
   cursor: pointer;
 }
 
+.chat__container--mob {
+  display: flex;
+}
+
+.chat__container--desk {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) {
   .chat__button__container {
     display: none;
@@ -3287,6 +3295,14 @@ input.pass__sz__ {
 
   .chat__detail__heading {
     border-radius: 0 20px 0 0;
+  }
+
+  .chat__container--desk {
+    display: flex;
+  }
+
+  .chat__container--mob {
+    display: none;
   }
 }
 .verification {

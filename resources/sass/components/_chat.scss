@@ -70,7 +70,7 @@
     border-radius: 20px;
     background-color: white;
 
-    display: none; /* MOET NORMAAL OP FLEX STAAN */
+    display: flex; /* MOET NORMAAL OP FLEX STAAN */
     flex-direction: column;
 }
 
@@ -311,6 +311,14 @@
     cursor:pointer;
 }
 
+.chat__container--mob{
+    display: flex;
+}
+
+.chat__container--desk{
+    display:none;
+}
+
 @media screen and (min-width: 1000px) {
 
     .chat__button__container {
@@ -332,6 +340,14 @@
 
     .chat__detail__heading {
         border-radius: 0 20px 0 0;
+    }
+
+    .chat__container--desk{
+        display:flex;
+    }
+
+    .chat__container--mob{
+        display: none;
     }
 
 }

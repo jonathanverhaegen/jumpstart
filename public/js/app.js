@@ -2486,12 +2486,12 @@ if (addPostBtn !== null) {
 } //zoekfunctie chat
 
 
-var searchBarDiv = document.querySelector('.chat__search-bar');
+var searchBarDesk = document.querySelector('.chat__container--desk');
 
-if (searchBarDiv !== null) {
-  var _input = searchBarDiv.querySelector('#search-chat');
+if (searchBarDesk !== null) {
+  var _input = searchBarDesk.querySelector('#search-chat');
 
-  var chats = document.querySelectorAll('.chat__list__person');
+  var chats = searchBarDesk.querySelectorAll('.chat__list__person');
 
   _input.addEventListener('keyup', function (e) {
     e.preventDefault();

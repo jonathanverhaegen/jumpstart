@@ -444,13 +444,37 @@ if(addPostBtn !== null){
     })
 }
 
-//zoekfunctie chat
+//zoekfunctie chat desktop
 
 let searchBarDesk = document.querySelector('.chat__container--desk');
 
 if(searchBarDesk !== null){
     let input = searchBarDesk.querySelector('#search-chat');
     let chats = searchBarDesk.querySelectorAll('.chat__list__person');
+
+    input.addEventListener('keyup', (e) => {
+        e.preventDefault();
+        let value = input.value;
+        chats.forEach((chat) => {
+            chat.style.display = "none";
+
+            let name = chat.querySelector('.chat__list__name').innerHTML;
+            let filterName = name.toLowerCase().indexOf(value.toLowerCase());
+
+            if(filterName > -1){
+                chat.style.display = "grid";
+            }
+        })
+    })
+}
+
+//zoekfunctie chat mob
+
+let searchBarMob = document.querySelector('.chat__container--mob');
+
+if(searchBarMob !== null){
+    let input = searchBarMob.querySelector('#search-chat');
+    let chats = searchBarMob.querySelectorAll('.chat__list__person');
 
     input.addEventListener('keyup', (e) => {
         e.preventDefault();

@@ -2483,7 +2483,7 @@ if (addPostBtn !== null) {
     e.preventDefault();
     document.querySelector('.addPost').style.display = "flex";
   });
-} //zoekfunctie chat
+} //zoekfunctie chat desktop
 
 
 var searchBarDesk = document.querySelector('.chat__container--desk');
@@ -2497,6 +2497,30 @@ if (searchBarDesk !== null) {
     e.preventDefault();
     var value = _input.value;
     chats.forEach(function (chat) {
+      chat.style.display = "none";
+      var name = chat.querySelector('.chat__list__name').innerHTML;
+      var filterName = name.toLowerCase().indexOf(value.toLowerCase());
+
+      if (filterName > -1) {
+        chat.style.display = "grid";
+      }
+    });
+  });
+} //zoekfunctie chat mob
+
+
+var searchBarMob = document.querySelector('.chat__container--mob');
+
+if (searchBarMob !== null) {
+  var _input2 = searchBarMob.querySelector('#search-chat');
+
+  var _chats = searchBarMob.querySelectorAll('.chat__list__person');
+
+  _input2.addEventListener('keyup', function (e) {
+    e.preventDefault();
+    var value = _input2.value;
+
+    _chats.forEach(function (chat) {
       chat.style.display = "none";
       var name = chat.querySelector('.chat__list__name').innerHTML;
       var filterName = name.toLowerCase().indexOf(value.toLowerCase());

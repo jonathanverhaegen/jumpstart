@@ -304,7 +304,7 @@
 .chat__detail__send-message img{
     width: 50px;
     position: absolute;
-    right: 12%;
+    right: 32%;
 }
 
 .chat__detail__send-message img:hover{
@@ -348,6 +348,12 @@
 
     .chat__container--mob{
         display: none;
+    }
+
+    .chat__detail__send-message img{
+        width: 50px;
+        position: absolute;
+        right: 12%;
     }
 
 }

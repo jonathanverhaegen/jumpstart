@@ -5,15 +5,15 @@
                     <img src="/attachments/{{$conversation->usertwo->avatar}}" alt="avatar" class="chat__detail__heading__profile">
                     <h2 class="chat__detail__heading__name">{{$conversation->usertwo->name}}</h2>
                     <div class="chat__detail__icons">
-                        <img src="./img/search-icon-chat.svg" alt="Search in chat" class="chat__detail__icons__search">
-                        <img src="./img/options-icon-chat.svg" alt="Options" class="chat__detail__icons__settings">
+                        <img src="/img/search-icon-chat.svg" alt="Search in chat" class="chat__detail__icons__search">
+                        <img src="/img/options-icon-chat.svg" alt="Options" class="chat__detail__icons__settings">
                     </div>
                     @else
                     <img src="/attachments/{{$conversation->userone->avatar}}" alt="Thomas" class="chat__detail__heading__profile">
                     <h2 class="chat__detail__heading__name">{{$conversation->userone->name}}</h2>
                     <div class="chat__detail__icons">
-                        <img src="./img/search-icon-chat.svg" alt="Search in chat" class="chat__detail__icons__search">
-                        <img src="./img/options-icon-chat.svg" alt="Options" class="chat__detail__icons__settings">
+                        <img src="/img/search-icon-chat.svg" alt="Search in chat" class="chat__detail__icons__search">
+                        <img src="/img/options-icon-chat.svg" alt="Options" class="chat__detail__icons__settings">
                     </div>
                     @endif
                 </div>

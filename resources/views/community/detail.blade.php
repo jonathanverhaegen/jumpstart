@@ -112,7 +112,7 @@
         @foreach($posts as $post)
         <div class="post">
             <div class="post__user">
-                <img class="post__user__img" src="/img/default.png" alt="">
+                <img class="post__user__img" src="/img/{{$post->user->avatar}}.png" alt="">
                 <div class="post__user__info">
                     <p class="post__user__info__name">{{$post->user->name}}</p>
                     <p class="post__user__info__date">{{ date('d/m/Y H:i:s', strtotime($post->created_at))}}</p>

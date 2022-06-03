@@ -57,6 +57,7 @@
 <div class="dashboard__profile">
         <div class="profile__container__">
             <div class="profile__container__base">
+            <a href="/dashboard" ><img class="profile__back" src="/img/pijl_nieuw.png" alt="terug"></a>
                 <div class="profile">
                         <div class="profile__img">
                         <img class="profile__pic" src="/img/thomas.png" alt="profile pic">

@@ -111,6 +111,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/instellingen-mobiel', [SettingsController::class, "settingsMobile"]);
     Route::get('/instellingen/statuut-stopzetten/1', [SettingsController::class, "settingsStatuutStopzetten1"]);
     Route::get('/instellingen/statuut-stopzetten/2', [SettingsController::class, "settingsStatuutStopzetten2"]);
+    Route::get('/instellingen/statuut-stopzetten/3', [SettingsController::class, "settingsStatuutStopzetten3"]);
 
     //routes van het profiel
     Route::get('/profiel', [ProfileController::class, "profile"]);

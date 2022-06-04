@@ -3523,6 +3523,26 @@ input.pass__sz__ {
   background-color: rgba(237, 239, 245, 0.43);
 }
 
+.settings__status-form__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings__status-form__buttons input[type=submit] {
+  width: 180px;
+}
+
+.settings__status-form__buttons input[type=submit]:first-child {
+  background-color: #B2BEDA;
+  color: #13204A;
+}
+
+.settings__status-form__buttons input[type=submit]:nth-child(2) {
+  background: none;
+  color: #222C74;
+  box-shadow: inset 0 0 0 2px #222C74;
+}
+
 @media screen and (min-width: 800px) {
   .settings__container {
     background-color: #FAFAFA;

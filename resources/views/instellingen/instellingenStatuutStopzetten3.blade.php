@@ -92,33 +92,24 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
-                <form action="/instellingen/statuut-stopzetten/3" method="GET" class="settings__status-form">
-                    <h3>Waarom wil je stoppen met ondernemen?</h3>
+                <form action="#" method="GET" class="settings__status-form">
+                    <h3>Heb je al eens gesproken met iemand van ICE CUBE?</h3>
                     <div class="settings__status-form__radio">
-                        <input type="radio" id="option1" name="reason" value="Mijn onderneming heeft minder succes dan verwacht.">
-                        <label for="reason1">Mijn onderneming heeft minder succes dan verwacht.</label>
+                        <input type="radio" id="option1" name="reason" value="Ja, maar het heeft niet geholpen.">
+                        <label for="reason1">Ja, maar het heeft niet geholpen.</label>
                     </div>
                     <div class="settings__status-form__radio">
-                        <input type="radio" id="option2" name="reason" value="De combinatie studeren en ondernemen is moeilijk.">
-                        <label for="reason2">De combinatie studeren en ondernemen is moeilijk.</label>
+                        <input type="radio" id="option2" name="reason" value="Nee, maar misschien wil dat wel eens doen.">
+                        <label for="reason2">Nee, maar misschien wil dat wel eens doen.</label>
                     </div>
                     <div class="settings__status-form__radio">
-                        <input type="radio" id="option3" name="reason" value="Ondernemen is echt niet voor mij.">
-                        <label for="reason3">Ondernemen is echt niet voor mij.</label>
+                        <input type="radio" id="option3" name="reason" value="Nee, maar ik wil echt stoppen.">
+                        <label for="reason3">Nee, maar ik wil echt stoppen.</label>
                     </div>
-                    <div class="settings__status-form__radio">
-                        <input type="radio" id="option4" name="reason" value="Ik voel mij niet genoeg ondersteund door mijn school.">
-                        <label for="reason4">Ik voel mij niet genoeg ondersteund door mijn school.</label>
+                    <div class="settings__status-form__buttons">
+                        <input type="submit" value="ICE CUBE contacteren">
+                        <input type="submit" value="Stopzetting starten">
                     </div>
-                    <div class="settings__status-form__radio">
-                        <input type="radio" id="option5" name="reason" value="De administratie is toch nog te veel en te ingewikkeld.">
-                        <label for="reason5">De administratie is toch nog te veel en te ingewikkeld.</label>
-                    </div>
-                    <div class="settings__status-form__radio">
-                        <input type="radio" id="option6" name="reason" value="Andere">
-                        <label for="reason6">Andere</label>
-                    </div>
-                    <input type="submit" value="Volgende">
                 </form>
             </div>
 

@@ -86,8 +86,8 @@
                 <p class="profile__info__title">Bio</p>
 
                 <p class="profile__info__inhoud">
-                    Kelly Smith Design is een jong bedrijf dat draait rond diversiteit, dit is terug te vinden in de designs. 
-                    De focus van KSD ligt op branding en rebranding van merken en producten. 
+                    Thomas Smith Design is een jong bedrijf dat draait rond diversiteit, dit is terug te vinden in de designs. 
+                    De focus van TSD ligt op branding en rebranding van merken en producten. 
                     Neem gerust een kijkje op Behance voor voorbeelden.
                 </p>
                 <div class="profile__social__icons">

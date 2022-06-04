@@ -54,9 +54,43 @@
         @endif
 
 
-      <div class="dashboard__container">
-          <h1>Dit is de homepage</h1>
-      </div>
+    <div class="dash__container">
+        <div class="dash__container__">
+            <div class="dash__container__base">
+                <div class="dash">
+                        <div class="dash__extra">
+                            <p class="dash__name"> Hi Thomas!</p>
+                            <p class="dash__mess">Wij hebben <strong>nieuwe ondernemingstips</strong> voor jou</p>
+                        </div>
+                        <div class="dash__img">
+                        <a href="dashboard/profile"><img class="dash__pic" src="/img/thomas.png" alt="profile pic"></a>
+                        </div>
+
+                </div>
+            </div>
+        </div> 
+    
+        <div class="dash__container__cal">
+            <p class="dash__cal"> Kalender</p>
+        </div>
+
+        <div class="dash__container__not">
+            <p class="dash__not"> Notificaties</p>
+        </div>
+
+        <div class="dash__container__par">
+            <p class="dash__par"> Parameters</p>
+        </div>
+    
+        <div class="dash__container__chat">
+            <p class="dash__chat">Berichten</p>
+            <a href=""><img class="chat__pic" src="/img/sarahp.png" alt="chat pic"></a>
+            <a href=""><img class="chat__pic" src="/img/Laurens.png" alt="chat pic"></a>
+            <a href=""><img class="chat__pic" src="/img/kris.png" alt="chat pic"></a>
+            <a href=""><img class="chat__pic" src="/img/leuke mensen.png" alt="chat pic"></a>
+        </div>
+    
+    </div>
 
 
 

@@ -100,6 +100,14 @@
     display: none;
 }
 
+.label__password{
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 600;
+    color: #161B4B;
+}
+
 .settings__detail__info form label:last-of-type {
     margin-top: 0;
     margin-bottom: auto;
@@ -128,6 +136,11 @@
 
     font-size: 1em;
     cursor: pointer;
+}
+
+.settings__detail__info__input::placeholder {
+    color: $darkblue; /*Change the placeholder color*/
+    opacity: 1; /*Change the opacity between 0 and 1*/
 }
 
 @media screen and (min-width: 800px) {

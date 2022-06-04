@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -69,6 +70,34 @@ class ProfileController extends Controller
 
             $request->session()->flash('success', 'Profiel is bijgewerkt');
             return redirect('/instellingen');
+        }
+    }
+
+    public function updatePasswordView(){
+        return view('instellingen/password');
+    }
+
+    public function updatePassword(Request $request){
+        $credentials = $request->validate([
+            'oud-wachtwoord' => 'required',
+            'nieuw-wachtwoord' => 'required|confirmed|min:8'
+        ]);
+
+        $old = $request->input('oud-wachtwoord');
+        $new = $request->input('nieuw-wachtwoord');
+        
+
+        if(Hash::check($old, Auth::user()->password)){
+            $user = Auth::user();
+            $user->password = Hash::make($new);
+            $user->save();
+
+            $request->session()->flash('success', 'Wachtwoord opgeslagen');
+            return redirect('/instellingen/wachtwoord-wijzigen');
+
+        }else{
+            $request->session()->flash('error', 'Oud-wachtwoord is niet correct');
+            return redirect('/instellingen/wachtwoord-wijzigen');
         }
     }
 }

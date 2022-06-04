@@ -2483,7 +2483,6 @@ if (addPostBtn !== null) {
     e.preventDefault();
     document.querySelector('.addPost').style.display = "flex";
   });
-
 } //settings avatar update
 
 
@@ -2494,20 +2493,20 @@ if (formAvatar !== null) {
 
   _input.addEventListener('change', function (e) {
     formAvatar.submit();
-
+  });
 } //zoekfunctie chat desktop
 
 
 var searchBarDesk = document.querySelector('.chat__container--desk');
 
 if (searchBarDesk !== null) {
-  var _input = searchBarDesk.querySelector('#search-chat');
+  var _input2 = searchBarDesk.querySelector('#search-chat');
 
   var chats = searchBarDesk.querySelectorAll('.chat__list__person');
 
-  _input.addEventListener('keyup', function (e) {
+  _input2.addEventListener('keyup', function (e) {
     e.preventDefault();
-    var value = _input.value;
+    var value = _input2.value;
     chats.forEach(function (chat) {
       chat.style.display = "none";
       var name = chat.querySelector('.chat__list__name').innerHTML;
@@ -2524,13 +2523,13 @@ if (searchBarDesk !== null) {
 var searchBarMob = document.querySelector('.chat__container--mob');
 
 if (searchBarMob !== null) {
-  var _input2 = searchBarMob.querySelector('#search-chat');
+  var _input3 = searchBarMob.querySelector('#search-chat');
 
   var _chats = searchBarMob.querySelectorAll('.chat__list__person');
 
-  _input2.addEventListener('keyup', function (e) {
+  _input3.addEventListener('keyup', function (e) {
     e.preventDefault();
-    var value = _input2.value;
+    var value = _input3.value;
 
     _chats.forEach(function (chat) {
       chat.style.display = "none";
@@ -2541,7 +2540,6 @@ if (searchBarMob !== null) {
         chat.style.display = "grid";
       }
     });
-
   });
 }
 

@@ -362,7 +362,7 @@
             <form class="stage__check" action="/check/stage" method="post">
             @csrf
                 <div class="stage__check__btn">
-                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
+                    <button type="submit" class="stageCheckBtn">Ik heb mijzelf aangesloten bij een sociaal verzekeringsfonds</button>
                     <input type="hidden" name="stage" value="5">
                 </div>
             </form>
@@ -528,7 +528,7 @@
             <div class="stage">
                 <p class="stage__title">Laat aan de bank weten wat je ondernemingsnummer is</p>
                 <p class="stage__text">Oef, dit is gelukkig maar een kleine stap. Nu je geregistreerd bent in de Kruispuntbank van Ondernemingen, heb je een ondernemingsnummer gekregen. Geef bij dit door aan je bank zodat zij jouw pas geopende rekening kunnen omzetten naar een rekening voor professioneel gebruik.</p>
-                @if(!empty($company))
+                @if(!empty($company->acount_number))
                 <p class="stage__text">Ondernemingsnummer: {{$company->account_number}}</p>
                 @endif
             </div>

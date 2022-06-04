@@ -3012,7 +3012,7 @@ input.pass__sz__ {
   width: 100%;
   border-radius: 20px;
   background-color: white;
-  display: none;
+  display: flex;
   /* MOET NORMAAL OP FLEX STAAN */
   flex-direction: column;
 }
@@ -3042,6 +3042,7 @@ input.pass__sz__ {
 .chat__list__heading__profile {
   height: 40px;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .chat__list__heading__new-message {
@@ -3098,6 +3099,7 @@ input.pass__sz__ {
   padding: 15px;
   cursor: pointer;
   transition: background-color 0.2s ease-in;
+  text-decoration: none;
 }
 
 .chat__list__person:hover {
@@ -3120,6 +3122,7 @@ input.pass__sz__ {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 3;
+  border-radius: 50%;
 }
 
 .chat__list__name {
@@ -3183,6 +3186,7 @@ input.pass__sz__ {
   padding: 10px;
   border-radius: 15px;
   line-height: 24px;
+  flex-direction: column;
 }
 
 .chat__message--from {
@@ -3243,6 +3247,35 @@ input.pass__sz__ {
   height: 100%;
 }
 
+.chat__attach__img {
+  width: 50%;
+  margin-top: 10px;
+}
+
+.chat__attach__down {
+  text-decoration: none;
+  color: white;
+}
+
+.chat__detail__send-message img {
+  width: 25px;
+  position: relative;
+  left: -160%;
+  top: 10px;
+}
+
+.chat__detail__send-message img:hover {
+  cursor: pointer;
+}
+
+.chat__container--mob {
+  display: flex;
+}
+
+.chat__container--desk {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) {
   .chat__button__container {
     display: none;
@@ -3263,6 +3296,21 @@ input.pass__sz__ {
 
   .chat__detail__heading {
     border-radius: 0 20px 0 0;
+  }
+
+  .chat__container--desk {
+    display: flex;
+  }
+
+  .chat__container--mob {
+    display: none;
+  }
+
+  .chat__detail__send-message img {
+    width: 25px;
+    position: relative;
+    left: -160%;
+    top: 10px;
   }
 }
 .settings__container {
@@ -3477,6 +3525,11 @@ input.pass__sz__ {
   margin-bottom: 25px;
 }
 
+.addPost--chat {
+  display: flex;
+  margin-top: 25px;
+}
+
 .addPost__title {
   text-align: center;
   color: #1E3472;
@@ -3594,10 +3647,10 @@ input.pass__sz__ {
 }
 
 .reaction__add img {
-  width: 50px;
+  width: 25px;
   position: absolute;
-  right: 20%;
-  margin-top: -4%;
+  right: 22%;
+  margin-top: -3%;
 }
 
 .reaction__add img:hover {
@@ -3619,7 +3672,7 @@ input.pass__sz__ {
 .reaction {
   background-color: #DADFEC;
   border-radius: 20px;
-  padding: 2%;
+  padding: 5%;
   margin-top: 20px;
 }
 
@@ -3662,7 +3715,7 @@ input.pass__sz__ {
 }
 
 .reaction__delete {
-  width: 50px;
+  width: 20px;
   margin-left: auto;
 }
 
@@ -3685,13 +3738,17 @@ input.pass__sz__ {
     margin-top: 40px;
   }
 
+  .reaction {
+    padding: 2%;
+  }
+
   .reaction__add__input {
     width: 60%;
     padding: 2%;
   }
 
   .reaction__add img {
-    margin-top: -1.5%;
+    margin-top: -0.5%;
   }
 
   .reaction__attachment {

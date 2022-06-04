@@ -11,4 +11,8 @@ class SettingsController extends Controller
         $data['user'] = Auth::user();
         return view('instellingen/instellingen', $data);
     }
+
+    public function settingsMobile(){
+        return view('instellingen/instellingenMobiel');
+    }
 }

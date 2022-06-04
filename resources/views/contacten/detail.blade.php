@@ -58,16 +58,16 @@
     <div class="detail__container__base">
         <div class="detail">
             <div class="detail__img">
-                <img class="detail__pic" src="/img/{{$agent->avatar}}" alt="{{$agent->firstname}}">
+                <img class="detail__pic" src="/attachments/{{$agent->avatar}}" alt="{{$agent->firstname}}">
             </div>
 
             <div class="detail__extra">
-            <p class="detail__name">{{$agent->firstname}} {{$agent->lastname}}</p>
-            <p class="detail__functie">{{$agent->info}}</p>
+            <p class="detail__name">{{$agent->name}}</p>
+            <p class="detail__functie">{{$agent->agent->info}}</p>
             <div class="detail__extra__icons">
-                <a href="tel:{{$agent->phone}}" ><img src="{{asset('img/tel.png')}}" alt="call" class="detail__icon3"></a>
+                <a href="tel:{{$agent->agent->phone}}" ><img src="{{asset('img/tel.png')}}" alt="call" class="detail__icon3"></a>
                 <a href="mailto:{{$agent->email}}" ><img src="{{asset('img/mail.png')}}" alt="mail" class="detail__icon1"></a>
-                <a href="" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="detail__icon2"></a>
+                <a href="/chat/addConversation/{{$agent->id}}" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="detail__icon2"></a>
             </div>
             </div>
     </div>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="bio__extra__text">
                     <p class="bio__extra__text__text">Gewenste vergaderdagen</p>
-                    <p class="bio__extra__text__title">{{$agent->vergaderdagen}}</p>
+                    <p class="bio__extra__text__title">{{$agent->agent->vergaderdagen}}</p>
                 </div>
             </div>
 
@@ -102,7 +102,7 @@
                 </div>
                 <div class="bio__extra__text">
                     <p class="bio__extra__text__text">Gewenste uren</p>
-                    <p class="bio__extra__text__title">{{$agent->uren}}</p>
+                    <p class="bio__extra__text__title">{{$agent->agent->uren}}</p>
                 </div>
             </div>
 

@@ -70,7 +70,7 @@
     border-radius: 20px;
     background-color: white;
 
-    display: none; /* MOET NORMAAL OP FLEX STAAN */
+    display: flex; /* MOET NORMAAL OP FLEX STAAN */
     flex-direction: column;
 }
 
@@ -99,6 +99,7 @@
 .chat__list__heading__profile {
     height: 40px;
     margin-right: 10px;
+    border-radius: 50%;
 }
 
 .chat__list__heading__new-message {
@@ -147,6 +148,7 @@
     padding: 15px;
     cursor: pointer;
     transition: background-color .2s ease-in;
+    text-decoration: none;
 }
 
 .chat__list__person:hover {
@@ -170,6 +172,7 @@
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
+    border-radius:50%;
 }
 
 .chat__list__name {
@@ -234,6 +237,7 @@
     padding: 10px;
     border-radius: 15px;
     line-height: 24px;
+    flex-direction: column;
 }
 
 .chat__message--from {
@@ -287,6 +291,35 @@
     height: 100%;
 }
 
+.chat__attach__img{
+    width:50%;
+    margin-top: 10px;
+}
+
+.chat__attach__down{
+    text-decoration: none;
+    color: $white;
+}
+
+.chat__detail__send-message img{
+        width: 25px;
+        position: relative;
+        left: -160%;
+        top: 10px;
+}
+
+.chat__detail__send-message img:hover{
+    cursor:pointer;
+}
+
+.chat__container--mob{
+    display: flex;
+}
+
+.chat__container--desk{
+    display:none;
+}
+
 @media screen and (min-width: 1000px) {
 
     .chat__button__container {
@@ -308,6 +341,21 @@
 
     .chat__detail__heading {
         border-radius: 0 20px 0 0;
+    }
+
+    .chat__container--desk{
+        display:flex;
+    }
+
+    .chat__container--mob{
+        display: none;
+    }
+
+    .chat__detail__send-message img{
+        width: 25px;
+        position: relative;
+        left: -160%;
+        top: 10px;
     }
 
 }

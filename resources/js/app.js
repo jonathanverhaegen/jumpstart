@@ -443,4 +443,13 @@ if(addPostBtn !== null){
         document.querySelector('.addPost').style.display = "flex";
     })
 }
+
+//settings avatar update
+let formAvatar = document.querySelector('.form--updateAvatar');
+if(formAvatar !== null){
+    let input = formAvatar.querySelector('.avatar');
+    input.addEventListener('change', (e) => {
+        formAvatar.submit();
+    })
+}
         

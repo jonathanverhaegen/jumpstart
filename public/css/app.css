@@ -3312,6 +3312,9 @@ input.pass__sz__ {
 
 .settings__detail__profile-picture img {
   align-self: flex-start;
+  width: 75px;
+  border-radius: 50%;
+  height: 75px;
 }
 
 .settings__detail__profile-picture__name {

@@ -34,4 +34,41 @@ class ProfileController extends Controller
         return redirect('/instellingen');
 
     }
+
+    public function updateProfile(Request $request){
+        $user = Auth::user();
+        if(!empty($user->company)){
+            $credentials = $request->validate([
+                'naam' => 'required',
+                'email' => 'required|email',
+                'bedrijfsnaam' => 'required'
+            ]);
+
+            $user->name = $request->input('naam');
+            $user->email = $request->input('email');
+            $user->bio = $request->input('bio');
+            $user->save();
+
+            $company = $user->company;
+            $company->name = $request->input('bedrijfsnaam');
+            $company->phone = $request->input('telefoon');
+            $company->save();
+
+            $request->session()->flash('success', 'Profiel is bijgewerkt');
+            return redirect('/instellingen');
+        }else{
+            $credentials = $request->validate([
+                'naam' => 'required',
+                'email' => 'required|email',
+            ]);
+
+            $user->name = $request->input('naam');
+            $user->email = $request->input('email');
+            $user->bio = $request->input('bio');
+            $user->save();
+
+            $request->session()->flash('success', 'Profiel is bijgewerkt');
+            return redirect('/instellingen');
+        }
+    }
 }

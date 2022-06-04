@@ -109,6 +109,7 @@ Route::group(['middleware' => ['auth']], function() {
     //routes van de instellingen
     Route::get('/instellingen', [SettingsController::class, "settings"]);
     Route::post('/profile/updateAvatar', [ProfileController::class, "updateAvatar"]);
+    Route::post('/profile/update', [ProfileController::class, "updateProfile"]);
     
 
     //routes van het profiel

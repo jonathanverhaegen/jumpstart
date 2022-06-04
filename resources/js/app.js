@@ -444,6 +444,14 @@ if(addPostBtn !== null){
     })
 }
 
+
+//settings avatar update
+let formAvatar = document.querySelector('.form--updateAvatar');
+if(formAvatar !== null){
+    let input = formAvatar.querySelector('.avatar');
+    input.addEventListener('change', (e) => {
+        formAvatar.submit();
+
 //zoekfunctie chat desktop
 
 let searchBarDesk = document.querySelector('.chat__container--desk');
@@ -489,6 +497,7 @@ if(searchBarMob !== null){
                 chat.style.display = "grid";
             }
         })
+
     })
 }
         

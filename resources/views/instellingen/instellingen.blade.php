@@ -84,30 +84,38 @@
 
             <div class="settings__detail">
                 <div class="settings__detail__profile-picture">
-                    <img src="./img/Laurens.png" alt="Profielfoto">
+                    <img src="/attachments/{{$user->avatar}}" alt="Profielfoto">
                     <div class="settings__detail__profile-picture__name">
-                        <span class="settings__user-name">Kelly Smith</span>
+                        <span class="settings__user-name">{{$user->name}}</span>
+                        <form action="/profile/updateAvatar" method="post" class="form--updateAvatar" enctype="multipart/form-data">
+                            @csrf
                         <label class="settings__upload-profile-picture"><input class="avatar" name="avatar" type="file" accept=".png, .jpg, .jpeg"/>Profielfoto wijzigen</label>
+                        </form>
                     </div>
                 </div>
 
                 <div class="settings__detail__info">
-                    <form action="#" method="POST">
-                        
-                        <label for="name">Naam</label>
-                        <input type="text" name="name" id="name" class="settings__detail__info__input" value="Kelly Smith">
+                    <form action="/profile/update" method="POST">
+                        @csrf 
 
+                        <label for="name">Naam</label>
+                        <input type="text" name="naam" id="name" class="settings__detail__info__input" value="{{$user->name}}">
+
+                        @if(!empty($user->company))
                         <label for="company-name">Bedrijfsnaam</label>
-                        <input type="text" name="company-name" id="company-name" class="settings__detail__info__input" value="Kelly Smith Design">
+                        <input type="text" name="bedrijfsnaam" id="company-name" class="settings__detail__info__input" value="{{$user->company->name}}">
+                        @endif
 
                         <label for="email">E-mailadres</label>
-                        <input type="email" name="email" id="email" class="settings__detail__info__input" value="kelly.smith@gmail.com">
+                        <input type="email" name="email" id="email" class="settings__detail__info__input" value="{{$user->email}}">
 
+                        @if(!empty($user->company))
                         <label for="phone">Telefoonnummer</label>
-                        <input type="text" name="phone" id="phone" class="settings__detail__info__input" value="0488 17 57 41">
+                        <input type="text" name="telefoon" id="phone" class="settings__detail__info__input" value="{{$user->company->phone}}">
+                        @endif
 
                         <label for="bio">Bio</label>
-                        <textarea name="bio" id="bio" cols="30" rows="8">Kelly Smith Design is een jong bedrijf dat draait rond diversiteit, dit is terug te vinden in de designs. De focus van KSD ligt op branding en rebranding van merken en producten. Neem gerust een kijkje op Behance voor voorbeelden.</textarea>
+                        <textarea name="bio" id="bio" cols="30" rows="8">{{$user->bio}}</textarea>
 
                         <input type="submit" value="Verzenden">
 

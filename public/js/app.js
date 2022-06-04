@@ -2483,6 +2483,18 @@ if (addPostBtn !== null) {
     e.preventDefault();
     document.querySelector('.addPost').style.display = "flex";
   });
+
+} //settings avatar update
+
+
+var formAvatar = document.querySelector('.form--updateAvatar');
+
+if (formAvatar !== null) {
+  var _input = formAvatar.querySelector('.avatar');
+
+  _input.addEventListener('change', function (e) {
+    formAvatar.submit();
+
 } //zoekfunctie chat desktop
 
 
@@ -2529,6 +2541,7 @@ if (searchBarMob !== null) {
         chat.style.display = "grid";
       }
     });
+
   });
 }
 

@@ -60,16 +60,14 @@
                         @csrf 
 
                         <label for="oud-wachtwoord">Oud wachtwoord</label>
-                        <input type="password" name="oud-wachtwoord" id="name" class="settings__detail__info__input" value="">
-
-                        
+                        <input type="password" name="oud-wachtwoord" id="name" class="settings__detail__info__input" placeholder="Oud wachtwoord">
+                    
                         <label for="nieuw-wachtwoord">Nieuw wachtwoord</label>
-                        <input type="password" name="nieuw-wachtwoord" id="company-name" class="settings__detail__info__input" value="">
+                        <input type="password" name="nieuw-wachtwoord" id="company-name" class="settings__detail__info__input" placeholder="Nieuw wachtwoord">
                         
-
                         <label for="nieuw-wachtwoord_confirmation">Bevestig nieuw wachtwoord</label>
-                        <input type="password" name="nieuw-wachtwoord_confirmation" id="email" class="settings__detail__info__input" value="">
-
+                        <input type="password" name="nieuw-wachtwoord_confirmation" id="email" class="settings__detail__info__input" placeholder="Bevestig nieuw wachtwoord">
+                        
                         <input type="submit" value="Verzenden">
 
                     </form>

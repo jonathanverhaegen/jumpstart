@@ -84,10 +84,17 @@ class ProfileController extends Controller
         ]);
 
         $old = $request->input('oud-wachtwoord');
+        $new = $request->input('nieuw-wachtwoord');
         
 
         if(Hash::check($old, Auth::user()->password)){
-            dd('mag');
+            $user = Auth::user();
+            $user->password = Hash::make($new);
+            $user->save();
+
+            $request->session()->flash('success', 'Wachtwoord opgeslagen');
+            return redirect('/instellingen/wachtwoord-wijzigen');
+
         }else{
             $request->session()->flash('error', 'Oud-wachtwoord is niet correct');
             return redirect('/instellingen/wachtwoord-wijzigen');

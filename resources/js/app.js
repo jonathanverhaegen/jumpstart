@@ -451,7 +451,8 @@ if(formAvatar !== null){
     let input = formAvatar.querySelector('.avatar');
     input.addEventListener('change', (e) => {
         formAvatar.submit();
-
+    })
+}
 //zoekfunctie chat desktop
 
 let searchBarDesk = document.querySelector('.chat__container--desk');

@@ -76,10 +76,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/check/inputStage4', [RoadmapController::class, "checkInputStage4"]);
     Route::post('/check/inputStage5', [RoadmapController::class, "checkInputStage5"]);
     Route::post('/check/inputStage7', [RoadmapController::class, "checkInputStage7"]);
-    // Route::post('/check/stage5/start', [RoadmapController::class, "checkStart"]);
-    // Route::post('/check/stage5/adress', [RoadmapController::class, "checkAdress"]);
-    // Route::post('/check/stage5/regime', [RoadmapController::class, "checkRegime"]);
-    // Route::post('/check/stage5/rekening', [RoadmapController::class, "checkRekening"]);
     Route::post('/check/stage6/handtekening', [RoadmapController::class, "checkHandtekening"]);
     Route::post('/check/stage6/bevestig', [RoadmapController::class, "checkBevestig"]);
     Route::post('/check/number', [RoadmapController::class, "checkNumber"]);
@@ -99,6 +95,10 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de chat
     Route::get('/chat', [ChatController::class, "chat"]);
+    Route::get('/chat/{id}', [ChatController::class, "mobileChat"]);
+    Route::get('/chat/addConversation/{id}', [ChatController::class, 'addChatView']);
+    Route::post('/add/chat', [ChatController::class, "addChat"]);
+    
 
     //routes vab de contacten
     Route::get('/contacten', [ContactController::class, "contacten"]);
@@ -108,10 +108,17 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de instellingen
     Route::get('/instellingen', [SettingsController::class, "settings"]);
+    Route::post('/profile/updateAvatar', [ProfileController::class, "updateAvatar"]);
+    Route::post('/profile/update', [ProfileController::class, "updateProfile"]);
+    Route::post('/profile/updatePassword', [ProfileController::class, "updatePassword"]);
+    
+    Route::get('/instellingen/wachtwoord-wijzigen', [ProfileController::class, "updatePasswordView"]);
+
     Route::get('/instellingen-mobiel', [SettingsController::class, "settingsMobile"]);
     Route::get('/instellingen/statuut-stopzetten/1', [SettingsController::class, "settingsStatuutStopzetten1"]);
     Route::get('/instellingen/statuut-stopzetten/2', [SettingsController::class, "settingsStatuutStopzetten2"]);
     Route::get('/instellingen/statuut-stopzetten/3', [SettingsController::class, "settingsStatuutStopzetten3"]);
+
 
     //routes van het profiel
     Route::get('/profiel', [ProfileController::class, "profile"]);

@@ -64,9 +64,9 @@
                 <h1 class="group__title">{{$group->name}}</h1>
             </div>
             <div class="group__blok">
-                <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
+                <img src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" class="person">
                 @foreach($users as $user)
-                    <img src="/img/{{$user->avatar}}" alt="{{$user->name}}" class="person">
+                    <a class="person" href="/chat/addConversation/{{$user->id}}"><img src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" ></a>
                  @endforeach
             </div>
         </div>
@@ -112,7 +112,7 @@
         @foreach($posts as $post)
         <div class="post">
             <div class="post__user">
-                <img class="post__user__img" src="/img/default.png" alt="">
+                <img class="post__user__img" src="/img/{{$post->user->avatar}}.png" alt="">
                 <div class="post__user__info">
                     <p class="post__user__info__name">{{$post->user->name}}</p>
                     <p class="post__user__info__date">{{ date('d/m/Y H:i:s', strtotime($post->created_at))}}</p>

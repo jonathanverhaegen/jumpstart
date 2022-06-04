@@ -17,17 +17,37 @@ class UserSeeder extends Seeder
     public function run()
     {
         $user = new User();
-        $user->name = "Verhaegen Jonathan";
-        $user->birth_date = "1998-02-18";
-        $user->email = "r0670495@student.thomasmore.be";
+        $user->name = "Sarah Van Eynde";
+        $user->email = "sarah@hotmail.com";
         $user->password = Hash::make("Test12345");
-        $user->avatar = "person1.png";
-        $user->bio = "";
-        $user->isAgent = 0;
+        $user->bio = "Get the real shit done! De stap zetten naar ondernemerschap is groots. Voor de durvers, voor de doeners, voor de dromers. You’re not alone in this! ICE Cube ondersteunt, we bieden een schouder, we bouwen een tribe, we bieden contacten aan. Kom op de koffie, we kijken er naar uit je te ontmoeten.";
+        $user->avatar = "sarah.png";
+        $user->isAgent = 1;
+        $user->birth_date = "1998-02-18";
         $user->save();
 
+        $userA = new User();
+        $userA->name = "Annelies Leynen";
+        $userA->email = "annelies@hotmail.com";
+        $userA->password = Hash::make("Test12345");
+        $userA->bio = "Get the real shit done! De stap zetten naar ondernemerschap is groots. Voor de durvers, voor de doeners, voor de dromers. You’re not alone in this! ICE Cube ondersteunt, we bieden een schouder, we bouwen een tribe, we bieden contacten aan. Kom op de koffie, we kijken er naar uit je te ontmoeten.";
+        $userA->avatar = "annelies.png";
+        $userA->isAgent = 1;
+        $userA->birth_date = "1998-02-18";
+        $userA->save();
+
+        $user3 = new User();
+        $user3->name = "Verhaegen Jonathan";
+        $user3->birth_date = "1998-02-18";
+        $user3->email = "r0670495@student.thomasmore.be";
+        $user3->password = Hash::make("Test12345");
+        $user3->avatar = "person1.png";
+        $user3->bio = "";
+        $user3->isAgent = 0;
+        $user3->save();
+
         $roadmap = new Roadmap();
-        $roadmap->user_id = $user->id;
+        $roadmap->user_id = $user3->id;
         $roadmap->stage = 1;
         $roadmap->check = 0;
         $roadmap->extra = 0;

@@ -4,8 +4,6 @@
 
 @section('content')
 
-
-
     <div class="container">
 
     <div class="header__container">
@@ -53,31 +51,31 @@
         @endcomponent
         @endif
 
-        <div class="settings__container">
+        <div class="settings__container__mobile">
 
-            <div class="settings__list">
-                <a href="#" class="settings__list__item settings__list__item--active">
+            <div class="settings__list__mobile">
+                <a href="/instellingen" class="settings__list__item__mobile">
                     Profiel bewerken
                 </a>
-                <a href="/instellingen/wachtwoord-wijzigen" class="settings__list__item">
+                <a href="/instellingen/wachtwoord-wijzigen" class="settings__list__item__mobile">
                     Wachtwoord wijzigen
                 </a>
-                <a href="#" class="settings__list__item">
+                <a href="#" class="settings__list__item__mobile">
                     Links en websites
                 </a>
-                <a href="#" class="settings__list__item">
+                <a href="#" class="settings__list__item__mobile">
                     Notificaties
                 </a>
-                <a href="#" class="settings__list__item">
+                <a href="#" class="settings__list__item__mobile">
                     Privacy en beveiliging
                 </a>
-                <a href="/instellingen/statuut" class="settings__list__item">
+                <a href="/instellingen/statuut-stopzetten/1" class="settings__list__item__mobile">
                     Statuut
                 </a>
-                <a href="#" class="settings__list__item">
+                <a href="#" class="settings__list__item__mobile">
                     Contact
                 </a>
-                <a href="#" class="settings__list__item">
+                <a href="#" class="settings__list__item__mobile">
                     Help
                 </a>
             </div>

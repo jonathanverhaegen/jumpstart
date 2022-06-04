@@ -670,10 +670,39 @@ class RoadmapController extends Controller
                 break;
             
         }
+    }
 
+    public function checkStageStop(Request $request){
+        //checken of gebruiker al mag checken
+        $roadmap = Auth::user()->roadmap;
+        
+        //credentials checken
+        $credentials = $request->validate([
+            'stage' => 'required'
+        ]);
 
+        $stage = intval($request->input('stage'));
+        
+        //volgende stage opslaan
+        $roadmap = Auth::user()->roadmap;
 
+        if($roadmap->stage === 5){
+            $request->session()->flash('success', 'Je hebt je statuut succesvol stopgezet');
+            return redirect('/roadmap');
+        }
 
+        if($roadmap->stage === $stage){
+            $roadmap->stage = $stage + 1;
+            $roadmap->check = 0;
+            $roadmap->extra = 0;
+            $roadmap->save();
+            $nextStage = $stage + 1;
+            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
+            return redirect('/roadmap');
+        }else{
+            $request->session()->flash('message', 'Deze stap is al gechecked');
+            return redirect('/roadmap');
+        }
     }
 
     

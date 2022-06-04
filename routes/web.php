@@ -129,6 +129,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes statuut stoppen
     Route::post('/statuut/stop/stap1', [RoadmapController::class, "stopStap1"]);
+    Route::post('/check/stage/stop', [RoadmapController::class, "checkStageStop"]);
 
     Route::post('/2fa', function () {
         return redirect(route('dashboard'));

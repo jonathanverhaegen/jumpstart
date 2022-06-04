@@ -64,17 +64,14 @@ class SettingsController extends Controller
         $stop->save();
 
         if($source === "icecube"){
-            $this->icecube();
+            return redirect('/contacten/instantie/3');
         }else{
             $this->roadmap();
         }
     }
 
-     function icecube(){
-        dd('naar icecube');
-    }
 
-     function roadmap(){
+    public function roadmap(){
         dd('naar roadmap');
     }
 }

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SettingsController extends Controller
 {
     public function settings(){
-        return view('instellingen/instellingen');
+        $data['user'] = Auth::user();
+        return view('instellingen/instellingen', $data);
     }
 }

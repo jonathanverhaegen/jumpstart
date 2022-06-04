@@ -108,6 +108,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van de instellingen
     Route::get('/instellingen', [SettingsController::class, "settings"]);
+    
 
     //routes van het profiel
     Route::get('/profiel', [ProfileController::class, "profile"]);

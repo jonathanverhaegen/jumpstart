@@ -84,10 +84,12 @@
 
             <div class="settings__detail">
                 <div class="settings__detail__profile-picture">
-                    <img src="./img/Laurens.png" alt="Profielfoto">
+                    <img src="/img/{{$user->avatar}}" alt="Profielfoto">
                     <div class="settings__detail__profile-picture__name">
-                        <span class="settings__user-name">Kelly Smith</span>
+                        <span class="settings__user-name">{{$user->name}}</span>
+                        <form action="/profile/updateAvatar" method="post" class="form--updateAvatar">
                         <label class="settings__upload-profile-picture"><input class="avatar" name="avatar" type="file" accept=".png, .jpg, .jpeg"/>Profielfoto wijzigen</label>
+                        </form>
                     </div>
                 </div>
 

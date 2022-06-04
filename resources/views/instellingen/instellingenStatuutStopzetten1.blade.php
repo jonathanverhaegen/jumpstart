@@ -71,7 +71,7 @@
                 <a href="#" class="settings__list__item">
                     Privacy en beveiliging
                 </a>
-                <a href="/instellingen/statuut-stopzetten" class="settings__list__item settings__list__item--active">
+                <a href="/instellingen/statuut-stopzetten/1" class="settings__list__item settings__list__item--active">
                     Statuut
                 </a>
                 <a href="#" class="settings__list__item">

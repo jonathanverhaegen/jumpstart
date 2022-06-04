@@ -66,12 +66,19 @@ class SettingsController extends Controller
         if($source === "icecube"){
             return redirect('/contacten/instantie/3');
         }else{
-            $this->roadmap();
+
+            $roadmap = Auth::user()->roadmap;
+            $roadmap->stage = 1;
+            $roadmap->check = 0;
+            $roadmap->extra = 0;
+            $roadmap->stop = 1;
+            $roadmap->save();
+            
+            return redirect('/roadmap');
+
         }
     }
 
 
-    public function roadmap(){
-        dd('naar roadmap');
-    }
+    
 }

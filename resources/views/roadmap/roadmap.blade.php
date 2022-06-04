@@ -56,6 +56,8 @@
         <div class="roadmap__container">
             <div class="roadmap">
 
+            @if($roadmap->stop === 0)
+
                 <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
                     <p class="roadmap__stage__title roadmap__stage__title--left">Bedrijfsgegevens</p>
                     <p class="roadmap__stage__number">1</p>
@@ -111,10 +113,97 @@
                 <a class="roadmap__back" href="">
                     <img class="backBtn" src="{{asset('/img/knop3.png')}}" alt="">
                 </a>
+                @endif
+
+                @if($roadmap->stop === 1)
+
+                    <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
+                        <p class="roadmap__stage__title roadmap__stage__title--left">Wat wil je doen</p>
+                        <p class="roadmap__stage__number">1</p>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon1">
+                    </a>
+
+                    <a @if($roadmap->stage > 1) href="" data-stage="2" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2">
+                        <div class="roadmap__stage__number">2</div>
+                        <div class="roadmap__stage__title roadmap__stage__title--right">Zet je onderneming stop</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon2">
+                    </a>
+
+                    <a @if($roadmap->stage > 2) href="" data-stage="3" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--3">
+                        <div class="roadmap__stage__title roadmap__stage__title--left">Stopzetten van je btw-nummer</div>
+                        <div class="roadmap__stage__number">3</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon3">
+                    </a>
+
+                    <a @if($roadmap->stage > 3) href="" data-stage="4" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--4">
+                        <div class="roadmap__stage__number">4</div>
+                        <div class="roadmap__stage__title roadmap__stage__title--right">Zet je statuut als zelfstandige stop</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon4">
+                    </a>
+
+                    <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--5">
+                        <div class="roadmap__stage__title roadmap__stage__title--left">Licht je bank in</div>
+                        <div class="roadmap__stage__number">5</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5">
+                    </a>
+
+                @endif
 
             </div>
         </div>
 
+        @if($roadmap->stop === 1)
+            <div class="stage__container stage__container--1">
+                <div class="stage__header">
+                    <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
+                    <div class="stage__header__stap">Stap 1</div>
+                    <div class="stage__header__extra"></div>
+                </div>
+                <div class="stage">
+                    <p class="stage__title">Wat wil je doen met je onderneming</p>
+                    <p class="stage__text">Vertel ons hieronder wat je met je onderneming wilt doen</p>
+                </div>
+                    
+                @if($roadmap->stage === 1 && $roadmap->check === 0 && $roadmap->extra === 0)
+                    <form class="form--stage" action="/statuut/stop/stap1" method="post">
+                    @csrf
+                        <div class="form--stage__field__radio">
+                            <input type="radio" name="waarom" value="stop"><label for="bevestig">Ik wil stoppen met mijn onderneming</label>
+                        </div>
+                        <div class="form--stage__field__radio">
+                            <input type="radio" name="waarom" value="hoofdberoep"><label for="bevestig">Ik wil van mijn onerneming mijn hoofdberoep maken</label>  
+                        </div>
+                        <div class="form--stage__field__radio">
+                            <input type="radio" name="waarom" value="bijberoep"><label for="bevestig">Ik wil van mijn onderneming mijn bijberoep maken</label>
+                        </div>
+
+                        <button class="stage__form__check__btn" type="submit">Checken</button>
+
+                    </form>
+                @endif
+
+                @if($roadmap->stage === 1 && $roadmap->extra === 1)
+                    <p>Hieronder vind je een link</p>
+                @endif
+
+                @if($roadmap->stage === 1 && $roadmap->extra === 2)
+                    <p>Hieronder vind je een link</p>
+                @endif
+
+                @if($roadmap->stage === 1 && $roadmap->check === 1)
+                    <form class="stage__check" action="/check/stage" method="post">
+                    @csrf
+                        <div class="stage__check__btn">
+                            <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
+                            <input type="hidden" name="stage" value="1">
+                        </div>
+                    </form>
+                @endif
+            </div>
+
+        @endif
+
+        @if($roadmap->stop === 0)
         <div class="stage__container stage__container--1">
             <div class="stage__header">
                     <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
@@ -587,6 +676,9 @@
                 <p class="stage__text">Het is veel informatie, maar mocht je nog vragen hebben, twijfel dan niet om links in het menu op “Contacten” te klikken en iemand om advies te vragen. Succes!</p>
                 </div>
         </div>
+
+        @endif
+
     </div>
 
     </div>

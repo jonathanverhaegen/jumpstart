@@ -639,5 +639,42 @@ class RoadmapController extends Controller
         return redirect('/roadmap');
     }
 
+    public function stopStap1(Request $request){
+        $credentials = $request->validate([
+            'waarom' => 'required'
+        ]);
+        
+        $why = $request->input('waarom');
+
+        switch($why){
+            case "stop":
+                $roadmap = Auth::user()->roadmap;
+                $roadmap->check = 1;
+                $roadmap->save();
+                $request->session()->flash('success', 'Je kan stap 1 nu laten checken');
+                return redirect('/roadmap');
+                break;
+            case "hoofdberoep":
+                $roadmap = Auth::user()->roadmap;
+                $roadmap->extra = 1;
+                $roadmap->save();
+                $request->session()->flash('success', 'Bij stap1 vind je alle informatie');
+                return redirect('/roadmap');
+                break;
+            case "bijberoep":
+                $roadmap = Auth::user()->roadmap;
+                $roadmap->extra = 2;
+                $roadmap->save();
+                $request->session()->flash('success', 'Bij stap1 vind je alle informatie');
+                return redirect('/roadmap');
+                break;
+            
+        }
+
+
+
+
+    }
+
     
 }

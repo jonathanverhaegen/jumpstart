@@ -127,6 +127,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/profiel', [ProfileController::class, "profile"]);
     Route::get('/profiel/edit', [ProfileController::class, "editProfile"]);
 
+    //routes statuut stoppen
+    Route::post('/statuut/stop/stap1', [RoadmapController::class, "stopStap1"]);
+
     Route::post('/2fa', function () {
         return redirect(route('dashboard'));
         })->name('2fa');

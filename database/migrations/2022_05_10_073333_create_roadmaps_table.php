@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('check');
             $table->integer('extra')->nullable();
             $table->string('regime')->nullable();
+            $table->boolean('stop')->default(0);
             $table->timestamps();
         });
     }

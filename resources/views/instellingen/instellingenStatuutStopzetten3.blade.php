@@ -53,7 +53,7 @@
         @endcomponent
         @endif
 
-        <div class="settings__container">
+        <div class="settings__container settings__container__status">
 
             <div class="settings__list">
                 <a href="/instellingen" class="settings__list__item">
@@ -82,11 +82,20 @@
                 </a>
             </div>
 
+            <div class="settings__second__list--mobile">
+                <a href="#" class="settings__second__list__item">
+                    Statuut aanpassen
+                </a>
+                <a href="/instellingen/statuut-stopzetten/1" class="settings__second__list__item settings__second__list__item--active">
+                    Statuut stopzetten
+                </a>
+            </div>
+
             <div class="settings__second__list">
                 <a href="#" class="settings__second__list__item">
                     Statuut aanpassen
                 </a>
-                <a href="/instellingen/statuut-stopzetten" class="settings__second__list__item settings__second__list__item--active">
+                <a href="/instellingen/statuut-stopzetten/1" class="settings__second__list__item settings__second__list__item--active">
                     Statuut stopzetten
                 </a>
             </div>

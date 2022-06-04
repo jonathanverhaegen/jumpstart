@@ -110,7 +110,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/instellingen', [SettingsController::class, "settings"]);
     Route::post('/profile/updateAvatar', [ProfileController::class, "updateAvatar"]);
     Route::post('/profile/update', [ProfileController::class, "updateProfile"]);
+    Route::post('/profile/updatePassword', [ProfileController::class, "updatePassword"]);
     
+    Route::get('/instellingen/wachtwoord-wijzigen', [ProfileController::class, "updatePasswordView"]);
 
     Route::get('/instellingen-mobiel', [SettingsController::class, "settingsMobile"]);
 

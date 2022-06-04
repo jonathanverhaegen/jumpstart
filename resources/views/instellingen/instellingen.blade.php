@@ -71,9 +71,11 @@
                 <a href="#" class="settings__list__item">
                     Privacy en beveiliging
                 </a>
+                @if(!empty(Auth::user()->roadmap))
                 <a href="/instellingen/statuut-stopzetten/1" class="settings__list__item">
                     Statuut
                 </a>
+                @endif
                 <a href="#" class="settings__list__item">
                     Contact
                 </a>

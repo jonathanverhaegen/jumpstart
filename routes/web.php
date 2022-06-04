@@ -116,13 +116,20 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/instellingen-mobiel', [SettingsController::class, "settingsMobile"]);
     Route::get('/instellingen/statuut-stopzetten/1', [SettingsController::class, "settingsStatuutStopzetten1"]);
-    Route::get('/instellingen/statuut-stopzetten/2', [SettingsController::class, "settingsStatuutStopzetten2"]);
-    Route::get('/instellingen/statuut-stopzetten/3', [SettingsController::class, "settingsStatuutStopzetten3"]);
+    Route::post('/instellingen/statuut-stopzetten/2', [SettingsController::class, "settingsStatuutStopzetten2"]);
+    Route::post('/instellingen/statuut-stopzetten/3', [SettingsController::class, "settingsStatuutStopzetten3"]);
+
+    //statuut stopzetten
+    Route::post('/statuut/stopzetten', [SettingsController::class, "statuutStopzetten"]);
 
 
     //routes van het profiel
     Route::get('/profiel', [ProfileController::class, "profile"]);
     Route::get('/profiel/edit', [ProfileController::class, "editProfile"]);
+
+    //routes statuut stoppen
+    Route::post('/statuut/stop/stap1', [RoadmapController::class, "stopStap1"]);
+    Route::post('/check/stage/stop', [RoadmapController::class, "checkStageStop"]);
 
     Route::post('/2fa', function () {
         return redirect(route('dashboard'));

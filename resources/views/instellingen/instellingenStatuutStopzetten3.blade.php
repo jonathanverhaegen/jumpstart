@@ -101,7 +101,8 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
-                <form action="#" method="GET" class="settings__status-form">
+                <form action="/statuut/stopzetten" method="POST" class="settings__status-form">
+                    @csrf
                     <h3>Heb je al eens gesproken met iemand van ICE CUBE?</h3>
                     <div class="settings__status-form__radio">
                         <input type="radio" id="option1" name="reason" value="Ja, maar het heeft niet geholpen.">
@@ -115,9 +116,11 @@
                         <input type="radio" id="option3" name="reason" value="Nee, maar ik wil echt stoppen.">
                         <label for="reason3">Nee, maar ik wil echt stoppen.</label>
                     </div>
+                    <input type="hidden" class="source" name="source" value="">
+
                     <div class="settings__status-form__buttons">
-                        <input type="submit" value="ICE CUBE contacteren">
-                        <input type="submit" value="Stopzetting starten">
+                        <input class="submit1" type="submit" value="ICE CUBE contacteren">
+                        <input class="submit2" type="submit" value="Stopzetting starten">
                     </div>
                 </form>
             </div>

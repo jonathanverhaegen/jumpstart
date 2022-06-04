@@ -22,7 +22,16 @@ class ContactController extends Controller
 
     public function instantieDetail($id){
         $data['instanties'] = Instantie::where('id', $id)->get();
-        $data['agents'] = Agent::where('instantie_id', $id)->get();
+        $users = User::where('isAgent', 1)->get();
+        foreach($users as $u){
+            if($u->agent->instantie_id === intval($id)){
+                $agents[] = $u;
+            }
+        }
+        if(empty($agents)){
+            $agents = "";
+        }
+        $data['agents'] = $agents;
         return view('contacten/instantie', $data);
     }
 }

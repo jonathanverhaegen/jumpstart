@@ -101,7 +101,8 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
-                <form action="/instellingen/statuut-stopzetten/3" method="GET" class="settings__status-form">
+                <form action="/instellingen/statuut-stopzetten/3" method="POST" class="settings__status-form">
+                    @csrf
                     <h3>Waarom wil je stoppen met ondernemen?</h3>
                     <div class="settings__status-form__radio">
                         <input type="radio" id="option1" name="reason" value="Mijn onderneming heeft minder succes dan verwacht.">

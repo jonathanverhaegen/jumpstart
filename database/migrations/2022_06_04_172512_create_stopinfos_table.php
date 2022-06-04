@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateStopinfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roadmaps', function (Blueprint $table) {
+        Schema::create('stopinfos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->integer('stage');
-            $table->boolean('check');
-            $table->integer('extra')->nullable();
-            $table->string('regime')->nullable();
-            $table->boolean('stop')->default(0);
+            $table->string('reason')->nullable();
+            $table->string('why')->nullable();
+            $table->string('icecube')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roadmaps_migration');
+        Schema::dropIfExists('stopinfos');
     }
-};
+}

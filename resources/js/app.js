@@ -501,4 +501,25 @@ if(searchBarMob !== null){
 
     })
 }
+
+//statuut stopzetten
+
+let statuutForm = document.querySelector('.settings__status-form');
+if(statuutForm !== null){
+    let input1 = statuutForm.querySelector('.submit1');
+    let input2 = statuutForm.querySelector('.submit2');
+    let hiddenValue = statuutForm.querySelector('.source');
+
+    input1.addEventListener('click', (e) => {
+        e.preventDefault();
+        hiddenValue.value = "icecube";
+        statuutForm.submit();
+    })
+
+    input2.addEventListener('click', (e) => {
+        e.preventDefault();
+        hiddenValue.value = "stop";
+        statuutForm.submit();
+    })
+}
         

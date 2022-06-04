@@ -56,6 +56,8 @@
         <div class="roadmap__container">
             <div class="roadmap">
 
+            @if($roadmap->stop === 0)
+
                 <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
                     <p class="roadmap__stage__title roadmap__stage__title--left">Bedrijfsgegevens</p>
                     <p class="roadmap__stage__number">1</p>
@@ -111,10 +113,185 @@
                 <a class="roadmap__back" href="">
                     <img class="backBtn" src="{{asset('/img/knop3.png')}}" alt="">
                 </a>
+                @endif
+
+                @if($roadmap->stop === 1)
+
+                    <a href="" data-stage="1" class="roadmap__stage roadmap__stage--1">
+                        <p class="roadmap__stage__title roadmap__stage__title--left">Wat wil je doen</p>
+                        <p class="roadmap__stage__number">1</p>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon1">
+                    </a>
+
+                    <a @if($roadmap->stage > 1) href="" data-stage="2" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2">
+                        <div class="roadmap__stage__number">2</div>
+                        <div class="roadmap__stage__title roadmap__stage__title--right">Zet je onderneming stop</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon2">
+                    </a>
+
+                    <a @if($roadmap->stage > 2) href="" data-stage="3" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--3">
+                        <div class="roadmap__stage__title roadmap__stage__title--left">Stopzetten van je btw-nummer</div>
+                        <div class="roadmap__stage__number">3</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon3">
+                    </a>
+
+                    <a @if($roadmap->stage > 3) href="" data-stage="4" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--4">
+                        <div class="roadmap__stage__number">4</div>
+                        <div class="roadmap__stage__title roadmap__stage__title--right">Zet je statuut als zelfstandige stop</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon4">
+                    </a>
+
+                    <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--5">
+                        <div class="roadmap__stage__title roadmap__stage__title--left">Licht je bank in</div>
+                        <div class="roadmap__stage__number">5</div>
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5">
+                    </a>
+
+                @endif
 
             </div>
         </div>
 
+        @if($roadmap->stop === 1)
+            <div class="stage__container stage__container--1">
+                <div class="stage__header">
+                    <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
+                    <div class="stage__header__stap">Stap 1</div>
+                    <div class="stage__header__extra"></div>
+                </div>
+                <div class="stage">
+                    <p class="stage__title">Wat wil je doen met je onderneming</p>
+                    <p class="stage__text">Vertel ons hieronder wat je met je onderneming wilt doen</p>
+                </div>
+                    
+                @if($roadmap->stage === 1 && $roadmap->check === 0 && $roadmap->extra === 0)
+                    <form class="form--stage" action="/statuut/stop/stap1" method="post">
+                    @csrf
+                        <div class="form--stage__field__radio">
+                            <input type="radio" name="waarom" value="stop"><label for="bevestig">Ik wil stoppen met mijn onderneming</label>
+                        </div>
+                        <div class="form--stage__field__radio">
+                            <input type="radio" name="waarom" value="hoofdberoep"><label for="bevestig">Ik wil van mijn onerneming mijn hoofdberoep maken</label>  
+                        </div>
+                        <div class="form--stage__field__radio">
+                            <input type="radio" name="waarom" value="bijberoep"><label for="bevestig">Ik wil van mijn onderneming mijn bijberoep maken</label>
+                        </div>
+
+                        <button class="stage__form__check__btn" type="submit">Checken</button>
+
+                    </form>
+                @endif
+
+                @if($roadmap->stage === 1 && $roadmap->extra === 1)
+                    <p>Hieronder vind je een link</p>
+                @endif
+
+                @if($roadmap->stage === 1 && $roadmap->extra === 2)
+                    <p>Hieronder vind je een link</p>
+                @endif
+
+                @if($roadmap->stage === 1 && $roadmap->check === 1)
+                    <form class="stage__check" action="/check/stage/stop" method="post">
+                    @csrf
+                        <div class="stage__check__btn">
+                            <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
+                            <input type="hidden" name="stage" value="1">
+                        </div>
+                    </form>
+                @endif
+            </div>
+
+            <div class="stage__container stage__container--2">
+            <div class="stage__header">
+                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
+                <div class="stage__header__stap">Stap 2</div>
+                <div class="stage__header__extra"></div>
+            </div>
+            <div class="stage">
+                <p class="stage__title">Zet je onderneming stop in de Kruispuntbank van Ondernemingen</p>
+                <p class="stage__text">Het stopzetten van je onderneming is eigenlijk bijna even eenvoudig als het starten van je onderneming: bij de start schrijf je in, bij de stop schrijf je je uit. Alle gegevens die bij het begin van je zelfstandige avontuur in de KBO werden genoteerd, zet je nu stop: activiteiten, vestigingen en bankrekeningnummer. Dit kan je gewoon laten doen door het ondernemingsloket van het sociaal verzekeringsfonds waarbij je bent ingeschreven.</p>
+            </div>
+            @if($roadmap->stage === 2)
+            <form class="stage__check" action="/check/stage/stop" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
+                    <input type="hidden" name="stage" value="2">
+                </div>
+            </form>
+            @endif
+        </div>
+
+        <div class="stage__container stage__container--3">
+            <div class="stage__header">
+                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
+                <div class="stage__header__stap">Stap 3</div>
+                <div class="stage__header__extra"></div>
+            </div>
+            <div class="stage">
+                <p class="stage__title">Stopzetten van je btw-nummer</p>
+                <p class="stage__text">Ook de btw-administratie moet weten dat je onderneming de activiteiten stopzet, zelfs als je gebruik maakt van de vrijstellingsregeling. Dat dient te gebeuren binnen de maand na stopzetting in de KBO, anders krijg je een boete. Na deze stopzetting dien je nog één keer de btw-aangifte in, net als een allerlaatste klantenlisting.</p>
+                <p class="stage__text">Dit kan je heel eenvoudig doen door online het formulier 604C in te vullen op deze link: </br> <a href="https://eservices.minfin.fgov.be/VAT001/" target="_blank">https://eservices.minfin.fgov.be/VAT001/</a></p>
+            </div>
+
+            @if($roadmap->stage === 3)
+            <form class="stage__check" action="/check/stage/stop" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
+                    <input type="hidden" name="stage" value="3">
+                </div>
+            </form>
+            @endif
+        </div>
+
+        <div class="stage__container stage__container--4">
+            <div class="stage__header">
+                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
+                <div class="stage__header__stap">Stap 4</div>
+                <div class="stage__header__extra"></div>
+            </div>
+            <div class="stage">
+                <p class="stage__title">Zet je statuut als zelfstandige stop</p>
+                <p class="stage__text">Stop je als zelfstandige? Dan stopt ook je aansluiting als zelfstandige bij je sociaal verzekeringsfonds. Ook hiervoor kan je eenvoudig contact opnemen met je sociaal verzekeringsfonds. Zij zullen je vragen enkele documenten in te vullen, en zullen op die manier jouw stopzetting in orde brengen</p>
+            </div>
+
+            @if($roadmap->stage === 4)
+            <form class="stage__check" action="/check/stage/stop" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
+                    <input type="hidden" name="stage" value="4">
+                </div>
+            </form>
+            @endif
+        </div>
+
+        <div class="stage__container stage__container--5">
+            <div class="stage__header">
+                <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
+                <div class="stage__header__stap">Stap 5</div>
+                <div class="stage__header__extra"></div>
+            </div>
+            <div class="stage">
+                <p class="stage__title">Licht je bank in</p>
+                <p class="stage__text">Als je stopzetting als zelfstandige volledig in orde is gebracht, is de laatste stap ook je bank hiervan op de hoogte te brengen. Er zijn hier twee opties, ofwel behoud je de bankrekening en vraag je aan de bank om je rekening terug om te zetten naar een rekening voor persoonlijk gebruik, ofwel schrijf je alles wat nog op die rekening staat over naar een persoonlijke rekening en vraag je de bank om deze rekening af te sluiten. Voor meer informatie daarvoor, neem je best contact op met je bank.</p>
+            </div>
+            @if($roadmap->stage === 5)
+            <form class="stage__check" action="/check/stage/stop" method="post">
+            @csrf
+                <div class="stage__check__btn">
+                    <button type="submit" class="stageCheckBtn">Ik wil deze stap afronden</button>
+                    <input type="hidden" name="stage" value="5">
+                </div>
+            </form>
+            @endif
+        </div>
+
+
+        @endif
+
+        @if($roadmap->stop === 0)
         <div class="stage__container stage__container--1">
             <div class="stage__header">
                     <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}" alt="back"></a>
@@ -587,6 +764,9 @@
                 <p class="stage__text">Het is veel informatie, maar mocht je nog vragen hebben, twijfel dan niet om links in het menu op “Contacten” te klikken en iemand om advies te vragen. Succes!</p>
                 </div>
         </div>
+
+        @endif
+
     </div>
 
     </div>

@@ -71,17 +71,19 @@
 
     <div class="contact__container__zoek">
         <h1 class="title">Contactpersonen</h1>
+        @if(!empty($agents))
         @foreach($agents as $agent)
         <div class="contact__zoek">
              <div class="contact__blok__zoek">
-                    <img class="pic1" src="/attachments/{{ $agent->avatar }}" alt="sarah"><a href="/contacten/{{$agent->id}}" class="contact__zoek__name">{{$agent->firstname}} {{$agent->lastname}}</a>
+                    <img class="pic1" src="/attachments/{{ $agent->avatar }}" alt="sarah"><a href="/contacten/{{$agent->id}}" class="contact__zoek__name">{{$agent->name}}</a>
                     <p class="contact__zoek__mail">{{$agent->email}}</p>
                     <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="/contacten/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
-                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon2"><a href="chat/addConversation/{{$agent->id}}" class="contact__zoek__link">Bericht sturen</a>
+                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon2"><a href="/chat/addConversation/{{$agent->id}}" class="contact__zoek__link">Bericht sturen</a>
                     <img  src="{{asset('img/tel.png')}}" alt="call" class="icon3"><a href="" class="contact__zoek__link">Bellen</a>
              </div>
         </div>
         @endforeach
+        @endif
     </div> 
 
 @endsection

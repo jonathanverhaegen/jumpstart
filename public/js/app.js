@@ -2541,6 +2541,25 @@ if (searchBarMob !== null) {
       }
     });
   });
+} //statuut stopzetten
+
+
+var statuutForm = document.querySelector('.settings__status-form');
+
+if (statuutForm !== null) {
+  var input1 = statuutForm.querySelector('.submit1');
+  var input2 = statuutForm.querySelector('.submit2');
+  var hiddenValue = statuutForm.querySelector('.source');
+  input1.addEventListener('click', function (e) {
+    e.preventDefault();
+    hiddenValue.value = "icecube";
+    statuutForm.submit();
+  });
+  input2.addEventListener('click', function (e) {
+    e.preventDefault();
+    hiddenValue.value = "stop";
+    statuutForm.submit();
+  });
 }
 
 /***/ }),

@@ -105,7 +105,8 @@
                 <p class="settings__detail__text">
                     Je staat op het punt jouw statuut student-zelfstandige stop te zetten. Het stopzetten van dit statuut vergt enkele stappen, naargelang de reden om het statuut stop te zetten in het afsluitingsproces anders. Daarom vragen we jou om enkele vragen in te vullen, zodat wij dit afsluitingsproces kunnen personaliseren naar jou.
                 </p>
-                <form action="/instellingen/statuut-stopzetten/2" method="GET" class="settings__status-form">
+                <form action="/instellingen/statuut-stopzetten/2" method="POST" class="settings__status-form">
+                    @csrf
                     <h3>Ik wens mijn statuut stop te zetten omwille van de volgende reden</h3>
                     <div class="settings__status-form__radio">
                         <input type="radio" id="option1" name="reason" value="Ik ga afstuderen.">

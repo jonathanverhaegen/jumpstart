@@ -3375,10 +3375,7 @@ input.pass__sz__ {
   font-family: "Lato", sans-serif;
   color: #13204A;
   line-height: 22px;
-}
-
-.settings__status-form {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .settings__status-form h3 {
@@ -3403,6 +3400,7 @@ input.pass__sz__ {
      -moz-appearance: none;
           appearance: none;
   margin: 0;
+  min-width: 30px;
   height: 30px;
   width: 30px;
   border: 2px solid #F92100;
@@ -3421,6 +3419,7 @@ input.pass__sz__ {
   display: flex;
   margin-left: 12px;
   cursor: pointer;
+  line-height: 22px;
 }
 
 .settings__status-form input[type=submit] {

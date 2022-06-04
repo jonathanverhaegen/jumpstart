@@ -111,10 +111,7 @@
     font-family: 'Lato', sans-serif;
     color: #13204A;
     line-height: 22px;
-}
-
-.settings__status-form {
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .settings__status-form h3 {
@@ -137,6 +134,7 @@
 .settings__status-form__radio input[type=radio] {
     appearance: none;
     margin: 0;
+    min-width: 30px;
     height: 30px;
     width: 30px;
     border: 2px solid #F92100;
@@ -155,6 +153,7 @@
     display: flex;
     margin-left: 12px;
     cursor: pointer;
+    line-height: 22px;
 }
 
 .settings__status-form input[type=submit] {

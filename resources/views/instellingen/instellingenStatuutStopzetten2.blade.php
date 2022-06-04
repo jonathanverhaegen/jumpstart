@@ -92,23 +92,31 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
-                <h2 class="settings__detail__heading">Stopzetten statuut student-zelfstandige</h2>
-                <p class="settings__detail__text">
-                    Je staat op het punt jouw statuut student-zelfstandige stop te zetten. Het stopzetten van dit statuut vergt enkele stappen, naargelang de reden om het statuut stop te zetten in het afsluitingsproces anders. Daarom vragen we jou om enkele vragen in te vullen, zodat wij dit afsluitingsproces kunnen personaliseren naar jou.
-                </p>
-                <form action="/instellingen/statuut-stopzetten/2" method="GET" class="settings__status-form">
-                    <h3>Ik wens mijn statuut stop te zetten omwille van de volgende reden</h3>
+                <form action="#" method="GET" class="settings__status-form">
+                    <h3>Waarom wil je stoppen met ondernemen?</h3>
                     <div class="settings__status-form__radio">
-                        <input type="radio" id="option1" name="reason" value="Ik ga afstuderen.">
-                        <label for="reason1">Ik ga afstuderen.</label>
+                        <input type="radio" id="option1" name="reason" value="Mijn onderneming heeft minder succes dan verwacht.">
+                        <label for="reason1">Mijn onderneming heeft minder succes dan verwacht.</label>
                     </div>
                     <div class="settings__status-form__radio">
-                        <input type="radio" id="option2" name="reason" value="Ik ga/ben 25 jaar (ge)worden.">
-                        <label for="reason2">Ik ga/ben 25 jaar (ge)worden.</label>
+                        <input type="radio" id="option2" name="reason" value="De combinatie studeren en ondernemen is moeilijk.">
+                        <label for="reason2">De combinatie studeren en ondernemen is moeilijk.</label>
                     </div>
                     <div class="settings__status-form__radio">
-                        <input type="radio" id="option3" name="reason" value="Ik zie het ondernemen niet meer zitten.">
-                        <label for="reason3">Ik zie het ondernemen niet meer zitten.</label>
+                        <input type="radio" id="option3" name="reason" value="Ondernemen is echt niet voor mij.">
+                        <label for="reason3">Ondernemen is echt niet voor mij.</label>
+                    </div>
+                    <div class="settings__status-form__radio">
+                        <input type="radio" id="option4" name="reason" value="Ik voel mij niet genoeg ondersteund door mijn school.">
+                        <label for="reason4">Ik voel mij niet genoeg ondersteund door mijn school.</label>
+                    </div>
+                    <div class="settings__status-form__radio">
+                        <input type="radio" id="option5" name="reason" value="De administratie is toch nog te veel en te ingewikkeld.">
+                        <label for="reason5">De administratie is toch nog te veel en te ingewikkeld.</label>
+                    </div>
+                    <div class="settings__status-form__radio">
+                        <input type="radio" id="option6" name="reason" value="Andere">
+                        <label for="reason6">Andere</label>
                     </div>
                     <input type="submit" value="Volgende">
                 </form>

@@ -15,7 +15,7 @@
         @foreach($reactions as $react)
         <div class="reaction">
             <div class="reaction__text">
-                <img class="reaction__img" src="/img/{{$react->user->avatar}}" alt="">
+                <img class="reaction__img" src="/attachments/{{$react->user->avatar}}" alt="">
                 <p class="reaction__text">{{$react->text}}</p>
                 <img class="reaction__delete" src="/img/kruisje.png" alt="delete" wire:click="delete('{{$react->id}}')">
             </div>

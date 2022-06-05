@@ -3252,6 +3252,7 @@ input.pass__sz__ {
 .chat__attach__img {
   width: 50%;
   margin-top: 10px;
+  border-radius: 20px;
 }
 
 .chat__attach__down {
@@ -3848,6 +3849,7 @@ input.pass__sz__ {
 .post__img img {
   width: 80%;
   margin-bottom: 10px;
+  border-radius: 20px;
 }
 
 .post__att {

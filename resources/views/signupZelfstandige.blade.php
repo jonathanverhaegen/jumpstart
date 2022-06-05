@@ -111,7 +111,7 @@
             </div>
 
             <div class="">
-                <input class="pass__sz" type="text" max="2000" name="bio" placeholder="Bio" value="{{old('bio')}}">
+                <textarea class="textarea_sz" name="bio" id="" cols="30" rows="8" placeholder="Bio">{{old('bio')}}</textarea>
             </div>
 
             <div class="form__punt">

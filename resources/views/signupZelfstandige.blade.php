@@ -43,7 +43,7 @@
 
       <h1 class="h__signup__sz">Word lid van onze community</h1>
 
-      <div class="signup__container">
+      <div class="signup__container__zelf">
 
       <div class="addZelf addZelf1">
         

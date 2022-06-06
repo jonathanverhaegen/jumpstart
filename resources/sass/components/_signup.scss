@@ -277,6 +277,13 @@ input::placeholder {
 
 // signup desktop
 @media(min-width:800px){
+
+    .signup__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top:50px;
+    }   
+
     .ill__su{
         display: block;
         margin-left: auto;
@@ -293,75 +300,15 @@ input::placeholder {
     
 
 //signup student desktop
-    .ill__su__s{
-        width: 600px;
-        height: 600px;
-        margin-top: 100px;
-    }
+    
+    
+    
+    
+    
+   
 
-    .h__signup__s{
-        margin-left: 733px;
-        margin-bottom: 10px;
-        margin-top: -475px;
-    }
     
-    input.name{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.date{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.mail{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.pass{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.pass__{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .togglePass{
-        width:30px;
-        margin-left: -30px; 
-        cursor: pointer;
-        position:relative;
-        margin-top:-90px;
-        margin-bottom:-10px;
-    }
-    
-    .__reg__student{
-        margin-left: 0px;
-    }
+   
     
     button.reg__student{
         padding-top: 10px;
@@ -370,7 +317,6 @@ input::placeholder {
         padding-right: 30px;
         margin-top: 40px;
         margin-bottom: 25px;
-        margin-left:894px;
     }
 
     //signup student-zelfstandige desk -- registratie & kbo & profile

@@ -2170,16 +2170,16 @@ var passwordToggle = document.querySelectorAll('.passwordToggleZelf');
 
 if (passwordToggle !== null) {
   passwordToggle.forEach(function (password) {
-    var btn = password.querySelector('.togglePass__');
+    var btn = password.querySelector('.togglePass--signup');
     var check = 0;
     btn.addEventListener('click', function (e) {
       e.preventDefault();
 
       if (check === 0) {
-        password.querySelector('.pass__sz').type = "text";
+        password.querySelector('.signup__input--pass').type = "text";
         check = 1;
       } else {
-        password.querySelector('.pass__sz').type = "password";
+        password.querySelector('.signup__input--pass').type = "password";
         check = 1;
       }
     });

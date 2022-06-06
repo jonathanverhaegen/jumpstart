@@ -110,15 +110,15 @@ let passwordToggle = document.querySelectorAll('.passwordToggleZelf');
 
 if(passwordToggle !== null){
     passwordToggle.forEach((password) => {
-        let btn = password.querySelector('.togglePass__');
+        let btn = password.querySelector('.togglePass--signup');
         let check = 0;
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             if(check === 0){
-                password.querySelector('.pass__sz').type = "text";
+                password.querySelector('.signup__input--pass').type = "text";
                 check = 1;
             }else{
-                password.querySelector('.pass__sz').type = "password";
+                password.querySelector('.signup__input--pass').type = "password";
                 check = 1;
             }
         })

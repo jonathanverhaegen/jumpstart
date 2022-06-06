@@ -67,6 +67,7 @@
         <div class="form__btn">
             <button class="reg__sz btn1" type="submit">Volgende</button>
         </div>
+        
     </div>
 
     <div class="addZelf2">

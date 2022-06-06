@@ -90,7 +90,7 @@ if(togglePasswordBtn !== null){
 let togglePassword = document.querySelectorAll('.passwordToggle');
 if(togglePassword !== null){
     togglePassword.forEach((toggle) => {
-        let toggleBtn = toggle.querySelector('.togglePass');
+        let toggleBtn = toggle.querySelector('.togglePass--signup');
         let check = 0;
         toggleBtn.addEventListener('click', (e) => {
             if(check === 0){
@@ -110,15 +110,15 @@ let passwordToggle = document.querySelectorAll('.passwordToggleZelf');
 
 if(passwordToggle !== null){
     passwordToggle.forEach((password) => {
-        let btn = password.querySelector('.togglePass__');
+        let btn = password.querySelector('.togglePass--signup');
         let check = 0;
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             if(check === 0){
-                password.querySelector('.pass__sz').type = "text";
+                password.querySelector('.signup__input--pass').type = "text";
                 check = 1;
             }else{
-                password.querySelector('.pass__sz').type = "password";
+                password.querySelector('.signup__input--pass').type = "password";
                 check = 1;
             }
         })
@@ -422,14 +422,14 @@ if(signupZelf !== null){
         e.preventDefault();
         title.innerHTML = "KBO";
         form1.style.display = "none";
-        form2.style.display = "block";
+        form2.style.display = "flex";
     });
 
     btn2.addEventListener('click', (e) => {
         e.preventDefault();
         title.innerHTML = "Vertel meer over jezelf";
         form2.style.display = "none";
-        form3.style.display = "block";
+        form3.style.display = "flex";
     })
 
 

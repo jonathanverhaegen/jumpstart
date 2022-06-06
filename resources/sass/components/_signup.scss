@@ -3,15 +3,20 @@
 
 //signup mobile
 .ill__su{
-    max-width: 400px;
+    width:100%;
     margin-top: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
 }
 
 .h__signup{
     font-family: $title;
     font-size: 30px;
     color: $orange;
-    margin-left: 33px;
+    text-align:center;
+    margin-left:0px;
+
 }
 
 .cont__btns{
@@ -39,15 +44,21 @@
 
 //signup student mobile
 .ill__su__s{
-    width: 400px;
+    width: 70%;
     margin-top: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
 }
+
 .h__signup__s{
     font-family: $title;
-    font-size: 30px;
+    font-size: 26px;
     color: $orange;
-    margin-left: 33px;
     margin-bottom: 10px;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 input::placeholder {
@@ -55,104 +66,48 @@ input::placeholder {
     opacity: 1; /*Change the opacity between 0 and 1*/
 }
 
-input.name{
-    margin-left: 0px;
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    margin-left: 33px;
-    padding-bottom: 10px;
-    
-
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $background;
-    width: 330px;
-}
-
-input.date{
-    margin-left: 0px;
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 33px;
-    padding-bottom: 10px;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $background;
-    width: 330px;
-}
-
-input.mail{
-    margin-left: 0px;
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 33px;
-    padding-bottom: 10px;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $background;
-    width: 330px;
+.form--signup{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction: column;
     
 }
 
-input.pass{
-    margin-left: 0px;
+.signup__input{
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 33px;
+    margin-bottom: 40px;
     padding-bottom: 10px;
-    
     border:none;
     border-bottom: $darkblue 2px solid;
     background-color: $background;
-    width: 330px;
-    
 }
 
-input.pass__{
-    margin-left: 0px;
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 33px;
-    padding-bottom: 10px;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $background;
-    width: 330px;
+.signup__input--pass{
+    width:100%;
 }
 
-.togglePass{
-    width:30px;
-    margin-left: 335px; 
+.signup__input--zelf{
+    background-color: $lightgray;
+}
+
+.addZelf{
+    display:flex;
+    flex-direction: column;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.togglePass--signup{
+    width: 30px;
+    margin-left: -30px;
     cursor: pointer;
-    position:relative;
-    margin-top:-80px;
-    margin-bottom: 30px;
-}
-
-.__reg__student{
-    font-family: $normal;
-    font-size: 20px;
-    color:$white;
-    margin-left: 0px;
+    position: relative;
+    top: 13px;
 }
 
 button.reg__student{
@@ -165,8 +120,10 @@ button.reg__student{
     padding-right: 50px;
     margin-top: 3px;
     margin-bottom: 25px;
-    margin-left: 100px;
     border:none;
+    font-family: $normal;
+    font-size: 20px;
+    color:$white;
 }
 
 
@@ -200,10 +157,13 @@ button.reg__student{
     font-family: $title;
     font-size: 25px;
     color: $orange;
-    margin-left:6%;
     margin-top: 1%;
     margin-bottom: 1%;
     padding-bottom: 5%;
+    width:90%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-right:20%;
 }
 
 .edit__icon__{
@@ -217,80 +177,7 @@ input::placeholder {
     opacity: 1; /*Change the opacity between 0 and 1*/
 }
 
-input.name__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
 
-input.date__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
-
-input.mail__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
-
-input.pass__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
-
-input.pass__sz__{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
 
 .togglePass__{
     width:30px;
@@ -320,7 +207,7 @@ input.pass__sz__{
     width: 58%;
     border: none;
     color:$white;
-    font-family: $normal;
+    font-family: $title;
 }
 
 .togglePunt{ //reg
@@ -370,7 +257,7 @@ input.pass__sz__{
 .form__avatar{
     display:flex;
     flex-direction: column;
-    margin-bottom:10px;
+    margin-bottom:20px;
 }
 
 .addZelf2, .addZelf3{
@@ -386,92 +273,23 @@ input.pass__sz__{
     background-color: #FAFAFA;
 }
 
+
+
 // signup desktop
 @media(min-width:800px){
+
+    .signup__container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 100px;
+    }   
+
     .ill__su{
         display: block;
         margin-left: auto;
         margin-right: auto;
         max-width: 450px;
         margin-top: 60px;
-    }
-    
-    .h__signup{
-        margin-left: 300px;
-        margin-top: 50px;
-    }
-
-    
-
-//signup student desktop
-    .ill__su__s{
-        width: 600px;
-        height: 600px;
-        margin-top: 100px;
-    }
-
-    .h__signup__s{
-        margin-left: 733px;
-        margin-bottom: 10px;
-        margin-top: -475px;
-    }
-    
-    input.name{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.date{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.mail{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.pass{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    
-    input.pass__{
-        width: 480px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        margin-left: 733px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-
-    .togglePass{
-        width:30px;
-        margin-left: -30px; 
-        cursor: pointer;
-        position:relative;
-        margin-top:-90px;
-        margin-bottom:-10px;
-    }
-    
-    .__reg__student{
-        margin-left: 0px;
     }
     
     button.reg__student{
@@ -481,7 +299,6 @@ input.pass__sz__{
         padding-right: 30px;
         margin-top: 40px;
         margin-bottom: 25px;
-        margin-left:894px;
     }
 
     //signup student-zelfstandige desk -- registratie & kbo & profile
@@ -489,6 +306,9 @@ input.pass__sz__{
     .h__reg__sz{
         margin-top: 2%;
         margin-bottom: 2%;
+        writing-mode: sideways-lr;
+        position: relative;
+        left: 13%;
     }
 
     .form__sz{
@@ -496,15 +316,16 @@ input.pass__sz__{
         margin-bottom:3%;
         padding-top:2%;
         padding-bottom:2%;
+        width:70%;
     }
 
     .h__signup__sz{
         text-align: center;
         font-size: 35px;
-        margin-left:0%;
         margin-top: 2%;
         margin-bottom: 1%;
         padding-bottom: 1%;
+        padding-right:0;
     }
 
     .edit__icon__{ //kbo edit icon
@@ -610,6 +431,19 @@ input.pass__sz__{
         flex-direction: row;
         gap: 20%;
 
+    }
+
+    .signupZelf{
+        display:flex;
+        margin-top:50px;
+    }
+
+    .signup__container__zelf{
+        width: 75%;
+        margin-left:auto;
+        margin-right:auto;
+        display:flex;
+        flex-direction: column;
     }
 
 

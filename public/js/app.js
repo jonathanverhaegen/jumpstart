@@ -2151,7 +2151,7 @@ var togglePassword = document.querySelectorAll('.passwordToggle');
 
 if (togglePassword !== null) {
   togglePassword.forEach(function (toggle) {
-    var toggleBtn = toggle.querySelector('.togglePass');
+    var toggleBtn = toggle.querySelector('.togglePass--signup');
     var check = 0;
     toggleBtn.addEventListener('click', function (e) {
       if (check === 0) {
@@ -2170,16 +2170,16 @@ var passwordToggle = document.querySelectorAll('.passwordToggleZelf');
 
 if (passwordToggle !== null) {
   passwordToggle.forEach(function (password) {
-    var btn = password.querySelector('.togglePass__');
+    var btn = password.querySelector('.togglePass--signup');
     var check = 0;
     btn.addEventListener('click', function (e) {
       e.preventDefault();
 
       if (check === 0) {
-        password.querySelector('.pass__sz').type = "text";
+        password.querySelector('.signup__input--pass').type = "text";
         check = 1;
       } else {
-        password.querySelector('.pass__sz').type = "password";
+        password.querySelector('.signup__input--pass').type = "password";
         check = 1;
       }
     });
@@ -2465,13 +2465,13 @@ if (signupZelf !== null) {
     e.preventDefault();
     title.innerHTML = "KBO";
     form1.style.display = "none";
-    form2.style.display = "block";
+    form2.style.display = "flex";
   });
   btn2.addEventListener('click', function (e) {
     e.preventDefault();
     title.innerHTML = "Vertel meer over jezelf";
     form2.style.display = "none";
-    form3.style.display = "block";
+    form3.style.display = "flex";
   });
 } //post plaatsen
 

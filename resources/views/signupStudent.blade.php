@@ -44,47 +44,58 @@
 
 
 
-
-
-      
-    <img class="ill__su__s" src="/img/ill_signup_s.png" alt="illustration">  
-      <form action="/user/addStudent" method="post" class="" enctype="multipart/form-data">
+    <div class="signup__container">
+        <img class="ill__su__s" src="/img/ill_signup_s.png" alt="illustration">
+        <div>
+            <h1 class="h__signup__s">Word nu student-zelfstandige!</h1>
+            <form class="form--signup" action="/user/addStudent" method="post" class="" enctype="multipart/form-data">
       @csrf
-      <h1 class="h__signup__s">Word nu student-zelfstandige!</h1>
-
+      
         <div class="form__avatar">
             <img class="sz__pic" src="/img/default.png" alt="profile pic">
             <label class="__prof__sz"><input class="avatar" name="avatar" type="file" accept=".png, .jpg, .jpeg"/>Profiel foto wijzigen</label>
         </div>
       
-        <div class="">
-        <input class="name" type="text" name="naam" placeholder="Naam en voornaam" value="{{ old('naam') }}">
-        </div>
+        
+        <input class="signup__input" type="text" name="naam" placeholder="Naam en voornaam" value="{{ old('naam') }}">
+        
 
-        <div class="">
-        <input class="date" type="date" name="geboortedatum" placeholder="Geboortedatum" value="{{ old('geboortedatum') }}">
-        </div>
+        
+        <input class="signup__input"  type="date" name="geboortedatum" placeholder="Geboortedatum" value="{{ old('geboortedatum') }}">
+        
 
-        <div class="">
-        <input class="mail" type="text" name="email" placeholder="Email" value="{{ old('email') }}">
+        
+        <input class="signup__input"  type="text" name="email" placeholder="Studentenmail" value="{{ old('email') }}">
+    
+
+        <div class="passwordToggle">
+        <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
+        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
         <div class="passwordToggle">
-        <input id="pass" class="pass" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
-        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
-        </div>
-
-        <div class="passwordToggle">
-        <input id="pass" class="pass__" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
-        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
+        <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
       
-    <div class="">
-        <button class="reg__student" type="submit"><p class="__reg__student">Registreer</p></button>
+    <div class="form__btn form__btn--signup">
+        <button class="reg__student" type="submit">Registreer</button>
     </div>
       
       </form>
+        </div>
+
+
+
+    </div>
+
+      
+    
+        
+    
+
+      
 
 
 

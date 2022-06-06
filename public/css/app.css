@@ -2578,11 +2578,6 @@ input::placeholder {
     margin-top: 60px;
   }
 
-  .h__signup {
-    margin-left: 300px;
-    margin-top: 50px;
-  }
-
   button.reg__student {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -2595,6 +2590,10 @@ input::placeholder {
   .h__reg__sz {
     margin-top: 2%;
     margin-bottom: 2%;
+    -ms-writing-mode: sideways-lr;
+        writing-mode: sideways-lr;
+    position: relative;
+    left: 13%;
   }
 
   .form__sz {
@@ -2602,15 +2601,16 @@ input::placeholder {
     margin-bottom: 3%;
     padding-top: 2%;
     padding-bottom: 2%;
+    width: 70%;
   }
 
   .h__signup__sz {
     text-align: center;
     font-size: 35px;
-    margin-left: 0%;
     margin-top: 2%;
     margin-bottom: 1%;
     padding-bottom: 1%;
+    padding-right: 0;
   }
 
   .edit__icon__ {
@@ -2729,6 +2729,18 @@ input::placeholder {
   .cont__btns {
     flex-direction: row;
     gap: 20%;
+  }
+
+  .signupZelf {
+    display: flex;
+  }
+
+  .signup__container {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
   }
 }
 .auth {

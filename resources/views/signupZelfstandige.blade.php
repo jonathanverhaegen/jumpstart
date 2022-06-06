@@ -35,11 +35,15 @@
 
 
     <div class="signupZelf">  
+        
 
     <h1 class="h__reg__sz">Registreren</h1>
       <form action="/user/addZelfstandige" method="post" class="form__sz" enctype="multipart/form-data">
       @csrf
+
       <h1 class="h__signup__sz">Word lid van onze community</h1>
+
+      <div class="signup__container">
 
       <div class="addZelf addZelf1">
         
@@ -118,6 +122,8 @@
             <div class="form__btn">
                 <button class="reg__sz btn3" type="submit">Volgende</button>
             </div>
+    </div>
+
     </div>
 
     </form>

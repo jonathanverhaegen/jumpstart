@@ -77,14 +77,14 @@
             
             <hr class="stripe__cal">   
             
-            <div class="recht">     
+            <div class="cal__grid">     
             <p class="cal__days"> ma</p>
             <p class="cal__days"> di</p>
             <p class="cal__days"> wo</p>
             <p class="cal__days"> do</p>
             <p class="cal__days"> vr</p>
             <p class="cal__days"> za</p>
-            <p class="cal__days"> zo</p>
+            <p class="cal__day"> zo</p>
 
             <p class="cal__digit"> 13</p>
             <p class="cal__digit"> 14</p>

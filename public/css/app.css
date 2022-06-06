@@ -1619,7 +1619,7 @@ button:hover {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   color: #E44402;
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 10px;
   margin-left: 10px;
 }
@@ -1724,6 +1724,22 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
+  }
+
+  .contact__detail__container {
+    background-color: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    padding-top: 25px;
+    margin-top: 25px;
+    padding-bottom: 50px;
+  }
+
+  .contact__back img {
+    margin-left: 2%;
+    width: 5%;
   }
 }
 .comm__container {

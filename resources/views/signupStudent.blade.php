@@ -48,6 +48,7 @@
 
       
     <img class="ill__su__s" src="/img/ill_signup_s.png" alt="illustration">
+        
     <h1 class="h__signup__s">Word nu student-zelfstandige!</h1>
 
       <form class="form--signup" action="/user/addStudent" method="post" class="" enctype="multipart/form-data">

@@ -41,27 +41,22 @@
       @csrf
       <h1 class="h__signup__sz">Word lid van onze community</h1>
 
-      <div class="addZelf1">
-        <div class="">
-        <input class="name__sz" type="text" name="naam" placeholder="Naam en voornaam" value="{{old('naam')}}">
-        </div>
-
-        <div class="">
-        <input class="date__sz" type="date" name="geboortedatum" placeholder="Geboortedatum" value="{{old('geboortedatum')}}">
-        </div>
-
-        <div class="">
-        <input class="mail__sz" type="text" name="email" placeholder="Email" value="{{old('email')}}">
+      <div class="addZelf addZelf1">
+        
+        <input class="signup__input signup__input--zelf" type="text" name="naam" placeholder="Naam en voornaam" value="{{old('naam')}}">
+        
+        <input class="signup__input signup__input--zelf" type="date" name="geboortedatum" placeholder="Geboortedatum" value="{{old('geboortedatum')}}">
+        
+        <input class="signup__input signup__input--zelf" type="text" name="email" placeholder="Email" value="{{old('email')}}">
+        
+        <div class="passwordToggleZelf">
+        <input class="signup__input signup__input--pass signup__input--zelf" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
+        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
         <div class="passwordToggleZelf">
-        <input class="pass__sz" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
-        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
-        </div>
-
-        <div class="passwordToggleZelf">
-        <input class="pass__sz" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
-        <img class="togglePass__" src="{{asset('img/verborgen.png')}}" alt="toggle">
+        <input class="signup__input signup__input--pass signup__input--zelf" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
+        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
         <div class="form__punt">

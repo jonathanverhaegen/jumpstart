@@ -79,7 +79,7 @@
         </div>
         
       
-    <div class="form__btn">
+    <div class="form__btn form__btn--signup">
         <button class="reg__student" type="submit">Registreer</button>
     </div>
       

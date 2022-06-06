@@ -235,6 +235,8 @@ button:hover{
     padding: 10px 25px 10px 25px;
 }
 
+
+
 @media(min-width:800px){
     .form--login{
         display:grid;
@@ -258,5 +260,9 @@ button:hover{
     .form--stage__field__btn{
         padding: 2%;
         width: 50%;
+    }
+
+    .form__btn--signup{
+        margin-top: -25px;
     }
 }

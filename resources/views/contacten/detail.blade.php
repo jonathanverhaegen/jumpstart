@@ -56,7 +56,7 @@
 <div class="contact__detail__container">
 
     <div class="contact__back">
-        <img src="/img/pijl_nieuw.png" alt="">
+        <a href="/contacten"><img src="/img/pijl_nieuw.png" alt=""></a>
     </div>
 
 

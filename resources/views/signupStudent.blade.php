@@ -67,22 +67,22 @@
         
 
         
-        <input class="signup__input"  type="text" name="email" placeholder="Email" value="{{ old('email') }}">
+        <input class="signup__input"  type="text" name="email" placeholder="Studentenmail" value="{{ old('email') }}">
     
 
         <div class="passwordToggle">
         <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
-        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
+        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
 
         <div class="passwordToggle">
         <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
-        <img class="togglePass" src="{{asset('img/verborgen.png')}}" alt="toggle">
+        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
         </div>
         
       
-    <div class="">
-        <button class="reg__student" type="submit"><p class="__reg__student">Registreer</p></button>
+    <div class="form__btn">
+        <button class="reg__student" type="submit">Registreer</button>
     </div>
       
       </form>

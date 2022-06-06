@@ -44,7 +44,7 @@
 
 //signup student mobile
 .ill__su__s{
-    width:100%;
+    width: 70%;
     margin-top: 10px;
     margin-left:auto;
     margin-right:auto;
@@ -53,7 +53,7 @@
 
 .h__signup__s{
     font-family: $title;
-    font-size: 30px;
+    font-size: 26px;
     color: $orange;
     margin-bottom: 10px;
     width:80%;
@@ -79,8 +79,7 @@ input::placeholder {
     font-family: $normal;
     font-size: 18px;
     color: $darkblue;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     padding-bottom: 10px;
     border:none;
     border-bottom: $darkblue 2px solid;
@@ -92,25 +91,12 @@ input::placeholder {
 }
 
 
-
-
-
-
-
-.togglePass{
-    width:30px;
-    margin-left: 335px; 
+.togglePass--signup{
+    width: 30px;
+    margin-left: -30px;
     cursor: pointer;
-    position:relative;
-    margin-top:-80px;
-    margin-bottom: 30px;
-}
-
-.__reg__student{
-    font-family: $normal;
-    font-size: 20px;
-    color:$white;
-    margin-left: 0px;
+    position: relative;
+    top: 13px;
 }
 
 button.reg__student{
@@ -123,8 +109,10 @@ button.reg__student{
     padding-right: 50px;
     margin-top: 3px;
     margin-bottom: 25px;
-    margin-left: 100px;
     border:none;
+    font-family: $normal;
+    font-size: 20px;
+    color:$white;
 }
 
 
@@ -328,7 +316,7 @@ input.pass__sz__{
 .form__avatar{
     display:flex;
     flex-direction: column;
-    margin-bottom:10px;
+    margin-bottom:20px;
 }
 
 .addZelf2, .addZelf3{

@@ -90,7 +90,7 @@ if(togglePasswordBtn !== null){
 let togglePassword = document.querySelectorAll('.passwordToggle');
 if(togglePassword !== null){
     togglePassword.forEach((toggle) => {
-        let toggleBtn = toggle.querySelector('.togglePass');
+        let toggleBtn = toggle.querySelector('.togglePass--signup');
         let check = 0;
         toggleBtn.addEventListener('click', (e) => {
             if(check === 0){

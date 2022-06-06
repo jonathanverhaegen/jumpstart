@@ -2151,7 +2151,7 @@ var togglePassword = document.querySelectorAll('.passwordToggle');
 
 if (togglePassword !== null) {
   togglePassword.forEach(function (toggle) {
-    var toggleBtn = toggle.querySelector('.togglePass');
+    var toggleBtn = toggle.querySelector('.togglePass--signup');
     var check = 0;
     toggleBtn.addEventListener('click', function (e) {
       if (check === 0) {

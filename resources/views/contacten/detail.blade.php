@@ -53,6 +53,13 @@
         @endcomponent
         @endif
 
+<div class="contact__detail__container">
+
+    <div class="contact__back">
+        <img src="/img/pijl_nieuw.png" alt="">
+    </div>
+
+
 <div class="contact__detail">
 <div class="detail__container__">
     <div class="detail__container__base">
@@ -111,6 +118,7 @@
         </div>
     </div>
 
+</div>
 </div>
 </div>
 

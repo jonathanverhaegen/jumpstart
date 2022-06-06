@@ -2269,15 +2269,19 @@ h1 {
   }
 }
 .ill__su {
-  max-width: 400px;
+  width: 100%;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .h__signup {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   color: #E44402;
-  margin-left: 33px;
+  text-align: center;
+  margin-left: 0px;
 }
 
 .cont__btns {
@@ -2303,16 +2307,21 @@ h1 {
 }
 
 .ill__su__s {
-  width: 400px;
+  width: 100%;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .h__signup__s {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   color: #E44402;
-  margin-left: 33px;
   margin-bottom: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 input::-moz-placeholder {
@@ -2336,79 +2345,28 @@ input::placeholder {
   /*Change the opacity between 0 and 1*/
 }
 
-input.name {
-  margin-left: 0px;
+.form--signup {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup__input {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   color: #13204A;
   margin-top: 5px;
   margin-bottom: 10px;
-  margin-left: 33px;
   padding-bottom: 10px;
   border: none;
   border-bottom: #13204A 2px solid;
   background-color: #EDEFF5;
-  width: 330px;
 }
 
-input.date {
-  margin-left: 0px;
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 33px;
-  padding-bottom: 10px;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #EDEFF5;
-  width: 330px;
-}
-
-input.mail {
-  margin-left: 0px;
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 33px;
-  padding-bottom: 10px;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #EDEFF5;
-  width: 330px;
-}
-
-input.pass {
-  margin-left: 0px;
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 33px;
-  padding-bottom: 10px;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #EDEFF5;
-  width: 330px;
-}
-
-input.pass__ {
-  margin-left: 0px;
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 33px;
-  padding-bottom: 10px;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #EDEFF5;
-  width: 330px;
+.signup__input--pass {
+  width: 100%;
 }
 
 .togglePass {

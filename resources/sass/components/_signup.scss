@@ -177,80 +177,7 @@ input::placeholder {
     opacity: 1; /*Change the opacity between 0 and 1*/
 }
 
-input.name__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
 
-input.date__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
-
-input.mail__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
-
-input.pass__sz{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
-
-input.pass__sz__{
-    font-family: $normal;
-    font-size: 18px;
-    color: $darkblue;
-    margin-left:6%;
-    margin-top: 0%;
-    margin-bottom: 10%;
-    padding-bottom: 3%;
-    
-    border:none;
-    border-bottom: $darkblue 2px solid;
-    background-color: $lightgray;
-    width: 310px;
-}
 
 .togglePass__{
     width:30px;
@@ -280,7 +207,7 @@ input.pass__sz__{
     width: 58%;
     border: none;
     color:$white;
-    font-family: $normal;
+    font-family: $title;
 }
 
 .togglePunt{ //reg
@@ -345,6 +272,8 @@ input.pass__sz__{
     color: #526A98;
     background-color: #FAFAFA;
 }
+
+
 
 // signup desktop
 @media(min-width:800px){

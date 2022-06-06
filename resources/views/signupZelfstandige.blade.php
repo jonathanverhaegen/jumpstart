@@ -67,29 +67,29 @@
         <div class="form__btn">
             <button class="reg__sz btn1" type="submit">Volgende</button>
         </div>
-        
+
     </div>
 
-    <div class="addZelf2">
-        <div class="">
-            <input class="name__sz" type="text" name="bedrijfsnaam" placeholder="Bedrijfsnaam" value="{{old('bedrijfsnaam')}}">
-            </div>
+    <div class="addZelf addZelf2">
+            
+            <input class="signup__input signup__input--zelf" type="text" name="bedrijfsnaam" placeholder="Bedrijfsnaam" value="{{old('bedrijfsnaam')}}">
+            
 
-            <div class="">
-            <input class="date__sz" type="text" name="ondernemingsnummer" placeholder="Ondernemingsnummer" value="{{old('ondernemingsnummer')}}">
-            </div>
+            
+            <input class="signup__input signup__input--zelf" type="text" name="ondernemingsnummer" placeholder="Ondernemingsnummer" value="{{old('ondernemingsnummer')}}">
+            
 
-            <div class="">
-            <input class="mail__sz" type="text" name="bedrijfsemail" placeholder="Bedrijfsmail" value="{{old('bedrijfsemail')}}">
-            </div>
+            
+            <input class="signup__input signup__input--zelf" type="text" name="bedrijfsemail" placeholder="Bedrijfsmail" value="{{old('bedrijfsemail')}}">
+            
 
-            <div class="">
-            <input class="pass__sz" type="number" name="telefoon" placeholder="Telefoonnummer" value="{{old('telefoon')}}">
-            </div>
+            
+            <input class="signup__input signup__input--zelf" type="number" name="telefoon" placeholder="Telefoonnummer" value="{{old('telefoon')}}">
+            
 
-            <div class="">
-            <input class="pass__sz__" type="date" name="opstartdatum" placeholder="Opstartdatum" value="{{old('opstartdatum')}}">
-            </div>
+            
+            <input class="signup__input signup__input--zelf" type="date" name="opstartdatum" placeholder="Opstartdatum" value="{{old('opstartdatum')}}">
+            
             
             <div class="form__punt">
                 <img class="togglePunt" src="/img/ill__sz__2.png" alt="punt">
@@ -100,15 +100,15 @@
             </div>
     </div>
 
-    <div class="addZelf3">
-        <div class="form__avatar">
+    <div class="addZelf addZelf3">
+            <div class="form__avatar">
                 <img class="sz__pic" src="/img/default.png" alt="profile pic">
                 <label class="__prof__sz"><input class="avatar" name="avatar" type="file" accept=".png, .jpg, .jpeg"/>Profiel foto wijzigen</label>
             </div>
 
-            <div class="">
-                <textarea class="textarea_sz" name="bio" id="" cols="30" rows="8" placeholder="Bio">{{old('bio')}}</textarea>
-            </div>
+            
+            <textarea class="signup__input signup__input--zelf signup__input--textarea" name="bio" id="" cols="30" rows="8" placeholder="Bio">{{old('bio')}}</textarea>
+            
 
             <div class="form__punt">
                 <img class="togglePunt" src="/img/ill__sz__3.png" alt="punt">

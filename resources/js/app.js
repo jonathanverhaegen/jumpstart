@@ -422,14 +422,14 @@ if(signupZelf !== null){
         e.preventDefault();
         title.innerHTML = "KBO";
         form1.style.display = "none";
-        form2.style.display = "block";
+        form2.style.display = "flex";
     });
 
     btn2.addEventListener('click', (e) => {
         e.preventDefault();
         title.innerHTML = "Vertel meer over jezelf";
         form2.style.display = "none";
-        form3.style.display = "block";
+        form3.style.display = "flex";
     })
 
 

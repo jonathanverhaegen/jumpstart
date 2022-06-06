@@ -2467,76 +2467,6 @@ input::placeholder {
   /*Change the opacity between 0 and 1*/
 }
 
-input.name__sz {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-left: 6%;
-  margin-top: 0%;
-  margin-bottom: 10%;
-  padding-bottom: 3%;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #FAFAFA;
-  width: 310px;
-}
-
-input.date__sz {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-left: 6%;
-  margin-top: 0%;
-  margin-bottom: 10%;
-  padding-bottom: 3%;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #FAFAFA;
-  width: 310px;
-}
-
-input.mail__sz {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-left: 6%;
-  margin-top: 0%;
-  margin-bottom: 10%;
-  padding-bottom: 3%;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #FAFAFA;
-  width: 310px;
-}
-
-input.pass__sz {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-left: 6%;
-  margin-top: 0%;
-  margin-bottom: 10%;
-  padding-bottom: 3%;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #FAFAFA;
-  width: 310px;
-}
-
-input.pass__sz__ {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  color: #13204A;
-  margin-left: 6%;
-  margin-top: 0%;
-  margin-bottom: 10%;
-  padding-bottom: 3%;
-  border: none;
-  border-bottom: #13204A 2px solid;
-  background-color: #FAFAFA;
-  width: 310px;
-}
-
 .togglePass__ {
   width: 30px;
   margin-left: 86%;
@@ -2565,7 +2495,7 @@ input.pass__sz__ {
   width: 58%;
   border: none;
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .togglePunt {

@@ -160,21 +160,6 @@ hr.stripe__cal {
   margin: 3%;
 }
 
-.chat__pic2 {
-  width: 40%;
-  margin: 3%;
-}
-
-.chat__pic3 {
-  width: 40%;
-  margin: 3%;
-}
-
-.chat__pic4 {
-  width: 40%;
-  margin: 3%;
-}
-
 .dash__chat__name {
   display: none;
 }
@@ -418,6 +403,10 @@ a {
   width: 10%;
 }
 
+.dash__chat__item {
+  text-decoration: none;
+}
+
 @media (min-width: 800px) {
   .dash__container__base {
     display: none;
@@ -505,55 +494,36 @@ a {
     font-size: 24px;
   }
 
+  .dash__chat__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -3%;
+  }
+
+  .dash__chat__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .chat__pic {
-    float: left;
-    width: 15%;
-    margin-left: 0%;
-    margin-right: 3%;
-    margin-top: 5%;
-    margin-bottom: 3%;
-  }
-
-  .chat__pic2 {
-    float: left;
-    width: 15%;
-    margin-left: 0%;
-    margin-right: 3%;
-    margin-top: 0%;
-    margin-bottom: 3%;
-  }
-
-  .chat__pic3 {
-    float: left;
-    width: 15%;
-    margin-left: 0%;
-    margin-right: 3%;
-    margin-top: 0%;
-    margin-bottom: 3%;
-  }
-
-  .chat__pic4 {
-    display: none;
+    width: 50px;
+    height: 50px;
   }
 
   .dash__chat__name {
-    display: flex;
     color: #1E3472;
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
-    margin-left: 10%;
-    margin-top: 5%;
+    display: block;
   }
 
   .dash__chat__mess {
-    display: flex;
     color: #1E3472;
     font-family: "Lato", sans-serif;
     font-size: 15px;
-    margin-left: 10%;
-    margin-right: 3%;
-    margin-top: 2%;
-    margin-bottom: 10%;
+    display: block;
   }
 
   .dash__container__not {

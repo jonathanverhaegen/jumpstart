@@ -101,13 +101,23 @@
 
             @foreach($chats as $chat)
                 @if($chat->user_one === $user->id)
-                    <a href="/chat"><img class="chat__pic" src="/attachments/{{$chat->usertwo->avatar}}" alt="chat pic"></a>
-                    <p class="dash__chat__name">{{$chat->usertwo->name}}</p>
-                    <p class="dash__chat__mess">{{$chat->chats[count($chat->chats)-1]->text}}</p>
+                
+                    <a class="dash__chat__item" href="/chat">
+                        <img class="chat__pic" src="/attachments/{{$chat->usertwo->avatar}}" alt="chat pic">
+                        <div class="dash__chat__text">
+                            <p class="dash__chat__name">{{$chat->usertwo->name}}</p>
+                            <p class="dash__chat__mess">{{$chat->chats[count($chat->chats)-1]->text}}</p>
+                        </div>
+                    </a>
+                
                 @else
-                    <a href="/chat"><img class="chat__pic" src="/attachments/{{$chat->userone->avatar}}" alt="chat pic"></a>
-                    <p class="dash__chat__name">{{$chat->userone->name}}</p>
-                    <p class="dash__chat__mess">{{$chat->chats[count($chat->chats)-1]->text}}</p>
+                    <a class="dash__chat__item" href="/chat">
+                        <img class="chat__pic" src="/attachments/{{$chat->userone->avatar}}" alt="chat pic">
+                        <div class="dash__chat__text">
+                            <p class="dash__chat__name">{{$chat->userone->name}}</p>
+                            <p class="dash__chat__mess">{{$chat->chats[count($chat->chats)-1]->text}}</p>
+                        </div>
+                    </a>
                 @endif
             
             @endforeach

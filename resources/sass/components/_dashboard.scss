@@ -166,18 +166,6 @@ hr.stripe__cal{
     width: 40%;
     margin: 3%;
 }
-.chat__pic2{
-    width: 40%;
-    margin: 3%;
-}
-.chat__pic3{
-    width: 40%;
-    margin: 3%;
-}
-.chat__pic4{
-    width: 40%;
-    margin: 3%;
-}
 
 .dash__chat__name{
     display: none;
@@ -426,6 +414,10 @@ a{
     width:10%;
 }
 
+.dash__chat__item{
+    text-decoration: none;
+}
+
 
 //dashboard desk
 @media(min-width:800px){
@@ -514,56 +506,37 @@ a{
         font-family: $title;
         font-size: 24px;
     }
+
+    .dash__chat__item{
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: -3%;
+    }
+
+    .dash__chat__text{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
     
     .chat__pic{
-        float: left;
-        width: 15%;
-        margin-left: 0%;
-        margin-right: 3%;
-        margin-top: 5%;
-        margin-bottom: 3%;
+        width:50px;
+        height:50px; 
     }
 
-    .chat__pic2{
-        float: left;
-        width: 15%;
-        margin-left: 0%;
-        margin-right: 3%;
-        margin-top: 0%;
-        margin-bottom: 3%;
-    }
-
-    .chat__pic3{
-        float: left;
-        width: 15%;
-        margin-left: 0%;
-        margin-right: 3%;
-        margin-top: 0%;
-        margin-bottom: 3%;
-    }
-    
-    .chat__pic4{
-        display: none;
-    }
-    
     .dash__chat__name{
-        display: flex;
         color:$blue;
         font-family: $title;
         font-size: 20px;
-        margin-left: 10%;
-        margin-top: 5%;
+        display:block;
     }
     
     .dash__chat__mess{
-        display: flex;
         color:$blue;
         font-family: $normal;
         font-size: 15px;
-        margin-left: 10%;
-        margin-right: 3%;
-        margin-top: 2%;
-        margin-bottom: 10%;
+        display:block;
     }
     
     //notifications
@@ -900,5 +873,7 @@ a{
         padding-bottom: 1%;
         margin-bottom: 0%;
     }
+
+    
 
 }

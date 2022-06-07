@@ -59,11 +59,11 @@
             <div class="dash__container__base">
                 <div class="dash">
                         <div class="dash__extra">
-                            <p class="dash__name"> Hi Jacob!</p>
+                            <p class="dash__name">Hi {{ explode(" ", $user->name)[1] }} </p>
                             <p class="dash__mess">Wij hebben <strong>nieuwe ondernemingstips</strong> voor jou</p>
                         </div>
                         <div class="dash__img">
-                        <a href="dashboard/profile"><img class="dash__pic" src="/img/Jacob.png" alt="profile pic"></a>
+                        <a href="dashboard/profile"><img class="dash__pic" src="/attachments/{{$user->avatar}}" alt="profile pic"></a>
                         </div>
 
                 </div>
@@ -98,20 +98,21 @@
 
         <div class="dash__container__chat">
             <p class="dash__chat">Berichten</p>
-            <a href=""><img class="chat__pic" src="/img/sarahp.png" alt="chat pic"></a>
-            <p class="dash__chat__name">Sarah Peeters</p>
-            <p class="dash__chat__mess">Hey Jacob, met welke stap van de roadmap ben jij bezig?</p>
+
+            @foreach($chats as $chat)
+                @if($chat->user_one === $user->id)
+                    <a href=""><img class="chat__pic" src="/attachments/{{$chat->usertwo->avatar}}" alt="chat pic"></a>
+                    <p class="dash__chat__name">{{$chat->usertwo->name}}</p>
+                    <p class="dash__chat__mess">Hey Jacob, met welke stap van de roadmap ben jij bezig?</p>
+                @else
+                    <a href=""><img class="chat__pic" src="/attachments/{{$chat->userone->avatar}}" alt="chat pic"></a>
+                    <p class="dash__chat__name">{{$chat->userone->name}}</p>
+                    <p class="dash__chat__mess">Hey Jacob, met welke stap van de roadmap ben jij bezig?</p>
+                @endif
             
+            @endforeach
 
-            <a href=""><img class="chat__pic2" src="/img/Laurens.png" alt="chat pic"></a>
-            <p class="dash__chat__name">Laurens Cole</p>
-            <p class="dash__chat__mess">Hey, gaat gij naar die workshop van Ice Cube? Weet gij waar wij moeten zijn? </p>
-
-            <a href=""><img class="chat__pic3" src="/img/kris.png" alt="chat pic"></a>
-            <p class="dash__chat__name">Kris van Rompaey</p>
-            <p class="dash__chat__mess">Beste Jacob, heeft u nog nagedacht over de branding opdracht die wij u hebben aangeboden?</p>
-
-            <a href=""><img class="chat__pic4" src="/img/leuke mensen.png" alt="chat pic"></a>
+            
 
 
         </div>

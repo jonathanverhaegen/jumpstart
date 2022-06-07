@@ -60,12 +60,12 @@
             <a href="/dashboard" ><img class="profile__back" src="/img/pijl_nieuw.png" alt="terug"></a>
                 <div class="profile">
                         <div class="profile__img">
-                        <img class="profile__pic" src="/img/thomas.png" alt="profile pic">
+                        <img class="profile__pic" src="/img/Jacob.png" alt="profile pic">
                         </div>
 
                         <div class="profile__extra">
-                            <p class="profile__name">Thomas Smith</p>
-                            <p class="profile__business">Thomas Smith Design</p>
+                            <p class="profile__name">Jacob Smith</p>
+                            <p class="profile__business">Jacob Smith Design</p>
                                 <div class="profile__extra__icons">
                                     <a href="" ><img src="{{asset('img/tel.png')}}" alt="call" class="profile__icon3"></a>
                                     <a href="" ><img src="{{asset('img/mail.png')}}" alt="mail" class="profile__icon1"></a>
@@ -86,8 +86,8 @@
                 <p class="profile__info__title">Bio</p>
 
                 <p class="profile__info__inhoud">
-                    Thomas Smith Design is een jong bedrijf dat draait rond diversiteit, dit is terug te vinden in de designs. 
-                    De focus van TSD ligt op branding en rebranding van merken en producten. 
+                    Jacob Smith Design is een jong bedrijf dat draait rond diversiteit, dit is terug te vinden in de designs. 
+                    De focus van JSD ligt op branding en rebranding van merken en producten. 
                     Neem gerust een kijkje op Behance voor voorbeelden.
                 </p>
                 <div class="profile__social__icons">

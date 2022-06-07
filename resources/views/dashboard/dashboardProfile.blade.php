@@ -60,11 +60,11 @@
             <a href="/dashboard" ><img class="profile__back" src="/img/pijl_nieuw.png" alt="terug"></a>
                 <div class="profile">
                         <div class="profile__img">
-                        <img class="profile__pic" src="/img/Jacob.png" alt="profile pic">
+                        <img class="profile__pic" src="/attachments/{{$user->avatar}}" alt="profile pic">
                         </div>
 
                         <div class="profile__extra">
-                            <p class="profile__name">Jacob Smith</p>
+                            <p class="profile__name">{{$user->name}}</p>
                             <p class="profile__business">Jacob Smith Design</p>
                                 <div class="profile__extra__icons">
                                     <a href="" ><img src="{{asset('img/tel.png')}}" alt="call" class="profile__icon3"></a>
@@ -86,9 +86,7 @@
                 <p class="profile__info__title">Bio</p>
 
                 <p class="profile__info__inhoud">
-                    Jacob Smith Design is een jong bedrijf dat draait rond diversiteit, dit is terug te vinden in de designs. 
-                    De focus van JSD ligt op branding en rebranding van merken en producten. 
-                    Neem gerust een kijkje op Behance voor voorbeelden.
+                    {{$user->bio}}
                 </p>
                 <div class="profile__social__icons">
                 <a href="" ><img src="{{asset('img/behance.png')}}" alt="behance" class="social__icon3"></a>
@@ -99,7 +97,7 @@
             </div>
          </div>
 
-         <a href="" class="profile__edit"><p class="profile__edit__">Profiel wijzigen</p></a>  
+         <a href="/instellingen" class="profile__edit"><p class="profile__edit__">Profiel wijzigen</p></a>  
 </div>
 
 

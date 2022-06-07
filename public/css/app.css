@@ -186,6 +186,10 @@ hr.stripe__cal {
   margin-left: 79%;
 }
 
+.not__pic:hover {
+  cursor: pointer;
+}
+
 .dash__not {
   display: none;
 }
@@ -301,6 +305,7 @@ hr.stripe {
   width: 80%;
   margin-left: 4%;
   margin-top: 22%;
+  border-radius: 50%;
 }
 
 .profile__name {

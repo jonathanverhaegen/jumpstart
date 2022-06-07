@@ -522,4 +522,21 @@ if(statuutForm !== null){
         statuutForm.submit();
     })
 }
+
+// let notPic = document.querySelector('.not__pic');
+// let checkPic = 0;
+// if(notPic !== null){
+//     notPic.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         if(checkPic === 0){
+//             notPic.src = "/img/tgl_btn_on.png";
+//             checkPic = 1;
+//             window.location.href = "/dashboard?filter=overheid";
+//         }else{
+//             notPic.src = "/img/tgl_btn.png";
+//             checkPic = 0;
+//         }
+
+//     })
+// }
         

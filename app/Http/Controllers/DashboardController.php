@@ -24,6 +24,7 @@ class DashboardController extends Controller
     }
 
     public function dashboardProfile(){
-        return view('dashboard/dashboardProfile');
+        $data['user'] = Auth::user();
+        return view('dashboard/dashboardProfile', $data);
     }
 }

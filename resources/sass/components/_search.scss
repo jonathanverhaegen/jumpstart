@@ -9,8 +9,9 @@
 .search{
     display:grid;
     grid-template-columns: 1fr 5fr;
-    gap:20px;
+    gap:0px;
     align-items: center;
+    margin-top: 4%;
 }
 
 .search__icon{
@@ -35,9 +36,17 @@
     opacity: 1; /*Change the opacity between 0 and 1*/
 }
 
+img.prof__pic__{
+    display: none;
+}
+
 @media(min-width:800px){
     .search__container{
         margin-top: 20px;
+    }
+
+    .search{
+        margin-top:0%;
     }
 
     .search__input input{
@@ -47,5 +56,17 @@
     }
     .search__icon{
         margin-left: -80px;
+    }
+
+    .search__icon__img{
+        margin-left: -15%;
+    }
+
+    img.prof__pic__{
+        display: flex;
+        width: 25%;
+        float: left;
+        margin-left: 572%;
+        margin-top:-29%;
     }
 }

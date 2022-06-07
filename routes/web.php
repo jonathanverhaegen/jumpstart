@@ -66,6 +66,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     //routes van het dashboard
     Route::get('/dashboard', [LoginController::class, "homepage"])->name('dashboard');
+    Route::get('/dashboard/profile', [LoginController::class, "homepageProfile"]);
 
     //routes van de roadmap
     Route::get('/roadmap', [RoadmapController::class, "roadmap"]);

@@ -124,17 +124,10 @@
 
         </div>
 
-        <div class="dash__container__not">
-        <img class="not__pic" src="/img/tgl_btn.png" alt="toggle"></a>
-            <p class="dash__not"> Notificaties</p>
-
-                
-                    
-                <livewire:todo  />
-                    
-                
-                
-        </div>
+        
+             
+        <livewire:todos :user_id="$user->id"/>
+        
 
         <div class="dash__container__par">
             <p class="dash__par"> Parameters</p>

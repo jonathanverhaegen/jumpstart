@@ -1,9 +1,9 @@
 <div class="dash__container__not">
 
 @if($toggle === 0)
-    <img class="not__pic" src="/img/tgl_btn.png" alt="toggle" wire:click="on"></a>
+    <img class="not__pic" src="/img/tgl_btn.png" alt="toggle" wire:click="toggleOn"></a>
 @else
-    <img class="not__pic" src="/img/tgl_btn_on.png" alt="toggle" wire:click="off"></a>
+    <img class="not__pic" src="/img/tgl_btn_on.png" alt="toggle" wire:click="toggleOff"></a>
 @endif
 
 <p class="dash__not"> Notificaties</p> 

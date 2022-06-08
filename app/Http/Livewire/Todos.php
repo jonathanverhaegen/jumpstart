@@ -18,11 +18,11 @@ class Todos extends Component
         }
     }
 
-    public function on(){
+    public function toggleOn(){
         $this->toggle = 1;
     }
 
-    public function off(){
+    public function toggleOff(){
         $this->toggle = 0;
     }
 

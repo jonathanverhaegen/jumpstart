@@ -15,14 +15,6 @@ class LoginController extends Controller
         return view('/login');
     }
 
-    public function homepage(){
-        return view('homepage');
-    }
-
-    public function homepageProfile(){
-        return view('homepageProfile');
-    }
-
 
     public function logout(){
         Auth::logout();

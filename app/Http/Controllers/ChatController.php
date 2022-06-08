@@ -24,7 +24,7 @@ class ChatController extends Controller
             if($conversation->user_one !== Auth::id() && $conversation->user_two !== Auth::id()){
                 abort(403);
             }
-            
+
             $chat->read = 1;
             $chat->save();
         }else{

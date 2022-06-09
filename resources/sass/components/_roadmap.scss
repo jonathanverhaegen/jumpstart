@@ -84,6 +84,7 @@
     font-family: $title;
     color: $orange;
     font-size:28px;
+    text-transform: uppercase;
 }
 
 .stage{
@@ -118,8 +119,8 @@
     background-color: $orange;
     color: $white;
     font-family: $title;
-    border-radius: 15px;
-    padding:2%;
+    border-radius: 20px;
+    padding:3%;
     font-size:24px;
     border:none;
 }
@@ -129,6 +130,7 @@
     width:100%;
     grid-template-columns: 1fr;
     justify-content: center;
+    margin-top:20px;
 }
 
 .stageCheckBtn{
@@ -139,7 +141,7 @@
     font-family: $normal;
     border-radius: 25px;
     padding:4%;
-    width:60%;
+    width:80%;
     align-self:center;
     margin-top: 20px;
     font-size:22px;
@@ -244,7 +246,7 @@
 }
 
 .stage2__form{
-    margin-top:20px;
+    margin-top:40px;
 }
 
 .stage5__form{
@@ -456,6 +458,11 @@
 .briefjeAdd{
     display:flex;
     justify-content: center;
+    margin-top: 20px;
+}
+
+.briefjeAdd--delete{
+    margin-top: 0px;
 }
 
 .briefjeAdd button{
@@ -463,15 +470,15 @@
     text-align: center;
     background-color: #E44402;
     color: white;
-    font-family: "Montserrat", sans-serif;
+    font-family: $normal;
     border-radius: 35px;
     padding: 5%;
-    font-size: 14px;
     border: none;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom:10px;
+    font-size: 22px;
 }
 
 .roadmap__back{
@@ -552,6 +559,10 @@
 
 .stage__info .briefje{
     margin-top: 0px;
+}
+
+.roadmap__span{
+    color: $blue;
 }
 
 

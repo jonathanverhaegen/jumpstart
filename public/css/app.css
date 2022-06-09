@@ -1215,6 +1215,7 @@ img.prof__pic__ {
   font-family: "Montserrat", sans-serif;
   color: #E44402;
   font-size: 28px;
+  text-transform: uppercase;
 }
 
 .stage {
@@ -1249,8 +1250,8 @@ img.prof__pic__ {
   background-color: #E44402;
   color: white;
   font-family: "Montserrat", sans-serif;
-  border-radius: 15px;
-  padding: 2%;
+  border-radius: 20px;
+  padding: 3%;
   font-size: 24px;
   border: none;
 }
@@ -1260,6 +1261,7 @@ img.prof__pic__ {
   width: 100%;
   grid-template-columns: 1fr;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .stageCheckBtn {
@@ -1270,7 +1272,7 @@ img.prof__pic__ {
   font-family: "Lato", sans-serif;
   border-radius: 25px;
   padding: 4%;
-  width: 60%;
+  width: 80%;
   align-self: center;
   margin-top: 20px;
   font-size: 22px;
@@ -1375,7 +1377,7 @@ img.prof__pic__ {
 }
 
 .stage2__form {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .stage5__form {
@@ -1576,6 +1578,11 @@ img.prof__pic__ {
 .briefjeAdd {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
+
+.briefjeAdd--delete {
+  margin-top: 0px;
 }
 
 .briefjeAdd button {
@@ -1583,15 +1590,15 @@ img.prof__pic__ {
   text-align: center;
   background-color: #E44402;
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   border-radius: 35px;
   padding: 5%;
-  font-size: 14px;
   border: none;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+  font-size: 22px;
 }
 
 .roadmap__back {
@@ -1687,6 +1694,10 @@ img.prof__pic__ {
 
 .stage__info .briefje {
   margin-top: 0px;
+}
+
+.roadmap__span {
+  color: #1E3472;
 }
 
 @media (max-width: 800px) {
@@ -2187,6 +2198,14 @@ button:hover {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
+}
+
+.form--stage__field__title {
+  text-align: center;
+  color: #1E3472;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 40px;
 }
 
 .form--stage__field__text {

@@ -69,13 +69,11 @@
     
 
         <div class="passwordToggle">
-        <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord" placeholder="Wachtwoord" value="">
-        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
+            <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord" placeholder="Wachtwoord" value=""><img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle"></input>
         </div>
 
         <div class="passwordToggle">
-        <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value="">
-        <img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle">
+            <input  id="pass" class="signup__input signup__input--pass" type="password" name="wachtwoord_confirmation" placeholder="Wachtwoord bevestigen" value=""><img class="togglePass--signup" src="{{asset('img/verborgen.png')}}" alt="toggle"></input>
         </div>
         
       

@@ -566,7 +566,11 @@
                 <div class="stage__info">
                     <p class="stage__info__title">Hieronder zie je de naam en het ondernemingsnummer dat je moet invullen in het formulier.</p>
                     <p class="stage__info__text">Naam: {{$company->name}}</p>
+                    @if(!empty($company->company_number))
                     <p class="stage__info__text">Ondernemingsnummer: {{$company->company_number}}</p>
+                    @else
+                    <p class="stage__info__text">Geen ondernemingsnummer</p>
+                    @endif
                 </div>
             </div>
 

@@ -101,4 +101,46 @@ class ChatController extends Controller
         return view('chat/chatMobile', $data);
     }
 
+
+    public static function makeDummyChats($user_id){
+        $convo1 = new Conversation();
+        $convo1->user_one = 3;
+        $convo1->user_two = $user_id;
+        $convo1->start = 0;
+        $convo1->save();
+
+        $chat1 = new Chat();
+        $chat1->conversation_id = $convo1->id;
+        $chat1->text = "Hey Jacob, met welke stap van de roadmap ben jij bezig?";
+        $chat1->read = 0;
+        $chat1->sender_id = 3;
+        $chat1->save();
+
+        $convo2 = new Conversation();
+        $convo2->user_one = 4;
+        $convo2->user_two = $user_id;
+        $convo2->start = 0;
+        $convo2->save();
+
+        $chat2 = new Chat();
+        $chat2->conversation_id = $convo2->id;
+        $chat2->text = "Yo, gaat gij naar die workshop van Ice Cube?";
+        $chat2->read = 0;
+        $chat2->sender_id = 4;
+        $chat2->save();
+
+        $convo3 = new Conversation();
+        $convo3->user_one = 5;
+        $convo3->user_two = $user_id;
+        $convo3->start = 0;
+        $convo3->save();
+
+        $chat3 = new Chat();
+        $chat3->conversation_id = $convo3->id;
+        $chat3->text = "Beste Jacob, heeft u nog nagedacht over de branding opdracht die wij u hebben aangeboden?";
+        $chat3->read = 0;
+        $chat3->sender_id = 5;
+        $chat3->save();
+    }
+
 }

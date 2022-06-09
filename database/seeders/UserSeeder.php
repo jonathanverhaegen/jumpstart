@@ -37,12 +37,12 @@ class UserSeeder extends Seeder
         $userA->save();
 
         $user3 = new User();
-        $user3->name = "Verhaegen Jonathan";
-        $user3->birth_date = "1998-02-18";
-        $user3->email = "r0670495@student.thomasmore.be";
+        $user3->name = "Peeters Sarah";
+        $user3->birth_date = "1998-03-14";
+        $user3->email = "r1234567@student.thomasmore.be";
         $user3->password = Hash::make("Test12345");
-        $user3->avatar = "person1.png";
-        $user3->bio = "";
+        $user3->avatar = "sarahp.png";
+        $user3->bio = "Dit is de bio van Sarah";
         $user3->isAgent = 0;
         $user3->save();
 
@@ -54,12 +54,12 @@ class UserSeeder extends Seeder
         $roadmap->save();
 
         $user1 = new User();
-        $user1->name = "Staetenburg Surinde";
-        $user1->birth_date = "1998-02-18";
-        $user1->email = "r0547896@student.thomasmore.be";
+        $user1->name = "Cole Laurens";
+        $user1->birth_date = "2001-06-12";
+        $user1->email = "r1346790@student.thomasmore.be";
         $user1->password = Hash::make("Test12345");
-        $user1->avatar = "person2.png";
-        $user1->bio = "";
+        $user1->avatar = "Laurens.png";
+        $user1->bio = "Dit is de bio van Laurens";
         $user1->isAgent = 0;
         $user1->save();
 
@@ -71,12 +71,12 @@ class UserSeeder extends Seeder
         $roadmap1->save();
 
         $user2 = new User();
-        $user2->name = "Storms Bob";
-        $user2->birth_date = "1998-02-18";
-        $user2->email = "r0789456@student.thomasmore.be";
+        $user2->name = "Van Rompaey Kris";
+        $user2->birth_date = "1996-10-18";
+        $user2->email = "r9876543@student.thomasmore.be";
         $user2->password = Hash::make("Test12345");
-        $user2->avatar = "person3.png";
-        $user2->bio = "";
+        $user2->avatar = "kris.png";
+        $user2->bio = "Dit is de bio van Kris";
         $user2->isAgent = 0;
         $user2->save();
 

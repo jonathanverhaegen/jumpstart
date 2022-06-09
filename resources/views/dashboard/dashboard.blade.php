@@ -103,7 +103,7 @@
                         <img class="chat__pic" src="/attachments/{{$chat->usertwo->avatar}}" alt="chat pic">
                         <div class="dash__chat__text">
                             <p class="dash__chat__name">{{$chat->usertwo->name}}</p>
-                            <p class="dash__chat__mess">{{substr($chat->chats[count($chat->chats)-1]->text,0,20)}}</p>
+                            <p class="dash__chat__mess">{{substr($chat->chats[count($chat->chats)-1]->text,0,80)}}</p>
                         </div>
                     </a>
                 
@@ -112,7 +112,7 @@
                         <img class="chat__pic" src="/attachments/{{$chat->userone->avatar}}" alt="chat pic">
                         <div class="dash__chat__text">
                             <p class="dash__chat__name">{{$chat->userone->name}}</p>
-                            <p class="dash__chat__mess">{{substr($chat->chats[count($chat->chats)-1]->text,0,20)}}</p>
+                            <p class="dash__chat__mess">{{substr($chat->chats[count($chat->chats)-1]->text,0,80)}}</p>
                         </div>
                     </a>
                 @endif

@@ -540,3 +540,162 @@ if(statuutForm !== null){
 //     })
 // }
         
+window.addEventListener("load", function() {
+
+    if(document.querySelector(".calendar__heading")) {
+
+        moment().format();
+        moment.locale("nl");
+        
+        let events = [];
+
+        let selectedYear = parseInt(moment().format("YYYY"));
+        let selectedMonth = parseInt(moment().format("M"));
+
+        const getLeadingDays = (date, staDay = 1) => {
+            const result = [];
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const firstDay = new Date(year, month, 1).getDay();
+            const days = (firstDay + 7) - (staDay + 7) - 1;
+
+            for(let i = days * -1; i <= 0; i++) {
+                result.push(new Date(year, month, i).getDate());
+            }
+
+            return result;
+        };
+
+        const getMonthDays = (date) => {
+            const result = [];
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const lastDay = new Date(year, month + 1, 0).getDate();
+
+            for(let i = 1; i <= lastDay; i++) {
+                result.push(i);
+            }
+
+            return result;
+        };
+
+        const getTrailingDays = (leadingDays, monthDays) => {
+            const result = [];
+            const days = 42 - (leadingDays.length + monthDays.length);
+
+            for(let i = 1; i <= days; i++) {
+                result.push(i);
+            }
+
+            return result;
+        };
+
+        const showCalendar = (year, month, events) => {
+
+            if(document.querySelector(".calendar__loading")) {
+                document.querySelector(".calendar__loading").remove();
+            }
+
+            const date = new Date(year, month - 1, 1);
+            let eventsThisMonth = []; 
+            let eventDates = [];
+
+            events.forEach(event => {
+                let compareDate = moment(event.date).format("YYYY-MM-DD");
+                let startDate = moment(date).format("YYYY-MM-01");
+                let endDate = moment(date).add(1, "month").format("YYYY-MM-01");
+
+                if(moment(compareDate).isBetween(startDate, endDate)) {
+                    eventsThisMonth.push(event);
+                    eventDates.push(parseInt(moment(event.date).format("D")));
+                }
+            });
+
+            const daysPrevMonth = getLeadingDays(date);
+            const daysThisMonth = getMonthDays(date);
+            const daysNextMonth = getTrailingDays(daysPrevMonth, daysThisMonth);
+
+            const daysElement = document.querySelector(".days");
+            const monthElement = document.querySelector(".month");
+
+            monthElement.innerText = moment(date).format("MMMM YYYY");
+
+            daysPrevMonth.forEach(day => {
+                daysElement.insertAdjacentHTML("beforeend", `<button class="day--previous-month">${day}</button>`);
+            });
+
+            daysThisMonth.forEach(day => {
+                if(eventDates.includes(day)) {
+                    let index = eventDates.indexOf(day);
+                    let event = eventsThisMonth[index];
+                    let eventName = event.name;
+                    let eventDate = moment(event.date).format("dddd D MMMM [om] HH:mm");
+
+                    daysElement.insertAdjacentHTML("beforeend", `<button class="day--this-month">${day}<span class="dot"></span><div class="calendar__event"><span class="calendar__event__name">${eventName}</span><span class="calendar__event__date">${eventDate}</span></div></button>`);
+                } else {
+                    daysElement.insertAdjacentHTML("beforeend", `<button class="day--this-month">${day}</button>`);
+                }
+            });
+
+            daysNextMonth.forEach(day => {
+                daysElement.insertAdjacentHTML("beforeend", `<button class="day--next-month">${day}</button>`);
+            });
+
+            document.querySelectorAll(".day--this-month").forEach(element => {
+                element.addEventListener("click", (evt) => {
+                    if(evt.target.querySelector(".calendar__event")) {
+                        evt.target.querySelector(".calendar__event").classList.toggle("calendar__event--active");
+                    };
+                });
+            })
+        };
+
+        const updateCalendar = (year, month) => {
+            document.querySelector(".days").innerHTML = "";
+            showCalendar(year, month, events);
+        };
+
+        fetch("https://bobstorms.be/jumpstart/calendar.php")
+            .then(res => res.json())
+            .then(data => {
+                let index = 0;
+                calendarItems = data.items;
+
+                calendarItems.forEach(item => {
+                    const eventName = item.summary;
+                    const eventDate = new Date(item.start.dateTime);
+
+                    const event = {
+                        "id": index,
+                        "name": eventName,
+                        "date": eventDate
+                    };
+                    events.push(event);
+                    index++;
+                });
+
+                //window.setTimeout(showCalendar, 3000, selectedYear, selectedMonth, events);
+                showCalendar(selectedYear, selectedMonth, events);
+            });
+
+        document.getElementById("calendar-back").addEventListener("click", () => {
+            selectedMonth--;
+            if(selectedMonth < 1) {
+                selectedMonth = 12;
+                selectedYear--;
+            }
+            updateCalendar(selectedYear, selectedMonth);
+        });
+
+        document.getElementById("calendar-forward").addEventListener("click", () => {
+            selectedMonth++;
+            if(selectedMonth > 12) {
+                selectedMonth = 1;
+                selectedYear++;
+            }
+            updateCalendar(selectedYear, selectedMonth);
+        });
+
+    }
+
+});

@@ -1,3 +1,121 @@
+.calendar__heading {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  color: #13204A;
+}
+
+.calendar__buttons {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.calendar__buttons img {
+  height: 25px;
+  cursor: pointer;
+}
+
+.calendar__buttons img:nth-child(2) {
+  transform: rotate(180deg);
+}
+
+.calendar__names {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar__names span {
+  padding: 10px;
+  text-align: center;
+  color: #13204A;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+}
+
+.month {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.days button {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.day--this-month {
+  color: #13204A;
+  position: relative;
+}
+
+.day--previous-month, .day--next-month {
+  color: #A1B1D4;
+}
+
+.dot {
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  background-color: red;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 28px;
+}
+
+.calendar__event {
+  position: absolute;
+  z-index: 9999;
+  background-color: #DBDFEB;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 250px;
+  top: 45px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.calendar__event--active {
+  display: flex;
+}
+
+.calendar__event__name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #13204A;
+}
+
+.calendar__event__date {
+  font-size: 1em;
+  color: #13204A;
+}
+
+.calendar__loading {
+  height: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
 .dash__container__base {
   width: 90%;
   background-color: #FAFAFA;
@@ -53,18 +171,15 @@ strong {
 }
 
 .dash__container__cal {
-  float: left;
-  width: 40%;
   background-color: #FAFAFA;
   border-radius: 20px 20px 20px 20px;
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
-  padding-bottom: 2%;
-  padding-top: 3%;
-  padding-left: 0%;
-  padding-right: 0%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
 }
 
 .dash__cal {
@@ -139,10 +254,9 @@ hr.stripe__cal {
 }
 
 .dash__container__chat {
-  width: 40%;
   background-color: #FAFAFA;
   border-radius: 20px 20px 20px 20px;
-  margin-left: 55%;
+  margin-left: 5%;
   margin-right: 5%;
   margin-top: 10%;
   margin-bottom: 5%;
@@ -158,7 +272,7 @@ hr.stripe__cal {
 }
 
 .chat__pic {
-  width: 70%;
+  height: 100px;
   margin: 3%;
 }
 
@@ -412,8 +526,14 @@ a {
 
 .dash__chat__item {
   text-decoration: none;
+  text-align: center;
 }
 
+@media screen and (min-width: 470px) {
+  .dash__container__chat {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 @media (min-width: 800px) {
   .dash__container__base {
     display: none;
@@ -446,10 +566,6 @@ a {
     margin-right: 0%;
     margin-top: 0%;
     margin-bottom: 2%;
-    padding-bottom: 4.2%;
-    padding-top: 30%;
-    padding-left: 0%;
-    padding-right: 0%;
   }
 
   .dash__cal {
@@ -508,6 +624,7 @@ a {
     flex-direction: row;
     align-items: center;
     margin-left: -3%;
+    text-align: left;
   }
 
   .dash__chat__text {

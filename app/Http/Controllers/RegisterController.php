@@ -163,7 +163,7 @@ class RegisterController extends Controller
         $todo4->save();
 
 
-        // event(new Registered($user));
+        event(new Registered($user));
 
         $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');
         return redirect('/login');
@@ -322,7 +322,7 @@ class RegisterController extends Controller
 
 
         //email verzenden voor verificatie
-        // event(new Registered($user));
+        event(new Registered($user));
 
         //redirecten naar login
         $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');

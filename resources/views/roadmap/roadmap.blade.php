@@ -165,7 +165,7 @@
                 </div>
                     
                 @if($roadmap->stage === 1 && $roadmap->check === 0 && $roadmap->extra === 0)
-                    <form class="form--stage" action="/statuut/stop/stap1" method="post">
+                    <form class="form--stage form__stop__radio" action="/statuut/stop/stap1" method="post">
                     @csrf
                         <div class="form--stage__field__radio">
                             <input type="radio" name="waarom" value="stop"><label for="bevestig">Ik wil stoppen met mijn onderneming</label>
@@ -177,7 +177,11 @@
                             <input type="radio" name="waarom" value="bijberoep"><label for="bevestig">Ik wil van mijn onderneming mijn bijberoep maken</label>
                         </div>
 
-                        <button class="stage__form__check__btn" type="submit">Checken</button>
+                        <div class="form__btn">
+                            <button class="stage__form__check__btn" type="submit">Checken</button>
+                        </div>
+
+                        
 
                     </form>
                 @endif

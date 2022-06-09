@@ -2268,6 +2268,14 @@ button:hover {
   padding: 10px 25px 10px 25px;
 }
 
+.form__stop__radio {
+  margin-top: 20px;
+}
+
+.form__stop__radio .form--stage__field__radio {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 800px) {
   .form--login {
     display: grid;

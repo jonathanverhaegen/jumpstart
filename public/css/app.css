@@ -2448,8 +2448,9 @@ button:hover {
   background-color: #13204A;
   color: white;
   font-family: "Montserrat", sans-serif;
-  padding: 20px;
+  padding: 20px 40px;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 @media (min-width: 800px) {

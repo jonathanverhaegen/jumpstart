@@ -122,7 +122,7 @@
   border-radius: 20px 20px 20px 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 25px;
   margin-bottom: 5%;
   padding: 5%;
 }
@@ -602,7 +602,7 @@ a {
 
   .dash__container__chat {
     width: 43%;
-    margin-top: 5%;
+    margin-top: 50px;
     margin-bottom: 0%;
     margin-left: 52%;
     padding-bottom: 2%;
@@ -1188,16 +1188,11 @@ a {
   grid-template-columns: 1fr 5fr;
   gap: 0px;
   align-items: center;
-  margin-top: 4%;
 }
 
 .search__icon {
   display: flex;
   justify-content: center;
-}
-
-.search__icon__img {
-  width: 50px;
 }
 
 .search__input input {
@@ -1227,20 +1222,17 @@ img.prof__pic__ {
   .search {
     margin-top: 0%;
     grid-template-columns: 1fr 5fr 1fr;
+    padding: 1%;
+  }
+
+  .search__input {
+    margin-left: -5%;
   }
 
   .search__input input {
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: -130px;
-  }
-
-  .search__icon {
-    margin-left: -80px;
-  }
-
-  .search__icon__img {
-    margin-left: -15%;
+    padding-left: 0px;
   }
 
   img.prof__pic__ {
@@ -1856,6 +1848,7 @@ img.prof__pic__ {
     margin-top: 9%;
     margin-bottom: -5%;
     margin-left: -28%;
+
   }
 
   .roadmap__stage--3 {
@@ -2422,6 +2415,10 @@ button:hover {
   .form__btn--signup {
     margin-top: -25px;
   }
+
+  .form--login {
+    padding-top: 12%;
+  }
 }
 .formBtn {
   width: 100%;
@@ -2704,6 +2701,7 @@ button:hover {
   width: 100%;
   align-items: center;
   font-family: "Lato", sans-serif;
+  gap: 10px;
 }
 
 .bio__extra__img img {
@@ -2712,7 +2710,11 @@ button:hover {
 
 .bio__extra__text__title {
   font-size: 18px;
-  margin-top: 10px;
+  margin-top: 5px;
+}
+
+.contact__back {
+  display: none;
 }
 
 @media (min-width: 800px) {
@@ -2769,6 +2771,35 @@ button:hover {
     padding-top: 25px;
     margin-top: 25px;
     padding-bottom: 50px;
+  }
+
+  .bio__container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .bio__extra {
+    margin-top: 20px;
+    width: 100%;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .bio__extra__img {
+    width: 20%;
+  }
+
+  .bio__extra__img--right {
+    margin-left: 33%;
+  }
+
+  .bio__extra__img img {
+    width: 100%;
   }
 
   .contact__back img {
@@ -3618,6 +3649,10 @@ input::placeholder {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 100px;
+    align-items: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .ill__su {

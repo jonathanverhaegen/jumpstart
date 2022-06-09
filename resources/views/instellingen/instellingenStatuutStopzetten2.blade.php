@@ -95,7 +95,7 @@
                 <a href="#" class="settings__second__list__item">
                     Statuut aanpassen
                 </a>
-                <a href="/instellingen/statuut-stopzetten" class="settings__second__list__item settings__second__list__item--active">
+                <a href="/instellingen/statuut-stopzetten/1" class="settings__second__list__item settings__second__list__item--active">
                     Statuut stopzetten
                 </a>
             </div>

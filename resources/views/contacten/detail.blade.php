@@ -104,7 +104,7 @@
             </div>
 
             <div class="bio__extra">
-                <div class="bio__extra__img">
+                <div class="bio__extra__img bio__extra__img--right">
                 <img src="{{asset('img/klok.png')}}" alt="clock" class="">
                 </div>
                 <div class="bio__extra__text">

@@ -1078,10 +1078,6 @@ a {
   justify-content: center;
 }
 
-.search__icon__img {
-  width: 50px;
-}
-
 .search__input input {
   border: none;
   color: #1E3472;
@@ -1109,20 +1105,17 @@ img.prof__pic__ {
   .search {
     margin-top: 0%;
     grid-template-columns: 1fr 5fr 1fr;
+    padding: 1%;
+  }
+
+  .search__input {
+    margin-left: -5%;
   }
 
   .search__input input {
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-left: -130px;
-  }
-
-  .search__icon {
-    margin-left: -80px;
-  }
-
-  .search__icon__img {
-    margin-left: -15%;
+    padding-left: 0px;
   }
 
   img.prof__pic__ {

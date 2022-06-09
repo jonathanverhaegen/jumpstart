@@ -50,17 +50,15 @@ route::get('/', function(){
 });
 
 
-
-
-//achter security
-Route::group(['middleware' => ['auth']], function() {
-    
     /**
     * Verification Routes
     */
     Route::get('/email/verify', [VerificationController::class, "show"])->name('verification.notice');
     Route::get('/email/verify/{id}/{hash}', [VerificationController::class, "verify"])->name('verification.verify')->middleware(['signed']);
     Route::post('/email/resend', [VerificationController::class, "resend"])->name('verification.resend');
+
+//achter security
+Route::group(['middleware' => ['auth']], function() {
 
     Route::group(['middleware' => ['2fa']], function() {
     Route::group(['middleware' => ['verified']], function() {

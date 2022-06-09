@@ -71,29 +71,26 @@
         </div> 
     
         <div class="dash__container__cal">
-            <p class="dash__cal"> Kalender</p>
-            <p class="cal__today"> 13</p>
-            <p class="cal__month"> Dec 2021</p>
-            
-            <hr class="stripe__cal">   
-            
-            <div class="cal__grid">     
-            <p class="cal__days"> ma</p>
-            <p class="cal__days"> di</p>
-            <p class="cal__days"> wo</p>
-            <p class="cal__days"> do</p>
-            <p class="cal__days"> vr</p>
-            <p class="cal__days"> za</p>
-            <p class="cal__day"> zo</p>
 
-            <p class="cal__digit"> 13</p>
-            <p class="cal__digit"> 14</p>
-            <p class="cal__digit"> 15</p>
-            <p class="cal__digit"> 16</p>
-            <p class="cal__digit"> 17</p>
-            <p class="cal__digit"> 18</p>
-            <p class="cal__digit"> 19</p>
+            <div class="calendar__heading">
+                <span class="month"></span>
+                <div class="calendar__buttons">
+                    <img src="./img/arrow-calendar.svg" alt="Terug" id="calendar-back">
+                    <img src="./img/arrow-calendar.svg" alt="Verder" id="calendar-forward">
+                </div>
             </div>
+            <div class="calendar__names">
+                <span>ma</span>
+                <span>di</span>
+                <span>wo</span>
+                <span>do</span>
+                <span>vr</span>
+                <span>za</span>
+                <span>zo</span>
+            </div>
+            <img src="./img/loading.gif" alt="Loading..." class="calendar__loading">
+            <div class="days"></div>
+            
         </div>
 
         <div class="dash__container__chat">
@@ -177,7 +174,6 @@
     
     </div>
 
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment-with-locales.min.js" integrity="sha512-vFABRuf5oGUaztndx4KoAEUVQnOvAIFs59y4tO0DILGWhQiFnFHiR+ZJfxLDyJlXgeut9Z07Svuvm+1Jv89w5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 @endsection

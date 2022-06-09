@@ -141,15 +141,17 @@
     padding-top: 4%;
     padding-bottom: 8%;
     display:grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
+    gap: 20%;
 }
 
 .dash__pic{
-    width:40%;
-    margin-left: 50%;
-    margin-top: 15%;
+    width: 75px;
     border-radius:50%;
-    
+}
+
+.dash__extra{
+    margin-top:15%;
 }
 
 .dash__name{
@@ -159,8 +161,6 @@
     color:$darkblue;
     font-size: 30px;
     margin-bottom: 5%;
-    margin-left: 3%;
-    margin-top:10%;
     width: 150%;
 }
 
@@ -169,11 +169,10 @@
     color: $darkblue;
     font-size: 18px;
     margin-bottom: 5%;
-    margin-left: 3.5%;
     margin-top:10%;
     width: 120%;
 }
-strong{
+.strong--dash{
     color: $orange;
 }
 
@@ -573,7 +572,7 @@ a{
     .dash__mess{
         display: none;
     }
-    strong{
+    .strong--dash{
         display: none;
     }
     

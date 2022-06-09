@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Homepage')
+@section('title', 'Roadmap')
 
 @section('content')
 
@@ -165,7 +165,7 @@
                 </div>
                     
                 @if($roadmap->stage === 1 && $roadmap->check === 0 && $roadmap->extra === 0)
-                    <form class="form--stage" action="/statuut/stop/stap1" method="post">
+                    <form class="form--stage form__stop__radio" action="/statuut/stop/stap1" method="post">
                     @csrf
                         <div class="form--stage__field__radio">
                             <input type="radio" name="waarom" value="stop"><label for="bevestig">Ik wil stoppen met mijn onderneming</label>
@@ -177,7 +177,11 @@
                             <input type="radio" name="waarom" value="bijberoep"><label for="bevestig">Ik wil van mijn onderneming mijn bijberoep maken</label>
                         </div>
 
-                        <button class="stage__form__check__btn" type="submit">Checken</button>
+                        <div class="form__btn">
+                            <button class="stage__form__check__btn" type="submit">Checken</button>
+                        </div>
+
+                        
 
                     </form>
                 @endif
@@ -306,11 +310,11 @@
             <form class="form--stage" action="/add/company" method="post">
                 @csrf
                     <div class="form--stage__field">
-                        <p class="form--stage__field__text">Algemene bedrijfsgegevens</p>
+                        <p class="form--stage__field__title">Algemene bedrijfsgegevens</p>
                         <input type="text" class="form--stage__field__input" name="naam" placeholder="Naam van je toekomstige onderneming">
                         <input type="text" class="form--stage__field__input" name="emailadres" placeholder="E-mailadres van je onderneming">
                         <input type="number" class="form--stage__field__input" name="telefoon" placeholder="Telefoonnummer van je onderneming">
-                        <p class="form--stage__field__text">Adresgegevens</p>
+                        <p class="form--stage__field__title">Adresgegevens</p>
                         <input type="text" class="form--stage__field__input" name="straat" placeholder="Straatnaam">
                         <input type="number" class="form--stage__field__input" name="nummer" placeholder="Huisnummer">
                         <input type="text" class="form--stage__field__input" name="plaats" placeholder="Plaats">
@@ -437,7 +441,7 @@
                         @endif
                     </form>
                     
-                    <form class="briefjeAdd" action="/delete/briefje" method="post">
+                    <form class="briefjeAdd briefjeAdd--delete" action="/delete/briefje" method="post">
                     @csrf
                     @if(!empty($briefjes[0]))
                     @foreach($briefjes as $b)
@@ -476,8 +480,8 @@
             <form class="formStage3" action="/check/inputStage4" method="post">
             @csrf
                 <div class="stage__btns">
-                    <a class="stagebtn3" data-exemption="0" href="#" >Ik kies <strong>niet</strong> voor de vrijstellingsregeling</a>
-                    <a class="stagebtn3" data-exemption="1" href="#" >Ik kies <strong>wel</strong> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" data-exemption="0" href="#" >Ik kies <span class="roadmap__span">niet</span> voor de vrijstellingsregeling</a>
+                    <a class="stagebtn3" data-exemption="1" href="#" >Ik kies <span class="roadmap__span">wel</span> voor de vrijstellingsregeling</a>
                     <a class="stagebtn3" data-exemption="2" href="#" >Ik weet het nog niet, ik laat mij informeren door een sociaal verzekeringsfonds</a>
                 </div>
                 <input type="hidden" name="vrijstelling" class="exemption">
@@ -566,7 +570,11 @@
                 <div class="stage__info">
                     <p class="stage__info__title">Hieronder zie je de naam en het ondernemingsnummer dat je moet invullen in het formulier.</p>
                     <p class="stage__info__text">Naam: {{$company->name}}</p>
+                    @if(!empty($company->company_number))
                     <p class="stage__info__text">Ondernemingsnummer: {{$company->company_number}}</p>
+                    @else
+                    <p class="stage__info__text">Geen ondernemingsnummer</p>
+                    @endif
                 </div>
             </div>
 

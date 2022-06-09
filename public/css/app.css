@@ -134,14 +134,17 @@
   padding-top: 4%;
   padding-bottom: 8%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
+  gap: 20%;
 }
 
 .dash__pic {
-  width: 40%;
-  margin-left: 50%;
-  margin-top: 15%;
+  width: 75px;
   border-radius: 50%;
+}
+
+.dash__extra {
+  margin-top: 15%;
 }
 
 .dash__name {
@@ -151,8 +154,6 @@
   color: #13204A;
   font-size: 30px;
   margin-bottom: 5%;
-  margin-left: 3%;
-  margin-top: 10%;
   width: 150%;
 }
 
@@ -161,12 +162,11 @@
   color: #13204A;
   font-size: 18px;
   margin-bottom: 5%;
-  margin-left: 3.5%;
   margin-top: 10%;
   width: 120%;
 }
 
-strong {
+.strong--dash {
   color: #E44402;
 }
 
@@ -555,7 +555,7 @@ a {
     display: none;
   }
 
-  strong {
+  .strong--dash {
     display: none;
   }
 
@@ -1226,6 +1226,7 @@ img.prof__pic__ {
 
   .search {
     margin-top: 0%;
+    grid-template-columns: 1fr 5fr 1fr;
   }
 
   .search__input input {
@@ -1245,10 +1246,9 @@ img.prof__pic__ {
   img.prof__pic__ {
     display: flex;
     width: 25%;
-    float: left;
-    margin-left: 572%;
-    margin-top: -29%;
     border-radius: 50%;
+    margin-left: auto;
+    margin-right: 20%;
   }
 }
 .roadmap__container {
@@ -1332,6 +1332,7 @@ img.prof__pic__ {
   font-family: "Montserrat", sans-serif;
   color: #E44402;
   font-size: 28px;
+  text-transform: uppercase;
 }
 
 .stage {
@@ -1366,8 +1367,8 @@ img.prof__pic__ {
   background-color: #E44402;
   color: white;
   font-family: "Montserrat", sans-serif;
-  border-radius: 15px;
-  padding: 2%;
+  border-radius: 20px;
+  padding: 3%;
   font-size: 24px;
   border: none;
 }
@@ -1377,6 +1378,7 @@ img.prof__pic__ {
   width: 100%;
   grid-template-columns: 1fr;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .stageCheckBtn {
@@ -1387,7 +1389,7 @@ img.prof__pic__ {
   font-family: "Lato", sans-serif;
   border-radius: 25px;
   padding: 4%;
-  width: 60%;
+  width: 80%;
   align-self: center;
   margin-top: 20px;
   font-size: 22px;
@@ -1492,7 +1494,7 @@ img.prof__pic__ {
 }
 
 .stage2__form {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .stage5__form {
@@ -1693,6 +1695,11 @@ img.prof__pic__ {
 .briefjeAdd {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
+
+.briefjeAdd--delete {
+  margin-top: 0px;
 }
 
 .briefjeAdd button {
@@ -1700,15 +1707,15 @@ img.prof__pic__ {
   text-align: center;
   background-color: #E44402;
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lato", sans-serif;
   border-radius: 35px;
   padding: 5%;
-  font-size: 14px;
   border: none;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+  font-size: 22px;
 }
 
 .roadmap__back {
@@ -1722,6 +1729,7 @@ img.prof__pic__ {
   font-family: "Lato", sans-serif;
   padding: 5%;
   border-radius: 20px;
+  font-size: 18px;
 }
 
 .checkNumber4 {
@@ -1804,6 +1812,10 @@ img.prof__pic__ {
 
 .stage__info .briefje {
   margin-top: 0px;
+}
+
+.roadmap__span {
+  color: #1E3472;
 }
 
 @media (max-width: 800px) {
@@ -1974,7 +1986,7 @@ img.prof__pic__ {
   }
 
   .stageCheckBtn {
-    padding: 1%;
+    padding: 2%;
     width: 100%;
   }
 
@@ -2061,7 +2073,7 @@ img.prof__pic__ {
     font-family: "Montserrat", sans-serif;
     border-radius: 35px;
     padding: 2%;
-    font-size: 14px;
+    font-size: 18px;
     border: none;
     width: 50%;
     margin-left: auto;
@@ -2304,6 +2316,14 @@ button:hover {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
+}
+
+.form--stage__field__title {
+  text-align: center;
+  color: #1E3472;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 40px;
 }
 
 .form--stage__field__text {
@@ -2365,6 +2385,14 @@ button:hover {
   padding: 10px 25px 10px 25px;
 }
 
+.form__stop__radio {
+  margin-top: 20px;
+}
+
+.form__stop__radio .form--stage__field__radio {
+  margin-bottom: 10px;
+}
+
 @media (min-width: 800px) {
   .form--login {
     display: grid;
@@ -2378,6 +2406,7 @@ button:hover {
   .form--stage__field {
     flex-direction: column;
     width: 100%;
+    margin-top: 10px;
   }
 
   .form--stage__field__input {

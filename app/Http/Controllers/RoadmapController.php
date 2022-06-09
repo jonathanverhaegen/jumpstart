@@ -622,6 +622,7 @@ class RoadmapController extends Controller
         }
 
         $roadmap = Auth::user()->roadmap;
+        $roadmap->check = 0;
         $roadmap->extra = 2;
         $roadmap->save();
         $request->session()->flash('success', 'Briefje is verwijderd');

@@ -264,38 +264,8 @@ class RegisterController extends Controller
         $company->user_id = $user->id;
         $company->save();
 
-        //todos 
-        //add todo
-        $todo1 = new Todo();
-        $todo1->title = "Personenelasting";
-        $todo1->text = "Deadline indienen personenbelasting";
-        $todo1->type = "overheid";
-        $todo1->user_id = $user->id;
-        $todo1->save();
-
-        $todo2 = new Todo();
-        $todo2->title = "Klantenlisting";
-        $todo2->text = "Deadline indienen klantenlisting btw";
-        $todo2->type = "overheid";
-        $todo2->user_id = $user->id;
-        $todo2->save();
-
-        $todo3 = new Todo();
-        $todo3->title = "Provinciebelasting Antwerpen";
-        $todo3->text = "Deadline indienen aangifte provinciebelasting Antwerpen";
-        $todo3->type = "overheid";
-        $todo3->user_id = $user->id;
-        $todo3->save();
-
-        $todo4 = new Todo();
-        $todo4->title = "Ice Cube";
-        $todo4->text = "Een workshop rond de branding van je bedrijf";
-        $todo4->type = "normal";
-        $todo4->user_id = $user->id;
-        $todo4->save();
-
-
-
+        //add dummy todo's
+        DashboardController::makeDummyTodo($user->id);
 
         //email verzenden voor verificatie
         event(new Registered($user));

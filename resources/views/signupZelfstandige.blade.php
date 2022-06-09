@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Register')
+@section('title', 'Registreer als student-zelfstandige')
 
 @section('content')
 

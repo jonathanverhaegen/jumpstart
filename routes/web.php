@@ -63,7 +63,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/email/resend', [VerificationController::class, "resend"])->name('verification.resend');
 
     Route::group(['middleware' => ['2fa']], function() {
-    // Route::group(['middleware' => ['verified']], function() {
+    Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard
     Route::get('/dashboard', [DashboardController::class, "dashboard"])->name('dashboard');
@@ -140,4 +140,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 });
-// });
+});

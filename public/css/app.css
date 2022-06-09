@@ -48,7 +48,7 @@
   width: 120%;
 }
 
-strong {
+.strong--dash {
   color: #E44402;
 }
 
@@ -435,7 +435,7 @@ a {
     display: none;
   }
 
-  strong {
+  .strong--dash {
     display: none;
   }
 
@@ -1869,7 +1869,7 @@ img.prof__pic__ {
   }
 
   .stageCheckBtn {
-    padding: 1%;
+    padding: 2%;
     width: 100%;
   }
 
@@ -1956,7 +1956,7 @@ img.prof__pic__ {
     font-family: "Montserrat", sans-serif;
     border-radius: 35px;
     padding: 2%;
-    font-size: 14px;
+    font-size: 18px;
     border: none;
     width: 50%;
     margin-left: auto;
@@ -2289,6 +2289,7 @@ button:hover {
   .form--stage__field {
     flex-direction: column;
     width: 100%;
+    margin-top: 10px;
   }
 
   .form--stage__field__input {

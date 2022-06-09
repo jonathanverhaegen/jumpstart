@@ -60,7 +60,7 @@
                 <div class="dash">
                         <div class="dash__extra">
                             <p class="dash__name">Hi {{ explode(" ", $user->name)[1] }} </p>
-                            <p class="dash__mess">Wij hebben <strong>nieuwe ondernemingstips</strong> voor jou</p>
+                            <p class="dash__mess">Wij hebben <strong class="strong-dash">nieuwe ondernemingstips</strong> voor jou</p>
                         </div>
                         <div class="dash__img">
                         <a href="dashboard/profile"><img class="dash__pic" src="/attachments/{{$user->avatar}}" alt="profile pic"></a>

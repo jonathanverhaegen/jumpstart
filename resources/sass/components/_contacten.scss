@@ -230,7 +230,7 @@
 
 .bio__container{
    background-color: $white; 
-   padding:25px;
+   padding: 25px;
    width:90%;
    margin-left:auto;
    margin-right:auto;
@@ -258,6 +258,7 @@
     width:100%;
     align-items: center;
     font-family: $normal;
+    gap:10px;
 }
 
 .bio__extra__img img{
@@ -266,7 +267,11 @@
 
 .bio__extra__text__title{
     font-size: 18px;
-    margin-top:10px;
+    margin-top: 5px;
+}
+
+.contact__back{
+    display:none;
 }
 
 
@@ -299,6 +304,7 @@
     .pic1{
         margin-top: -10px;
     }
+    
 
     .contact__zoek{
         float: left;
@@ -329,6 +335,35 @@
         padding-top: 25px;
         margin-top: 25px;
         padding-bottom: 50px;
+    }
+
+    .bio__container{
+        padding-top:25px;
+        padding-bottom:25px;
+        padding-left:0px;
+        padding-right: 0px;
+    }
+
+    .bio__extra{
+        margin-top: 20px;
+        width: 100%;
+        align-items: center;
+        font-family: "Lato", sans-serif;
+        gap: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bio__extra__img{
+        width:20%;
+    }
+
+    .bio__extra__img--right{
+        margin-left: 33%;
+    }
+
+    .bio__extra__img img{
+        width:100%;
     }
 
     .contact__back img{

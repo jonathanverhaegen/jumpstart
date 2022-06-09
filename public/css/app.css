@@ -1109,6 +1109,7 @@ img.prof__pic__ {
 
   .search {
     margin-top: 0%;
+    grid-template-columns: 1fr 5fr 1fr;
   }
 
   .search__input input {
@@ -1128,10 +1129,9 @@ img.prof__pic__ {
   img.prof__pic__ {
     display: flex;
     width: 25%;
-    float: left;
-    margin-left: 572%;
-    margin-top: -29%;
     border-radius: 50%;
+    margin-left: auto;
+    margin-right: 20%;
   }
 }
 .roadmap__container {

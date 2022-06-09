@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -65,7 +66,8 @@ Route::group(['middleware' => ['auth']], function() {
     // Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard
-    Route::get('/dashboard', [LoginController::class, "homepage"])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, "dashboard"])->name('dashboard');
+    Route::get('/dashboard/profile', [DashboardController::class, "dashboardProfile"]);
 
     //routes van de roadmap
     Route::get('/roadmap', [RoadmapController::class, "roadmap"]);

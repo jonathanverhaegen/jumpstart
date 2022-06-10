@@ -171,7 +171,7 @@
                             <input type="radio" name="waarom" value="stop"><label for="bevestig">Ik wil stoppen met mijn onderneming</label>
                         </div>
                         <div class="form--stage__field__radio">
-                            <input type="radio" name="waarom" value="hoofdberoep"><label for="bevestig">Ik wil van mijn onerneming mijn hoofdberoep maken</label>  
+                            <input type="radio" name="waarom" value="hoofdberoep"><label for="bevestig">Ik wil van mijn onderneming mijn hoofdberoep maken</label>  
                         </div>
                         <div class="form--stage__field__radio">
                             <input type="radio" name="waarom" value="bijberoep"><label for="bevestig">Ik wil van mijn onderneming mijn bijberoep maken</label>

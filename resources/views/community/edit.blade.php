@@ -58,10 +58,12 @@
 
 
         <div class="edit__container">
-        <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back__icon"></a>  
+        <a href="/community"><img src="{{asset('img/back.png')}}" alt="back" class="back__icon"></a> 
+        <div class="groupedit__container"> 
             @foreach($groups as $group)
                 <livewire:groups :group_id="$group->id" />
             @endforeach
+        </div>
         </div>
 
 

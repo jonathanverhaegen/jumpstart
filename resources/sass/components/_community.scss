@@ -422,16 +422,17 @@ h1{
         margin-right: -70px;
     }
 
+    .groupedit__container{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .edit{
-        float: left;
-        margin: 12px 0px 30px 40px;
         height: 150px;
         width: 270px;    
     }
 
     .edit__{
-        float: left;
-        margin: 12px 0px 30px 40px;
         height: 150px;
         width: 270px;    
     }

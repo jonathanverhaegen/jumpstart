@@ -60,6 +60,7 @@
     <div class="comm__container">
     <h1>Mijn community</h1>
     <a href="/community/edit"><img src="{{asset('img/aanpassen.png')}}" alt="edit" class="edit__icon"></a>
+    <div class="groupedit__container">
         @if(!empty($groups[0]))
         @foreach($groups as $g)
         @if($g->goverment === 1)
@@ -76,6 +77,7 @@
         @else
         <p class="community__emptytext">Je bent momenteel geen lid van een groep</p>
         @endif
+    </div>
     </div> 
 
 

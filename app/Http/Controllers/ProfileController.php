@@ -100,4 +100,9 @@ class ProfileController extends Controller
             return redirect('/instellingen/wachtwoord-wijzigen');
         }
     }
+
+    public function profileDetail($id){
+        $data['user'] = User::where('id', $id)->first();
+        return view('dashboard/dashboardProfile', $data);
+    }
 }

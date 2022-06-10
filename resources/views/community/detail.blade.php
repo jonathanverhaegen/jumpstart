@@ -67,7 +67,11 @@
                     <img class="person" src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" >
                 @if(!empty($users))
                 @foreach($users as $user)
-                    <a href="/chat/addConversation/{{$user->id}}"><img class="person" src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" ></a>
+                    @if($user->isAgent === 0)
+                    <a href="/profile/{{$user->id}}"><img class="person" src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" ></a>
+                    @else
+                    <a href="/contacten/{{$user->id}}"><img class="person" src="/attachments/{{$user->avatar}}" alt="{{$user->name}}" ></a>
+                    @endif
                 @endforeach
                 @endif
             </div>

@@ -65,11 +65,15 @@
 
                         <div class="profile__extra">
                             <p class="profile__name">{{$user->name}}</p>
+                            @if(!empty($user->company->name))
                             <p class="profile__business">Jacob Smith Design</p>
+                            @endif
                                 <div class="profile__extra__icons">
+                                    @if(!empty($user->company->phone))
                                     <a href="" ><img src="{{asset('img/tel.png')}}" alt="call" class="profile__icon3"></a>
-                                    <a href="" ><img src="{{asset('img/mail.png')}}" alt="mail" class="profile__icon1"></a>
-                                    <a href="" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="profile__icon2"></a>
+                                    @endif
+                                    <a href="mailto:{{$user->email}}" ><img src="{{asset('img/mail.png')}}" alt="mail" class="profile__icon1"></a>
+                                    <a href="/chat/addConversation/{{$user->id}}" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="profile__icon2"></a>
                                 </div>
                         </div>
                 </div>
@@ -96,8 +100,9 @@
 
             </div>
          </div>
-
-         <a href="/instellingen" class="profile__edit"><p class="profile__edit__">Profiel wijzigen</p></a>  
+        @if($user->id === Auth::id())
+         <a href="/instellingen" class="profile__edit"><p class="profile__edit__">Profiel wijzigen</p></a> 
+        @endif
 </div>
 
 

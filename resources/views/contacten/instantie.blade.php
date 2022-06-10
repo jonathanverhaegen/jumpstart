@@ -84,16 +84,22 @@
                 <div class="contact__blok__info">
                     <div class="contact__blok__info__item">
                         <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon">
+                        @if($agent->isAgent === 1)
                         <a href="/contacten/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
+                        @else
+                        <a href="/profile/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
+                        @endif
                     </div>
                     <div class="contact__blok__info__item">
                         <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon">
                         <a href="/chat/addConversation/{{$agent->id}}" class="contact__zoek__link">Bericht sturen</a>
                     </div>
+                    @if($agent->isAgent === 1)
                     <div class="contact__blok__info__item">
                         <img  src="{{asset('img/tel.png')}}" alt="call" class="icon">
                         <a href="" class="contact__zoek__link">Bellen</a>
                     </div>
+                    @endif
                 </div>
 
              </div>

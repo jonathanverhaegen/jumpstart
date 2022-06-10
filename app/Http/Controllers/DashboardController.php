@@ -23,15 +23,12 @@ class DashboardController extends Controller
         return view('dashboard/dashboard', $data);
     }
 
-    public function dashboardProfile(){
-        $data['user'] = Auth::user();
-        return view('dashboard/dashboardProfile', $data);
-    }
+   
 
     public static function makeDummyTodo($user_id){
         
         $todo1 = new Todo();
-        $todo1->title = "Personenelasting";
+        $todo1->title = "Personenbelasting";
         $todo1->text = "Deadline indienen personenbelasting";
         $todo1->type = "overheid";
         $todo1->user_id = $user_id;

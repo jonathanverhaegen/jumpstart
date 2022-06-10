@@ -2465,10 +2465,9 @@ button:hover {
   border-radius: 20px 20px 20px 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
   padding-top: 25px;
-  height: 580px;
+  padding-bottom: 25px;
+  margin-top: 25px;
 }
 
 .contact {
@@ -2508,7 +2507,7 @@ button:hover {
   margin-top: 25px;
   margin-bottom: 25px;
   padding-top: 25px;
-  height: 545px;
+  padding-bottom: 25px;
 }
 
 .title {
@@ -2518,6 +2517,7 @@ button:hover {
   font-size: 20px;
   margin-left: 33.3px;
   padding-bottom: 10px;
+  grid-column: 1/span 3;
 }
 
 .contact__zoek {
@@ -2720,14 +2720,12 @@ button:hover {
 
 @media (min-width: 800px) {
   .contact__container {
-    height: 220px;
     margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .contact {
-    float: left;
-    margin-left: 30px;
-    margin-right: 0px;
     width: 282px;
   }
 
@@ -2737,18 +2735,16 @@ button:hover {
 
   .contact__container__zoek {
     margin-top: 50px;
-    margin-bottom: 0px;
-    height: 379px;
+    margin-bottom: 50px;
+  }
+
+  .contact__zoek__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .pic1 {
     margin-top: -10px;
-  }
-
-  .contact__zoek {
-    float: left;
-    margin-left: 30px;
-    margin-right: 0px;
   }
 
   .contact__detail {

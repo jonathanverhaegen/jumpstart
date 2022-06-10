@@ -79,12 +79,5 @@ class UserSeeder extends Seeder
         $user2->bio = "Dit is de bio van Kris";
         $user2->isAgent = 0;
         $user2->save();
-
-        $roadmap2 = new Roadmap();
-        $roadmap2->user_id = $user2->id;
-        $roadmap2->stage = 1;
-        $roadmap2->check = 0;
-        $roadmap2->extra = 0;
-        $roadmap2->save();
     }
 }

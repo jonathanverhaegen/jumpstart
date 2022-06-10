@@ -25,5 +25,9 @@ class InstantieSeeder extends Seeder
         $instantie3 = new Instantie();
         $instantie3->name = "ICE CUBE";
         $instantie3->save();
+
+        $instantie4 = new Instantie();
+        $instantie4->name = "Studenten";
+        $instantie4->save();
     }
 }

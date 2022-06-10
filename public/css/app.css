@@ -2613,6 +2613,7 @@ button:hover {
   margin-left: -75px;
   margin-top: -10px;
   width: 25%;
+  border-radius: 50%;
 }
 
 .pic2 {

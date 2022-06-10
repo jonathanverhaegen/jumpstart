@@ -89,11 +89,11 @@
                         @if($con->user_one === Auth::id())
                         <img src="/attachments/{{$con->usertwo->avatar}}" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">{{$con->usertwo->name}}</span>
-                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,40)}}...</span>
+                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,20)}}...</span>
                         @else
                         <img src="/attachments/{{$con->userone->avatar}}" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">{{$con->userone->name}}</span>
-                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,40)}}...</span>
+                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,20)}}...</span>
                         @endif
                     </a>
                     @endforeach
@@ -140,11 +140,11 @@
                         @if($con->user_one === Auth::id())
                         <img src="/attachments/{{$con->usertwo->avatar}}" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">{{$con->usertwo->name}}</span>
-                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,20)}}...</span>
+                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,40)}}...</span>
                         @else
                         <img src="/attachments/{{$con->userone->avatar}}" alt="Sarah" class="chat__list__profile">
                         <span class="chat__list__name">{{$con->userone->name}}</span>
-                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text, 0, 20)}}...</span>
+                        <span class="chat__list__preview">{{substr($con->chats[count($con->chats)-1]->text,0,40)}}...</span>
                         @endif
                     </a>
                     @endforeach

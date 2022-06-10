@@ -66,7 +66,7 @@
                         <div class="profile__extra">
                             <p class="profile__name">{{$user->name}}</p>
                             @if(!empty($user->company->name))
-                            <p class="profile__business">Jacob Smith Design</p>
+                            <p class="profile__business">{{$user->company->name}}</p>
                             @endif
                                 <div class="profile__extra__icons">
                                     @if(!empty($user->company->phone))

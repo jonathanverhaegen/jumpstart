@@ -141,6 +141,8 @@ class RegisterController extends Controller
 
         event(new Registered($user));
 
+        auth()->login($user);
+
         $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');
         return redirect('/login');
         
@@ -269,6 +271,8 @@ class RegisterController extends Controller
 
         //email verzenden voor verificatie
         event(new Registered($user));
+
+        auth()->login($user);
 
         //redirecten naar login
         $request->session()->flash('success', 'Je account is aangemaakt. Je hebt een email gekregen om je emailadres te verifieren');

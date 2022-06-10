@@ -2612,7 +2612,8 @@ button:hover {
   margin-bottom: 0px;
   margin-left: -75px;
   margin-top: -10px;
-  width: 25%;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 

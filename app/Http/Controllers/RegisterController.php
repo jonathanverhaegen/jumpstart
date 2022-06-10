@@ -137,7 +137,7 @@ class RegisterController extends Controller
         DashboardController::makeDummyTodo($user->id);
 
         //dummy chat
-        ChatController::makeDummyChats($user->id);
+        ChatController::makeDummyChats($user->id, $user->name);
 
         event(new Registered($user));
 

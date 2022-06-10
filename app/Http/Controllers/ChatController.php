@@ -102,7 +102,7 @@ class ChatController extends Controller
     }
 
 
-    public static function makeDummyChats($user_id){
+    public static function makeDummyChats($user_id, $user_name){
         $convo1 = new Conversation();
         $convo1->user_one = 3;
         $convo1->user_two = $user_id;
@@ -111,7 +111,7 @@ class ChatController extends Controller
 
         $chat1 = new Chat();
         $chat1->conversation_id = $convo1->id;
-        $chat1->text = "Hey Jacob, met welke stap van de roadmap ben jij bezig?";
+        $chat1->text = "Hey ".explode(" ", $user_name)[1].", met welke stap van de roadmap ben jij bezig?";
         $chat1->read = 0;
         $chat1->sender_id = 3;
         $chat1->save();
@@ -137,7 +137,7 @@ class ChatController extends Controller
 
         $chat3 = new Chat();
         $chat3->conversation_id = $convo3->id;
-        $chat3->text = "Beste Jacob, heeft u nog nagedacht over de branding opdracht die wij u hebben aangeboden?";
+        $chat3->text = "Beste ".explode(" ", $user_name)[1].", heeft u nog nagedacht over de branding opdracht die wij u hebben aangeboden?";
         $chat3->read = 0;
         $chat3->sender_id = 5;
         $chat3->save();

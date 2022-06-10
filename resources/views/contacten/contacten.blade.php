@@ -74,13 +74,27 @@
         <div class="contact__zoek__grid">
         @foreach($agents as $agent)
         <div class="contact__zoek">
-             <div class="contact__blok__zoek">
-
-                    <img class="pic1" src="attachments/{{ $agent->avatar }}" alt="avatar"><p class="contact__zoek__name">{{$agent->name}}</p>
+        <div class="contact__blok__zoek">
+                <div class="contact__blok__user">
+                    <img class="pic1" src="/attachments/{{ $agent->avatar }}" alt="avatar">
+                    <p class="contact__zoek__name">{{$agent->name}}</p>
                     <p class="contact__zoek__mail">{{$agent->email}}</p>
-                    <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon1"><a href="/contacten/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
-                    <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon2"><a href="/chat/addConversation/{{$agent->id}}" class="contact__zoek__link">Bericht sturen</a>
-                    <img  src="{{asset('img/tel.png')}}" alt="call" class="icon3"><a href="" class="contact__zoek__link">Bellen</a>
+                </div>
+                <div class="contact__blok__info">
+                    <div class="contact__blok__info__item">
+                        <img src="{{asset('img/profiel.png')}}" alt="profile" class="icon">
+                        <a href="/contacten/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
+                    </div>
+                    <div class="contact__blok__info__item">
+                        <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon">
+                        <a href="/chat/addConversation/{{$agent->id}}" class="contact__zoek__link">Bericht sturen</a>
+                    </div>
+                    <div class="contact__blok__info__item">
+                        <img  src="{{asset('img/tel.png')}}" alt="call" class="icon">
+                        <a href="" class="contact__zoek__link">Bellen</a>
+                    </div>
+                </div>
+
              </div>
         </div>
         @endforeach

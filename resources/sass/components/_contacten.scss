@@ -68,6 +68,7 @@
 .contact__zoek{
     display:flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     margin: 10px auto 30px auto;
     text-align: left;
@@ -75,17 +76,52 @@
     border-radius: 20px 20px 20px 20px;
     background-position: center;
     background-repeat: no-repeat;
-    height: 205px;
-    width: 300px;
+    width:80%;
+    padding: 20px;
 }
 
 .contact__blok__zoek{
-    float: right;
     text-decoration: none;
     color: $darkblue;
     border-radius: 10px 10px 10px 10px;
-    margin: 10px 0px 10px 90px;
     text-align: left;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.contact__blok__user{
+    display:grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 20px;
+}
+
+.pic1{
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    grid-row: 1 / span 2;
+}
+
+.contact__blok__info{
+    width: 70%;
+    margin-left: 30%;
+    margin-right:auto;
+}
+
+.contact__blok__info__item{
+    display:flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon{
+    width:50px;
+    height:50px;
 }
 
 .contact__zoek__name{
@@ -107,72 +143,11 @@
     font-family: $normal;
     color:$darkblue;
     font-size: 16px;
-
     display:flex;
     flex-direction: row;
-    
     text-decoration: none;
     color: $darkblue;
-    
     border-radius: 10px 10px 10px 10px;
-    margin: 10px auto 10px 60px;
-    padding-top: 10px;
-    text-align: left; 
-}
-
-.icon1{
-    float: left;
-    display: flex;
-    flex-direction: row;
-    max-width: 20%;
-    max-height: 20%;
-    margin-top: -90px;
-    margin-left: 0px;
-    padding-top: 100px;
-    padding-left: 0px;
-}
-
-.icon2{
-    float: left;
-    display: flex;
-    flex-direction: row;
-    max-width: 20%;
-    max-height: 20%;
-    margin-top: -145px;
-    margin-left: -43px;
-    padding-top: 145px;
-    padding-left: 0px;
-}
-
-.icon3{
-    float: left;
-    display: flex;
-    flex-direction: row;
-    max-width: 20%;
-    max-height: 20%;
-    margin-top: -150px;
-    margin-left: 0px;
-    padding-top: 145px;
-    padding-left: 0px;
-}
-
-.pic1{
-    float:left;
-    margin-bottom: 0px;
-    margin-left: -75px;
-    margin-top: -10px;
-    width: 60px;
-    height: 60px;
-    border-radius:50%;
-}
-
-.pic2{
-    float:left;
-    margin-top: -10px;
-    margin-bottom: 0px;
-    margin-left: -75px;
-    padding-top: -10px;
-
 }
 
 // detail mobile

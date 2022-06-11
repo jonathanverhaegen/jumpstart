@@ -2466,7 +2466,7 @@ button:hover {
   margin-left: auto;
   margin-right: auto;
   padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 5px;
   margin-top: 25px;
 }
 
@@ -2617,7 +2617,7 @@ button:hover {
   border-radius: 20px 20px 20px 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25px;
+  margin-top: 10px;
   margin-bottom: 25px;
   padding: 25px;
 }
@@ -2664,7 +2664,7 @@ button:hover {
 }
 
 .bio__container {
-  background-color: white;
+  background-color: #FAFAFA;
   padding: 25px;
   width: 90%;
   margin-left: auto;
@@ -2703,8 +2703,10 @@ button:hover {
   margin-top: 5px;
 }
 
-.contact__back {
-  display: none;
+.contact__back img {
+  margin-left: 7%;
+  padding-top: 3%;
+  width: 10%;
 }
 
 @media (min-width: 800px) {
@@ -2750,7 +2752,7 @@ button:hover {
   }
 
   .contact__detail__container {
-    background-color: white;
+    background-color: #FAFAFA;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -2790,8 +2792,10 @@ button:hover {
   }
 
   .contact__back img {
-    margin-left: 2%;
+    display: flex;
+    margin-left: 3%;
     width: 5%;
+    padding-top: 0%;
   }
 }
 .comm__container {
@@ -3120,6 +3124,8 @@ h1 {
   flex-direction: row;
   text-decoration: none;
   align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   margin: 10px 0px 30px Opx;
   text-align: center;
   background-color: #13204A;
@@ -4159,7 +4165,7 @@ input::placeholder {
 .chat__detail__send-message input[type=submit] {
   background-color: #13204A;
   color: #DADFEC;
-  margin-left: 10px;
+  margin-left: 0px;
   cursor: pointer;
 }
 

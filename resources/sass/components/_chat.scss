@@ -279,7 +279,7 @@
 .chat__detail__send-message input[type=submit] {
     background-color: #13204A;
     color: #DADFEC;
-    margin-left: 10px;
+    margin-left: 0px;
     cursor: pointer;
 }
 
@@ -320,6 +320,7 @@
 .chat__container--desk{
     display:none;
 }
+
 
 @media screen and (min-width: 1000px) {
 

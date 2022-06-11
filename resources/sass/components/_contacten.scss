@@ -9,7 +9,7 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 5px;
     margin-top: 25px;
     
 }
@@ -165,7 +165,7 @@
     border-radius: 20px 20px 20px 20px;
     margin-left:auto;
     margin-right:auto;
-    margin-top:25px;
+    margin-top:10px;
     margin-bottom:25px;
     padding:25px;
 }
@@ -213,7 +213,7 @@
 }
 
 .bio__container{
-   background-color: $white; 
+   background-color: $lightgray; 
    padding: 25px;
    width:90%;
    margin-left:auto;
@@ -254,8 +254,10 @@
     margin-top: 5px;
 }
 
-.contact__back{
-    display:none;
+.contact__back img{
+    margin-left: 7%;
+    padding-top: 3%;
+    width: 10%;
 }
 
 
@@ -306,7 +308,7 @@
     }
 
     .contact__detail__container{
-        background-color: white;
+        background-color: $lightgray;
         width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -346,8 +348,10 @@
     }
 
     .contact__back img{
-        margin-left: 2%;
+        display: flex;
+        margin-left: 3%;
         width: 5%;
+        padding-top: 0%;
     }
     
 }    

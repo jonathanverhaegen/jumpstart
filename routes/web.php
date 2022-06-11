@@ -53,15 +53,15 @@ route::get('/', function(){
     /**
     * Verification Routes
     */
-    //Route::get('/email/verify', [VerificationController::class, "show"])->name('verification.notice');
-    //Route::get('/email/verify/{id}/{hash}', [VerificationController::class, "verify"])->name('verification.verify')->middleware(['signed']);
+    Route::get('/email/verify', [VerificationController::class, "show"])->name('verification.notice');
+    Route::get('/email/verify/{id}/{hash}', [VerificationController::class, "verify"])->name('verification.verify')->middleware(['signed']);
     Route::post('/email/resend', [VerificationController::class, "resend"])->name('verification.resend');
 
 //achter security
-//Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth']], function() {
 
-   // Route::group(['middleware' => ['2fa']], function() {
-   // Route::group(['middleware' => ['verified']], function() {
+    Route::group(['middleware' => ['2fa']], function() {
+    Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard
     Route::get('/dashboard', [DashboardController::class, "dashboard"])->name('dashboard');
@@ -135,8 +135,7 @@ route::get('/', function(){
         return redirect(route('dashboard'));
         })->name('2fa');
     
-/*
+
 });
 });
 });
-*/

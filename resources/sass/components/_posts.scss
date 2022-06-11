@@ -35,7 +35,7 @@
 .form--post__textarea{
     border:none;
     background-color: $gray;
-    padding: 2%;
+    padding: 5%;
     font-family: $normal;
     color: $blue;
     width:100%;
@@ -246,5 +246,9 @@
 
     .reaction__attachment{
         width:60%;
+    }
+
+    .form--post__textarea{
+        padding: 2%;
     }
 }

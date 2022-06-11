@@ -80,6 +80,7 @@
                     <img class="pic1" src="/attachments/{{ $agent->avatar }}" alt="avatar">
                     <p class="contact__zoek__name">{{$agent->name}}</p>
                     <p class="contact__zoek__mail">{{$agent->email}}</p>
+                    
                 </div>
                 <div class="contact__blok__info">
                     <div class="contact__blok__info__item">

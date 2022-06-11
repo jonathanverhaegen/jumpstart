@@ -2481,7 +2481,7 @@ button:hover {
   background-position: center;
   background-repeat: no-repeat;
   height: 150px;
-  width: 300px;
+  width: 80%;
 }
 
 .contact__blok {
@@ -2527,6 +2527,9 @@ button:hover {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .contact__zoek {
@@ -2534,7 +2537,6 @@ button:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 10px auto 30px auto;
   text-align: left;
   background-color: #CBD3E6;
   border-radius: 20px 20px 20px 20px;
@@ -2551,6 +2553,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .contact__blok__user {
@@ -2559,6 +2562,7 @@ button:hover {
   grid-template-rows: 1fr 1fr;
   align-items: center;
   grid-column-gap: 20px;
+  word-break: break-all;
 }
 
 .pic1 {
@@ -4733,7 +4737,7 @@ input::placeholder {
 .form--post__textarea {
   border: none;
   background-color: #E4E8F1;
-  padding: 2%;
+  padding: 5%;
   font-family: "Lato", sans-serif;
   color: #1E3472;
   width: 100%;
@@ -4942,6 +4946,10 @@ input::placeholder {
 
   .reaction__attachment {
     width: 60%;
+  }
+
+  .form--post__textarea {
+    padding: 2%;
   }
 }
 body {

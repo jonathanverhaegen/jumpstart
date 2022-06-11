@@ -63,11 +63,13 @@
                         <img class="profile__pic" src="/attachments/{{$user->avatar}}" alt="profile pic">
                         </div>
 
+                        
                         <div class="profile__extra">
                             <p class="profile__name">{{$user->name}}</p>
                             @if(!empty($user->company->name))
                             <p class="profile__business">{{$user->company->name}}</p>
                             @endif
+                            @if($user->id !== Auth::id())
                                 <div class="profile__extra__icons">
                                     @if(!empty($user->company->phone))
                                     <a href="" ><img src="{{asset('img/tel.png')}}" alt="call" class="profile__icon3"></a>
@@ -75,6 +77,7 @@
                                     <a href="mailto:{{$user->email}}" ><img src="{{asset('img/mail.png')}}" alt="mail" class="profile__icon1"></a>
                                     <a href="/chat/addConversation/{{$user->id}}" ><img src="{{asset('img/chatting.png')}}" alt="chat" class="profile__icon2"></a>
                                 </div>
+                            @endif
                         </div>
                 </div>
             </div>

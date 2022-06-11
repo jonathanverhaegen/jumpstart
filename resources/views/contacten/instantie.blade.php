@@ -88,7 +88,7 @@
                         @if($agent->isAgent === 1)
                         <a href="/contacten/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
                         @else
-                        <a href="/profile/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
+                        <a href="/profiel/{{$agent->id}}" class="contact__zoek__link">Profiel bekijken</a>
                         @endif
                     </div>
                     <div class="contact__blok__info__item">

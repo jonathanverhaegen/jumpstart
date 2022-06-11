@@ -2482,6 +2482,8 @@ if (addPostBtn !== null) {
   addPostBtn.addEventListener('click', function (e) {
     e.preventDefault();
     document.querySelector('.addPost').style.display = "flex";
+    var url = window.location.href;
+    window.location.href = url + "#addPost";
   });
 } //settings avatar update
 
@@ -2560,7 +2562,8 @@ if (statuutForm !== null) {
     hiddenValue.value = "stop";
     statuutForm.submit();
   });
-}
+} //calender      
+
 
 window.addEventListener("load", function () {
   if (document.querySelector(".calendar__heading")) {

@@ -30,8 +30,9 @@ class CommunityController extends Controller
         $usersgroups = UsersGroup::where('group_id', $data['group']->id)->where('user_id', '!=', Auth::id())->get();
         foreach($usersgroups as $u){
             $users[] = User::where('id', $u->user_id)->first();
-        }    
+        }
         $data['users'] = $users;
+        dd($data["users"]);
         $data['user'] = Auth::user(); 
         $data['faqs'] = $data['group']->faqs;
         $data['posts'] = Post::where('group_id', $data['group']->id)->orderByDesc('id')->get();

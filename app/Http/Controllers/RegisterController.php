@@ -42,7 +42,7 @@ class RegisterController extends Controller
             'naam' => 'required|max:255',
             'geboortedatum' => 'required|before:today',
             'opleiding' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email|unique:companies,email',
             'wachtwoord' => 'required|confirmed|min:8'
         ]);
 
@@ -165,7 +165,7 @@ class RegisterController extends Controller
             'wachtwoord' => 'required|confirmed|min:8',
             'bedrijfsnaam' => 'required|max:255',
             'ondernemingsnummer' => 'required',
-            'bedrijfsemail' => 'required|email|unique:companies,email',
+            'bedrijfsemail' => 'required|email|unique:users,email|unique:companies,email',
             'telefoon' => 'required',
             'opstartdatum' => 'required|before:today',
             'bio' => 'required'

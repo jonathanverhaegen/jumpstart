@@ -40,6 +40,7 @@
   font-size: 1.5em;
   font-weight: 700;
   text-transform: capitalize;
+  color: #1E3472;
 }
 
 .days {
@@ -563,7 +564,7 @@ a {
     float: left;
     width: 44%;
     margin-left: 5%;
-    margin-right: 0%;
+    margin-right: 5%;
     margin-top: 0%;
     margin-bottom: 2%;
   }
@@ -4309,6 +4310,17 @@ input::placeholder {
   z-index: 1;
 }
 
+.settings__detail__back-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.settings__detail__back-button img {
+  height: 25px;
+}
+
 .settings__second__list__item {
   display: flex;
   flex-direction: row;
@@ -4610,6 +4622,14 @@ input::placeholder {
 }
 
 @media screen and (min-width: 800px) {
+  .settings__detail__back-button {
+    display: none;
+  }
+
+  .settings__detail__back-button--show-desktop {
+    display: flex;
+  }
+
   .settings__container__status {
     flex-direction: row;
   }

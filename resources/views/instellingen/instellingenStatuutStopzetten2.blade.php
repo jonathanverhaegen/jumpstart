@@ -101,6 +101,9 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
+                <a href="/instellingen/statuut-stopzetten/1" class="settings__detail__back-button settings__detail__back-button--show-desktop">
+                    <img src="/img/back2.png" alt="Terug">
+                </a>
                 <form action="/instellingen/statuut-stopzetten/3" method="POST" class="settings__status-form">
                     @csrf
                     <h3>Waarom wil je stoppen met ondernemen?</h3>

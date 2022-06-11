@@ -101,6 +101,9 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
+                <a href="/instellingen/statuut-stopzetten/2" class="settings__detail__back-button settings__detail__back-button--show-desktop">
+                    <img src="/img/back2.png" alt="Terug">
+                </a>
                 <form action="/statuut/stopzetten" method="POST" class="settings__status-form">
                     @csrf
                     <h3>Heb je al eens gesproken met iemand van ICE CUBE?</h3>

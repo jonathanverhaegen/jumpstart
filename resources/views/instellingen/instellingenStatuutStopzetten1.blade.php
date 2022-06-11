@@ -101,6 +101,9 @@
             </div>
 
             <div class="settings__detail settings__detail__status">
+                <a href="/instellingen-mobiel" class="settings__detail__back-button">
+                    <img src="/img/back2.png" alt="Terug">
+                </a>
                 <h2 class="settings__detail__heading">Stopzetten statuut student-zelfstandige</h2>
                 <p class="settings__detail__text">
                     Je staat op het punt jouw statuut student-zelfstandige stop te zetten. Het stopzetten van dit statuut vergt enkele stappen, naargelang de reden om het statuut stop te zetten in het afsluitingsproces anders. Daarom vragen we jou om enkele vragen in te vullen, zodat wij dit afsluitingsproces kunnen personaliseren naar jou.

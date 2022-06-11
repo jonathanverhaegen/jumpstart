@@ -94,7 +94,7 @@
                         <img  src="{{asset('img/chatting.png')}}" alt="chat" class="icon">
                         <a href="/chat/addConversation/{{$agent->id}}" class="contact__zoek__link">Bericht sturen</a>
                     </div>
-                    @if($agent->isAgent === 1)
+                    @if(!empty($agent->company->phone))
                     <div class="contact__blok__info__item">
                         <img  src="{{asset('img/tel.png')}}" alt="call" class="icon">
                         <a href="" class="contact__zoek__link">Bellen</a>

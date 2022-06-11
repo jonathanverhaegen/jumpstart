@@ -25,7 +25,6 @@ class CommunityController extends Controller
     }
 
     public function communityDetail($name){
-        
         $data['group'] = Group::where('name', $name)->first();
         $usersgroups = UsersGroup::where('group_id', $data['group']->id)->where('user_id', '!=', Auth::id())->get();
         foreach($usersgroups as $u){

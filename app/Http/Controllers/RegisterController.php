@@ -139,7 +139,7 @@ class RegisterController extends Controller
         //dummy chat
         ChatController::makeDummyChats($user->id, $user->name);
 
-        event(new Registered($user));
+       // event(new Registered($user));
 
         auth()->login($user);
 

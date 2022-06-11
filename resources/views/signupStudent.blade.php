@@ -66,6 +66,12 @@
 
         
         <input class="signup__input"  type="text" name="email" placeholder="Studentenmail" value="{{ old('email') }}">
+
+        <select class="signup__input" name="opleiding" id="">
+            @foreach($educations as $e)
+            <option value="{{$e->id}}">{{$e->title}}</option>
+            @endforeach
+        </select>
     
 
         <div class="passwordToggle">

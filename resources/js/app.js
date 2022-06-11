@@ -441,6 +441,8 @@ if(addPostBtn !== null){
     addPostBtn.addEventListener('click', (e) => {
         e.preventDefault();
         document.querySelector('.addPost').style.display = "flex";
+        let url = window.location.href;
+        window.location.href = url + "#addPost"
     })
 }
 
@@ -523,7 +525,8 @@ if(statuutForm !== null){
     })
 }
 
-        
+
+//calender      
 window.addEventListener("load", function() {
 
     if(document.querySelector(".calendar__heading")) {

@@ -83,10 +83,10 @@
 
         <div class="profile__info__container">
             <div class="profile__bio">
+                @if(!empty($user->education_id))
                 <p class="profile__info__title"> Opleiding</p>
-                <p class="profile__info__inhoud">Interactive Multimedia Design</p>
-
-
+                <p class="profile__info__inhoud">{{$user->education->title}}</p>
+                @endif
                 <p class="profile__info__title">Bio</p>
 
                 <p class="profile__info__inhoud">

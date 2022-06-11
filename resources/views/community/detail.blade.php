@@ -96,7 +96,7 @@
         <a href="/community/addFaq/{{$group->id}}" class="ask"><p class="ask__question">Vraag stellen</p></a>  
         </div>
 
-        <div class="addPost">
+        <div id="addPost" class="addPost">
             <p class="addPost__title">Post plaatsen</p>
 
             <form class="form--post" action="/add/post" method="post" enctype="multipart/form-data">

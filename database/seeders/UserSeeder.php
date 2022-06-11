@@ -43,6 +43,7 @@ class UserSeeder extends Seeder
         $user3->password = Hash::make("Test12345");
         $user3->avatar = "sarahp.png";
         $user3->bio = "Dit is de bio van Sarah";
+        $user3->education_id = 1;
         $user3->isAgent = 0;
         $user3->save();
 
@@ -60,6 +61,7 @@ class UserSeeder extends Seeder
         $user1->password = Hash::make("Test12345");
         $user1->avatar = "Laurens.png";
         $user1->bio = "Dit is de bio van Laurens";
+        $user3->education_id = 2;
         $user1->isAgent = 0;
         $user1->save();
 

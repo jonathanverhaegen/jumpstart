@@ -45,7 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
-    protected $with = ["roadmap", "usersgroups", "company", "agent", "stopinfo"];
+    protected $with = ["roadmap", "usersgroups", "company", "agent", "stopinfo", "education"];
 
     public function roadmap(){
         return $this->hasOne(\App\Models\Roadmap::class);
@@ -76,5 +76,9 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function stopinfo(){
         return $this->hasOne(\App\Models\Stopinfo::class);
+    }
+
+    public function education(){
+        return $this->belongsTo(\App\Models\Education::class);
     }
 }

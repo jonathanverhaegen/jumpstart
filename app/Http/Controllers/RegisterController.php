@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Education;
 use App\Models\Roadmap;
 use App\Models\Todo;
 use App\Models\User;
@@ -17,7 +18,8 @@ class RegisterController extends Controller
     }
 
     public function signupStudent(){
-        return view('signupStudent');
+        $data['educations'] = Education::get();
+        return view('signupStudent', $data);
     }
 
     public function signupZelfstandige(){
@@ -39,6 +41,7 @@ class RegisterController extends Controller
         $credentials = $request->validate([
             'naam' => 'required|max:255',
             'geboortedatum' => 'required|before:today',
+            'opleiding' => 'required',
             'email' => 'required|email',
             'wachtwoord' => 'required|confirmed|min:8'
         ]);
@@ -59,7 +62,8 @@ class RegisterController extends Controller
          if(!empty($fileName)){
             $registration_data = [
                 'naam' => $request->input('naam'), 
-                'geboortedatum' => $request->input('geboortedatum'), 
+                'geboortedatum' => $request->input('geboortedatum'),
+                'opleiding' => $request->input('opleiding'), 
                 'email' => $request->input('email'), 
                 'wachtwoord' => $request->input('wachtwoord'),
                 'fileName' => $fileName
@@ -67,7 +71,8 @@ class RegisterController extends Controller
          }else{
             $registration_data = [
                 'naam' => $request->input('naam'), 
-                'geboortedatum' => $request->input('geboortedatum'), 
+                'geboortedatum' => $request->input('geboortedatum'),
+                'opleiding' => $request->input('opleiding'), 
                 'email' => $request->input('email'), 
                 'wachtwoord' => $request->input('wachtwoord')
             ];
@@ -119,6 +124,7 @@ class RegisterController extends Controller
         $user->email = $request->input('email');
         $user->password = Hash::make($request->input('wachtwoord'));
         $user->bio = $request->input('bio');
+        $user->education_id = $request->input('opleiding');
         $user->google2fa_secret = $request->input('google2fa_secret');
         if(!empty($request->input('fileName'))){
             $user->avatar = $request->input('fileName');

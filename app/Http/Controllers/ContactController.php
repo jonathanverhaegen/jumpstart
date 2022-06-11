@@ -6,6 +6,7 @@ use App\Models\Agent;
 use App\Models\Instantie;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -26,7 +27,7 @@ class ContactController extends Controller
         $users = User::where('isAgent', 1)->get();
 
         if($id === "4"){
-            $users = User::where('isAgent', 0)->get();
+            $users = User::where('isAgent', 0)->where('id', '!=', Auth::id())->get();
 
             foreach($users as $u){
                 if(!empty($u->roadmap)){

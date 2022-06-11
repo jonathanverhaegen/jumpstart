@@ -85,6 +85,9 @@
             </div>
 
             <div class="settings__detail">
+                <a href="/instellingen-mobiel" class="settings__detail__back-button">
+                    <img src="/img/back2.png" alt="Terug">
+                </a>
                 <div class="settings__detail__profile-picture">
                     <img src="/attachments/{{$user->avatar}}" alt="Profielfoto">
                     <div class="settings__detail__profile-picture__name">

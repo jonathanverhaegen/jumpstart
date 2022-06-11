@@ -46,6 +46,17 @@
     z-index: 1;
 }
 
+.settings__detail__back-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.settings__detail__back-button img {
+    height: 25px;
+}
+
 .settings__second__list__item {
     display: flex;
     flex-direction: row;
@@ -335,6 +346,14 @@
 }
 
 @media screen and (min-width: 800px) {
+
+    .settings__detail__back-button {
+        display: none;
+    }
+
+    .settings__detail__back-button--show-desktop {
+        display: flex;
+    }
 
     .settings__container__status {
         flex-direction: row;

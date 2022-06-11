@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('avatar')->default('default.png');
             $table->longText('bio')->nullable();
+            $table->foreignId('education_id')->nullable();
             $table->boolean('isAgent')->default(0);
             $table->text('google2fa_secret')->nullable();
             $table->dateTime('email_verified_at')->nullable();

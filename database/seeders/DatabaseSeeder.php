@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
             SubcategorySeeder::class,
             ActivitySeeder::class,
             AgentSeeder::class,
-            InstantieSeeder::class
+            InstantieSeeder::class,
+            EducationSeeder::class
         ]);
     }
 }

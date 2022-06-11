@@ -42,6 +42,31 @@ class ConversationMobile extends Component
             $this->textChat = "";
             $this->attachment = "";
         }
+
+        if(!empty($this->attachment)){
+            $chat = new Chat();
+            $chat->text = "";
+            $chat->conversation_id = $conversation_id;
+            $chat->read = 0;
+            $chat->sender_id = Auth::id();
+            $chat->save();
+
+            if (!empty($this->attachment)) {
+                $file = $this->attachment;
+                $imageSrc = time().'.'.$file->extension();
+                $this->attachment->storeAs('attachments', $imageSrc, 'real_public');
+
+                //attachment opslaan in database
+                $newAttach = new AttachmentsChat();
+                $newAttach->name = $file->getClientOriginalName();
+                $newAttach->source = $imageSrc;
+                $newAttach->chat_id = $chat->id;
+                $newAttach->save();
+            }
+
+            $this->textChat = "";
+            $this->attachment = "";
+        }
     }
 
     public function render()

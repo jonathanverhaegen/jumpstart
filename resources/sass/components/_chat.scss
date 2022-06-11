@@ -264,7 +264,7 @@
     border: none;
     border-radius: 50px;
     background-color: #DADFEC;
-    font-size: 1em;
+    font-size: 0.9em;
     color: #13204A;
 
     padding-left: 15px;
@@ -281,6 +281,7 @@
     color: #DADFEC;
     margin-left: 10px;
     cursor: pointer;
+    margin-left:-2%;
 }
 
 .chat__detail__send-message input::placeholder {
@@ -292,7 +293,7 @@
 }
 
 .chat__attach__img{
-    width:50%;
+    width:100%;
     margin-top: 10px;
     border-radius: 20px;
 }
@@ -350,6 +351,12 @@
 
     .chat__container--mob{
         display: none;
+    }
+
+    .chat__attach__img{
+        width:50%;
+        margin-top: 10px;
+        border-radius: 20px;
     }
 
     .chat__detail__send-message img{

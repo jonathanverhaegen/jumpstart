@@ -51,7 +51,7 @@ class RoadmapController extends Controller
             $roadmap->extra = 0;
             $roadmap->save();
             $nextStage = $stage + 2;
-            $request->session()->flash('success', 'Stap '.$stage.' is klaar, je kan nu verder met stap '.$nextStage);
+            $request->session()->flash('success', 'check eerst stap 6 en ga dan verder naar 7');
             return redirect('/roadmap');
         }
 
@@ -603,7 +603,7 @@ class RoadmapController extends Controller
         $roadmap->check = 1;
         $roadmap->save();
 
-        $request->session()->flash('success', 'Briefje is opgeslagen. Je kan nu stap 2 afchecken');
+        $request->session()->flash('success', 'Briefje is opgeslagen. Je kan nu stap 3 afchecken');
         return redirect('/roadmap');
     }
 

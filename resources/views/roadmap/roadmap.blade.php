@@ -739,7 +739,7 @@
         <div class="stage__container stage__container--8">
             <div class="stage__header">
                 <a href="" class="stage__header__back"><img  src="{{asset('img/back.png')}}"" alt="back"></a>
-                <div class="stage__header__stap">Stap 7</div>
+                <div class="stage__header__stap">Stap 8</div>
                 <div class="stage__header__extra"></div>
             </div>
             <div class="stage">

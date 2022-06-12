@@ -5,7 +5,7 @@
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 25px;
-    height: calc(100vh - 180px);
+    min-height: calc(100vh - 180px);
     display: flex;
     flex-direction: row;
 }

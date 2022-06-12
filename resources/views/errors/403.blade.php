@@ -1,6 +1,6 @@
 @extends('layouts/app')
 
-@section('title', 'Pagina niet gevonden | Jumpstart')
+@section('title', 'Toegang geweigerd | Jumpstart')
 
 <style>
     html, body {
@@ -13,8 +13,8 @@
 
 <div class="error-page">
     <img src="img/illustration-error.png" alt="Niet gevonden" class="error-page__illustration">
-    <h1>404</h1>
-    <h2>Pagina niet gevonden</h2>
+    <h1>403</h1>
+    <h2>Toegang geweigerd</h2>
     <a href="/dashboard" class="error-page__button">Ga terug naar Jumpstart</a>
 </div>
 

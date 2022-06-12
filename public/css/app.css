@@ -4130,6 +4130,7 @@ input::placeholder {
   border-radius: 15px;
   line-height: 24px;
   flex-direction: column;
+  word-break: break-all;
 }
 
 .chat__message--from {
@@ -4161,6 +4162,22 @@ input::placeholder {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 3px;
+}
+
+.chat__detail__send-message textarea {
+  height: 45px;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  background-color: #DADFEC;
+  font-size: 0.9em;
+  color: #13204A;
+  padding-left: 15px;
+  padding-right: 15%;
+  padding-bottom: 3px;
+  padding-top: 12px;
+  flex: 1 0;
+  resize: none;
 }
 
 .chat__detail__send-message input:first-child {
@@ -4262,6 +4279,10 @@ input::placeholder {
     position: relative;
     left: -160%;
     top: 10px;
+  }
+
+  .chat__detail__send-message textarea {
+    padding-right: 10%;
   }
 }
 .settings__container {

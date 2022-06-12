@@ -120,31 +120,31 @@
                     <a href="" data-stage="1" class="roadmap__stage roadmap__stage--2-1">
                         <p class="roadmap__stage__title roadmap__stage__title--left">Wat wil je doen</p>
                         <p class="roadmap__stage__number">1</p>
-                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon1 stengel__icon1__stop">
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon1 stengel__icon1__stop stengel__icon1__stop2">
                     </a>
 
                     <a @if($roadmap->stage > 1) href="" data-stage="2" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2-2">
                         <div class="roadmap__stage__number">2</div>
                         <div class="roadmap__stage__title roadmap__stage__title--right">Zet je onderneming stop</div>
-                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon2 stengel__icon2__stop">
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon2 stengel__icon2__stop stengel__icon2__stop2">
                     </a>
 
                     <a @if($roadmap->stage > 2) href="" data-stage="3" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2-3">
                         <div class="roadmap__stage__title roadmap__stage__title--left">Stopzetten van je btw-nummer</div>
                         <div class="roadmap__stage__number">3</div>
-                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon3 stengel__icon3__stop">
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon3 stengel__icon3__stop stengel__icon3__stop2">
                     </a>
 
                     <a @if($roadmap->stage > 3) href="" data-stage="4" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2-4">
                         <div class="roadmap__stage__number">4</div>
                         <div class="roadmap__stage__title roadmap__stage__title--right">Zet je statuut als zelfstandige stop</div>
-                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon4 stengel__icon4__stop">
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon4 stengel__icon4__stop stengel__icon4__stop2">
                     </a>
 
                     <a @if($roadmap->stage > 4) href="" data-stage="5" @else style="opacity:0.4" @endif  class="roadmap__stage roadmap__stage--2-5">
                         <div class="roadmap__stage__title roadmap__stage__title--left">Licht je bank in</div>
                         <div class="roadmap__stage__number">5</div>
-                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5 stengel__icon5__stop">
+                        <img src="{{asset('img/stengel.png')}}" alt="stengel" class="stengel__icon5 stengel__icon5__stop stengel__icon5__stop2">
                     </a>
 
                 @endif

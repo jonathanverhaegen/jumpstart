@@ -12,7 +12,7 @@
 @section('content')
 
 <div class="error-page">
-    <img src="img/illustration-error.png" alt="Niet gevonden" class="error-page__illustration">
+    <img src="https://app.jumpstartvlaanderen.be/img/illustration-error.png" alt="Niet gevonden" class="error-page__illustration">
     <h1>404</h1>
     <h2>Pagina niet gevonden</h2>
     <a href="/dashboard" class="error-page__button">Ga terug naar Jumpstart</a>

@@ -60,8 +60,8 @@ route::get('/', function(){
 //achter security
 Route::group(['middleware' => ['auth']], function() {
 
-    //Route::group(['middleware' => ['2fa']], function() {
-    //Route::group(['middleware' => ['verified']], function() {
+    Route::group(['middleware' => ['2fa']], function() {
+    Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard
     Route::get('/dashboard', [DashboardController::class, "dashboard"])->name('dashboard');
@@ -136,4 +136,6 @@ Route::group(['middleware' => ['auth']], function() {
         })->name('2fa');
     
 
+});
+});
 });

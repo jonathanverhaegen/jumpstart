@@ -14,12 +14,15 @@ class CommunityController extends Controller
 {
     public function community(){
         $usersgroups = UsersGroup::where('user_id', Auth::id())->orderBy('group_id', 'asc')->get();
+
         foreach($usersgroups as $u){
             $groups[] = Group::where('id', $u->group_id)->first();
         }
+
         if(!isset($groups)){
             $groups = "";
         }
+
         $data['groups'] = $groups;
         return view('community/community', $data);
     }
@@ -27,13 +30,16 @@ class CommunityController extends Controller
     public function communityDetail($name){
         $data['group'] = Group::where('name', $name)->first();
         $usersgroups = UsersGroup::where('group_id', $data['group']->id)->where('user_id', '!=', Auth::id())->get();
+
         foreach($usersgroups as $u){
             $users[] = User::where('id', $u->user_id)->first();
         }
+
         $data['users'] = $users;
         $data['user'] = Auth::user(); 
         $data['faqs'] = $data['group']->faqs;
         $data['posts'] = Post::where('group_id', $data['group']->id)->orderByDesc('id')->get();
+
         return view('community/detail', $data);
     }
 
@@ -76,9 +82,6 @@ class CommunityController extends Controller
             }
         }
         
-        
-        
-
         $group = Group::where('id', $group_id)->first();
 
         $request->session()->flash('success', 'Je post is geplaatst');

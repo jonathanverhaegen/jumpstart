@@ -78,7 +78,6 @@ class RegisterController extends Controller
             ];
          }
          
-
          // Add the secret key to the registration data
          $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
 
@@ -86,15 +85,12 @@ class RegisterController extends Controller
          $request->session()->flash('registration_data', $registration_data);
 
          // Generate the QR image. This is the image the user will scan with their app
-      // to set up two factor authentication
+        // to set up two factor authentication
          $QR_Image = $google2fa->getQRCodeInline(
              config('jumpstart.test'),
              $registration_data['email'],
              $registration_data['google2fa_secret']
          );
-
-         
-
          // Pass the QR barcode image to our view
          return view('google2fa.register', ['QR_Image' => $QR_Image, 'secret' => $registration_data['google2fa_secret']]);
     }
@@ -214,8 +210,6 @@ class RegisterController extends Controller
             ];
         }
         
-
-
         // Add the secret key to the registration data
         $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
 

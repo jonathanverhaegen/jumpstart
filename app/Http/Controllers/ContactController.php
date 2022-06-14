@@ -18,7 +18,6 @@ class ContactController extends Controller
 
     public function contactenDetail($id){
         $data["agent"] = User::where('id', $id)->where('isAgent', 1)->first();
-        
         return view('contacten/detail', $data);
     }
 
@@ -47,6 +46,7 @@ class ContactController extends Controller
         if(empty($agents)){
             $agents = "";
         }
+        
         $data['agents'] = $agents;
         return view('contacten/instantie', $data);
     }

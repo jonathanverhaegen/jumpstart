@@ -86,7 +86,6 @@ class ProfileController extends Controller
         $old = $request->input('oud-wachtwoord');
         $new = $request->input('nieuw-wachtwoord');
         
-
         if(Hash::check($old, Auth::user()->password)){
             $user = Auth::user();
             $user->password = Hash::make($new);

@@ -349,7 +349,6 @@ class RoadmapController extends Controller
 
         $request->session()->flash('success', 'Vrijstelling doorgegeven. Je kan stap 4 nu laten checken');
         return redirect('/roadmap');
-
     }
 
     

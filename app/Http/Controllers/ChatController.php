@@ -82,12 +82,7 @@ class ChatController extends Controller
                 $newAttach->save();
                 sleep(1);
         }
-
         return redirect('/chat?chat='. $convo->id);
-
-
-
-
     }
 
     public function mobileChat($conversation_id){

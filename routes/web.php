@@ -60,7 +60,9 @@ route::get('/', function(){
 //achter security
 Route::group(['middleware' => ['auth']], function() {
 
+    //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
     Route::group(['middleware' => ['2fa']], function() {
+    //https://codeanddeploy.com/blog/laravel/how-to-implement-laravel-8-email-verification
     Route::group(['middleware' => ['verified']], function() {
 
     //routes van het dashboard

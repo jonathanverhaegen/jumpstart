@@ -56,9 +56,11 @@ class RegisterController extends Controller
         }
         
          // Initialise the 2FA class
+         //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
          $google2fa = app('pragmarx.google2fa');
 
          // Save the registration data in an array
+         //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
          if(!empty($fileName)){
             $registration_data = [
                 'naam' => $request->input('naam'), 
@@ -79,24 +81,29 @@ class RegisterController extends Controller
          }
          
          // Add the secret key to the registration data
+         //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
          $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
 
          // Save the registration data to the user session for just the next request
+         //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
          $request->session()->flash('registration_data', $registration_data);
 
          // Generate the QR image. This is the image the user will scan with their app
         // to set up two factor authentication
+        //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
          $QR_Image = $google2fa->getQRCodeInline(
              config('jumpstart.test'),
              $registration_data['email'],
              $registration_data['google2fa_secret']
          );
          // Pass the QR barcode image to our view
+         //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
          return view('google2fa.register', ['QR_Image' => $QR_Image, 'secret' => $registration_data['google2fa_secret']]);
     }
 
      public function completeRegistration(Request $request)
       {   
+          //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
           // add the session data back to the request input
           $request->merge(session('registration_data'));
 
@@ -141,6 +148,8 @@ class RegisterController extends Controller
         //dummy chat
         ChatController::makeDummyChats($user->id, $user->name);
 
+        //email verzenden voor verificatie
+        //https://codeanddeploy.com/blog/laravel/how-to-implement-laravel-8-email-verification
         event(new Registered($user));
 
         auth()->login($user);
@@ -178,9 +187,11 @@ class RegisterController extends Controller
         }
 
         // Initialise the 2FA class
+        //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
         $google2fa = app('pragmarx.google2fa');
 
         // Save the registration data in an array
+        //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
         if(!empty($fileName)){
             $registration_data = [
                 'naam' => $request->input('naam'), 
@@ -211,13 +222,16 @@ class RegisterController extends Controller
         }
         
         // Add the secret key to the registration data
+        //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
         $registration_data["google2fa_secret"] = $google2fa->generateSecretKey();
 
         // Save the registration data to the user session for just the next request
+        //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
         $request->session()->flash('registration_data', $registration_data);
 
         // Generate the QR image. This is the image the user will scan with their app
         // to set up two factor authentication
+        //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
         $QR_Image = $google2fa->getQRCodeInline(
             config('jumpstart.test'),
             $registration_data['email'],
@@ -225,6 +239,7 @@ class RegisterController extends Controller
         );
 
         // Pass the QR barcode image to our view
+        //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
         return view('google2fa.registerZelf', ['QR_Image' => $QR_Image, 'secret' => $registration_data['google2fa_secret']]);
 
          
@@ -232,7 +247,7 @@ class RegisterController extends Controller
 
     public function completeRegistrationZelf(Request $request)
       {   
-
+          //https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz
           // add the session data back to the request input
           $request->merge(session('registration_data'));
 
@@ -270,6 +285,7 @@ class RegisterController extends Controller
         DashboardController::makeDummyTodo($user->id);
 
         //email verzenden voor verificatie
+        //https://codeanddeploy.com/blog/laravel/how-to-implement-laravel-8-email-verification
         event(new Registered($user));
 
         auth()->login($user);

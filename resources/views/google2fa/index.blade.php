@@ -31,6 +31,7 @@
     @endcomponent
     @endif
     
+    <!-- https://www.sitepoint.com/2fa-in-laravel-with-google-authenticator-get-secure/zz -->
     <div class="auth">
         <p class="auth__title">Inloggen met Google Authenticatie</p>
 

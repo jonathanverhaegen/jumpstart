@@ -1507,31 +1507,31 @@ img.prof__pic__ {
 }
 
 /*roadmap verdeling */
-.roadmap__stage--1 {
+.roadmap__stage--1, .roadmap__stage--2-1 {
   position: relative;
   left: -2%;
   top: 10px;
 }
 
-.roadmap__stage--2 {
+.roadmap__stage--2, .roadmap__stage--2-2 {
   margin-left: 40px;
   margin-top: 70px;
   margin-bottom: -10px;
 }
 
-.roadmap__stage--3 {
+.roadmap__stage--3, .roadmap__stage--2-3 {
   position: relative;
   left: 0%;
   top: 70px;
 }
 
-.roadmap__stage--4 {
+.roadmap__stage--4, .roadmap__stage--2-4 {
   margin-left: 40px;
   margin-top: 130px;
   margin-bottom: -10px;
 }
 
-.roadmap__stage--5 {
+.roadmap__stage--5, .roadmap__stage--2-5 {
   margin-left: 70px;
   margin-top: 70px;
   margin-bottom: -10px;
@@ -1842,6 +1842,10 @@ img.prof__pic__ {
     margin-top: 25%;
   }
 
+  .roadmap__stage--2-1 {
+    margin-top: 18.5%;
+  }
+
   .stengel__icon1 {
     width: 2%;
     height: 5%;
@@ -1855,12 +1859,21 @@ img.prof__pic__ {
     margin-left: 38%;
   }
 
+  .roadmap__stage--2-2 {
+    margin-top: -2%;
+    margin-left: 38%;
+  }
+
+  .stengel__icon2__stop2 {
+    margin-left: -48%;
+  }
+
   .stengel__icon2 {
     width: 3%;
     height: 8%;
     margin-top: 9%;
     margin-bottom: -5%;
-    margin-left: -28%;
+    margin-left: -48%;
   }
 
   .roadmap__stage--3 {
@@ -1868,11 +1881,20 @@ img.prof__pic__ {
     margin-left: 30%;
   }
 
+  .roadmap__stage--2-3 {
+    margin-top: -37.2%;
+    margin-left: 30%;
+  }
+
+  .stengel__icon3__stop2 {
+    margin-left: -6%;
+  }
+
   .stengel__icon3 {
     width: 3%;
     height: 8%;
     margin-top: -7%;
-    margin-left: -7%;
+    margin-left: -6%;
     margin-bottom: -25%;
   }
 
@@ -1883,16 +1905,36 @@ img.prof__pic__ {
     position: relative;
   }
 
+  .roadmap__stage--2-4 {
+    margin-top: 7%;
+    margin-left: 70%;
+    z-index: 10;
+    position: relative;
+  }
+
+  .stengel__icon4__stop2 {
+    margin-left: -124%;
+  }
+
   .stengel__icon4 {
     width: 7%;
     height: 14%;
     margin-top: 0%;
-    margin-left: -95%;
+    margin-left: -124%;
     margin-bottom: -25%;
   }
 
   .roadmap__stage--5 {
-    margin-top: -26%;
+    margin-top: -25.2%;
+    margin-left: 70%;
+  }
+
+  .stengel__icon5__stop2 {
+    margin-left: -15%;
+  }
+
+  .roadmap__stage--2-5 {
+    margin-top: -25.4%;
     margin-left: 70%;
   }
 
@@ -1900,7 +1942,7 @@ img.prof__pic__ {
     width: 7%;
     height: 14%;
     margin-top: -5%;
-    margin-left: -17%;
+    margin-left: -15%;
     margin-bottom: -25%;
   }
 
